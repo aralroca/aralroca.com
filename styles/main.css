@@ -1,6 +1,10 @@
-main,
-main img {
+main {
+  overflow-x: hidden;
   max-width: 800px;
+}
+
+main img {
+  max-width: 100%;
 }
 
 header,
@@ -22,6 +26,7 @@ header nav a {
 }
 
 .logo {
+  font-size: 22px;
   font-weight: bold;
 }
 

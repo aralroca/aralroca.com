@@ -1,10 +1,17 @@
 import Link from 'next/link'
+import Head from 'next/head'
 
 import '../styles/main.css'
 
 export default function Layout({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1.0"
+        />
+      </Head>
       <header>
         <Link href="/">
           <a title="Go to homepage" className="logo">
