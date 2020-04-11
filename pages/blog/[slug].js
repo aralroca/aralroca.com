@@ -46,7 +46,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     .toString()
 
   const { data, content } = matter(markdownWithMetadata)
-  const __html = marked(content).replace('<img ', '<img loading="lazy" ')
+  const __html = marked(content).replace(/<img /g, '<img loading="lazy" ')
 
   return {
     props: {
