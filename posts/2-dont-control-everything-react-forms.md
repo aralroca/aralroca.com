@@ -47,18 +47,14 @@ A common mistake in React is to try to control every single field of a form usin
   </form>
 ```
 
- 
-
 Then we can use the state directly in the onSignIn method.
 
 ```js
 onSignIn = () => {
-  const { username, password } = this.state;
+  const { username, password } = this.state
   // ...
 }
 ```
-
- 
 
 These fields are controlled because every time that the state changes, the text rendered changes inside the input. Moreover, every time that the user types, the onChange event is fired to save the new state. If we type a username of 15 characters and a password of 8; 24 react renders will happen under the hood (one for each character + one extra for the first render).
 
@@ -70,31 +66,22 @@ Uncontrolled fields are the natural way to write without a React state:
 
 ```js
 <form onSubmit={onSignIn}>
+  <div>
+    <input
+      required
+      name="username"
+      type="text"
+      placeholder={userNamePlaceholder}
+    />
+  </div>
 
-      <div>
-        <input
-          required
-          name="username"
-          type="text"
-          placeholder={userNamePlaceholder}
-        />
-      </div>
+  <div>
+    <input name="password" type="password" placeholder={passwordPlaceholder} />
+  </div>
 
-      <div>
-        <input
-          name="password"
-          type="password"
-          placeholder={passwordPlaceholder}
-        />
-      </div>
-
-      <button type="submit">
-         Sign In
-      </button>
-  </form>
+  <button type="submit">Sign In</button>
+</form>
 ```
-
- 
 
 In this case, the state is not necessary. We need these fields on the event onSubmit but it’s not necessary to store it at every change in the React state because we already have it in the event. This means that we only do 1 simple render for this component: The first render.
 
@@ -102,19 +89,17 @@ On the onSignIn function, we can find the username and password fields inside ev
 
 ```js
 onSignIn = (event) => {
-      const [username, password] = Array.prototype
-          .slice.call(event.target)
-          .map(field => field.value)
+  const [username, password] = Array.prototype.slice
+    .call(event.target)
+    .map((field) => field.value)
 
   // ...
 }
 ```
 
- 
-
 However, although we simplified it a little, it’s still quite ugly to repeat this Array.prototype.slice.call in every single form submit. Let’s see how to improve it.
 
-### 
+###
 
 ### Improving the uncontrolled way
 
@@ -122,11 +107,9 @@ Our goal here is to simplify the logic of every “submit” event in order to a
 
 ```js
 onSignIn = ({ username, password }) => {
- // ...
+  // ...
 }
 ```
-
- 
 
 In this case, we will provide the fields directly as an argument. This argument is an object with all the fields of the form when the key is the name attribute.
 
@@ -138,21 +121,26 @@ Our reusable personal Form Component could be:
 
 ```jsx
 function Form({ children, onSubmit, ...restOfProps }) {
-  const onSubmitAllFields = useCallback(event => {
-    event.preventDefault()
-    event.stopPropagation()
+  const onSubmitAllFields = useCallback(
+    (event) => {
+      event.preventDefault()
+      event.stopPropagation()
 
-    const fields = Array.prototype.slice.call(event.target)
-      .filter(field => field.name)
-      .reduce((form, { name, value }) => ({
-        ...form,
-        [name]: typeof value === 'string'
-          ? value.trim()
-          : value,
-      }), {})
+      const fields = Array.prototype.slice
+        .call(event.target)
+        .filter((field) => field.name)
+        .reduce(
+          (form, { name, value }) => ({
+            ...form,
+            [name]: typeof value === 'string' ? value.trim() : value,
+          }),
+          {}
+        )
 
-    onSubmit(fields)
-  }, [onSubmit])
+      onSubmit(fields)
+    },
+    [onSubmit]
+  )
 
   return (
     <form {...restOfProps} onSubmit={onSubmitAllFields}>
@@ -162,10 +150,7 @@ function Form({ children, onSubmit, ...restOfProps }) {
 }
 
 export default memo(Form)
-
 ```
-
- 
 
 Thus, we are moving the repeating code that we always do in our forms: **preventDefault** , **stopPropagation** , **extract fields** + **trim string fields**.
 
@@ -173,14 +158,14 @@ Now, we can use this new approach by only changing one character, from “form�
 
 > **Note** : I’m using the new hooks API (proposal), even though it can also be written as a class component.
 
-### 
+###
 
 ### Conclusions
 
 Both approaches; controlled and uncontrolled forms are great for different reasons. We have to know the difference to choose the best for any occasion. My advice would be: use normally uncontrolled unless you really need the state to do dynamic checks or to change dynamically the text of each input.
 
 > It’s my preferred way of deal with forms. If I don’t need the value to be controlled, then I don’t control it ![👍](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f44d.png)[https://t.co/0TGb3Lrs9Y](https://t.co/0TGb3Lrs9Y)
-> 
+>
 > — Kent C. Dodds (@kentcdodds) [8 de julio de 2018](https://twitter.com/kentcdodds/status/1015954912075644930?ref_src=twsrc%5Etfw)
 
 If you want to try the Form component, I added in npm:
@@ -188,6 +173,5 @@ If you want to try the Form component, I added in npm:
 ```
 npm install react-form-uncontrolled --save
 ```
-
 
 Repo: https://github.com/SylcatOfficial/react-form-uncontrolled
