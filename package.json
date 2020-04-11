@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "format": "pretty-quick",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "yarn build && yarn export && cd out && now && cd .."
   },
   "dependencies": {
     "gray-matter": "4.0.2",
