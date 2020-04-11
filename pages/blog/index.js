@@ -3,23 +3,26 @@ import fs from 'fs'
 
 export default function Blog({ posts }) {
   return (
-    <div>{posts.map(slug => {
-      return (
-        <div key={slug}>
-          <Link href={"/blog/" + slug}>
-            <a>{"/blog/" + slug}</a>
-          </Link>
-        </div>
-      );
-    })}</div>
+    <>
+      <h1>All my posts</h1>
+      {posts.map((post) => {
+        return (
+          <div key={post}>
+            <Link href={`/blog/${post}`}>
+              <a>{`/blog/${post}`}</a>
+            </Link>
+          </div>
+        )
+      })}
+    </>
   )
 }
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync("posts");
+  const files = fs.readdirSync('posts')
   return {
     props: {
-      posts: files.map(filename => filename.replace(".md", ""))
-    }
+      posts: files.map((filename) => filename.replace('.md', '')),
+    },
   }
 }

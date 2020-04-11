@@ -1,0 +1,47 @@
+main,
+main img {
+  max-width: 800px;
+}
+
+header,
+footer {
+  display: flex;
+  max-width: 1200px;
+}
+
+footer {
+  justify-content: flex-end;
+}
+
+header nav {
+  margin-left: auto;
+}
+
+header nav a {
+  margin: 0 5px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+footer a {
+  font-style: italic;
+}
+
+footer a,
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  padding-top: 40px;
+  min-height: 90vh;
+}
+
+main,
+header,
+footer {
+  margin: 0 auto;
+}
