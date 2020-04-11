@@ -1,0 +1,39 @@
+{
+  "name": "aralroca",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "pretty-quick",
+    "export": "next export"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "marked": "^0.8.2",
+    "next": "9.3.4",
+    "preact": "10.4.0",
+    "preact-render-to-string": "5.1.6",
+    "react": "github:preact-compat/react#1.0.0",
+    "react-dom": "github:preact-compat/react-dom#1.0.0",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@1.0.1",
+    "sass": "1.26.3"
+  },
+  "devDependencies": {
+    "husky": "4.2.5",
+    "prettier": "2.0.4",
+    "pretty-quick": "2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && git add ."
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  }
+}
