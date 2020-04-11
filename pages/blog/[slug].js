@@ -1,10 +1,12 @@
 import fs from 'fs'
 import path from 'path'
+import readingTime from 'reading-time'
 import matter from 'gray-matter'
 import Head from 'next/head'
 import marked from 'marked'
+import niceDateText from '../../utils/niceDateText'
 
-export default function Post({ htmlString, data }) {
+export default function Post({ date, __html, data, timeToRead }) {
   return (
     <>
       <Head>
@@ -12,11 +14,15 @@ export default function Post({ htmlString, data }) {
         <meta title="description" content={data.description} />
       </Head>
       <h1>{data.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: htmlString }} />
+      <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
+      <div dangerouslySetInnerHTML={{ __html }} />
     </>
   )
 }
 
+/**
+ * Load all the slugs corresponding to all mardown filenames.
+ */
 export const getStaticPaths = async () => {
   const files = fs.readdirSync('posts')
   const paths = files.map((filename) => ({
@@ -31,21 +37,23 @@ export const getStaticPaths = async () => {
   }
 }
 
+/**
+ * Read each post converting markdown to HTML + metadata
+ */
 export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = fs
     .readFileSync(path.join('posts', slug + '.md'))
     .toString()
 
-  const parsedMarkdown = matter(markdownWithMetadata)
-  const htmlString = marked(parsedMarkdown.content).replace(
-    '<img ',
-    '<img loading="lazy" '
-  )
+  const { data, content } = matter(markdownWithMetadata)
+  const __html = marked(content).replace('<img ', '<img loading="lazy" ')
 
   return {
     props: {
-      htmlString,
-      data: parsedMarkdown.data,
+      data,
+      date: niceDateText(new Date(data.created)),
+      __html,
+      timeToRead: readingTime(content),
     },
   }
 }

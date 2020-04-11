@@ -1,17 +1,14 @@
 import Link from 'next/link'
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import '../styles/main.css'
 
 export default function Layout({ Component, pageProps }) {
+  const { pathname } = useRouter()
+  const isActive = (link) => (pathname.startsWith(link) ? 'active' : '')
+
   return (
     <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1.0"
-        />
-      </Head>
       <header>
         <Link href="/">
           <a title="Go to homepage" className="logo">
@@ -20,10 +17,13 @@ export default function Layout({ Component, pageProps }) {
         </Link>
         <nav>
           <Link href="/blog">
-            <a>Blog</a>
+            <a className={isActive('/blog')}>Blog</a>
+          </Link>
+          <Link href="/supporters">
+            <a className={isActive('/supporters')}>Supporters</a>
           </Link>
           <Link href="/contact">
-            <a>Contact</a>
+            <a className={isActive('/contact')}>Contact</a>
           </Link>
         </nav>
       </header>
@@ -32,8 +32,8 @@ export default function Layout({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <footer>
-        <a title="Contact me" href="mailto:aral-rg@hotmail.com">
-          aral-rg@hotmail.com
+        <a title="Contact me" href="mailto:contact@aralroca.com">
+          contact@aralroca.com
         </a>
       </footer>
     </>
