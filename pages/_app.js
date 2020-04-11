@@ -12,6 +12,7 @@ export default function Layout({ Component, pageProps }) {
       <header>
         <Link href="/">
           <a title="Go to homepage" className="logo">
+            <img src="/images/logo.png" width={24} />
             Aral Roca.
           </a>
         </Link>
