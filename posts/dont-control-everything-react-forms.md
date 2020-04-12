@@ -1,6 +1,7 @@
 ---
 title: Don’t control everything! React forms
 created: 11/2/2018
+description: Use uncontrolled forms as default way to handle forms.
 cover_image: https://aralroca.files.wordpress.com/2018/11/rawpixel-665349-unsplash.jpg?w=2560&h=1200&crop=1
 tags: react, uncontrolled,forms,hooks
 ---

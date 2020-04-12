@@ -6,7 +6,7 @@ export default function Home() {
       <Head>
         <title>Aral Roca</title>
       </Head>
-      <div>This is the homepage... There is nothing at this moment.</div>
+      <h1>Hi, I'm Aral</h1>
     </>
   )
 }

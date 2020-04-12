@@ -32,6 +32,10 @@ html {
   background-color: #880e4f;
 }
 
+.light-theme .post-list-item a {
+  color: #ad1457;
+}
+
 main img {
   max-width: 100%;
 }
@@ -43,7 +47,7 @@ footer {
 }
 
 footer {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 header nav {
@@ -82,6 +86,10 @@ footer a {
   margin-right: 20px;
 }
 
+footer a:hover {
+  text-decoration: underline;
+}
+
 footer a,
 .logo {
   text-decoration: none;
@@ -94,7 +102,7 @@ main {
   max-width: var(--max-screen-width);
   min-height: 300px;
   overflow-x: hidden;
-  padding: 20px;
+  padding: 20px 30px;
   z-index: 1;
 }
 
@@ -103,4 +111,21 @@ header,
 footer {
   margin-left: auto;
   margin-right: auto;
+}
+
+.post-list-item {
+  margin: 50px 0;
+}
+
+.post-list-item p,
+.post-list-item h2 {
+  margin: 8px;
+}
+
+.post-list-item h2 {
+  margin-bottom: 0;
+}
+
+.post-list-item a {
+  text-decoration: none;
 }

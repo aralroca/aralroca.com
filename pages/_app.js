@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import '../styles/main.css'
@@ -9,6 +10,9 @@ export default function Layout({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <title>Aral Roca</title>
+      </Head>
       <header>
         <Link href="/">
           <a title="Go to homepage" className="logo">
@@ -23,8 +27,8 @@ export default function Layout({ Component, pageProps }) {
           <Link href="/supporters">
             <a className={isActive('/supporters')}>Supporters</a>
           </Link>
-          <Link href="/contact">
-            <a className={isActive('/contact')}>Contact</a>
+          <Link href="/donate">
+            <a className={isActive('/donate')}>Donate</a>
           </Link>
         </nav>
       </header>
@@ -33,6 +37,29 @@ export default function Layout({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <footer>
+        <div>
+          <a
+            href="https://twitter.com/aralroca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            twitter
+          </a>
+          <a
+            href="https://github.com/aralroca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
+          <a
+            href="https://stackoverflow.com/users/4467741/aral-roca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            stack overflow
+          </a>
+        </div>
         <a title="Contact me" href="mailto:contact@aralroca.com">
           contact@aralroca.com
         </a>
