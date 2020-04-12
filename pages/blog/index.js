@@ -16,7 +16,7 @@ export default function Blog({ posts }) {
       {posts.map((post) => {
         return (
           <div className="post-list-item" key={post.slug}>
-            <Link href={`/blog/${post.slug}`}>
+            <Link href={`/blog/[slug]?slug=${post.slug}`} as={`/blog/${slug}`}>
               <a>
                 <h2>{post.metadata.title}</h2>
               </a>
