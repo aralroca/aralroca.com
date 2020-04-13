@@ -5,12 +5,14 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1.0"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#ad1457" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Ruluko&display=swap"
+            rel="stylesheet"
+          />
+           <link
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
             rel="stylesheet"
           />
         </Head>
