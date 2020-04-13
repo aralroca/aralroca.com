@@ -15,7 +15,7 @@ export default function Post({ date, __html, data, timeToRead }) {
       </Head>
       <h1>{data.title}</h1>
       <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
-      <div dangerouslySetInnerHTML={{ __html }} />
+      <div className="post" dangerouslySetInnerHTML={{ __html }} />
     </>
   )
 }

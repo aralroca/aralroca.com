@@ -100,7 +100,6 @@ onSignIn = (event) => {
 
 However, although we simplified it a little, it’s still quite ugly to repeat this Array.prototype.slice.call in every single form submit. Let’s see how to improve it.
 
-###
 
 ### Improving the uncontrolled way
 
@@ -159,7 +158,6 @@ Now, we can use this new approach by only changing one character, from “form�
 
 > **Note** : I’m using the new hooks API (proposal), even though it can also be written as a class component.
 
-###
 
 ### Conclusions
 

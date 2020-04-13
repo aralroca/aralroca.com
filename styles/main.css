@@ -47,18 +47,22 @@ footer {
 }
 
 footer {
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 header nav {
   margin: 0 20px 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 header nav a {
   text-decoration: none;
   transition-duration: 0.3s;
   margin: 0 5px;
-  padding: 10px;
+  padding: 14px 10px;
   border-radius: 5px;
 }
 
@@ -83,7 +87,7 @@ header nav a {
 
 footer a {
   color: black;
-  margin-right: 20px;
+  margin: 10px;
 }
 
 footer a:hover {
@@ -128,4 +132,15 @@ footer {
 
 .post-list-item a {
   text-decoration: none;
+}
+
+.post, .post pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+@media (max-width: 481px) {
+  .logo span {
+    display: none;
+  }
 }

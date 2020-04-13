@@ -124,7 +124,6 @@ Finally, we get the page transition in our portal:
 
 Code: <a href="https://github.com/aralroca/HTMLPortalElement-react-example">https://github.com/aralroca/HTMLPortalElement-react-example</a>
 
-<h2></h2>
 <h2>Benefits of portals</h2>
 Portals are a new proposal to load pages as an iframe, allowing the navigation to the content with a beautiful transition and improving the user's experience.
 
