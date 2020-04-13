@@ -43,6 +43,7 @@ export const getStaticProps = async () => {
       date: niceDateText(new Date(data.created)),
     }
   })
+  .sort((a, b) => new Date(b.metadata.created) -  new Date(a.metadata.created))
 
   return { props: { posts } }
 }
