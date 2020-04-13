@@ -4,7 +4,7 @@
 
 body,
 html {
-  font-family: QuickSand;
+  font-family: Raleway;
   padding: 0;
   margin: 0;
 }
@@ -127,6 +127,8 @@ footer {
 }
 
 .post-list-item h2 {
+  font-size: 20px;
+  font-family: Raleway;
   margin-bottom: 0;
 }
 
@@ -134,9 +136,42 @@ footer {
   text-decoration: none;
 }
 
-.post, .post pre {
+.post,
+.post pre {
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+header, footer, h1, h2 {
+  font-family: Ruluko;
+}
+
+.homepage {
+  text-align: center;
+}
+
+.homepage h1 {
+  margin-bottom: 0;
+}
+
+.homepage h2 {
+  color: #4a4a4a;
+  margin-top: 5px;
+}
+
+.profile-picture {
+  width: 160px;
+  height: 160px;
+  background-color: #e1e2e1;
+  border-radius: 50%;
+}
+
+.quote {
+  margin: 46px 10px 10px 15px;
+  padding-left: 10px;
+  color: #455a64;
+  font-size: 15px;
+  border-left: 3px solid #7e57c2;
 }
 
 @media (max-width: 481px) {

@@ -10,7 +10,7 @@ export default function Blog({ posts }) {
   return (
     <>
       <Head>
-        <title>Blog - Aral Roca</title>
+        <title key="title">Blog - Aral Roca</title>
       </Head>
       <h1>Blog</h1>
       {posts.map((post) => {
@@ -34,16 +34,20 @@ export default function Blog({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const posts = fs.readdirSync('posts').map((slug) => {
-    const { data, content } = matter(fs.readFileSync(path.join('posts', slug)))
-    return {
-      slug: slug.replace('.md', ''),
-      metadata: data,
-      timeToRead: readingTime(content),
-      date: niceDateText(new Date(data.created)),
-    }
-  })
-  .sort((a, b) => new Date(b.metadata.created) -  new Date(a.metadata.created))
+  const posts = fs
+    .readdirSync('posts')
+    .map((slug) => {
+      const { data, content } = matter(
+        fs.readFileSync(path.join('posts', slug))
+      )
+      return {
+        slug: slug.replace('.md', ''),
+        metadata: data,
+        timeToRead: readingTime(content),
+        date: niceDateText(new Date(data.created)),
+      }
+    })
+    .sort((a, b) => new Date(b.metadata.created) - new Date(a.metadata.created))
 
   return { props: { posts } }
 }
