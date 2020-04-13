@@ -16,8 +16,8 @@ export default function Layout({ Component, pageProps }) {
       <header>
         <Link href="/">
           <a title="Go to homepage" className="logo">
-            <img src="/images/logo.png" width={24} />
-            Aral Roca.
+            <img src="/images/logo.png" width={48} />
+            <span>Aral Roca.</span>
           </a>
         </Link>
         <nav>
@@ -37,7 +37,6 @@ export default function Layout({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <footer>
-        <div>
           <a
             href="https://twitter.com/aralroca"
             target="_blank"
@@ -59,7 +58,6 @@ export default function Layout({ Component, pageProps }) {
           >
             stack overflow
           </a>
-        </div>
         <a title="Contact me" href="mailto:contact@aralroca.com">
           contact@aralroca.com
         </a>
