@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import ChangeTheme from '../components/ChangeTheme'
 import getCanonical from '../utils/getCanonical'
 
 import '../styles/main.css'
@@ -18,7 +19,6 @@ export default function Layout({ Component, pageProps }) {
     tags:
       'javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain',
   }
-  console.log(process.env)
 
   return (
     <>
@@ -95,6 +95,7 @@ export default function Layout({ Component, pageProps }) {
         <a title="Contact me" href="mailto:contact@aralroca.com">
           contact@aralroca.com
         </a>
+        <ChangeTheme />
       </footer>
     </>
   )

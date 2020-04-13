@@ -2,48 +2,98 @@
   --max-screen-width: 900px;
 }
 
+.dark {
+  --bg-color-main: #1e1e1e;
+  --bg-color: #121212;
+  --color-header: white;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color: rgba(255, 255, 255, 0.60);
+  --home-h2: rgba(255, 255, 255, 0.70);;
+  --heading-color: rgba(255, 255, 255, 0.87);
+  --hover-nav: #880e4f;
+  --img-placeholder: black;
+  --post-h2: #ff7597;
+  --primary-color: #9a2c58;
+  --quote-color: rgba(255, 255, 255, 0.48);
+  --secondary-color: #bb86fc;
+}
+
+.dark img:not(.logo img) {
+  opacity: 0.75;
+}
+
+.dark .homepage p {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.light {
+  --bg-color-main: white;
+  --bg-color: rgb(250, 250, 250);
+  --color-header: black;
+  --color-shadow: rgba(102, 102, 102, 0.5);
+  --color: black;
+  --home-h2: #4a4a4a;
+  --hover-nav: #880e4f;
+  --img-placeholder: #e1e2e1;
+  --post-h2: #ad1457;
+  --primary-color: #ad1457;
+  --quote-color: #455a64;
+  --secondary-color: #7e57c2;
+}
+
+h1, h2, h3, h4 {
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--secondary-color);
+}
+
 body,
 html {
   font-family: Raleway;
   padding: 0;
+  color: var(--color);
   margin: 0;
+  background-color: var(--bg-color);
 }
 
-.light-theme {
-  background-color: rgb(250, 250, 250);
+main {
+  background-color: var(--bg-color-main);
 }
 
-.light-theme main {
-  background-color: white;
+header nav a {
+  border: 1px solid transparent;
+  color: var(--color-header);
+  text-decoration: none;
+  transition-duration: 0.3s;
+  margin: 0 5px;
+  padding: 12px 10px;
+  border-radius: 5px;
 }
 
-.light-theme header {
-  background: linear-gradient(-213deg, #ad1457 0%, #e91e63 100%) right center /
-      contain no-repeat,
-    left center #f06292;
+header nav a:hover,
+header nav a.active {
+  border: 1px solid var(--hover-nav)
 }
 
-.light-theme header nav a {
-  color: white;
-}
-
-.light-theme header nav a:hover,
-.light-theme header nav a.active {
-  background-color: #880e4f;
-}
-
-.light-theme .post-list-item a {
-  color: #ad1457;
+.post-list-item a, .post-list-item a h2 {
+  color: var(--post-h2);
 }
 
 main img {
   max-width: 100%;
 }
 
+header {
+  background-color: var(--bg-color);
+  border-bottom: 40px solid var(--primary-color);
+}
+
 header,
 footer {
   display: flex;
-  padding: 30px calc((100% - var(--max-screen-width)) / 2) 40px;
+  padding: 30px calc((100% - var(--max-screen-width)) / 2) 25px;
 }
 
 footer {
@@ -58,25 +108,19 @@ header nav {
   align-items: center;
 }
 
-header nav a {
-  text-decoration: none;
-  transition-duration: 0.3s;
-  margin: 0 5px;
-  padding: 14px 10px;
-  border-radius: 5px;
-}
 
 .logo {
   font-size: 22px;
   font-weight: bold;
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--color-header);
   padding-left: 10px;
 }
 
 .logo img {
   margin-right: 10px;
+  box-shadow: 1px 1px 5px 0px var(--color-shadow);
 }
 
 .post-info,
@@ -86,7 +130,7 @@ header nav a {
 }
 
 footer a {
-  color: black;
+  color: var(--color);
   margin: 10px;
 }
 
@@ -101,8 +145,9 @@ footer a,
 
 main {
   border-radius: 5px;
-  box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
+  box-shadow: 2px 2px 10px 0px var(--color-shadow);
   margin-top: -20px;
+  background-color: var(--bg-color-main);
   max-width: var(--max-screen-width);
   min-height: 300px;
   overflow-x: hidden;
@@ -155,27 +200,42 @@ header, footer, h1, h2 {
 }
 
 .homepage h2 {
-  color: #4a4a4a;
+  color: var(--home-h2);
   margin-top: 5px;
 }
 
 .profile-picture {
   width: 160px;
   height: 160px;
-  background-color: #e1e2e1;
+  background-color: var(--img-placeholder);
   border-radius: 50%;
 }
 
 .quote {
   margin: 46px 10px 10px 15px;
   padding-left: 10px;
-  color: #455a64;
+  color: var(--quote-color);
   font-size: 15px;
-  border-left: 3px solid #7e57c2;
+  border-left: 3px solid var(--secondary-color);
+}
+
+p {
+  line-height: 20px;
+}
+
+.change-theme {
+  margin-left: 15px;
+  font-family: Ruluko;
+  color: var(--color);
+  border: none;
+  background-color: var(--bg-color);
 }
 
 @media (max-width: 481px) {
   .logo span {
     display: none;
+  }
+  .change-theme {
+    height: 48px;
   }
 }
