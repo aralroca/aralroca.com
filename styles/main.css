@@ -11,7 +11,6 @@
   --home-h2: rgba(255, 255, 255, 0.7);
   --heading-color: rgba(255, 255, 255, 0.87);
   --hover-nav: #880e4f;
-  --border-color: #263238;
   --img-placeholder: black;
   --post-h2: #ff7597;
   --primary-color: #9a2c58;
@@ -33,7 +32,6 @@
   --color-header: black;
   --color-shadow: rgba(102, 102, 102, 0.5);
   --color: black;
-  --border-color: #e0e0e0;
   --home-h2: #4a4a4a;
   --hover-nav: #880e4f;
   --img-placeholder: #e1e2e1;
@@ -244,10 +242,10 @@ p {
   color: var(--color);
   text-rendering: auto;
   width: 100%;
+  cursor: pointer;
   appearance: none;
   height: 28px;
-  border-radius: 3px;
-  border: 1px solid var(--border-color);
+  border: none;
   background: var(--bg-color);
   padding: 0 10px;
   padding-right: 10px;
@@ -278,11 +276,7 @@ p {
   left: 10px;
 }
 
-.change-theme svg:last-child {
-  right: 1px;
-}
-
-@media (max-width: 481px) {
+@media (max-width: 550px) {
   .logo span {
     display: none;
   }
