@@ -13,7 +13,7 @@
   "dependencies": {
     "gray-matter": "4.0.2",
     "marked": "0.8.2",
-    "next": "9.3.4",
+    "next": "9.3.5",
     "preact": "10.4.0",
     "preact-render-to-string": "5.1.6",
     "react": "github:preact-compat/react#1.0.0",
