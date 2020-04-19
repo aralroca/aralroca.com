@@ -8,7 +8,7 @@ tags: react, uncontrolled,forms,hooks
 
 Forms are a crucial part of almost all applications. At least one of them is usually necessary: the “Sign in” page. In this article, we are going to explain the benefits of uncontrolled forms in React and how to do it as simple as possible to re-use it in every form. We are going to use the classic “Sign in” page as an example.
 
-![signIn](https://aralroca.files.wordpress.com/2018/11/signin.png?w=960)
+<img class="center" src="/images/blog-images/9.png" alt="Sign in image" />
 
 ### Difference between controlled and uncontrolled
 
@@ -21,31 +21,31 @@ A common mistake in React is to try to control every single field of a form usin
 ```jsx
 <form onSubmit={onSignIn}>
 
-      <div>
-        <input
-          required
-          value={this.state.username}
-          onChange={e => this.setState({ username: e.target.value )}
-          name="username"
-          type="text"
-          placeholder={userNamePlaceholder}
-        />
-      </div>
+  <div>
+    <input
+      required
+      value={this.state.username}
+      onChange={e => this.setState({ username: e.target.value )}
+      name="username"
+      type="text"
+      placeholder={userNamePlaceholder}
+    />
+  </div>
 
-      <div>
-        <input
-          value={this.state.password}
-          onChange={e => this.setState({ password: e.target.value )}
-          name="password"
-          type="password"
-          placeholder={passwordPlaceholder}
-        />
-      </div>
+  <div>
+    <input
+      value={this.state.password}
+      onChange={e => this.setState({ password: e.target.value )}
+      name="password"
+      type="password"
+      placeholder={passwordPlaceholder}
+    />
+  </div>
 
-      <button type="submit">
-         Sign In
-      </button>
-  </form>
+  <button type="submit">
+      Sign In
+  </button>
+</form>
 ```
 
 Then we can use the state directly in the onSignIn method.
@@ -115,7 +115,7 @@ In this case, we will provide the fields directly as an argument. This argument 
 
 To achieve our goal, we can replace the form tag to our personal Component:
 
-![form](https://aralroca.files.wordpress.com/2018/11/form.png?w=960)
+<img class="center" src="/images/blog-images/10.png" alt="form" />
 
 Our reusable personal Form Component could be:
 

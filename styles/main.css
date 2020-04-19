@@ -64,6 +64,7 @@ html {
 
 main {
   background-color: var(--bg-color-main);
+  line-height: 30px;
 }
 
 header nav a {
@@ -187,8 +188,30 @@ footer {
 
 .post,
 .post pre {
-  white-space: pre-wrap;
+  white-space: pre-line;
   word-break: break-all;
+}
+
+table th {
+  border: 1px solid var(--home-h2);
+}
+
+.post img {
+  height: auto;
+}
+
+.youtube {
+  width: 560px;
+  height: 315px;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.post ul, .post li {
+  margin: 0;
 }
 
 header,
@@ -224,10 +247,6 @@ h2 {
   color: var(--quote-color);
   font-size: 15px;
   border-left: 3px solid var(--secondary-color);
-}
-
-p {
-  line-height: 20px;
 }
 
 .change-theme {
@@ -279,5 +298,9 @@ p {
 @media (max-width: 550px) {
   .logo span {
     display: none;
+  }
+  .youtube {
+    width: 320px;
+    height: 152px;
   }
 }

@@ -16,14 +16,14 @@ The result after replacing `next-i18next` to `next-translate` in our project (wi
 
 Before:
 
-![Before](https://thepracticaldev.s3.amazonaws.com/i/h8oi7pr43ibm06wd6lf5.jpeg)
+![Before](/images/blog-images/1.jpeg)
 
 After:
 
-![After](https://thepracticaldev.s3.amazonaws.com/i/ti0et3hv1ym9d4mcxqyg.jpeg)
+![After](/images/blog-images/2.jpeg)
 
 714 B !! 🤯
 
-Please, help us with a star on GitHub repo (or contribute, PRs are welcome):
+Please, help us with a star on GitHub repo (or contribute, PRs are welcome 😊
 
 👉 https://github.com/vinissimus/next-translate
