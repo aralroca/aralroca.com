@@ -12,6 +12,7 @@
   --heading-color: rgba(255, 255, 255, 0.87);
   --hover-nav: #880e4f;
   --img-placeholder: black;
+  --separator: #263238;
   --post-h2: #ff7597;
   --primary-color: #9a2c58;
   --quote-color: rgba(255, 255, 255, 0.48);
@@ -35,6 +36,7 @@
   --home-h2: #4a4a4a;
   --hover-nav: #880e4f;
   --img-placeholder: #e1e2e1;
+  --separator: #eceff1;
   --post-h2: #ad1457;
   --primary-color: #ad1457;
   --quote-color: #455a64;
@@ -65,6 +67,37 @@ html {
 main {
   background-color: var(--bg-color-main);
   line-height: 30px;
+}
+
+.supporters h2 {
+  margin-top: 40px;
+}
+
+u {
+  text-decoration: none;
+  color: var(--heading-color);
+  border-bottom: 2px dotted var(--secondary-color);
+}
+
+.donate-wrapper-separator {
+  border-top: 1px solid var(--separator);
+  border-bottom: 1px solid var(--separator);
+  border-left: 1px solid var(--separator);
+  border-right: 1px solid var(--separator);
+  margin-top: 47px;
+  margin-bottom: 25px;
+  width: 52%;
+}
+
+.donate-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.donate-wrapper ul {
+  padding-left: 20px;
 }
 
 header nav a {
@@ -210,7 +243,8 @@ table th {
   margin: 0 auto;
 }
 
-.post ul, .post li {
+.post ul,
+.post li {
   margin: 0;
 }
 
