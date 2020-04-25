@@ -242,6 +242,27 @@ table th {
   height: 315px;
 }
 
+.page-404 {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-404 h1 {
+  border-right: 1px solid var(--home-h2); 
+  margin: 0px 20px 0px 0px; 
+  padding: 10px 23px 10px 0px; 
+  font-size: 24px; 
+  font-weight: 500; 
+}
+
+.page-404 h2 {
+  font-size: 14px; 
+  font-weight: normal; 
+  line-height: inherit; 
+}
+
 .center {
   display: block;
   margin: 0 auto;
