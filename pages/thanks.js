@@ -15,11 +15,23 @@ export default function Supporters() {
 
       <h2>🌕 Platinum supporters</h2>
       <em>None.</em>
-
-      <h2>🌔 Silver supporters</h2>
+   
+      <h2>🌖 Gold Sponsors</h2>
       <em>None.</em>
 
-      <h2>🌓 Supporters</h2>
+      <h2>🌗 Silver Sponsors</h2>
+      <em>None.</em>
+
+      <h2>🌘 Bronze Sponsors</h2>
+      <em>None.</em>
+
+      <h2>Top Supporters</h2>
+      <em>None.</em>
+
+      <h2>Open-Source Supporter</h2>
+      <em>None.</em>
+
+      <h2>Supporters</h2>
       <em>None.</em>
 
       <h2>Become a supporter</h2>

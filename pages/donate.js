@@ -36,15 +36,6 @@ export default function Donate() {
             </li>
             <li>
               <a
-                href="https://ko-fi.com/aralroca"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ko-fi.com
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://www.patreon.com/aralroca"
                 target="_blank"
                 rel="noopener noreferrer"
