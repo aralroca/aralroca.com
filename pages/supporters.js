@@ -8,7 +8,7 @@ export default function Supporters() {
         <title key="title">Supporters - Aral Roca</title>
       </Head>
       <h1>Supporters</h1>
-      <p>
+      <p className="description">
         Thank you for making my Open-Source work possible.{' '}
         <u>You're awesome!</u>
       </p>

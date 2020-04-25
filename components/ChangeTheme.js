@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 function Arrows(props) {
   return (
@@ -83,11 +83,13 @@ function System() {
 
 export default function ChangeTheme() {
   const isNode = typeof window === 'undefined'
-  const [theme, setTheme] = useState(isNode ? undefined : window.__theme || 'system')
+  const [theme, setTheme] = useState(
+    isNode ? undefined : window.__theme || 'system'
+  )
   const right = {
     dark: 30,
     system: 15,
-    light: 27
+    light: 27,
   }[theme]
 
   function onChangeTheme(e) {
@@ -107,7 +109,12 @@ export default function ChangeTheme() {
       {theme === 'dark' && <Dark />}
       {theme === 'system' && <System />}
       {theme === 'light' && <Light />}
-      <select title="Choose another theme" value={theme} onChange={onChangeTheme}>
+      <select
+        title="Choose another theme"
+        aria-label="Choose another theme"
+        value={theme}
+        onChange={onChangeTheme}
+      >
         <option value="system">System</option>
         <option value="dark">Dark</option>
         <option value="light">Light</option>

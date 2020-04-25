@@ -73,6 +73,10 @@ main {
   margin-top: 40px;
 }
 
+.supporters .description {
+  margin: 50px 0 60px;
+}
+
 u {
   text-decoration: none;
   color: var(--heading-color);
