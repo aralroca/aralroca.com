@@ -21,11 +21,14 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
               (function() {
+                var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 window.__onThemeChange = function() {};
                 function setTheme(newTheme) {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
-                  document.body.className = newTheme;
+                  document.body.className = newTheme === 'system'
+                    ? darkQuery.matches ? 'dark' : 'light'
+                    : newTheme;
                   window.__onThemeChange(newTheme);
                 }
                 var preferredTheme;
@@ -38,11 +41,10 @@ export default class MyDocument extends Document {
                     localStorage.setItem('theme', newTheme);
                   } catch (err) {}
                 }
-                var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 darkQuery.addListener(function(e) {
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
-                setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+                setTheme(preferredTheme || 'system');
               })();
             `,
             }}
