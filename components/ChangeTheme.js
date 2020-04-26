@@ -94,11 +94,7 @@ export default function ChangeTheme() {
 
   function onChangeTheme(e) {
     const { value } = e.target
-    const system = window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light'
-    window.__setPreferredTheme(value === 'system' ? system : value)
-    if (value === 'system') localStorage.removeItem('theme')
+    window.__setPreferredTheme(value)
     setTheme(value)
   }
 
