@@ -3,7 +3,7 @@ title: Don’t control everything! React forms
 created: 11/2/2018
 description: Use uncontrolled forms as default way to handle forms.
 cover_image: https://aralroca.files.wordpress.com/2018/11/rawpixel-665349-unsplash.jpg?w=2560&h=1200&crop=1
-tags: react, uncontrolled,forms,hooks
+tags: react,forms,hooks
 ---
 
 Forms are a crucial part of almost all applications. At least one of them is usually necessary: the “Sign in” page. In this article, we are going to explain the benefits of uncontrolled forms in React and how to do it as simple as possible to re-use it in every form. We are going to use the classic “Sign in” page as an example.
@@ -100,7 +100,6 @@ onSignIn = (event) => {
 
 However, although we simplified it a little, it’s still quite ugly to repeat this Array.prototype.slice.call in every single form submit. Let’s see how to improve it.
 
-
 ### Improving the uncontrolled way
 
 Our goal here is to simplify the logic of every “submit” event in order to avoid the need of finding continuously the fields inside the event.target. We want something more enjoyable like:
@@ -157,7 +156,6 @@ Thus, we are moving the repeating code that we always do in our forms: **prevent
 Now, we can use this new approach by only changing one character, from “form” to “Form”.
 
 > **Note** : I’m using the new hooks API (proposal), even though it can also be written as a class component.
-
 
 ### Conclusions
 

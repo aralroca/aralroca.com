@@ -1,7 +1,7 @@
 ---
 title: Exploring HTMLPortalElement with React
 description: In this article, I will explain how to use HTMLPortalElement doing a “Hello world” demo with React.
-tags: portals, htmlportalelement, react, react.js
+tags: experimental, javascript, react
 created: 06/10/2019
 cover_image: https://aralroca.files.wordpress.com/2019/06/pedro-lastra-137923-unsplash-e1560074127908.jpg?w=2560&h=1163&crop=1
 ---
@@ -137,7 +137,6 @@ Of course, here we are using a different origin (YouTube). Nevertheless, if we u
 Portals are still a proposal and maybe it's something we won't see in the future. Whatever, if it finally exists, it's going to be useful to preview content, especially, for media.
 
 <iframe class="center youtube" src="https://www.youtube.com/embed/_4VkeU7E6oA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 <h2>References:</h2>
 <ul>
