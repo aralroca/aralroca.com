@@ -24,7 +24,12 @@ export default function Layout({ Component, pageProps }) {
     <>
       <Head>
         <title key="title">{data.title}</title>
-        <meta key="meta-title" title="description" content={data.description} />
+        <meta key="meta-title" title="title" content={data.title} />
+        <meta
+          key="meta-description"
+          title="description"
+          content={data.description}
+        />
         <meta key="meta-tags" name="keywords" content={data.tags} />
         <meta name="twitter:creator" content="@aralroca" />
         <meta name="twitter:title" content={data.title} />

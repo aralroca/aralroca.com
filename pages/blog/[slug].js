@@ -19,7 +19,12 @@ export default function Post({ date, __html, data, timeToRead }) {
     <>
       <Head>
         <title key="title">{data.title}</title>
-        <meta key="meta-title" title="description" content={data.description} />
+        <meta key="meta-title" title="title" content={data.title} />
+        <meta
+          key="meta-description"
+          title="description"
+          content={data.description}
+        />
         <meta key="meta-tags" name="keywords" content={data.tags} />
         <link key="canonical" rel="canonical" href={url} />
         <meta key="meta-og:url" property="og:url" content={url} />
