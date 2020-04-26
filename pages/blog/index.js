@@ -62,7 +62,7 @@ export default function Blog({ posts, tags }) {
 
       <Searcher key={key.current} search={search} onSearch={onSearch} />
 
-      <div className="tags" style={{ marginTop: 40 }}>
+      <div className="tags" style={{ marginTop: 10 }}>
         {tags.map((tag) => (
           <Tag
             onClick={() => (key.current = Date.now())}
