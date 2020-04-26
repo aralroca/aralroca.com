@@ -8,15 +8,16 @@
   --color-header: white;
   --color-shadow: rgba(0, 0, 0, 0.5);
   --color: rgba(255, 255, 255, 0.6);
-  --home-h2: rgba(255, 255, 255, 0.7);
   --heading-color: rgba(255, 255, 255, 0.87);
+  --home-h2: rgba(255, 255, 255, 0.7);
   --hover-nav: #880e4f;
   --img-placeholder: black;
-  --separator: #263238;
   --post-h2: #ff7597;
   --primary-color: #9a2c58;
   --quote-color: rgba(255, 255, 255, 0.48);
   --secondary-color: #bb86fc;
+  --separator: #263238;
+  --tag: #4e8abb;
 }
 
 .dark img:not(.logo img) {
@@ -36,11 +37,12 @@
   --home-h2: #4a4a4a;
   --hover-nav: #880e4f;
   --img-placeholder: #e1e2e1;
-  --separator: #eceff1;
   --post-h2: #ad1457;
   --primary-color: #ad1457;
   --quote-color: #455a64;
   --secondary-color: #7e57c2;
+  --separator: #eceff1;
+  --tag: #1873cc;
 }
 
 h1,
@@ -165,6 +167,14 @@ header nav {
   box-shadow: 1px 1px 5px 0px var(--color-shadow);
 }
 
+.post-info {
+  margin: 10px 0 0 5px;
+}
+
+.post-title {
+  margin: 30px 0 5px;
+}
+
 .post-info,
 .footer {
   font-size: 14px;
@@ -250,17 +260,17 @@ table th {
 }
 
 .page-404 h1 {
-  border-right: 1px solid var(--home-h2); 
-  margin: 0px 20px 0px 0px; 
-  padding: 10px 23px 10px 0px; 
-  font-size: 24px; 
-  font-weight: 500; 
+  border-right: 1px solid var(--home-h2);
+  margin: 0px 20px 0px 0px;
+  padding: 10px 23px 10px 0px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .page-404 h2 {
-  font-size: 14px; 
-  font-weight: normal; 
-  line-height: inherit; 
+  font-size: 14px;
+  font-weight: normal;
+  line-height: inherit;
 }
 
 .center {
@@ -352,6 +362,42 @@ h2 {
 
 .change-theme svg:first-child {
   left: 10px;
+}
+
+.post-searcher {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid var(--quote-color);
+  color: var(--color);
+  margin-top: 17px;
+  max-width: 320px;
+  padding: 10px;
+  width: 100%;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border: 1px solid var(--tag);
+  padding: 0 5px;
+  color: var(--tag);
+  border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.tag:hover:not(.active) {
+  border-color: var(--color);
+  color: var(--color);
+}
+
+.tag.active {
+  color: var(--bg-color);
+  background-color: var(--tag);
 }
 
 @media (max-width: 550px) {

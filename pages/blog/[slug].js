@@ -5,11 +5,14 @@ import matter from 'gray-matter'
 import path from 'path'
 import readingTime from 'reading-time'
 import { useRouter } from 'next/router'
-import niceDateText from '../../utils/niceDateText'
+
+import Tag from '../../components/Tag'
 import getCanonical from '../../utils/getCanonical'
+import niceDateText from '../../utils/niceDateText'
 
 export default function Post({ date, __html, data, timeToRead }) {
   const { asPath } = useRouter()
+  const tags = data.tags.split(',')
   const url = getCanonical(asPath)
 
   return (
@@ -32,8 +35,13 @@ export default function Post({ date, __html, data, timeToRead }) {
           content={data.description}
         />
       </Head>
-      <h1>{data.title}</h1>
+      <h1 className="post-title">{data.title}</h1>
       <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
+      <div className="tags" style={{ marginBottom: 40 }}>
+        {tags.map((tag) => (
+          <Tag key={tag} label={tag} />
+        ))}
+      </div>
       <div className="post" dangerouslySetInnerHTML={{ __html }} />
     </>
   )
