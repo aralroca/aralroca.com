@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
             rel="stylesheet"
           />
+         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"></script>
         </Head>
         <body className="light">
           <script
@@ -51,6 +52,13 @@ export default class MyDocument extends Document {
                 });
                 setTheme(preferredTheme || 'system');
               })();
+              
+              // Google analytics
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-80705550-1');
             `,
             }}
           />
