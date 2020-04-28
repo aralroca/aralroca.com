@@ -102,6 +102,7 @@ The most important parts of a neuron are:
 A neuron in machine learning (simplified):
 
 <img class="center" src="/images/blog-images/15.jpg" alt="neuron in machine learning" />
+<br />
 
 - **Inputs**: The parameters of the input.
 - **Weights**: Like synapses, their activity increase or decrease to adjust the neuron in order to establish a better linear regression.
@@ -112,6 +113,7 @@ A neuron in machine learning (simplified):
 The usage of an activation function is very useful, it's the power of a neural network. Without any activation function it's not possible to have a smart neuron network. The reason is that although you have multiple neurons in your network, the output of the neural network is always going to be a linear regression. We need some mechanism to deform this individual linear regressions to be non-linear to solve the non-linear problems. Thanks to activation functions we can transform these linear functions to non-linear functions:
 
 <img class="center" src="/images/blog-images/16.jpg" alt="Neural network in machine learning" />
+<br />
 
 ## Training a model
 
@@ -130,36 +132,38 @@ When we work with the Gradient Descent algorithm, we start in some random point 
 I'm not going to explain Gradient Descent algorithm deeply. Just remember that it's the optimization algorithm to train the AI models to minimize the error of predictions. This algorithm requires time and GPU for matrix multiplications. This converge point is usually hard to achieve in the first execution so we need to fix some hyperparameters like the learning rate (size of the step down the hill) or add some regularization. After the iterations of Gradient Descent we get a closer point to the converge point when the error is close to 0%. At this moment, we already have the model created and we are ready to start predicting!
 
 <img class="center" src="/images/blog-images/20.gif" alt="predicting" />
+<br />
 
 ## Training a model with TensorFlow.js
 
 TensorFlow.js provides us with an easy way to create neural networks. At first, we are going to create a LinearModel class with a method trainModel. For this kind of model we are going to use a sequential model. A sequential model is any model where the outputs of one layer are the inputs to the next layer, i.e. when the model topology is a simple 'stack' of layers, with no branching or skipping. Inside the method trainModel we are going to define the layers (we are going to use only one because it's enough for a Linear Regression problem):
 
-<pre style="margin:0;line-height:125%;"><span style="color:#0000ff;">import</span> * as tf from <span style="color:#a31515;">'@tensorflow/tfjs'</span>;
+```jsx
+import * as tf from '@tensorflow/tfjs';
 
-<span style="color:#008000;">/**</span>
-<span style="color:#008000;">* Linear model class</span>
-<span style="color:#008000;">*/</span>
-<span style="color:#0000ff;">export</span> <span style="color:#0000ff;">default</span> <span style="color:#0000ff;">class</span> LinearModel {
-  <span style="color:#008000;">/**</span>
- <span style="color:#008000;">* Train model</span>
- <span style="color:#008000;">*/</span>
+/**
+* Linear model class
+*/
+export default class LinearModel {
+  /**
+ * Train model
+ */
   async trainModel(xs, ys){
-    <span style="color:#0000ff;">const</span> layers = tf.layers.dense({
-      units: 1, <span style="color:#008000;">// Dimensionality of the output space</span>
-      inputShape: [1], <span style="color:#008000;">// Only one param</span>
+    const layers = tf.layers.dense({
+      units: 1, // Dimensionality of the output space
+      inputShape: [1], // Only one param
     });
-    <span style="color:#0000ff;">const</span> lossAndOptimizer = {
-      loss: <span style="color:#a31515;">'meanSquaredError'</span>,
-      optimizer: <span style="color:#a31515;">'sgd'</span>, <span style="color:#008000;">// Stochastic gradient descent</span>
+    const lossAndOptimizer = {
+      loss: 'meanSquaredError',
+      optimizer: 'sgd', // Stochastic gradient descent
     };
 
-    <span style="color:#0000ff;">this</span>.linearModel = tf.sequential();
-    <span style="color:#0000ff;">this</span>.linearModel.add(layers); <span style="color:#008000;">// Add the layer</span>
-    <span style="color:#0000ff;">this</span>.linearModel.compile(lossAndOptimizer);
+    this.linearModel = tf.sequential();
+    this.linearModel.add(layers); // Add the layer
+    this.linearModel.compile(lossAndOptimizer);
 
-    <span style="color:#008000;">// Start the model training!</span>
-    await <span style="color:#0000ff;">this</span>.linearModel.fit(
+    // Start the model training!
+    await this.linearModel.fit(
       tf.tensor1d(xs),
       tf.tensor1d(ys),
     );
@@ -167,15 +171,16 @@ TensorFlow.js provides us with an easy way to create neural networks. At first, 
 
   ...more
 }
-</pre>
+```
 
 To use this class:
 
-<pre style="margin:0;line-height:125%;"><span style="color:#0000ff;">const</span> model = <span style="color:#0000ff;">new</span> LinearModel();
+```jsx
+const model = new LinearModel();
 
-<span style="color:#008000;">// xs and ys -> array of numbers (x-axis and y-axis)</span>
+// xs and ys -> array of numbers (x-axis and y-axis)
 await model.trainModel(xs, ys);
-</pre>
+```
 
 After this training, we are ready to start predicting!
 
@@ -183,26 +188,28 @@ After this training, we are ready to start predicting!
 
 Predicting normally is the easier part! Training a model requires to define some hyperparameters... but still, predicting is so simple. We are going to write the next method into the LinearRegressor class:
 
-<pre style="margin:0;line-height:125%;"><span style="color:#0000ff;">import</span> * as tf from <span style="color:#a31515;">'@tensorflow/tfjs'</span>;
+```jsx
+import * as tf from '@tensorflow/tfjs';
 
-<span style="color:#0000ff;">export</span> <span style="color:#0000ff;">default</span> <span style="color:#0000ff;">class</span> LinearModel {
+export default class LinearModel {
   ...trainingCode
 
   predict(value){
-    <span style="color:#0000ff;">return</span> Array.from(
-      <span style="color:#0000ff;">this</span>.linearModel
+    return Array.from(
+      this.linearModel
       .predict(tf.tensor2d([value], [1, 1]))
       .dataSync()
     )
   }
 }
-</pre>
+```
 
 Now, we can use the prediction method in our code:
 
-<pre style="margin:0;line-height:125%;"><span style="color:#0000ff;">const</span> prediction = model.predict(500); <span style="color:#008000;">// Predict for the number 500</span>
-console.log(prediction) <span style="color:#008000;">// => 420.423</span>
-</pre>
+```js
+const prediction = model.predict(500); // Predict for the number 500
+console.log(prediction) // => 420.423
+```
 
 <img class="center" src="/images/blog-images/21.gif" alt="Linear model" />
 
@@ -218,54 +225,56 @@ Learning to create models is the most difficult part; normalizing the data for t
 
 📕 Code: [https://github.com/aralroca/posenet-d3](https://github.com/aralroca/posenet-d3) It's very easy to use:
 
-<pre style="margin:0;line-height:125%;"><span style="color:#0000ff;">import</span> * as posenet from <span style="color:#a31515;">'@tensorflow-models/posenet'</span>;
+```js
+import * as posenet from '@tensorflow-models/posenet';
 
-<span style="color:#008000;">// Constants</span>
-<span style="color:#0000ff;">const</span> imageScaleFactor = 0.5;
-<span style="color:#0000ff;">const</span> outputStride = 16;
-<span style="color:#0000ff;">const</span> flipHorizontal = <span style="color:#0000ff;">true</span>;
-<span style="color:#0000ff;">const</span> weight = 0.5;
+// Constants
+const imageScaleFactor = 0.5;
+const outputStride = 16;
+const flipHorizontal = true;
+const weight = 0.5;
 
-<span style="color:#008000;">// Load the model</span>
-<span style="color:#0000ff;">const</span> net = await posenet.load(weight);
+// Load the model
+const net = await posenet.load(weight);
 
-<span style="color:#008000;">// Do predictions</span>
-<span style="color:#0000ff;">const</span> poses = await net
+// Do predictions
+const poses = await net
       .estimateSinglePose(
           imageElement, 
           imageScaleFactor, 
           flipHorizontal, 
           outputStride
       );
-</pre>
+```
 
 **poses** variable is this JSON:
 
-<pre style="margin:0;line-height:125%;">{
-  <span style="color:#a31515;">"score"</span>: 0.32371445304906,
-  <span style="color:#a31515;">"keypoints"</span>: [
+```json
+{
+  "score": 0.32371445304906,
+  "keypoints": [
     {
-      <span style="color:#a31515;">"position"</span>: {
-        <span style="color:#a31515;">"y"</span>: 76.291801452637,
-        <span style="color:#a31515;">"x"</span>: 253.36747741699
+      "position": {
+        "y": 76.291801452637,
+        "x": 253.36747741699
       },
-      <span style="color:#a31515;">"part"</span>: <span style="color:#a31515;">"nose"</span>,
-      <span style="color:#a31515;">"score"</span>: 0.99539834260941
+      "part": "nose",
+      "score": 0.99539834260941
     },
     {
-      <span style="color:#a31515;">"position"</span>: {
-        <span style="color:#a31515;">"y"</span>: 71.10383605957,
-        <span style="color:#a31515;">"x"</span>: 253.54365539551
+      "position": {
+        "y": 71.10383605957,
+        "x": 253.54365539551
       },
-      <span style="color:#a31515;">"part"</span>: <span style="color:#a31515;">"leftEye"</span>,
-      <span style="color:#a31515;">"score"</span>: 0.98781454563141
+      "part": "leftEye",
+      "score": 0.98781454563141
     },
-    <span style="color:#008000;">// ...And for: rightEye, leftEar, rightEar, leftShoulder, rightShoulder</span>
-    <span style="color:#008000;">// leftElbow, rightElbow, leftWrist, rightWrist, leftHip, rightHip,</span>
-    <span style="color:#008000;">// leftKnee, rightKnee, leftAnkle, rightAnkle</span>
+    // ...And for: rightEye, leftEar, rightEar, leftShoulder, rightShoulder
+    // leftElbow, rightElbow, leftWrist, rightWrist, leftHip, rightHip,
+    // leftKnee, rightKnee, leftAnkle, rightAnkle
   ]
 }
-</pre>
+```
 
 Imagine how many funny projects you can develop only with this model!
 
@@ -277,27 +286,30 @@ Imagine how many funny projects you can develop only with this model!
 
 We can import external models into TensorFlow.js. In this example, we are going to use a Keras model for number recognition (h5 file format). For this, we need the [**tfjs_converter**](https://github.com/tensorflow/tfjs-converter).
 
-<pre>pip install tensorflowjs
-</pre>
+```
+pip install tensorflowjs
+```
 
 Then, use the converter:
 
-<pre>tensorflowjs_converter --input_format keras keras/cnn.h5 src/assets
-</pre>
+```
+tensorflowjs_converter --input_format keras keras/cnn.h5 src/assets
+```
 
 Finally, you are ready to import the model into your JS code!
 
-<pre style="margin:0;line-height:125%;"><span style="color:#008000;">// Load model</span>
-<span style="color:#0000ff;">const</span> model = await tf.loadModel(<span style="color:#a31515;">'./assets/model.json'</span>);
+```js
+// Load model
+const model = await tf.loadModel('./assets/model.json');
 
-<span style="color:#008000;">// Prepare image</span>
-<span style="color:#0000ff;">let</span> img = tf.fromPixels(imageData, 1);
+// Prepare image
+let img = tf.fromPixels(imageData, 1);
 img = img.reshape([1, 28, 28, 1]);
-img = tf.cast(img, <span style="color:#a31515;">'float32'</span>);
+img = tf.cast(img, 'float32');
 
-<span style="color:#008000;">// Predict</span>
-<span style="color:#0000ff;">const</span> output = model.predict(img);
-</pre>
+// Predict
+const output = model.predict(img)
+```
 
 Few lines of code is enough to enjoy with the number recognition model from Keras into our JS code. Of course, now we can add more logic into this code to do something more useful, like a canvas to draw a number and then capture this image to predict the number.
 
@@ -317,6 +329,7 @@ Training models in the browser can be very inefficient depending on the device. 
 - A good way to create models is using neural networks.
 - A good and easy tool to create neural networks is TensorFlow.js.
 
+<br />
 <img class="center" src="/images/blog-images/26.jpeg" alt="bye!" />
 
 ## References:

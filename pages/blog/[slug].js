@@ -42,7 +42,7 @@ export default function Post({ date, __html, data, timeToRead }) {
       </Head>
       <h1 className="post-title">{data.title}</h1>
       <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
-      <div className="tags" style={{ marginBottom: 40 }}>
+      <div className="tags" style={{ marginBottom: 30 }}>
         {tags.map((tag) => (
           <Tag key={tag} label={tag} />
         ))}
@@ -76,6 +76,14 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = fs
     .readFileSync(path.join('posts', slug + '.md'))
     .toString()
+
+  marked.setOptions({
+    highlight: function(code, language) {
+      const hljs = require('highlight.js');
+      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+      return hljs.highlight(validLanguage, code).value;
+    },
+  })
 
   const { data, content } = matter(markdownWithMetadata)
   const __html = marked(content).replace(/<img /g, '<img loading="lazy" ')

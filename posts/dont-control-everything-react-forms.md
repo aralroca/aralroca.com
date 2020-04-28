@@ -16,7 +16,7 @@ To understand what “uncontrolled” means, first, we’ll see the meaning of �
 
 A common mistake in React is to try to control every single field of a form using a state and an onChange method. This way is usually chosen to allow the use of this state inside the onSubmit method, although it’s not the only and best way to get the fields.
 
-**controlled fields**
+#### Controlled fields
 
 ```jsx
 <form onSubmit={onSignIn}>
@@ -63,7 +63,7 @@ This controlled behavior is useful if the state is used before submitting the fo
 
 Uncontrolled fields are the natural way to write without a React state:
 
-**uncontrolled input**
+#### Uncontrolled input
 
 ```js
 <form onSubmit={onSignIn}>

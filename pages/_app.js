@@ -5,6 +5,7 @@ import ChangeTheme from '../components/ChangeTheme'
 import getCanonical from '../utils/getCanonical'
 
 import '../styles/main.css'
+import '../styles/highlightcode.css'
 
 export default function Layout({ Component, pageProps }) {
   const { pathname, asPath } = useRouter()
