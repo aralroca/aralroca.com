@@ -233,18 +233,30 @@ footer {
   text-decoration: none;
 }
 
-.post,
-.post pre {
-  white-space: pre-line;
+blockquote {
+  background-color: var(--bg-color);
+  border-left: 1px solid var(--color-shadow);
+}
+
+.post p {
+  padding: 10px;
+}
+
+.post a {
   word-break: break-all;
 }
 
 table th {
-  border: 1px solid var(--home-h2);
+  border: 1px solid var(--color-shadow);
+}
+
+.dark table th {
+  border: 1px solid var(--quote-color);
 }
 
 .post img {
   height: auto;
+  box-shadow: 1px 1px 5px 0px var(--color-shadow);
 }
 
 .youtube {
@@ -276,6 +288,7 @@ table th {
 .center {
   display: block;
   margin: 0 auto;
+  text-align: center;
 }
 
 .post ul,

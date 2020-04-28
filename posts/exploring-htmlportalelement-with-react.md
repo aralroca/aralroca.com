@@ -21,7 +21,9 @@ To know more about it, I recommend to read these references:
 In this article, I will explain how to use this future feature to do a "Hello world" demo with React.
 
 <h2>Getting started</h2>
+<p>
 First of all, to use this draft feature you'll need Chrome Canary. Once you have it, activate the flag of Portals:
+</p>
 
 <img class="center" src="/images/blog-images/4.png" alt="Portal flag in Chrome" />
 
@@ -29,23 +31,22 @@ Next, we'll test portals. Remember that portals need to be on the top level of o
 
 <strong>Hello world with HTMLPortalElement and React:</strong>
 
-<pre style="margin: 0; line-height: 125%;"><span style="color: #008800; font-weight: bold;">import</span> React, { useState, useEffect, useRef } from <span style="background-color: #fff0f0;">'react'</span>;
-<span style="color: #008800; font-weight: bold;">import</span> { render } from <span style="background-color: #fff0f0;">'react-dom'</span>;
+```jsx
+import React, { useState, useEffect, useRef } from 'react';
+import { render } from 'react-dom';
 
-<span style="color: #008800; font-weight: bold;">function</span> PortalExample() {
-  <span style="color: #008800; font-weight: bold;">if</span> (<span style="color: #333333;">!</span><span style="color: #007020;">window</span>.HTMLPortalElement) {
-    <span style="color: #008800; font-weight: bold;">return</span> <span style="background-color: #fff0f0;">'HTMLPortalElement is not supported in your browser.'</span>
+function PortalExample() {
+  if (!window.HTMLPortalElement) {
+    return 'HTMLPortalElement is not supported in your browser.'
   }
 
-  <span style="color: #008800; font-weight: bold;">return</span> (
-    <span style="color: #333333;"><</span>portal
-      src<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"https://www.aralroca.com"</span>
-    <span style="color: #333333;">/></span>
+  return (
+    <portal src="https://www.aralroca.com" />
   );
 }
 
-render(<span style="color: #333333;"><</span>PortalExample <span style="color: #333333;">/></span>, <span style="color: #007020;">document</span>.getElementById(<span style="background-color: #fff0f0;">'root'</span>));
-</pre>
+render(<PortalExample />, document.getElementById('root'));
+```
 
 We get a similar result than using an iframe:
 
@@ -55,15 +56,19 @@ Nevertheless, we want a beautiful transition to navigate to the content of this 
 
 <h2>Navigating to a portal</h2>
 As I said, there is a significant difference between portals and iframes; with portals we can navigate to the content. In order to do that, the element has the function <strong>activate</strong> to go to the page.
-<pre style="margin: 0; line-height: 125%;"><span style="color: #333333;"><</span>portal
-  src<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"https://www.aralroca.com"</span>
-   <span style="color: #888888;">// navigate to content</span>
-  onClick<span style="color: #333333;">=</span>{({ target }) <span style="color: #333333;">=></span> target.activate()} 
-<span style="color: #333333;">/></span>
-</pre>
+
+```jsx
+<portal
+  src="https://www.aralroca.com"
+   // navigate to content
+  onClick={({ target }) => target.activate()} 
+/>
+```
+
 Now we can navigate to the content. Although without any transition... yet:
 
 <img class="center" src="/images/blog-images/6.gif" alt="Using the portal" width="800" height="412" />
+<br />
 
 <h2>Adding a page transition</h2>
 Instead of calling the <strong>activate</strong> function on the <strong>onClick</strong> event, we are going to use the <strong>onClick</strong> event to add an extra css class with the transition. Then, we are going to use the <strong>onTransitionEnd </strong>event to control when the css transition is finished. After that, we'll call the <strong>activate </strong>function<strong>.</strong>
@@ -72,51 +77,53 @@ Therefore, our css transition is going to scale the portal until the portal fits
 
 React code:
 
-<pre style="margin: 0; line-height: 125%;"><span style="color: #008800; font-weight: bold;">import</span> React, { useState } from <span style="background-color: #fff0f0;">'react'</span>;
-<span style="color: #008800; font-weight: bold;">import</span> { render } from <span style="background-color: #fff0f0;">'react-dom'</span>;
+```jsx
+import React, { useState } from 'react';
+import { render } from 'react-dom';
 
-<span style="color: #008800; font-weight: bold;">import</span> <span style="background-color: #fff0f0;">'./style.css'</span>;
+import './style.css';
 
-<span style="color: #008800; font-weight: bold;">function</span> PortalExample() {
-  <span style="color: #008800; font-weight: bold;">const</span> [transition, setTransition] <span style="color: #333333;">=</span> useState(<span style="color: #008800; font-weight: bold;">false</span>)
+function PortalExample() {
+  const [transition, setTransition] = useState(false)
 
-  <span style="color: #008800; font-weight: bold;">if</span> (<span style="color: #333333;">!</span><span style="color: #007020;">window</span>.HTMLPortalElement) {
-    <span style="color: #008800; font-weight: bold;">return</span> <span style="background-color: #fff0f0;">'HTMLPortalElement is not supported in your browser.'</span>
+  if (!window.HTMLPortalElement) {
+    return 'HTMLPortalElement is not supported in your browser.'
   }
 
-  <span style="color: #008800; font-weight: bold;">return</span> (
-    <span style="color: #333333;"><</span>portal
-      src<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"https://www.aralroca.com"</span>
-      className<span style="color: #333333;">=</span>{<span style="background-color: #fff0f0;">`portal ${transition ? 'portal-reveal' : ''}`</span>}
-      onClick<span style="color: #333333;">=</span>{() <span style="color: #333333;">=></span> setTransition(<span style="color: #008800; font-weight: bold;">true</span>)}
-      onTransitionEnd<span style="color: #333333;">=</span>{(e) <span style="color: #333333;">=></span> e.propertyName <span style="color: #333333;">===</span> <span style="background-color: #fff0f0;">'transform'</span> <span style="color: #333333;">&&</span> e.target.activate()}
-    <span style="color: #333333;">/></span>
+  return (
+    <portal
+      src="https://www.aralroca.com"
+      className={`portal ${transition ? 'portal-reveal' : ''}`}
+      onClick={() => setTransition(true)}
+      onTransitionEnd={(e) => e.propertyName === 'transform' && e.target.activate()}
+    />
   );
 }
 
-render(<span style="color: #333333;"><</span>PortalExample <span style="color: #333333;">/></span>, <span style="color: #007020;">document</span>.getElementById(<span style="background-color: #fff0f0;">'root'</span>));
-</pre>
+render(<PortalExample />, document.getElementById('root'));
+```
 
 Styles:
 
-<pre style="margin: 0; line-height: 125%;"><span style="color: #007700;">body</span> {
-  <span style="color: #008800; font-weight: bold;">background-color</span><span style="color: #333333;">:</span> <span style="color: #6600ee; font-weight: bold;">#212121</span>;
+```css
+body {
+  background-color: #212121;
 }
 
-<span style="color: #bb0066; font-weight: bold;">.portal</span> {
-  <span style="color: #008800; font-weight: bold;">position</span><span style="color: #333333;">:</span> <span style="color: #008800; font-weight: bold;">fixed</span>;
-  <span style="color: #008800; font-weight: bold;">width</span><span style="color: #333333;">:</span> <span style="color: #6600ee; font-weight: bold;">100</span><span style="color: #333333;">%</span>;
-  <span style="color: #008800; font-weight: bold;">cursor</span><span style="color: #333333;">:</span> <span style="color: #008800; font-weight: bold;">pointer</span>;
-  <span style="color: #008800; font-weight: bold;">height</span><span style="color: #333333;">:</span> <span style="color: #6600ee; font-weight: bold;">100</span><span style="color: #333333;">%</span>;
-  transition<span style="color: #333333;">:</span> transform <span style="color: #6600ee; font-weight: bold;">0.4s</span>;
-  box<span style="color: #333333;">-</span>shadow<span style="color: #333333;">:</span> <span style="color: #6600ee; font-weight: bold;">0</span> <span style="color: #6600ee; font-weight: bold;">0</span> <span style="color: #6600ee; font-weight: bold;">20px</span> <span style="color: #6600ee; font-weight: bold;">10px</span> <span style="color: #6600ee; font-weight: bold;">#999</span>;
-  transform<span style="color: #333333;">:</span> scale(<span style="color: #6600ee; font-weight: bold;">0</span><span style="color: #333333;">.</span><span style="color: #6600ee; font-weight: bold;">4</span>);
+.portal {
+  position: fixed;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  transition: transform 0.4s;
+  box-shadow: 0 0 20px 10px #999;
+  transform: scale(0.4);
 }
 
-<span style="color: #bb0066; font-weight: bold;">.portal.portal-reveal</span> {
-  transform<span style="color: #333333;">:</span> scale(<span style="color: #6600ee; font-weight: bold;">1</span><span style="color: #333333;">.</span><span style="color: #6600ee; font-weight: bold;">0</span>);
+.portal.portal-reveal {
+  transform: scale(1.0);
 }
-</pre>
+```
 
 Finally, we get the page transition in our portal:
 
