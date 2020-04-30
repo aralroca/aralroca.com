@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect, useRef } from 'react'
 
 import Tag from '../../components/Tag'
+import filterSearch from '../../utils/filterSearch'
 import niceDateText from '../../utils/niceDateText'
 
 function Searcher({ search, onSearch }) {
@@ -31,13 +32,7 @@ export default function Blog({ posts, tags }) {
   const [search, setSearch] = useState(router.query.q || '')
 
   const filteredPosts = search
-    ? posts.filter(({ metadata }) => {
-        return (
-          metadata.title.toLowerCase().includes(search) ||
-          metadata.description.toLowerCase().includes(search) ||
-          metadata.tags.toLowerCase().includes(search)
-        )
-      })
+    ? posts.filter(filterSearch(search))
     : posts
 
   function onSearch(e) {
