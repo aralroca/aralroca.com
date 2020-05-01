@@ -7,7 +7,7 @@ export default function Newsletter() {
       target="_blank"
       novalidate
     >
-      <h2>Subscribe to new posts! 📬</h2>
+      <h2>Subscribe to new posts! 📩</h2>
       <input
         type="email"
         value=""
