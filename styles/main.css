@@ -413,6 +413,30 @@ h2 {
   background-color: var(--tag);
 }
 
+.newsletter {
+  background-color: var(--bg-color);
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px 10px;
+  width: calc(100% - 20px);
+  box-shadow: 1px 1px 5px 0px var(--color-shadow);
+  max-width: 350px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: 1px solid var(--quote-color);
+  background-color: var(--bg-color-main);
+  color: var(--color);
+}
+
+.newsletter button {
+  padding: 10px;
+  color: var(--bg-color);
+  border: 1px solid var(--tag);
+  background-color: var(--tag);
+}
+
 @media (max-width: 550px) {
   .logo span {
     display: none;

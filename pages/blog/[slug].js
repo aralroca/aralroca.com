@@ -6,6 +6,7 @@ import path from 'path'
 import readingTime from 'reading-time'
 import { useRouter } from 'next/router'
 
+import Newsletter from '../../components/Newsletter'
 import Tag from '../../components/Tag'
 import getCanonical from '../../utils/getCanonical'
 import niceDateText from '../../utils/niceDateText'
@@ -48,6 +49,7 @@ export default function Post({ date, __html, data, timeToRead }) {
         ))}
       </div>
       <div className="post" dangerouslySetInnerHTML={{ __html }} />
+      <Newsletter />
     </>
   )
 }
