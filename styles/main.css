@@ -416,7 +416,7 @@ h2 {
 .newsletter {
   background-color: var(--bg-color);
   text-align: center;
-  margin: 100px auto 40px;
+  margin: 110px auto 40px;
   padding: 30px 10px;
   width: calc(100% - 20px);
   box-shadow: 1px 1px 5px 0px var(--color-shadow);
@@ -425,6 +425,7 @@ h2 {
 
 .newsletter h2 {
   padding: 0;
+  font-size: 21px;
   margin-top: 0;
 }
 
@@ -437,9 +438,11 @@ h2 {
 
 .newsletter button {
   padding: 10px;
-  color: var(--bg-color);
-  border: 1px solid var(--tag);
-  background-color: var(--tag);
+  cursor: pointer;
+  color: var(--color);
+  border: 1px solid var(--quote-color);
+  border-left: none;
+  background-color: var(--bg-color-main);
 }
 
 @media (max-width: 550px) {

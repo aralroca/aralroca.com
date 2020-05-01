@@ -11,6 +11,7 @@ export default function Newsletter() {
       <input
         type="email"
         value=""
+        ariaLabel="Email address"
         name="EMAIL"
         id="mce-EMAIL"
         placeholder="Email address"

@@ -35,7 +35,7 @@ pre code {
 .dark .hljs-comment,
 .dark .hljs-meta,
 .dark .hljs-meta .hljs-keyword {
-  color: #707880;
+  color: #7d848c;
 }
 
 .dark .hljs-number,
@@ -43,7 +43,7 @@ pre code {
 .dark .hljs-literal,
 .dark .hljs-deletion,
 .dark .hljs-link {
- color: #cc6666
+  color: #cc6666;
 }
 
 .dark .hljs-string,
@@ -58,14 +58,14 @@ pre code {
 .dark .hljs-attribute,
 .dark .hljs-code,
 .dark .hljs-selector-id {
- color: #b294bb;
+  color: #b294bb;
 }
 
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-bullet,
 .dark .hljs-tag {
- color: #81a2be;
+  color: #81a2be;
 }
 
 .dark .hljs-subst,
@@ -92,7 +92,6 @@ pre code {
   font-weight: bold;
 }
 
-
 .light .xml .hljs-meta {
   color: #c0c0c0;
 }
@@ -113,7 +112,7 @@ pre code {
 
 .light .hljs-variable,
 .light .hljs-template-variable {
-  color: #3F6E74;
+  color: #3f6e74;
 }
 
 .light .hljs-code,
@@ -124,7 +123,7 @@ pre code {
 
 .light .hljs-regexp,
 .light .hljs-link {
-  color: #0E0EFF;
+  color: #0e0eff;
 }
 
 .light .hljs-title,
@@ -148,7 +147,7 @@ pre code {
 }
 
 .light .hljs-attr {
-  color: #836C28;
+  color: #836c28;
 }
 
 .light .hljs-subst {
