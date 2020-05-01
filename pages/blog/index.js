@@ -7,6 +7,7 @@ import readingTime from 'reading-time'
 import { useRouter } from 'next/router'
 import { useState, useEffect, useRef } from 'react'
 
+import Newsletter from '../../components/Newsletter'
 import Tag from '../../components/Tag'
 import filterSearch from '../../utils/filterSearch'
 import niceDateText from '../../utils/niceDateText'
@@ -98,6 +99,7 @@ export default function Blog({ posts, tags }) {
           .
         </div>
       )}
+      <Newsletter />
     </>
   )
 }
