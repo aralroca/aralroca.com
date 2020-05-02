@@ -22,12 +22,11 @@ function readPost(slug) {
   })
 
   const { data, content } = matter(markdownWithMetadata)
-  const __html = marked(content).replace(/<img /g, '<img loading="lazy" ')
 
   return {
     data,
     date: niceDateText(new Date(data.created)),
-    __html,
+    __html: marked(content),
     timeToRead: readingTime(content),
   }
 }

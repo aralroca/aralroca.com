@@ -62,5 +62,11 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  return { props: readPost(slug) }
+  const post = readPost(slug)
+  return {
+    props: {
+      ...post,
+      __html: post.__html.replace(/<img /g, '<img loading="lazy" '),
+    },
+  }
 }
