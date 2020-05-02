@@ -7,7 +7,7 @@ async function generateRss() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>
-        <atom:link href="http://aralroca.com/rss.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://aralroca.com/rss.xml" rel="self" type="application/rss+xml" />
         <title>Aral Roca</title>
         <description>Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.</description>
         <link>https://aralroca.com</link>
@@ -18,7 +18,7 @@ async function generateRss() {
           const content = __html
             // Absoulte path for images and links
             // https://validator.w3.org/feed/docs/warning/ContainsRelRef.html
-            .replace(/src="\//g, 'src="https://aralroca.com/')
+            .replace(/(src|href)="\//g, '$&/aralroca.com/')
             // Not iframes
             // https://validator.w3.org/feed/docs/warning/SecurityRisk.html
             .replace(/<iframe.*<\/iframe>/g, '')
