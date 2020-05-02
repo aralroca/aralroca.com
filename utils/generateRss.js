@@ -18,7 +18,8 @@ async function generateRss() {
           const content = __html
             // Absoulte path for images and links
             // https://validator.w3.org/feed/docs/warning/ContainsRelRef.html
-            .replace(/(src|href)="\//g, '$&/aralroca.com/')
+            .replace(/src="\//g, 'src="https://aralroca.com/')
+            .replace(/href="\//g, 'href="https://aralroca.com/')
             // Not iframes
             // https://validator.w3.org/feed/docs/warning/SecurityRisk.html
             .replace(/<iframe.*<\/iframe>/g, '')
