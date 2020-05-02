@@ -35,6 +35,12 @@ export default function Layout({ Component, pageProps }) {
         <meta name="twitter:creator" content="@aralroca" />
         <meta name="twitter:title" content={data.title} />
         <link key="canonical" rel="canonical" href={data.url} />
+        <link
+          rel="search"
+          href="https://aralroca.com/search.xml"
+          type="application/opensearchdescription+xml"
+          title="Aral Roca"
+        />
         <meta key="meta-og:url" property="og:url" content={data.url} />
         <meta
           key="meta-og-image"
