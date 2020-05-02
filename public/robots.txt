@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://aralroca.com/sitemap.xml

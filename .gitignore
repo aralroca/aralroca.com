@@ -24,3 +24,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# generated rss.xml and sitemap.xml
+public/rss.xml
+public/sitemap.xml

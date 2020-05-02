@@ -1,4 +1,4 @@
-export default function niceDateText(date) {
+function niceDateText(date) {
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -8,3 +8,5 @@ export default function niceDateText(date) {
 
   return date.toLocaleDateString('en-EN', options)
 }
+
+module.exports = niceDateText
