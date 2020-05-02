@@ -2,7 +2,14 @@ module.exports = {
   experimental: {
     modern: true,
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
+    // Generate Sitemap + RSS on build time
+    if (isServer) {
+      require('./utils/generateSitemap')()
+      require('./utils/generateRss')()
+    }
+
+    // Preact
     const splitChunks = config.optimization && config.optimization.splitChunks
     if (splitChunks) {
       const cacheGroups = splitChunks.cacheGroups

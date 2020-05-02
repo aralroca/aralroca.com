@@ -1,15 +1,12 @@
 import Head from 'next/head'
 import fs from 'fs'
-import marked from 'marked'
-import matter from 'gray-matter'
-import path from 'path'
-import readingTime from 'reading-time'
 import { useRouter } from 'next/router'
 
 import Newsletter from '../../components/Newsletter'
 import Tag from '../../components/Tag'
+import clearPage from '../../utils/clearPage'
 import getCanonical from '../../utils/getCanonical'
-import niceDateText from '../../utils/niceDateText'
+import readPost from '../../utils/readPost'
 
 export default function Post({ date, __html, data, timeToRead }) {
   const { asPath } = useRouter()
@@ -58,44 +55,12 @@ export default function Post({ date, __html, data, timeToRead }) {
  * Load all the slugs corresponding to all mardown filenames.
  */
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync('posts')
-  const paths = files.map((filename) => ({
-    params: {
-      slug: filename.replace('.md', ''),
-    },
-  }))
+  const files = fs.readdirSync('posts').map(clearPage)
+  const paths = files.map((slug) => ({ params: { slug } }))
 
-  return {
-    paths,
-    fallback: false,
-  }
+  return { paths, fallback: false }
 }
 
-/**
- * Read each post converting markdown to HTML + metadata
- */
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join('posts', slug + '.md'))
-    .toString()
-
-  marked.setOptions({
-    highlight: function(code, language) {
-      const hljs = require('highlight.js');
-      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
-      return hljs.highlight(validLanguage, code).value;
-    },
-  })
-
-  const { data, content } = matter(markdownWithMetadata)
-  const __html = marked(content).replace(/<img /g, '<img loading="lazy" ')
-
-  return {
-    props: {
-      data,
-      date: niceDateText(new Date(data.created)),
-      __html,
-      timeToRead: readingTime(content),
-    },
-  }
+  return { props: readPost(slug) }
 }

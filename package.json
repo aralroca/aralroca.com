@@ -14,6 +14,7 @@
     "test:watch": "NODE_ENV=test jest --watch"
   },
   "dependencies": {
+    "globby": "11.0.0",
     "gray-matter": "4.0.2",
     "highlight.js": "10.0.1",
     "marked": "1.0.0",
@@ -30,7 +31,7 @@
     "prettier": "2.0.5",
     "babel-preset-minify": "0.5.1",
     "babel-jest": "25.5.1",
-    "jest": "25.5.2",
+    "jest": "25.5.4",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "pretty-quick": "2.0.1"
   },

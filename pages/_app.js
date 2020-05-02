@@ -78,6 +78,14 @@ export default function Layout({ Component, pageProps }) {
       </main>
       <footer>
         <a
+          title="RSS Feed"
+          href="/rss.xml"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          rss
+        </a>
+        <a
           href="https://twitter.com/aralroca"
           target="_blank"
           rel="noopener noreferrer"
