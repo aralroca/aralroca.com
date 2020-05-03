@@ -2,8 +2,11 @@
 title: Don’t control everything! React forms
 created: 11/2/2018
 description: Use uncontrolled forms as default way to handle forms.
-cover_image: https://aralroca.files.wordpress.com/2018/11/rawpixel-665349-unsplash.jpg?w=2560&h=1200&crop=1
 tags: react,forms,hooks
+cover_image: /images/cover-images/2_cover_image.jpg
+cover_image_mobile: /images/cover-images/2_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/2_cover_image_vert.jpg
+cover_color: '#5D6667'
 ---
 
 Forms are a crucial part of almost all applications. At least one of them is usually necessary: the “Sign in” page. In this article, we are going to explain the benefits of uncontrolled forms in React and how to do it as simple as possible to re-use it in every form. We are going to use the classic “Sign in” page as an example.

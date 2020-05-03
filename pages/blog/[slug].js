@@ -38,6 +38,16 @@ export default function Post({ date, __html, data, timeToRead }) {
           content={data.description}
         />
       </Head>
+      <div style={{
+        backgroundColor: data.cover_color,
+        backgroundImage: `url(${data.cover_image})`,
+        backgroundSize: 'cover',
+        marginLeft: -30,
+        marginTop: -30,
+        maxWidth: 'calc(100% + 60px)',
+        paddingTop: '48%',
+        width: 960,
+      }} />
       <h1 className="post-title">{data.title}</h1>
       <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
       <div className="tags" style={{ marginBottom: 30 }}>
