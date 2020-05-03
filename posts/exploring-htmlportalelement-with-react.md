@@ -35,20 +35,18 @@ Next, we'll test portals. Remember that portals need to be on the top level of o
 <strong>Hello world with HTMLPortalElement and React:</strong>
 
 ```jsx
-import React, { useState, useEffect, useRef } from 'react';
-import { render } from 'react-dom';
+import React, { useState, useEffect, useRef } from 'react'
+import { render } from 'react-dom'
 
 function PortalExample() {
   if (!window.HTMLPortalElement) {
     return 'HTMLPortalElement is not supported in your browser.'
   }
 
-  return (
-    <portal src="https://www.aralroca.com" />
-  );
+  return <portal src="https://www.aralroca.com" />
 }
 
-render(<PortalExample />, document.getElementById('root'));
+render(<PortalExample />, document.getElementById('root'))
 ```
 
 We get a similar result than using an iframe:
@@ -62,9 +60,9 @@ As I said, there is a significant difference between portals and iframes; with p
 
 ```jsx
 <portal
-  src="https://www.aralroca.com"
-   // navigate to content
-  onClick={({ target }) => target.activate()} 
+  src="https://aralroca.com"
+  // navigate to content
+  onClick={({ target }) => target.activate()}
 />
 ```
 
@@ -81,10 +79,10 @@ Therefore, our css transition is going to scale the portal until the portal fits
 React code:
 
 ```jsx
-import React, { useState } from 'react';
-import { render } from 'react-dom';
+import React, { useState } from 'react'
+import { render } from 'react-dom'
 
-import './style.css';
+import './style.css'
 
 function PortalExample() {
   const [transition, setTransition] = useState(false)
@@ -95,15 +93,17 @@ function PortalExample() {
 
   return (
     <portal
-      src="https://www.aralroca.com"
+      src="https://aralroca.com"
       className={`portal ${transition ? 'portal-reveal' : ''}`}
       onClick={() => setTransition(true)}
-      onTransitionEnd={(e) => e.propertyName === 'transform' && e.target.activate()}
+      onTransitionEnd={(e) =>
+        e.propertyName === 'transform' && e.target.activate()
+      }
     />
-  );
+  )
 }
 
-render(<PortalExample />, document.getElementById('root'));
+render(<PortalExample />, document.getElementById('root'))
 ```
 
 Styles:
@@ -124,7 +124,7 @@ body {
 }
 
 .portal.portal-reveal {
-  transform: scale(1.0);
+  transform: scale(1);
 }
 ```
 
