@@ -3,7 +3,10 @@ title: Detect text toxicity using React
 description: Discover how to detect threatening language, insults, obscenities, identity-based hate or sexually explicit language on texts using React. 
 tags: tensorflow, machine-learning, javascript, react, hooks
 created: 04/28/2020
-cover_image: https://images.unsplash.com/photo-1572968271460-12fe6f8c9d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+cover_image: /images/cover-images/5_cover_image.jpg
+cover_image_mobile: /images/cover-images/5_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/5_cover_image_vert.jpg
+cover_color: '#B4AF9E'
 ---
 
 In a previous article I explained **how to start with Tensorflow.js**, from creating a simple linear regression model to using pretrained models as posenet. I **highly recommend** to read [this article](/blog/first-steps-with-tensorflowjs) to understand how it works.

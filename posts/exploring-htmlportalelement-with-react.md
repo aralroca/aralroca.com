@@ -3,7 +3,10 @@ title: Exploring HTMLPortalElement with React
 description: In this article, I will explain how to use HTMLPortalElement doing a “Hello world” demo with React.
 tags: experimental, javascript, react
 created: 06/10/2019
-cover_image: https://aralroca.files.wordpress.com/2019/06/pedro-lastra-137923-unsplash-e1560074127908.jpg?w=2560&h=1163&crop=1
+cover_image: /images/cover-images/3_cover_image.jpg
+cover_image_mobile: /images/cover-images/3_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/3_cover_image_vert.jpg
+cover_color: '#D2C9BE'
 ---
 
 HTMLPortalElement is a draft of a new HTML Element, very similar to iframes but with the big difference that it allows to navigate to the content of the "iframe" by using a page transition.

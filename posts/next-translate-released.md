@@ -3,6 +3,10 @@ title: Next-translate released 🎉
 created: 12/11/2019
 description: i18n for Next.js static pages
 tags: nextjs, javascript, react, i18n
+cover_image: /images/cover-images/4_cover_image.jpg
+cover_image_mobile: /images/cover-images/4_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/4_cover_image_vert.jpg
+cover_color: '#6A6A6C'
 ---
 
 After having some trouble with `next-i18next` library to internationalize pages, we decided to create an alternative library! With some differences:

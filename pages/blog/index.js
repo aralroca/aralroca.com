@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -11,6 +10,7 @@ import Newsletter from '../../components/Newsletter'
 import Tag from '../../components/Tag'
 import filterSearch from '../../utils/filterSearch'
 import niceDateText from '../../utils/niceDateText'
+import PostItem from '../../components/PostItem'
 
 function Searcher({ search, onSearch }) {
   const label = 'Search posts'
@@ -32,15 +32,14 @@ export default function Blog({ posts, tags }) {
   const key = useRef(Date.now())
   const [search, setSearch] = useState(router.query.q || '')
 
-  const filteredPosts = search
-    ? posts.filter(filterSearch(search))
-    : posts
+  const filteredPosts = search ? posts.filter(filterSearch(search)) : posts
 
   function onSearch(e) {
     const val = e.target.value.toLowerCase()
     const url = val ? `/blog?q=${e.target.value.toLowerCase()}` : '/blog'
     router.replace(url, undefined, { shallow: true })
   }
+
 
   // Update state from search param
   useEffect(() => setSearch(router.query.q), [router.query.q])
@@ -69,22 +68,7 @@ export default function Blog({ posts, tags }) {
         ))}
       </div>
 
-      {filteredPosts.map((post) => {
-        return (
-          <div className="post-list-item" key={post.slug}>
-            <Link
-              href={`/blog/[slug]?slug=${post.slug}`}
-              as={`/blog/${post.slug}`}
-            >
-              <a>
-                <h2>{post.metadata.title}</h2>
-              </a>
-            </Link>
-            <p className="post-info">{`${post.date} • ${post.timeToRead.text}`}</p>
-            <p>{post.metadata.description}</p>
-          </div>
-        )
-      })}
+      {filteredPosts.map((post) => <PostItem key={post.slug} {...post} />)}
 
       {filteredPosts.length === 0 && (
         <div style={{ marginTop: 50, textAlign: 'center' }}>

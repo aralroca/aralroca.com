@@ -3,7 +3,10 @@ title: First steps with TensorFlow.js
 description: Learn how to start with TensorFlow.js
 created: 8/24/2018
 tags: tensorflow, javascript, machine-learning
-cover_image: https://thepracticaldev.s3.amazonaws.com/i/osz5r6flkipl8mtc90ej.jpg
+cover_image: /images/cover-images/1_cover_image.jpg
+cover_image_mobile: /images/cover-images/1_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/1_cover_image_vert.jpg
+cover_color: '#393537'
 ---
 
 I would like to do more articles explaining a little bit about all the machine learning and deep learning basics. I'm a beginner in this area, but I'd like to explain soon these concepts to create some interesting AI models. Nevertheless, we don't need a deep knowledge about machine learning to use some existing models. We can use some libraries like Keras, Tensorflow or TensorFlow.js. We are going to see here how to create basic AI models and use more sophisticated models with TensorFlow.js. Although it's not required a deep knowledge, we are going to explain few concepts.
