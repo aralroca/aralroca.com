@@ -17,7 +17,7 @@ export default function Layout({ Component, pageProps }) {
     title: 'Aral Roca',
     description:
       "Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.",
-    cover_image: 'https://aralroca.com/images/profile.jpg',
+    cover_image: 'https://aralroca.com/images/profile_full.jpg',
     tags:
       'javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain',
   }
