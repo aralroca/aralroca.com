@@ -24,7 +24,7 @@ export default function Post({ date, __html, data, timeToRead }) {
         <meta
           key="meta-og-image"
           property="og:image"
-          content={data.cover_image}
+          content={'https://aralroca.com' + data.cover_image}
         />
         <meta key="meta-og:title" property="og:title" content={data.title} />
         <meta
