@@ -1,17 +1,13 @@
 import Head from 'next/head'
 import fs from 'fs'
-import { useRouter } from 'next/router'
 
 import Newsletter from '../../components/Newsletter'
 import Tag from '../../components/Tag'
 import clearPage from '../../utils/clearPage'
-import getCanonical from '../../utils/getCanonical'
 import readPost from '../../utils/readPost'
 
 export default function Post({ date, __html, data, timeToRead }) {
-  const { asPath } = useRouter()
   const tags = data.tags.split(',')
-  const url = getCanonical(asPath)
 
   return (
     <>
@@ -24,8 +20,7 @@ export default function Post({ date, __html, data, timeToRead }) {
           content={data.description}
         />
         <meta key="meta-tags" name="keywords" content={data.tags} />
-        <link key="canonical" rel="canonical" href={url} />
-        <meta key="meta-og:url" property="og:url" content={url} />
+        <meta name="twitter:title" content={data.title} />
         <meta
           key="meta-og-image"
           property="og:image"
