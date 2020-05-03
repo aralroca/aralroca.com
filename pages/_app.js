@@ -10,13 +10,14 @@ import '../styles/highlightcode.css'
 export default function Layout({ Component, pageProps }) {
   const { pathname, asPath } = useRouter()
   const isActive = (link) => (pathname.startsWith(link) ? 'active' : '')
+  const isDefaultMeta = pathname !== '/blog/[slug]'
 
   const data = {
     url: getCanonical(asPath),
     title: 'Aral Roca',
     description:
       "Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.",
-    cover_image: 'https://www.aralroca.com/images/profile.jpg',
+    cover_image: 'https://aralroca.com/images/profile.jpg',
     tags:
       'javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain',
   }
@@ -24,34 +25,40 @@ export default function Layout({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title key="title">{data.title}</title>
-        <meta key="meta-title" name="title" content={data.title} />
-        <meta
-          key="meta-description"
-          name="description"
-          content={data.description}
-        />
-        <meta key="meta-tags" name="keywords" content={data.tags} />
+        {
+          isDefaultMeta && (
+            <>
+              <title key="title">{data.title}</title>
+              <meta key="meta-title" name="title" content={data.title} />
+              <meta
+                key="meta-description"
+                name="description"
+                content={data.description}
+              />
+              <meta key="meta-tags" name="keywords" content={data.tags} />
+              <meta name="twitter:title" content={data.title} />
+              <meta
+                key="meta-og-image"
+                property="og:image"
+                content={data.cover_image}
+              />
+              <meta key="meta-og:title" property="og:title" content={data.title} />
+              <meta
+                key="meta-og:description"
+                property="og:description"
+                content={data.description}
+              />
+            </>
+          )
+        }
         <meta name="twitter:creator" content="@aralroca" />
-        <meta name="twitter:title" content={data.title} />
+        <meta key="meta-og:url" property="og:url" content={data.url} />
         <link key="canonical" rel="canonical" href={data.url} />
         <link
           rel="search"
           href="https://aralroca.com/search.xml"
           type="application/opensearchdescription+xml"
           title="Aral Roca"
-        />
-        <meta key="meta-og:url" property="og:url" content={data.url} />
-        <meta
-          key="meta-og-image"
-          property="og:image"
-          content={data.cover_image}
-        />
-        <meta key="meta-og:title" property="og:title" content={data.title} />
-        <meta
-          key="meta-og:description"
-          property="og:description"
-          content={data.description}
         />
       </Head>
       <header>

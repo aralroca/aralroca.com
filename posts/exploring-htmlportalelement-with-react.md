@@ -43,7 +43,7 @@ function PortalExample() {
     return 'HTMLPortalElement is not supported in your browser.'
   }
 
-  return <portal src="https://www.aralroca.com" />
+  return <portal src="https://aralroca.com" />
 }
 
 render(<PortalExample />, document.getElementById('root'))
