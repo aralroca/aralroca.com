@@ -19,8 +19,9 @@ export default function Post({ date, __html, data, timeToRead }) {
           name="description"
           content={data.description}
         />
-        <meta key="meta-tags" name="keywords" content={data.tags} />
+        <meta name="keywords" content={data.tags} />
         <meta name="twitter:title" content={data.title} />
+        <meta key="og:type" property="og:type" content="article" />
         <meta
           key="meta-og-image"
           property="og:image"

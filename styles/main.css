@@ -17,6 +17,7 @@
   --quote-color: rgba(255, 255, 255, 0.48);
   --secondary-color: #bb86fc;
   --separator: #263238;
+  --post-item-bg: #1c2529;
   --tag: #4e8abb;
 }
 
@@ -35,6 +36,7 @@
   --color-shadow: rgba(102, 102, 102, 0.5);
   --color: black;
   --home-h2: #4a4a4a;
+  --post-item-bg: #fefefe;
   --hover-nav: #880e4f;
   --img-placeholder: #e1e2e1;
   --post-h2: #ad1457;
@@ -217,6 +219,7 @@ footer {
 .post-list-item {
   margin: 50px 0;
   display: flex;
+  background-color: var(--post-item-bg);
   cursor: pointer;
   box-shadow: 1px 1px 3px 0px var(--color-shadow);
 }
