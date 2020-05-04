@@ -243,6 +243,10 @@ footer {
   text-decoration: none;
 }
 
+.post h2 {
+  margin: 40px 0 10px;
+}
+
 blockquote {
   background-color: var(--bg-color);
   border-left: 1px solid var(--color-shadow);
