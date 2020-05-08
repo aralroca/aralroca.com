@@ -19,19 +19,19 @@ OpenCV can also use Intel's embedded performance primitives, a set of low-level 
 
 With OpenCV you can develop things like:
 
-* 2D and 3D feature toolkits
-* Egomotion estimation
-* Facial recognition system
-* Gesture recognition
-* Human–computer interaction (HCI)
-* Mobile robotics
-* Motion understanding
-* Object identification
-* Segmentation and recognition
-* Stereopsis stereo vision: depth perception from 2 cameras
-* Structure from motion (SFM)
-* Motion tracking
-* Augmented reality
+- 2D and 3D feature toolkits
+- Egomotion estimation
+- Facial recognition system
+- Gesture recognition
+- Human–computer interaction (HCI)
+- Mobile robotics
+- Motion understanding
+- Object identification
+- Segmentation and recognition
+- Stereopsis stereo vision: depth perception from 2 cameras
+- Structure from motion (SFM)
+- Motion tracking
+- Augmented reality
 
 <br />
 <img class="center" src="/images/blog-images/30.png" alt="OpenCV logo" />
@@ -61,7 +61,7 @@ Once you fill in the name of your project, raise the local environment with `yar
 
 To compile OpenCV to webassembly we can follow the official documentation at:
 
-* https://docs.opencv.org/3.4.10/d4/da1/tutorial_js_setup.html
+- https://docs.opencv.org/3.4.10/d4/da1/tutorial_js_setup.html
 
 However, I'll tell you the steps I've taken:
 
@@ -122,24 +122,23 @@ The initial content will be like this:
 
 ```js
 /**
- *  Here we will check from time to time if we can access the OpenCV 
- *  functions. We will return in a callback if it's been resolved 
+ *  Here we will check from time to time if we can access the OpenCV
+ *  functions. We will return in a callback if it's been resolved
  *  well (true) or if there has been a timeout (false).
  */
 function waitForOpencv(callbackFn, waitTimeMs = 30000, stepTimeMs = 100) {
-  if(cv.Mat) callbackFn(true);
+  if (cv.Mat) callbackFn(true)
 
-  let timeSpentMs = 0;
+  let timeSpentMs = 0
   const interval = setInterval(() => {
-    const limitReached = timeSpentMs > waitTimeMs;
-    if(cv.Mat || limitReached) {
-      clearInterval(interval);
-      return callbackFn(!limitReached);
+    const limitReached = timeSpentMs > waitTimeMs
+    if (cv.Mat || limitReached) {
+      clearInterval(interval)
+      return callbackFn(!limitReached)
+    } else {
+      timeSpentMs += stepTimeMs
     }
-    else {
-      timeSpentMs += stepTimeMs;
-    }
-  }, stepTimeMs);
+  }, stepTimeMs)
 }
 
 /**
@@ -147,19 +146,20 @@ function waitForOpencv(callbackFn, waitTimeMs = 30000, stepTimeMs = 100) {
  * into the worker. Without this, there would be no communication possible
  * with the project.
  */
-onmessage = function(e) {
-  switch(e.data.msg) {
+onmessage = function (e) {
+  switch (e.data.msg) {
     case 'load': {
       // Import Webassembly script
-      self.importScripts('./opencv.js');
-      waitForOpencv(function(success){
-        if(success) postMessage({ msg: e.data.msg });
-        else throw new Error('Error on loading OpenCV');
-      });
-      break;
+      self.importScripts('./opencv.js')
+      waitForOpencv(function (success) {
+        if (success) postMessage({ msg: e.data.msg })
+        else throw new Error('Error on loading OpenCV')
+      })
+      break
     }
-    default: break;
-  }  
+    default:
+      break
+  }
 }
 ```
 
@@ -177,8 +177,8 @@ Once the file has been created, we will enter this initial code, which will allo
 ```js
 class CV {
   /**
-   * We will use this method privately to communicate with the worker and 
-   * return a promise with the result of the event. This way we can call 
+   * We will use this method privately to communicate with the worker and
+   * return a promise with the result of the event. This way we can call
    * the worker asynchronously.
    */
   _dispatch(event) {
@@ -188,22 +188,22 @@ class CV {
     return new Promise((res, rej) => {
       let interval = setInterval(() => {
         const status = this._status[msg]
-        if(status[0] === 'done') res(status[1])
-        if(status[0] === 'error') rej(status[1])
-        if(status[0] !== 'loading') { 
+        if (status[0] === 'done') res(status[1])
+        if (status[0] === 'error') rej(status[1])
+        if (status[0] !== 'loading') {
           delete this._status[msg]
           clearInterval(interval)
         }
       }, 50)
-    }) 
+    })
   }
 
   /**
    * First, we will load the worker and capture the onmessage
    * and onerror events to always know the status of the event
    * we have triggered.
-   * 
-   * Then, we are going to call the 'load' event, as we've just 
+   *
+   * Then, we are going to call the 'load' event, as we've just
    * implemented it so that the worker can capture it.
    */
   load() {
@@ -211,8 +211,8 @@ class CV {
     this.worker = new Worker('/js/cv.worker.js') // load worker
 
     // Capture events and save [status, event] inside the _status object
-    this.worker.onmessage = e => this._status[e.data.msg] = ['done', e]
-    this.worker.onerror = e => this._status[e.data.msg] = ['error', e]
+    this.worker.onmessage = (e) => (this._status[e.data.msg] = ['done', e])
+    this.worker.onerror = (e) => (this._status[e.data.msg] = ['error', e])
     return this._dispatch({ msg: 'load' })
   }
 }
@@ -254,10 +254,10 @@ const maxVideoSize = 200
  *
  * 1. A video component so the user can see what's on the camera.
  *
- * 2. A button to generate an image of the video, load OpenCV and 
+ * 2. A button to generate an image of the video, load OpenCV and
  * process the image.
  *
- * 3. A canvas to allow us to capture the image of the video and 
+ * 3. A canvas to allow us to capture the image of the video and
  * show it to the user.
  */
 export default function Page() {
@@ -269,7 +269,7 @@ export default function Page() {
    * In the onClick event we'll capture a frame within
    * the video to pass it to our service.
    */
-   async function onClick() {
+  async function onClick() {
     updateProcessing(true)
 
     const ctx = canvasEl.current.getContext('2d')
@@ -304,7 +304,7 @@ export default function Page() {
         })
         videoElement.current.srcObject = stream
 
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           videoElement.current.onloadedmetadata = () => {
             resolve(videoElement.current)
           }
@@ -335,12 +335,12 @@ export default function Page() {
       }}
     >
       <video className="video" playsInline ref={videoElement} />
-      <button 
-        disabled={processing} 
-        style={{ width: maxVideoSize, padding: 10 }} 
+      <button
+        disabled={processing}
+        style={{ width: maxVideoSize, padding: 10 }}
         onClick={onClick}
-      > 
-      {processing ? 'Processing...' : 'Take a photo'}
+      >
+        {processing ? 'Processing...' : 'Take a photo'}
       </button>
       <canvas
         ref={canvasEl}
@@ -359,10 +359,10 @@ class CV {
   // ...previous service code here...
 
   /**
-   * We are going to use the _dispatch event we created before to 
+   * We are going to use the _dispatch event we created before to
    * call the postMessage with the msg and the image as payload.
-   * 
-   * Thanks to what we've implemented in the _dispatch, this will 
+   *
+   * Thanks to what we've implemented in the _dispatch, this will
    * return a promise with the processed image.
    */
   imageProcessing(payload) {
@@ -425,14 +425,14 @@ function imageDataFromMat(mat) {
   return clampedArray
 }
 
-onmessage = function(e) {
-  switch(e.data.msg) {
+onmessage = function (e) {
+  switch (e.data.msg) {
     // ...previous onmessage code here...
     case 'imageProcessing':
       return imageProcessing(e.data)
     default:
       break
-  }  
+  }
 }
 ```
 
@@ -444,27 +444,27 @@ Although we have processed the image in a very simple way and we could have done
 
 ## Conclusion
 
-We have seen how to use the most used library for computer vision in the browser. We've seen how to compile OpenCV into webassembly and use it in a worker to not block the UI for a good performance. I hope that even if you have never heard of this library, now you'll give it a try. 
+We have seen how to use the most used library for computer vision in the browser. We've seen how to compile OpenCV into webassembly and use it in a worker to not block the UI for a good performance. I hope that even if you have never heard of this library, now you'll give it a try.
 
 <br />
 <img class="center" src="/images/blog-images/29.jpg" alt="Example of computer vision" />
 <br />
 
-
 ## Code
 
 I've uploaded the code of this article on GitHub in case you want to take a look.
 
-* https://github.com/vinissimus/opencv-js-webworker
+- CODE -> https://github.com/vinissimus/opencv-js-webworker
+- DEMO -> https://vinissimus.github.io/opencv-js-webworker/
 
 To see a more sophisticated example implemented in Vue.js, take a look at this other repo:
 
-* https://github.com/latsic/imgalign
+- https://github.com/latsic/imgalign
 
 ## References
 
-* https://docs.opencv.org/3.4.10/d4/da1/tutorial_js_setup.html
-* https://docs.opencv.org/master/de/d06/tutorial_js_basic_ops.html
-* https://en.wikipedia.org/wiki/OpenCV
-* https://github.com/latsic/imgalign
-* https://opencv.org/
+- https://docs.opencv.org/3.4.10/d4/da1/tutorial_js_setup.html
+- https://docs.opencv.org/master/de/d06/tutorial_js_basic_ops.html
+- https://en.wikipedia.org/wiki/OpenCV
+- https://github.com/latsic/imgalign
+- https://opencv.org/
