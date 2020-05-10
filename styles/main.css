@@ -268,9 +268,13 @@ table th {
   border: 1px solid var(--quote-color);
 }
 
-.post img:not(.cover-image) {
+.post img:not(.cover-image):not(.transparent) {
   height: auto;
   box-shadow: 1px 1px 5px 0px var(--color-shadow);
+}
+
+.dark .post img.transparent {
+  filter: invert(1);
 }
 
 .youtube {
