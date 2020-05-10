@@ -273,6 +273,10 @@ table th {
   box-shadow: 1px 1px 5px 0px var(--color-shadow);
 }
 
+.dark .post img.transparent {
+  filter: invert(1);
+}
+
 .youtube {
   width: 560px;
   height: 315px;
