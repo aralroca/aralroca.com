@@ -1,5 +1,5 @@
 ---
-title: "Learn Deno: Chat app"
+title: 'Learn Deno: Chat app'
 created: 05/10/2020
 description: Learn how Deno works and it's differences with Node.js by creating a Chat application.
 tags: deno, javascript, react
@@ -9,7 +9,7 @@ cover_image_vert: /images/cover-images/8_cover_image_vert.jpg
 cover_color: '#6A6A6C'
 ---
 
-Node.js was writtern initially by [Ryan Dahl](https://en.wikipedia.org/wiki/Ryan_Dahl) on 2009 (in C++). Ryan left Node.js in 2012, as at this point he felt he had more or less fulfilled his goals. 
+Node.js was writtern initially by [Ryan Dahl](https://en.wikipedia.org/wiki/Ryan_Dahl) on 2009 (in C++). Ryan left Node.js in 2012, as at this point he felt he had more or less fulfilled his goals.
 
 His goals are now different. After realizing that there were some design errors impossible to fix in Node.js, he decided to create another JavaScript (also TypeScript) runtime built with V8: Deno (in Rust). Deno 1.0.0 will be finally released on 13th May 2020.
 
@@ -19,17 +19,16 @@ We'll see how Deno works and its differences with Node, implementing a simple ch
 
 **We will cover the following:**
 
-* [Installing Deno](#installing-deno)
-* [Simple "Hello World"](#simple-hello-world)
-* [Serve an index.html](#serve-an-indexhtml)
-* [Using WebSockets](#using-websockets)
-* [Third-party and deps.ts convention](#third-party-and-depsts-convention)
-* [Testing](#testing)
-* [Debugging](#debugging)
-* [Conclusion](#conclusion)
-* [Code of this article](#code-of-this-article)
-* [References](#references)
-
+- [Installing Deno](#installing-deno)
+- [Simple "Hello World"](#simple-hello-world)
+- [Serve an index.html](#serve-an-indexhtml)
+- [Using WebSockets](#using-websockets)
+- [Third-party and deps.ts convention](#third-party-and-depsts-convention)
+- [Testing](#testing)
+- [Debugging](#debugging)
+- [Conclusion](#conclusion)
+- [Code of this article](#code-of-this-article)
+- [References](#references)
 
 ## Installing Deno
 
@@ -89,8 +88,7 @@ ENVIRONMENT VARIABLES:
 
 In case that you are using Visual Studio Code, I recommend to install this plugin to ease working with Deno:
 
-* https://marketplace.visualstudio.com/items?itemName=axetroy.vscode-deno
-
+- https://marketplace.visualstudio.com/items?itemName=axetroy.vscode-deno
 
 ## Simple "Hello World"
 
@@ -107,7 +105,7 @@ And in the shell:
 
 ```bh
 ➜  deno run example.ts
-Compile file:///Users/aralroca/deno/example.ts
+Compile file:///Users/aralroca/example.ts
 Hello from Deno 🖐
 ```
 
@@ -133,32 +131,33 @@ We are going to create two files: `server.ts` and `index.html`.
     <meta charset="utf-8" />
     <title>Example using Deno</title>
   </head>
-  <body>index.html served correctly</body>
+  <body>
+    index.html served correctly
+  </body>
 </html>
 ```
-
 
 <small>server.ts</small>
 
 ```js
-import { listenAndServe } from "https://deno.land/std/http/server.ts";
+import { listenAndServe } from 'https://deno.land/std/http/server.ts'
 
 listenAndServe({ port: 3000 }, async (req) => {
-  if (req.method === "GET" && req.url === "/") {
+  if (req.method === 'GET' && req.url === '/') {
     req.respond({
       status: 200,
       headers: new Headers({
-        "content-type": "text/html",
+        'content-type': 'text/html',
       }),
-      body: await Deno.open("./index.html"),
-    });
+      body: await Deno.open('./index.html'),
+    })
   }
-});
+})
 
-console.log("Server running on localhost:3000");
+console.log('Server running on localhost:3000')
 ```
 
-We can use ESmodules by default instead of Common.js, indicating the file extension always at the end. Moreover, it supports the latest features as `async-await`. 
+We can use ESmodules by default instead of Common.js, indicating the file extension always at the end. Moreover, it supports the latest features as `async-await`.
 
 Also, we don't need to worry about formatting anymore. Instead of using tools as Prettier, we can format the files with `deno fmt` command.
 
@@ -169,7 +168,6 @@ The first time `deno run server.ts` runs, we'll see two differences with respect
 2. It throws an error `Uncaught PermissionDenied: network access to "127.0.0.1:3000", run again with the --allow-net flag`. Deno is secure by default. This means that we can't access to the net or read a file (index.html). This is one of the big improvements over Node. In Node any CLI library could do many things without our consent. With Deno it's possible, for example, to allow reading access only in one folder: `deno --allow-read=/etc`. To see all permission flags, run `deno run -h`.
 
 Now we are ready to serve `index.html`:
-
 
 ```bh
 ➜ deno run --allow-net --allow-read server.ts
@@ -189,36 +187,36 @@ To continue implementing our simple chat app, let's create a new file `chat.ts` 
 import {
   WebSocket,
   isWebSocketCloseEvent,
-} from "https://deno.land/std/ws/mod.ts";
-import { v4 } from "https://deno.land/std/uuid/mod.ts";
+} from 'https://deno.land/std/ws/mod.ts'
+import { v4 } from 'https://deno.land/std/uuid/mod.ts'
 
-const users = new Map<string, WebSocket>();
+const users = new Map<string, WebSocket>()
 
 function broadcast(message: string, senderId?: string): void {
-  if(!message) return
+  if (!message) return
   for (const user of users.values()) {
-    user.send(senderId ? `[${senderId}]: ${message}` : message);
+    user.send(senderId ? `[${senderId}]: ${message}` : message)
   }
 }
 
 export async function chat(ws: WebSocket): Promise<void> {
-  const userId = v4.generate();
+  const userId = v4.generate()
 
   // Register user connection
-  users.set(userId, ws);
-  broadcast(`> User with the id ${userId} is connected`);
+  users.set(userId, ws)
+  broadcast(`> User with the id ${userId} is connected`)
 
   // Wait for new messages
   for await (const event of ws) {
     const message = typeof event === 'string' ? event : ''
 
-    broadcast(message, userId);
+    broadcast(message, userId)
 
     // Unregister user conection
     if (!message && isWebSocketCloseEvent(event)) {
-      users.delete(userId);
-      broadcast(`> User with the id ${userId} is disconnected`);
-      break;
+      users.delete(userId)
+      broadcast(`> User with the id ${userId} is disconnected`)
+      break
     }
   }
 }
@@ -227,35 +225,35 @@ export async function chat(ws: WebSocket): Promise<void> {
 Now, register an endpoint `/ws` to expose the chat on `server.ts`:
 
 ```ts
-import { listenAndServe } from "https://deno.land/std/http/server.ts";
-import { acceptWebSocket, acceptable } from "https://deno.land/std/ws/mod.ts";
-import { chat } from "./chat.ts";
+import { listenAndServe } from 'https://deno.land/std/http/server.ts'
+import { acceptWebSocket, acceptable } from 'https://deno.land/std/ws/mod.ts'
+import { chat } from './chat.ts'
 
 listenAndServe({ port: 3000 }, async (req) => {
-  if (req.method === "GET" && req.url === "/") {
+  if (req.method === 'GET' && req.url === '/') {
     req.respond({
       status: 200,
       headers: new Headers({
-        "content-type": "text/html",
+        'content-type': 'text/html',
       }),
-      body: await Deno.open("./index.html"),
-    });
+      body: await Deno.open('./index.html'),
+    })
   }
 
   // WebSockets Chat
-  if (req.method === "GET" && req.url === "/ws") {
+  if (req.method === 'GET' && req.url === '/ws') {
     if (acceptable(req)) {
       acceptWebSocket({
         conn: req.conn,
         bufReader: req.r,
         bufWriter: req.w,
         headers: req.headers,
-      }).then(chat);
+      }).then(chat)
     }
   }
-});
+})
 
-console.log("Server running on localhost:3000");
+console.log('Server running on localhost:3000')
 ```
 
 To implement our client-side part, we are going to choose Preact to be able to use modules directly without the need of npm, babel and webpack, as we saw on the [previous article](https://aralroca.com/blog/app-with-react-api-without-tools-as-webpack-or-babel).
@@ -270,15 +268,20 @@ To implement our client-side part, we are going to choose Preact to be able to u
   <body>
     <div id="app" />
     <script type="module">
-      import { html, render, useEffect, useState } from 'https://unpkg.com/htm/preact/standalone.module.js'
+      import {
+        html,
+        render,
+        useEffect,
+        useState,
+      } from 'https://unpkg.com/htm/preact/standalone.module.js'
 
       let ws
 
       function Chat() {
         // Messages
         const [messages, setMessages] = useState([])
-        const onReceiveMessage = ({ data }) => setMessages(m => ([...m, data]))
-        const onSendMessage = e => {
+        const onReceiveMessage = ({ data }) => setMessages((m) => [...m, data])
+        const onSendMessage = (e) => {
           const msg = e.target[0].value
 
           e.preventDefault()
@@ -290,21 +293,19 @@ To implement our client-side part, we are going to choose Preact to be able to u
         useEffect(() => {
           if (ws) ws.close()
           ws = new WebSocket(`ws://${window.location.host}/ws`)
-          ws.addEventListener("message", onReceiveMessage)
+          ws.addEventListener('message', onReceiveMessage)
 
           return () => {
-            ws.removeEventListener("message", onReceiveMessage)
+            ws.removeEventListener('message', onReceiveMessage)
           }
         }, [])
 
         return html`
-          ${messages.map(message => html`
-              <div>${message}</div>
-          `)}
+          ${messages.map((message) => html` <div>${message}</div> `)}
 
           <form onSubmit=${onSendMessage}>
-           <input type="text" />
-           <button>Send</button>
+            <input type="text" />
+            <button>Send</button>
           </form>
         `
       }
@@ -321,13 +322,12 @@ Result:
 
 It's a very ugly chat without styles, but functional, because our aim here is to understand how Deno works.
 
-
 ## Third-party and deps.ts convention
 
 We can use third-party libraries in the same way we use the Deno Standard Library, by importing directly the URL of the module.
 
-* STD, Deno core libraries: https://deno.land/std/
-* X, Deno Third-party libraries: https://deno.land/x/
+- STD, Deno core libraries: https://deno.land/std/
+- X, Deno Third-party libraries: https://deno.land/x/
 
 However, the ecosystem in https://deno.land/x/ is quite small yet. But hey, I have good news for you, we can use packages from https://www.pika.dev. Thanks to tools like Parcel or Minibundle we can compile Node libraries into modules to re-use them in Deno projects.
 
@@ -338,7 +338,7 @@ We are going to use the [camel-case](https://www.pika.dev/npm/camel-case) packag
 Let's add this import in our `chat.ts` file:
 
 ```js
-import { camelCase } from 'https://cdn.pika.dev/camel-case@^4.1.1';
+import { camelCase } from 'https://cdn.pika.dev/camel-case@^4.1.1'
 // ...before code
 const message = camelCase(typeof event === 'string' ? event : '')
 // ... before code
@@ -352,14 +352,14 @@ However, if I want to use this `camelCase` helper in more than one file, it's cu
 
 ```js
 // deps.ts file
-export { camelCase } from 'https://cdn.pika.dev/camel-case@^4.1.1';
+export { camelCase } from 'https://cdn.pika.dev/camel-case@^4.1.1'
 ```
 
 and
 
 ```js
 // chat.ts file
-import { camelCase } from './deps.ts';
+import { camelCase } from './deps.ts'
 // ...
 const message = camelCase(typeof event === 'string' ? event : '')
 // ...
@@ -372,9 +372,9 @@ We are going to build a useless `camilize.ts` utility to return the text in came
 ```js
 /**
  * Return the text in camelCase + how many 🐪
- * 
+ *
  * @example "this is an example" -> "thisIsAnExample 🐪🐪🐪"
- * @param text 
+ * @param text
  * @returns {string}
  */
 export function camelize(text: string) {
@@ -385,7 +385,7 @@ export function camelize(text: string) {
 By the way, we can visualize the JSdocs of a file using `deno doc [file]`:
 
 ```
-➜  deno doc camelize.ts 
+➜  deno doc camelize.ts
 function camelize(text: string)
   Return the text in camelCase + how many 🐪
 ```
@@ -393,13 +393,12 @@ function camelize(text: string)
 Let's create a file `test.ts`. The test runner is built into the core of Deno using the `Deno.test()` and we can use assertions using the STD https://deno.land/std/testing/asserts.ts.
 
 ```js
-import { assertStrictEq } from "https://deno.land/std/testing/asserts.ts";
-import { camelize } from "./camelize.ts";
+import { assertStrictEq } from 'https://deno.land/std/testing/asserts.ts'
+import { camelize } from './camelize.ts'
 
-Deno.test("camelize works", async () => {
-  assertStrictEq(camelize("this is an example"), "thisIsAnExample 🐪🐪🐪");
-});
-
+Deno.test('camelize works', async () => {
+  assertStrictEq(camelize('this is an example'), 'thisIsAnExample 🐪🐪🐪')
+})
 ```
 
 To run all tests, we just need to execute `deno test`.
@@ -429,28 +428,28 @@ failures:
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out (0ms)
 ```
 
-Of course it fails because we didn't implemented our utility yet, but still, we can see how the errors feedback are displayed in the shell.
+Of course it fails because we didn't implemented our utility yet, but still, we can see how the errors are displayed in the shell.
 
 After implementing the `camelize` utility:
 
 ```js
-import { camelCase } from "./deps.ts";
+import { camelCase } from './deps.ts'
 
 /**
  * Return the text in camelCase + how many 🐪
- * 
+ *
  * @example "this is an example" -> "thisIsAnExample 🐪🐪🐪"
- * @param text 
+ * @param text
  * @returns {string}
  */
 export function camelize(text: string) {
-  const camelCaseText = camelCase(text);
-  const matches = camelCaseText.match(/[A-Z]/g) || [];
+  const camelCaseText = camelCase(text)
+  const matches = camelCaseText.match(/[A-Z]/g) || []
   const camels = Array.from({ length: matches.length })
-    .map(() => "🐪")
-    .join("");
+    .map(() => '🐪')
+    .join('')
 
-  return `${camelCaseText} ${camels}`;
+  return `${camelCaseText} ${camels}`
 }
 ```
 
@@ -485,7 +484,6 @@ In order to debug with Deno:
 <img src="/images/blog-images/37.png" alt="Debugging with Deno" class="center" />
 <br />
 
-
 ## Conclusion
 
 We learned about how Deno works by creating a simple chat app in TypeScript. We did it without npm, package.json, node_modules, webpack, babel, jest, prettier... because we don't need them, Deno simplifies this.
@@ -494,19 +492,18 @@ We explored important things to begin with a Deno project: Permissions, deno com
 
 I hope this article will be useful to start using Dino 1.0.0 in your projects when it comes out on March 13, 2020.
 
-
 ## Code of this article
 
 I uploaded the code on my GitHub:
 
-* https://github.com/aralroca/chat-with-deno-and-preact
+- https://github.com/aralroca/chat-with-deno-and-preact
 
 ## References
 
-* https://deno.land/
-* https://github.com/denoland/deno/tree/master/docs
-* https://blog.logrocket.com/deno-1-0-what-you-need-to-know/
-* https://twitter.com/flaviocopes/status/1259068673966383105
-* https://www.youtube.com/watch?v=M3BM9TB-8yA
-* https://github.com/denoland/deno
-* https://en.wikipedia.org/wiki/Ryan_Dahl
+- https://deno.land/
+- https://github.com/denoland/deno/tree/master/docs
+- https://blog.logrocket.com/deno-1-0-what-you-need-to-know/
+- https://twitter.com/flaviocopes/status/1259068673966383105
+- https://www.youtube.com/watch?v=M3BM9TB-8yA
+- https://github.com/denoland/deno
+- https://en.wikipedia.org/wiki/Ryan_Dahl
