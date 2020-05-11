@@ -9,5 +9,5 @@
 <br />
 <br />
 <p align="center">
-  If you found some issue/errata in my blog feel free to create an issue or PR! 😄
+  If you found some issue/typo in my blog feel free to create an issue or PR! 😄
 </p>

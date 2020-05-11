@@ -490,7 +490,7 @@ We learned about how Deno works by creating a simple chat app in TypeScript. We 
 
 We explored important things to begin with a Deno project: Permissions, deno commands, how to use deno internals, how to use third-party dependencies, serving a file, websockets, formating files, testing, debugging, etc.
 
-I hope this article will be useful to start using Dino 1.0.0 in your projects when it comes out on March 13, 2020.
+I hope this article will be useful to start using Deno 1.0.0 in your projects when it comes out on March 13, 2020.
 
 ## Code of this article
 
