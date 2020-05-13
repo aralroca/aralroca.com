@@ -404,7 +404,7 @@ Deno.test('camelize works', async () => {
 To run all tests, we just need to execute `deno test`.
 
 ```
-➜  deno deno test
+➜  deno test
 Compile file:///Users/aralroca/test.ts
 running 1 tests
 test camelize works ... FAILED (0ms)
