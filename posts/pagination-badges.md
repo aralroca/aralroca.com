@@ -20,7 +20,7 @@ The helper accepts a list of 3 options:
 * `pages` - Total number of pages to display.
 * `numBadges` (optional). Number of badges to be generated, by default is 5.
 
- It returns an array with the badges as `number`, filling `null` for the separators. This is implemented this way (in pure JavaScript instead of returning for example JSX) to reuse it everywhere: (P)React, Vue, Svelte, Angular... Even in Node or Deno.
+It returns an array with the badges as `number`, filling `null` for the separators. This is implemented this way (in pure JavaScript instead of returning for example JSX) to reuse it everywhere: (P)React, Vue, Svelte, Angular... Even in Node or Deno.
 
 ```js
 export default function pagesBadges({ currentPage, pages, numBadges = 5 }) {
