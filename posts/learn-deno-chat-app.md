@@ -367,7 +367,7 @@ const message = camelCase(typeof event === 'string' ? event : '')
 
 ## Testing
 
-We are going to build a useless `camilize.ts` utility to return the text in camelCase with a nice extra, it includes one 🐪 per uppercase letter. Why? To see how to test it with Deno.
+We are going to build a useless `camelize.ts` utility to return the text in camelCase with a nice extra, it includes one 🐪 per uppercase letter. Why? To see how to test it with Deno.
 
 ```js
 /**
