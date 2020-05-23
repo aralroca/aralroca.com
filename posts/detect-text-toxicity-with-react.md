@@ -1,12 +1,13 @@
 ---
 title: Detect text toxicity using React
-description: Discover how to detect threatening language, insults, obscenities, identity-based hate or sexually explicit language on texts using React. 
+description: Discover how to detect threatening language, insults, obscenities, identity-based hate or sexually explicit language on texts using React.
 tags: tensorflow, machine-learning, javascript, react, hooks
 created: 04/28/2020
 cover_image: /images/cover-images/5_cover_image.jpg
 cover_image_mobile: /images/cover-images/5_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/5_cover_image_vert.jpg
 cover_color: '#B4AF9E'
+dev_to: detect-text-toxicity-using-react-2d46
 ---
 
 In a previous article I explained **how to start with Tensorflow.js**, from creating a simple linear regression model to using pretrained models as posenet. I **highly recommend** to read [this article](/blog/first-steps-with-tensorflowjs) to understand how it works.
@@ -48,7 +49,6 @@ const predictions = useTextToxicity('This is an example')
   },
   ...
 */
-
 ```
 
 I uploaded the npm package so you can use it by doing:
@@ -62,49 +62,45 @@ And the GitHub repo 👉 https://github.com/aralroca/react-text-toxicity
 We can connect the `useTextToxicity` hook to a `state` by using:
 
 ```js
-const [value, setValue] = useState("");
-const predictions = useTextToxicity(value);
+const [value, setValue] = useState('')
+const predictions = useTextToxicity(value)
 
 //...
-<textarea
-  value={value}
-  onChange={(e) => setValue(e.target.value)}
-/>
+;<textarea value={value} onChange={(e) => setValue(e.target.value)} />
 ```
 
 This way, everytime that the value changes, the predictions will be updated (we can predict "on the fly").
 
-
-Here's the full example code of *Fig 1*:
+Here's the full example code of _Fig 1_:
 
 ```js
-import React, { Fragment, useState } from "react";
-import useTextToxicity from "react-text-toxicity";
+import React, { Fragment, useState } from 'react'
+import useTextToxicity from 'react-text-toxicity'
 
 function Toxicity({ predictions }) {
-  const style = { margin: 10 };
+  const style = { margin: 10 }
 
-  if (!predictions) return <div style={style}>Loading predictions...</div>;
+  if (!predictions) return <div style={style}>Loading predictions...</div>
 
   return (
     <div style={style}>
       {predictions.map(({ label, match, probability }) => (
         <div style={{ margin: 5 }} key={label}>
-          {`${label} - ${probability} - ${match ? "🤢" : "🥰"}`}
+          {`${label} - ${probability} - ${match ? '🤢' : '🥰'}`}
         </div>
       ))}
     </div>
-  );
+  )
 }
 
 export default function Index() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('')
 
   // predictions are updated every time the value is updated
-  const predictions = useTextToxicity(value);
+  const predictions = useTextToxicity(value)
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: 'flex' }}>
       <div>
         <div>Write something</div>
         <textarea
@@ -115,16 +111,15 @@ export default function Index() {
       </div>
       {value && <Toxicity predictions={predictions} />}
     </div>
-  );
+  )
 }
 ```
-
 
 ## Under the "hook"
 
 Under the hood, the hook is using Tensorflow.js toxicity model:
 
-* https://github.com/tensorflow/tfjs-models/tree/master/toxicity
+- https://github.com/tensorflow/tfjs-models/tree/master/toxicity
 
 If you need to implement the same outside React, you can use this repo.
 

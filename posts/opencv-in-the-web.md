@@ -7,6 +7,7 @@ cover_image: /images/cover-images/6_cover_image.jpg
 cover_image_mobile: /images/cover-images/6_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/6_cover_image_vert.jpg
 cover_color: '#2D2B30'
+dev_to: opencv-directly-in-the-browser-webassembly-webworker-423i
 ---
 
 We'll see how to use the OpenCV library directly on the browser! To do this, we will compile OpenCV to webassembly and then run it inside a webworker.

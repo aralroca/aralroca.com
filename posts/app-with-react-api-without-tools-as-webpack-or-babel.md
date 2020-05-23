@@ -7,6 +7,7 @@ cover_image: /images/cover-images/7_cover_image.jpg
 cover_image_mobile: /images/cover-images/7_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/7_cover_image_vert.jpg
 cover_color: '#171920'
+dev_to: app-with-react-api-without-tools-as-webpack-or-babel-4170
 ---
 
 There are tools like Webpack or Babel that seem indispensable when we work as frontends. But, could we make an application without such tools? Even without package.json or bundles? And being able to continue using the React API? Let's see how.

@@ -1,16 +1,12 @@
 import Head from 'next/head'
-import fs from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
-import readingTime from 'reading-time'
 import { useRouter } from 'next/router'
 import { useState, useEffect, useRef } from 'react'
 
 import Newsletter from '../../components/Newsletter'
+import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
 import filterSearch from '../../utils/filterSearch'
-import niceDateText from '../../utils/niceDateText'
-import PostItem from '../../components/PostItem'
+import getAllPosts from '../../utils/getAllPosts'
 
 function Searcher({ search, onSearch }) {
   const label = 'Search posts'
@@ -40,7 +36,6 @@ export default function Blog({ posts, tags }) {
     router.replace(url, undefined, { shallow: true })
   }
 
-
   // Update state from search param
   useEffect(() => setSearch(router.query.q), [router.query.q])
 
@@ -68,7 +63,9 @@ export default function Blog({ posts, tags }) {
         ))}
       </div>
 
-      {filteredPosts.map((post) => <PostItem key={post.slug} {...post} />)}
+      {filteredPosts.map((post) => (
+        <PostItem key={post.slug} {...post} />
+      ))}
 
       {filteredPosts.length === 0 && (
         <div style={{ marginTop: 50, textAlign: 'center' }}>
@@ -89,21 +86,7 @@ export default function Blog({ posts, tags }) {
 }
 
 export const getStaticProps = async () => {
-  const posts = fs
-    .readdirSync('posts')
-    .map((slug) => {
-      const { data, content } = matter(
-        fs.readFileSync(path.join('posts', slug))
-      )
-      return {
-        slug: slug.replace('.md', ''),
-        metadata: data,
-        timeToRead: readingTime(content),
-        date: niceDateText(new Date(data.created)),
-      }
-    })
-    .sort((a, b) => new Date(b.metadata.created) - new Date(a.metadata.created))
-
+  const posts = getAllPosts()
   const tags = posts.reduce((t, post) => {
     const postTags = post.metadata.tags.split(',')
     postTags.forEach((tag) => {
