@@ -7,6 +7,7 @@ cover_image: /images/cover-images/4_cover_image.jpg
 cover_image_mobile: /images/cover-images/4_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/4_cover_image_vert.jpg
 cover_color: '#6A6A6C'
+dev_to: next-translate-released-12ek
 ---
 
 After having some trouble with `next-i18next` library to internationalize pages, we decided to create an alternative library! With some differences:

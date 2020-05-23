@@ -2,11 +2,20 @@ import Head from 'next/head'
 import fs from 'fs'
 
 import Newsletter from '../../components/Newsletter'
+import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
 import clearPage from '../../utils/clearPage'
+import getMorePosts from '../../utils/getMorePosts'
 import readPost from '../../utils/readPost'
 
-export default function Post({ date, __html, data, timeToRead }) {
+export default function Post({
+  date,
+  slug,
+  __html,
+  data,
+  timeToRead,
+  morePosts,
+}) {
   const tags = data.tags.split(',')
 
   return (
@@ -34,16 +43,18 @@ export default function Post({ date, __html, data, timeToRead }) {
           content={data.description}
         />
       </Head>
-      <div style={{
-        backgroundColor: data.cover_color,
-        backgroundImage: `url(${data.cover_image})`,
-        backgroundSize: 'cover',
-        marginLeft: -30,
-        marginTop: -30,
-        maxWidth: 'calc(100% + 60px)',
-        paddingTop: '48%',
-        width: 960,
-      }} />
+      <div
+        style={{
+          backgroundColor: data.cover_color,
+          backgroundImage: `url(${data.cover_image})`,
+          backgroundSize: 'cover',
+          marginLeft: -30,
+          marginTop: -30,
+          maxWidth: 'calc(100% + 60px)',
+          paddingTop: '48%',
+          width: 960,
+        }}
+      />
       <h1 className="post-title">{data.title}</h1>
       <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
       <div className="tags" style={{ marginBottom: 30 }}>
@@ -52,7 +63,51 @@ export default function Post({ date, __html, data, timeToRead }) {
         ))}
       </div>
       <div className="post" dangerouslySetInnerHTML={{ __html }} />
+      <div className="end-post">
+        {data.dev_to && (
+          <>
+            <a
+              href={`https://dev.to/aralroca/${data.dev_to}#comments`}
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Discuss on Dev.to"
+            >
+              Discuss on Dev.to
+            </a>
+            <span> • </span>
+          </>
+        )}
+        <a
+          href={`https://twitter.com/search?q=${encodeURI(
+            `https://aralroca.com/blog/${slug}`
+          )}`}
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Discuss on Twitter"
+        >
+          Discuss on Twitter
+        </a>
+        <span> • </span>
+        <a
+          href={`https://github.com/aralroca/aralroca.com/blob/master/posts/${slug}.md`}
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Edit post on GitHub"
+        >
+          Edit on GitHub
+        </a>
+      </div>
       <Newsletter />
+      {
+        morePosts.length > 0 && (
+          <>
+            <b className="related-posts-title">More...</b>
+            <div className="related-posts">
+            {morePosts.map(p => <PostItem key={p.slug} {...p} />)}
+            </div>
+          </>
+        )
+      }
     </>
   )
 }
@@ -69,9 +124,13 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const post = readPost(slug)
+  const morePosts = await getMorePosts(post, slug)
+
   return {
     props: {
       ...post,
+      slug,
+      morePosts,
       __html: post.__html.replace(/<img /g, '<img loading="lazy" '),
     },
   }

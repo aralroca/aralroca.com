@@ -7,6 +7,7 @@ cover_image: /images/cover-images/3_cover_image.jpg
 cover_image_mobile: /images/cover-images/3_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/3_cover_image_vert.jpg
 cover_color: '#D2C9BE'
+dev_to: exploring-htmlportalelement-with-react-1m56
 ---
 
 HTMLPortalElement is a draft of a new HTML Element, very similar to iframes but with the big difference that it allows to navigate to the content of the "iframe" by using a page transition.
