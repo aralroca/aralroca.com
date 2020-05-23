@@ -290,15 +290,13 @@ table th {
 
 .related-posts {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .related-posts > div {
-  flex: 0 calc(50% - 40px);
-  margin: 20px;
+  flex: 0 calc(50% - 20px);
   min-width: 260px;
-  max-width: 360px;
 }
 
 .related-posts-title {
@@ -515,7 +513,7 @@ h2 {
   min-width: 70px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 612px) {
   .logo span {
     display: none;
   }
@@ -531,5 +529,13 @@ h2 {
   .post-list-item .post-thumb {
     width: 100%;
     background-image: var(--thumb-img-mobile);
+  }
+
+  .related-posts {
+    justify-content: center;
+  }
+
+  .related-posts > div {
+    flex: 0 100%;
   }
 }
