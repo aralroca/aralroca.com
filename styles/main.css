@@ -306,6 +306,7 @@ table th {
 }
 
 .related-posts .post-list-item {
+  margin: 20px 0 30px;
   flex-wrap: wrap;
 }
 
