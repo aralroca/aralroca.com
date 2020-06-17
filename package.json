@@ -16,7 +16,7 @@
   "dependencies": {
     "globby": "11.0.1",
     "gray-matter": "4.0.2",
-    "highlight.js": "10.1.0",
+    "highlight.js": "10.1.1",
     "marked": "1.1.0",
     "next": "9.4.4",
     "preact": "10.4.4",

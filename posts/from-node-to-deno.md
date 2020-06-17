@@ -91,25 +91,14 @@ await Promise.all([webview1.run(), webview2.run()])
 
 [Forever](https://github.com/foreversd/forever) and [PM2](https://github.com/Unitech/pm2) are CLI tools for ensuring that a given script runs continuously as a daemon. Unlike Forever, PM2 is more complete and also serves as load balancer. Both are very useful in Node, but can we use them in Deno?
 
-Forever is intended for Node only, so using it is not feasible. On the other hand, with PM2 we can run non-node scripts, so we could still use it for Deno.
+Forever is intended for Node only, so using it is not feasible. On the other hand, with PM2 we can use an interpreter.
 
 <img src="/images/blog-images/56.png" alt="PM2 logo" class="center transparent keepcolor" />
 
-Creating an `app.sh` file
-
-```bh
-#!/bin/bash
-deno run -A myCode.ts
+```
+➜ pm2 start app.ts --interpreter="deno" --interpreter-args="run --allow-net" 
 ```
 
-And
-
-```
-➜ pm2 start ./app.sh
-```
-
-<br />
-<img src="/images/blog-images/41.png" alt="Running Deno with PM2" class="center" />
 <br />
 
 ## Express / Koa
