@@ -100,8 +100,6 @@ Forever is intended for Node only, so using it is not feasible. On the other han
 ```
 
 <br />
-<img src="/images/blog-images/41.png" alt="Running Deno with PM2" class="center" />
-<br />
 
 ## Express / Koa
 
