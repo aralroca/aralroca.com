@@ -7,11 +7,12 @@ cover_image: /images/cover-images/11_cover_image.jpg
 cover_image_mobile: /images/cover-images/11_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/11_cover_image_vert.jpg
 cover_color: '#7C7671'
+dev_to: discovering-snowpack-29f3
 ---
 
-In today's article we'll do some exploring to see what [Snowpack](https://www.snowpack.dev/) is and what are its advantages.
+In today's article, we'll do some exploring to see what [Snowpack](https://www.snowpack.dev/) is and what are its advantages.
 
-In the last few months I've heard a lot of talk about Snowpack and I hadn't given it a chance. The time has come.
+In the last few months, I've heard a lot of talk about Snowpack and I hadn't given it a chance. The time has come.
 
 <img src="/images/blog-images/snowpack_logo.png" alt="Snowpack logo" class="center transparent" />
 
@@ -80,7 +81,7 @@ The main question here should be "Does it make sense to keep using a bundler in 
 
 Snowpack was intended to use an unbundled development, using directly ESM. Among other advantages:
 
-- Much faster (no-wait build time, reflecting changes immediatly)
+- Much faster (no-wait build time, reflecting changes immediately)
 - Easier to debug
 - Project size doesn't affect dev speed
 - Simpler tooling
