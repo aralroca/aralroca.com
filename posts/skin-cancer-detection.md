@@ -1,6 +1,6 @@
 ---
 title: Classify any kind of image. Skin cancer detection example
-created: 06/28/2020
+created: 06/29/2020
 description: Learn how to implement any kind of image recognition by implementing a skin cancer detection in Tensorflow.js.
 tags: tensorflow, javascript, machine-learning, react
 cover_image: /images/cover-images/12_cover_image.jpg
@@ -140,14 +140,14 @@ export default function useLoadSkinDetectionModel() {
 
   useEffect(() => {
     async function loadModel() {
-      const mobilenet = await tf.loadModel(pretrainedModel.url);
+      const mobilenet = await tf.loadLayersModel(pretrainedModel.url);
       const layer = mobilenet.getLayer(pretrainedModel.layer);
       const pretrained = await tf.model({
-        inputs: [mobilenet.inputs[0]],
+        inputs: mobilenet.inputs,
         outputs: layer.output,
       });
 
-      const model = await tf.loadModel(
+      const model = await tf.loadLayersModel(
         "./model/ml-classifier-malignant-benign.json",
       );
 
@@ -245,4 +245,5 @@ By understanding how we have implemented this detector, the same example can be 
 ## References
 
 * https://github.com/thekevinscott/ml-classifier-ui
+* https://thekevinscott.com/image-classification-with-javascript/
 * https://www.tensorflow.org/js/tutorials
