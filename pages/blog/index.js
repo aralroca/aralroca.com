@@ -3,10 +3,13 @@ import { useRouter } from 'next/router'
 import { useState, useEffect, useRef } from 'react'
 
 import Newsletter from '../../components/Newsletter'
+import Pagination from '../../components/Paginator'
 import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
 import filterSearch from '../../utils/filterSearch'
 import getAllPosts from '../../utils/getAllPosts'
+
+const itemsPerPage = 10
 
 function Searcher({ search, onSearch }) {
   const label = 'Search posts'
@@ -25,10 +28,15 @@ function Searcher({ search, onSearch }) {
 
 export default function Blog({ posts, tags }) {
   const router = useRouter()
+  const { query } = router
   const key = useRef(Date.now())
-  const [search, setSearch] = useState(router.query.q || '')
+  const [search, setSearch] = useState(query.q || '')
 
   const filteredPosts = search ? posts.filter(filterSearch(search)) : posts
+  const [currentPage, setCurrentPage] = useState(parseInt(query.page) || 1)
+  const pages = Math.ceil(filteredPosts.length / itemsPerPage)
+  const lastIndex = itemsPerPage * currentPage
+  const firstIndex = lastIndex - itemsPerPage
 
   function onSearch(e) {
     const val = e.target.value.toLowerCase()
@@ -36,8 +44,9 @@ export default function Blog({ posts, tags }) {
     router.replace(url, undefined, { shallow: true })
   }
 
-  // Update state from search param
-  useEffect(() => setSearch(router.query.q), [router.query.q])
+  // Update state from param
+  useEffect(() => setSearch(query.q), [query.q])
+  useEffect(() => setCurrentPage(parseInt(query.page) || 1), [query.page])
 
   return (
     <>
@@ -63,9 +72,17 @@ export default function Blog({ posts, tags }) {
         ))}
       </div>
 
-      {filteredPosts.map((post) => (
+      {filteredPosts.slice(firstIndex, lastIndex).map((post) => (
         <PostItem key={post.slug} {...post} />
       ))}
+
+      {pages > 1 && !console.log(pages) && (
+        <Pagination
+          href={(p) => `/blog?q=${query.q || ''}&page=${p}`}
+          currentPage={currentPage}
+          pages={pages}
+        />
+      )}
 
       {filteredPosts.length === 0 && (
         <div style={{ marginTop: 50, textAlign: 'center' }}>
