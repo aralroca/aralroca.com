@@ -76,7 +76,7 @@ export default function Blog({ posts, tags }) {
         <PostItem key={post.slug} {...post} />
       ))}
 
-      {pages > 1 && !console.log(pages) && (
+      {pages > 1 && (
         <Pagination
           href={(p) => `/blog?q=${query.q || ''}&page=${p}`}
           currentPage={currentPage}
