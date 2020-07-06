@@ -1,12 +1,12 @@
 ---
-title: Classify any kind of image on the browser
+title: Classify any image on the browser in few steps
 created: 07/07/2020
 description: Learn how to implement any kind of image recognition by implementing a cat/dog classifier in Tensorflow.js.
 tags: tensorflow, javascript, machine-learning, react
 cover_image: /images/cover-images/12_cover_image.jpeg
 cover_image_mobile: /images/cover-images/12_cover_image_mobile.jpeg
 cover_image_vert: /images/cover-images/12_cover_image_vert.jpeg
-cover_color: '#030102'
+cover_color: '#D5CBC0'
 ---
 
 This article is a small tutorial to implement an application that predicts if is a cat or dog image. To do this we'll use Tensorflow.js to make the prediction directly on the browser.
@@ -50,19 +50,19 @@ Once our dataset of images is ready, we can train the model.
 
 First thing we have to know is what kind of model we want. We'll train a [Image Classification Model](https://www.tensorflow.org/tutorials/images/classification), which after a given input image will say if it's cat or dog.
 
-There is a model called [Mobilenet](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet), already trained to classify images. The problem? It does not classify the images we want. To fix this we'll use a technique called [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning), to use its "intelligence" to recognize our images.
+There is a model called [Mobilenet](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet), already trained to classify [1000 different images](https://github.com/tensorflow/tfjs-examples/blob/master/mobilenet/imagenet_classes.js). The problem? It does not classify the images we want. To fix this we'll use a technique called [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning), to use its "intelligence" to recognize our images.
 
 Currently, we can transfer this knowledge without coding thanks to some open source tools. That's what we're going to do, we'll leave the code for the usage part of this model.
 
-First, we're going to use this tool:
+Let's use this tool:
 
 - https://thekevinscott.github.io/ml-classifier-ui/
 
-This tool uses a layer of the neural network located at the end (`conv_pw_13_relu`). This means that it works well for images similar to the one MobileNet has trained with. If you want to use more different images, it is likely that it will not do well and you should use an earlier layer. The more the layer is at the end, the faster it will be and the less resources will be used when training the model.
+This tool uses a layer of the MobileNet neural network located at the end (`conv_pw_13_relu`). This means that it works well for images similar to the one MobileNet has trained with (animals, instruments, everyday objects...). If you want to use more different images (for example skin freckles to detect a melanoma), it is likely that it will not do well and you should use an earlier layer. The more the layer is at the end, the faster it will be and the less resources will be used when training the model.
 
 Now you need to drag&drop the `training_set` folder from the downloaded dataset and wait. That's all.
 
-> **Note:** Depending on your device GPU performance it can take a long time. If you have chosen a bigger dataset or another layer and your device doesn't have enough resources, you can use the [Colab](https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/images/transfer_learning.ipynb) environment, modifying the dog-cat example for yours.
+> **Note:** Depending on your device GPU performance it can take a long time. If you have chosen a bigger dataset or another layer and your browser doesn't have enough resources, you can use the [ml-classifier](https://github.com/thekevinscott/ml-classifier) in a Node.js environment.
 
 <br />
 <img src="/images/blog-images/training-cats-dogs-classifier.gif" alt="Training the model" class="center" />
@@ -251,7 +251,7 @@ export default function CatsDogsDetection() {
 
 What it does:
 
-1. Using the input file, we show in the `<img>` element the image with the resolution of 224x224 (important to keep this size).
+1. Using the input file, we show in the `<img>` element the image preview with 224x224 of resolution (important to keep it).
 2. Once the image is loaded (onLoad event) we make the prediction.
 
 And the result:
