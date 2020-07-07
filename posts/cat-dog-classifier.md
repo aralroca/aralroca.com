@@ -1,5 +1,5 @@
 ---
-title: 'Image classification: in the browser'
+title: 'Image classifier: in the browser'
 created: 07/07/2020
 description: Learn how to implement any kind of image recognition in the browser by implementing a cat/dog classifier in Tensorflow.js.
 tags: tensorflow, javascript, machine-learning, react
