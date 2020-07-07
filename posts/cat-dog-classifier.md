@@ -7,6 +7,7 @@ cover_image: /images/cover-images/12_cover_image.jpeg
 cover_image_mobile: /images/cover-images/12_cover_image_mobile.jpeg
 cover_image_vert: /images/cover-images/12_cover_image_vert.jpeg
 cover_color: '#D5CBC0'
+dev_to: classify-any-image-on-the-browser-in-few-steps-pmm
 ---
 
 This is a small tutorial to implement an application that predicts if it's a cat or a dog image. To do this we'll use Tensorflow.js to make the prediction directly in the browser.
