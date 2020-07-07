@@ -13,7 +13,7 @@ This is a small tutorial to implement an application that predicts if it's a cat
 
 I recommend reading [this other article](https://aralroca.com/blog/first-steps-with-tensorflowjs) where I introduce Tensorflow.js.
 
-However, after this you'll be able to classify any kind of image in an easy way even without any knowledge of ML. Also, it can be replicated for any image classification problem.
+However, after this, you'll be able to classify any kind of image in an easy way even without any knowledge of ML. Also, it can be replicated for any image classification problem.
 
 **We will cover the following:**
 
@@ -27,7 +27,7 @@ However, after this you'll be able to classify any kind of image in an easy way 
 - [Why in the browser?](#why-in-the-browser)
 - [Code of this article](#code-of-this-article)
 - [Conclusion](#conclusion)
-- [References and acknowledgements](#references-and-acknowledgements)
+- [References and acknowledgments](#references-and-acknowledgments)
 
 ## The dataset
 
@@ -40,15 +40,15 @@ For this, I'm going to use this dataset from Kaggle, with 10.000 images of cats/
 
 - https://www.kaggle.com/tongpython/cat-and-dog
 
-Thus, you only need to donwload it.
+Thus, you only need to download it.
 
-> **Note:** On [Kaggle](https://www.kaggle.com/datasets) you'll find a lot of available datasets, its a good place to search for data. For our purposes, we'll choose a small dataset of 218MB. I recommend using one not too big at least for now, so you won't end up with your device's resources.
+> **Note:** On [Kaggle](https://www.kaggle.com/datasets) you'll find a lot of available datasets, it's a good place to search for data. For our purposes, we'll choose a small dataset of 218MB. I recommend using one not too big at least for now, so you won't end up with your device's resources.
 
 ## Training the model
 
 Once our dataset of images is ready, we can train the model.
 
-First thing we have to know is what kind of model we want. We'll train a [Image Classification Model](https://www.tensorflow.org/tutorials/images/classification), which after a given input image will say if it's cat or dog.
+The first thing we have to know is what kind of model we want. We'll train an [Image Classification Model](https://www.tensorflow.org/tutorials/images/classification), which after a given input image will say if it's a cat or dog.
 
 There is a model called [Mobilenet](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet), already trained to classify [1000 different images](https://github.com/tensorflow/tfjs-examples/blob/master/mobilenet/imagenet_classes.js). The problem? It does not classify the images we want. To fix this we'll use a technique called [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning), to use its "intelligence" to recognize our images.
 
@@ -183,7 +183,7 @@ We already have the loaded model. Now we are going to replace the displayed text
 
 ### Using the model
 
-In this tutorial we are going to implement something not too complex by simply loading an image from the filesystem. It will display the prediction (cat or dog). We could complicate it by adding a camera, but this is not the purpose of the article.
+In this tutorial, we are going to implement something not too complex by simply loading an image from the filesystem. It will display the prediction (cat or dog). We could complicate it by adding a camera, but this is not the purpose of the article.
 
 What we're going to do to get the prediction is this:
 
@@ -268,7 +268,7 @@ Here are several reasons:
 
 - **Faster predictions**: It's not necessary to make a request to any server from our application, so we save the time it takes for the request.
 - **Working offline**: As in the previous point, we can make predictions with our device (mobile, tablet, desktop...) even without the Internet.
-- **Cost zero in money**: We just need to put our app on a CDN. If 2000 people are using the application at the same time to make predictions, we won't sature any server as there is no need even to have a server. Each user will make the predictions directly from their device.
+- **Cost zero in money**: We just need to put our app on a CDN. If 2000 people are using the application at the same time to make predictions, we won't saturate any server as there is no need even to have a server. Each user will make the predictions directly from their device.
 - **Open-source models**: Instead of hiding the models behind a server by using them with JavaScript, we are publishing them in such a way that any developer who likes the application can use the same models for their project.
 - **Privacy**: The data is not stored in any external database nor travels on the net, it stays on the device.
 
@@ -284,13 +284,13 @@ And the demo link:
 
 ## Conclusion
 
-We've seen how to solve any kind of image classification problem with a few steps. As an example we have implemented a cat/dog classifier. The same example can be replicated for any type of image classification:
+We've seen how to solve any kind of image classification problem with a few steps. As an example, we have implemented a cat/dog classifier. The same example can be replicated for any type of image classification:
 
 - Skin cancer detection
 - Rock-paper-scissors game
 - etc
 
-## References and acknowledgements
+## References and acknowledgments
 
 I want to thank [Kevin Scott](https://github.com/thekevinscott) (author of ml-classifier tool) for this article. He helped me understand and solve some problems.
 
