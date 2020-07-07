@@ -9,11 +9,11 @@ cover_image_vert: /images/cover-images/12_cover_image_vert.jpeg
 cover_color: '#D5CBC0'
 ---
 
-This article is a small tutorial to implement an application that predicts if is a cat or dog image. To do this we'll use Tensorflow.js to make the prediction directly on the browser.
+This is a small tutorial to implement an application that predicts if it's a cat or a dog image. To do this we'll use Tensorflow.js to make the prediction directly on the browser.
 
 I recommend reading [this other article](https://aralroca.com/blog/first-steps-with-tensorflowjs) where I introduce Tensorflow.js.
 
-However, with this tutorial you'll be able to classify any kind of image in an easy way even without any knowledge of ML. Also, it can be replicated for any image classification problem.
+However, after this you'll be able to classify any kind of image in an easy way even without any knowledge of ML. Also, it can be replicated for any image classification problem.
 
 **We will cover the following:**
 
@@ -36,13 +36,13 @@ Before we start training a model, we need to have many images of cats and dogs, 
 - Recopilate our custom dataset
 - Use an existing dataset
 
-For this tutorial, I'm going to use this dataset from Kaggle, with 10.000 images of cats/dogs:
+For this, I'm going to use this dataset from Kaggle, with 10.000 images of cats/dogs:
 
 - https://www.kaggle.com/tongpython/cat-and-dog
 
 Thus, you only need to donwload it.
 
-> **Note:** On [Kaggle](https://www.kaggle.com/datasets) you'll find a lot of available datasets, its a good place to search for data. For our purposes, we'll choose an small dataset of 218MB. I recommend using one not too big at least for now, so you won't end up with your device's resources.
+> **Note:** On [Kaggle](https://www.kaggle.com/datasets) you'll find a lot of available datasets, its a good place to search for data. For our purposes, we'll choose a small dataset of 218MB. I recommend using one not too big at least for now, so you won't end up with your device's resources.
 
 ## Training the model
 
@@ -58,9 +58,9 @@ Let's use this tool:
 
 - https://thekevinscott.github.io/ml-classifier-ui/
 
-This tool uses a layer of the MobileNet neural network located at the end (`conv_pw_13_relu`). This means that it works well for images similar to the one MobileNet has trained with (animals, instruments, everyday objects...). If you want to use more different images (for example skin freckles to detect a melanoma), it is likely that it will not do well and you should use an earlier layer. The more the layer is at the end, the faster it will be and the less resources will be used when training the model.
+This tool uses a layer of the MobileNet neural network located at the end (`conv_pw_13_relu`). This means that it works well for images similar to the ones MobileNet has trained with (animals, instruments, everyday objects...). If you want to use more different images (for example skin freckles to detect a melanoma), it may not work unless you use an earlier layer. The closer the layer is to the end, the faster it'll be and the less resources will be used when training the model.
 
-Now you need to drag&drop the `training_set` folder from the downloaded dataset and wait. That's all.
+Now you need to drag and drop the `training_set` folder from the downloaded dataset and wait. That's all.
 
 > **Note:** Depending on your device GPU performance it can take a long time. If you have chosen a bigger dataset or another layer and your browser doesn't have enough resources, you can use the [ml-classifier](https://github.com/thekevinscott/ml-classifier) in a Node.js environment.
 
@@ -69,9 +69,9 @@ Now you need to drag&drop the `training_set` folder from the downloaded dataset 
 
 ## Testing our model
 
-Testing a model lets us know if it still works with new images, not only the ones you have already trained. That's how we know that a model is working.
+Testing a model lets us know if it works with new images, not only the ones you have already trained. That's how we know that a model is working.
 
-To test it, we'll use the `test_set` folder of the dataset. We can drag & drop it again. It contains different images from the ones we've used in the training.
+To test it, we'll use the `test_set` folder of the dataset. We can drag and drop it again. It contains different images from the ones we've used in the training.
 
 It will be much faster now than before.
 
@@ -183,7 +183,7 @@ We already have the loaded model. Now we are going to replace the displayed text
 
 ### Using the model
 
-In this tutorial we are going to implement something simple, simply loading an image from the filesystem. It will say the prediction (cat or dog). We could complicate it by adding a camera that automatically takes pictures, but this is not the purpose of the article.
+In this tutorial we are going to implement something not too complex by simply loading an image from the filesystem. It will display the prediction (cat or dog). We could complicate it by adding a camera, but this is not the purpose of the article.
 
 What we're going to do to get the prediction is this:
 
@@ -251,8 +251,8 @@ export default function CatsDogsDetection() {
 
 What it does:
 
-1. Using the input file, we show in the `<img>` element the image preview with 224x224 of resolution (important to keep it).
-2. Once the image is loaded (onLoad event) we make the prediction.
+1. Using the input file, we show in the `<img>` element the image preview with 224x224px resolution (important to keep it).
+2. Once the image is loaded (onLoad event) we can start predicting.
 
 And the result:
 
@@ -260,7 +260,7 @@ And the result:
 
 ## Why in the browser?
 
-You've probably wondered at some point why we do it with JavaScript, rather than Python or something else.
+You've probably wondered at some point why are we doing it with JavaScript, rather than Python or something else.
 
 <img src="/images/blog-images/why-in-the-browser.png" alt="Why in the browser" class="center transparent" />
 
@@ -270,7 +270,7 @@ Here are several reasons:
 - **Working offline**: As in the previous point, we can make predictions with our device (mobile, tablet, desktop...) even without Internet.
 - **Cost zero in money**: We just need to put our app on a CDN. If 2000 people are using the application at the same time to make predictions, we won't sature any server as there is no need even to have a server. Each user will make the predictions directly from their device.
 - **Open source models**: Instead of hiding the models behind a server by using them with JavaScript, we are publishing them in such a way that any developer who likes the application can use the same models for their project.
-- **Privacity**: The data is not stored in any external database, the data doesn't travel on the net, it stays on the device.
+- **Privacity**: The data is not stored in any external database nor travels on the net, it stays on the device.
 
 ## Code of this article
 
@@ -284,7 +284,7 @@ And the demo link:
 
 ## Conclusion
 
-We've seen how we can solve any kind of image classification problem with a few steps. As an example we have implemented a cats/dogs classifier. The same example can be replicated for any type of image classification:
+We've seen how to solve any kind of image classification problem with a few steps. As an example we have implemented a cat/dog classifier. The same example can be replicated for any type of image classification:
 
 - Skin cancer detection
 - Rock-paper-scissors game
