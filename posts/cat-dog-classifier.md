@@ -1,7 +1,7 @@
 ---
-title: Classify any image on the browser in few steps
+title: 'Image classification: in the browser'
 created: 07/07/2020
-description: Learn how to implement any kind of image recognition by implementing a cat/dog classifier in Tensorflow.js.
+description: Learn how to implement any kind of image recognition in the browser by implementing a cat/dog classifier in Tensorflow.js.
 tags: tensorflow, javascript, machine-learning, react
 cover_image: /images/cover-images/12_cover_image.jpeg
 cover_image_mobile: /images/cover-images/12_cover_image_mobile.jpeg
@@ -9,7 +9,7 @@ cover_image_vert: /images/cover-images/12_cover_image_vert.jpeg
 cover_color: '#D5CBC0'
 ---
 
-This is a small tutorial to implement an application that predicts if it's a cat or a dog image. To do this we'll use Tensorflow.js to make the prediction directly on the browser.
+This is a small tutorial to implement an application that predicts if it's a cat or a dog image. To do this we'll use Tensorflow.js to make the prediction directly in the browser.
 
 I recommend reading [this other article](https://aralroca.com/blog/first-steps-with-tensorflowjs) where I introduce Tensorflow.js.
 
