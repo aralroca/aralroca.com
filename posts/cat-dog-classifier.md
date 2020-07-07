@@ -267,10 +267,10 @@ You've probably wondered at some point why are we doing it with JavaScript, rath
 Here are several reasons:
 
 - **Faster predictions**: It's not necessary to make a request to any server from our application, so we save the time it takes for the request.
-- **Working offline**: As in the previous point, we can make predictions with our device (mobile, tablet, desktop...) even without Internet.
+- **Working offline**: As in the previous point, we can make predictions with our device (mobile, tablet, desktop...) even without the Internet.
 - **Cost zero in money**: We just need to put our app on a CDN. If 2000 people are using the application at the same time to make predictions, we won't sature any server as there is no need even to have a server. Each user will make the predictions directly from their device.
-- **Open source models**: Instead of hiding the models behind a server by using them with JavaScript, we are publishing them in such a way that any developer who likes the application can use the same models for their project.
-- **Privacity**: The data is not stored in any external database nor travels on the net, it stays on the device.
+- **Open-source models**: Instead of hiding the models behind a server by using them with JavaScript, we are publishing them in such a way that any developer who likes the application can use the same models for their project.
+- **Privacy**: The data is not stored in any external database nor travels on the net, it stays on the device.
 
 ## Code of this article
 
