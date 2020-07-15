@@ -9,7 +9,11 @@ cover_image_vert: /images/cover-images/4_cover_image_vert.jpg
 cover_color: '#6A6A6C'
 ---
 
-WebGL és un motor de rasterització. És a dir, que el contingut enlloc de ser un mapa de bits, serà un conjunt de vectors.
+WebGL és un motor de rasterització. És a dir, que el contingut enlloc de ser un mapa de bits, serà un conjunt de vectors i ell mateix s'encarregarà de convertir-lo en mapa de bits.
+
+No és una llibreria 3D, és més, les llibreries 3D utilitzen un motor de rasterització, on en la web és WebGL. Això significa que no és tan fàcil com dir, posam una llum aquí, la camara allà, i serà complicat perquè s'ha de parlar directament amb la GPU passant exactament que volem, així que veurem forces matemàtiques i processos farragosos. Tot i així, tenir una bona base en WebGL ens ajudarà després a utilitzar qualsevol llibreria de 3D, ja que entendrem la abstracció que fan aquestes llibreries entenent que fan exactament per sota.
+
+Depenent el que volem desenvolupar, si és sencill, pot valdra més la pena fer-ho directament amb WebGL, que utilitzar una llibreria com THREE. Tan pel nivell d'optimització que podem acurar, com al fet de no importar la llibreria de THREE que fa mil coses més i pesa ~150kb. Naturalment, per algo més complexe, llibreries 3D com THREE poden ajudar molt i en aquests casos si ens estalviem picar molt codi i ens surt a compte.
 
 Vertex coordinates -> Van de -1 a 1, in X and Y direction.
 
@@ -70,13 +74,6 @@ void main() {
 }
 ```
 
-Aquest article ho explica molt bé:
-
-1. https://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html Últim llegit: "Let's start with a vertex shader"
-2. https://webglfundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html (per llegir)
-
-Puc agafar aquest artícle com a referència del curs, ja que el curs d'Udemy és deixa moltes coses sense explicar.
-
 ## Drawing a triangle
 
 Com a primer deures, farem un triangle amb WebGL amb codesandbox.
@@ -105,17 +102,21 @@ precision mediump float;
 in vec2 position;
 
 void main () {
-    gl_Position = vec4(position, 0.0, 1.0);//x,y,z,w
+    // gl_Position is a special variable a vertex shader
+    // is responsible for setting
+    gl_Position = vec4(position, 0.0, 1.0); //x,y,z,w
 }`
 
 // Write fragment shaders
 const fragmentShader = `#version 300 es
 
+// fragment shaders don't have a default precision so we need
+// to pick one. mediump is a good default. It means "medium precision"
 precision mediump float;
 out vec4 color;
 
 void main () {
-    color = vec4(0.0, 0.0, 1.0, 1.0);//r,g,b,a
+    color = vec4(0.0, 0.0, 1.0, 1.0); //r,g,b,a
 }
 `
 
@@ -165,11 +166,15 @@ export default function App() {
       new Float32Array(coordinates),
       gl.STATIC_DRAW
     ) // use this channel to store data on the GPU
+    // The last argument, gl.STATIC_DRAW is a hint to WebGL
+    // about how we'll use the data. WebGL can try to use
+    // that hint to optimize certain things. gl.STATIC_DRAW
+    // tells WebGL we are not likely to change this data much
     gl.bindBuffer(gl.ARRAY_BUFFER, null) // desallocate memory
 
     // Link GPU variable to CPU and sending data
     gl.useProgram(program)
-    const position = gl.getAttribLocation(program, 'possition')
+    const position = gl.getAttribLocation(program, 'position')
     gl.enableVertexAttribArray(position)
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
     gl.vertexAttribPointer(position, 2, gl.FLOAT, gl.FALSE, 0, 0)
@@ -187,9 +192,98 @@ if (typeof window !== 'undefined') {
 ```
 
 Codesandbox: https://codesandbox.io/s/webgl-triangle-e90o1?file=/src/index.js:0-2616
-(No funciona del tot, s'ha de revisar el codi)
+
+## Encapsulation
+
+Com sempre son els mateixos pasos, podem "encapsular-ho" en un helper per poder fer d'una manera més amigable cada pas.
+
+```js
+export default class WebGLUtils {
+  getGLContext(canvas, bgColor) {
+    const defaultBgColor = [1, 1, 1, 1]
+    const gl = canvas.getContext('webgl2')
+
+    gl.clearColor(...(bgColor ? bgColor : defaultBgColor))
+    gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT)
+
+    return gl
+  }
+
+  getShader(gl, shaderSource, shaderType) {
+    const shader = gl.createShader(shaderType)
+
+    gl.shaderSource(shader, shaderSource)
+    gl.compileShader(shader)
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(shader))
+    }
+
+    return shader
+  }
+
+  getProgram(gl, vs, fs) {
+    const program = gl.createProgram()
+
+    gl.attachShader(program, vs)
+    gl.attachShader(program, fs)
+    gl.linkProgram(program)
+    gl.useProgram(program)
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(program))
+    }
+
+    return program
+  }
+
+  createAndBindBuffer(gl, bufferType, typeOfDrawing, data) {
+    const buffer = gl.createBuffer()
+
+    gl.bindBuffer(bufferType, buffer)
+    gl.bufferData(bufferType, data, typeOfDrawing)
+    gl.bindBuffer(bufferType, null)
+
+    return buffer
+  }
+
+  linkGPUAndCPU(
+    gl,
+    {
+      program,
+      gpuVariable,
+      channel,
+      buffer,
+      dims,
+      dataType,
+      normalize,
+      stride,
+      offset,
+    }
+  ) {
+    const position = gl.getAttribLocation(program, gpuVariable)
+    gl.enableVertexAttribArray(position)
+    gl.bindBuffer(channel, buffer)
+    gl.vertexAttribPointer(position, dims, dataType, normalize, stride, offset)
+  }
+}
+```
+
+Link: https://codesandbox.io/s/webgl-triangle-e90o1?file=/src/utils/webgl.js
+
+El que es pot arribar a fer amb WebGL és conceptualment simple, encara que el procés de fer-ho no ho sigui. WebGL es poden dibuixar triangles, linees o punts. Ja que només serveix per rasteritzar, així que només es pot fer el que els vectors deixen fer. Així que la complexitat ve determinada del que es vol fer.
+
+La rasterización es el proceso por el cual una imagen descrita en un formato gráfico vectorial se convierte en una imagen de mapa de bits (bitmap).
+
+Es pot complicar amb varyings i textures, i transformacions com escalar, rotar, translation.
 
 ## References
+
+Curs web pròxim per llegir del index:
+
+- https://webglfundamentals.org/webgl/lessons/webgl-how-it-works.html
+
+Puc agafar aquest artícle com a referència del curs, ja que el curs d'Udemy és deixa moltes coses sense explicar.
 
 - https://github.com/subhasishdash/webglinternals
 - https://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html
