@@ -37,13 +37,13 @@ The literal definition of WebGL is "Web Graphics Library". However, it is not a 
 
 It's in a low-level that converts **vertices** into **pixels**. We can understand WebGL as a rasterization engine. It's based on OpenGL ES 3.0 graphical API (WebGL 2.0, unlike the old version that is based on ES 2.0).
 
-<img style="max-width: 600px" src="/images/blog-images/webgl-schema.png" class="center" alt="WebGL Schema" />
+<img src="/images/blog-images/webgl-schema.png" class="center" alt="WebGL Schema" />
 
 The existing 3d libraries on the web (like [THREE.js](https://threejs.org/) or [Babylon.js](https://github.com/BabylonJS/Babylon.js)) use WebGL below. They need a way to communicate to the GPU to tell what to draw.
 
 This example could also be directly solved with THREE.js, using the `THREE.Triangle`. You can see an example [here](https://stackoverflow.com/a/29843694/4467741). However, the purpose of this tutorial is to understand how it works underneath, i.e. how these 3d libraries communicate with the GPU via WebGL. We are going to render a triangle without the help of any 3d library.
 
-<img style="max-width: 600px" src="/images/blog-images/3dlibraries_underthehood.png" class="center" alt="Let's explore how to do a triangle without 3D libraries" />
+<img src="/images/blog-images/3dlibraries_underthehood.png" class="center" alt="Let's explore how to do a triangle without 3D libraries" />
 
 ## Creating a WebGL canvas
 
@@ -82,7 +82,7 @@ First of all, we need to know that all these vectors range from -1 to 1.
 
 Corners of the canvas:
 
-<img style="max-width: 400px" src="/images/blog-images/coordinates-webgl.png" alt="Coordinates" class="center" />
+<img src="/images/blog-images/coordinates-webgl.png" alt="Coordinates" class="center" />
 
 - **(0, 0)** - Center
 - **(1, 1)** - Top right
@@ -92,7 +92,7 @@ Corners of the canvas:
 
 The triangle we want to draw has these three points:
 
-<img style="max-width: 400px" src="/images/blog-images/triangle_webgl.png" alt="Coordinates" class="center" />
+<img src="/images/blog-images/triangle_webgl.png" alt="Coordinates" class="center" />
 
 **(-1, -1)**, **(0, 1)** and **(1, -1)**. Thus, we are going to store the triangle coordinates into an array:
 
