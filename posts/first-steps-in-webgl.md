@@ -9,7 +9,7 @@ cover_image_vert: /images/cover-images/13_cover_image_vert.jpg
 cover_color: '#BBB6AE'
 ---
 
-In this article we'll see what WebGL is and how to draw a **triangle** directly by talking to the graphics processing unit (GPU). This is a simple example that could be solved in other ways, such as using a canvas with a 2d context or even with CSS. But let's say it's a way to start with WebGL, as a "hello world", to understand how it works.
+In this article we'll see what WebGL is and how to draw a **triangle** by talking to the graphics processing unit (GPU). Although this simple example could be solved in better ways, such as using a canvas with a 2d context or even with CSS, what we want is to start with WebGL. Like a "hello world", to understand how it works.
 
 <img src="/images/blog-images/triangle.jpeg" alt="Triangle" class="center" />
 <small class="center">Photo by: Apurv Das (Unsplash)</small>
@@ -32,21 +32,21 @@ In this article we'll see what WebGL is and how to draw a **triangle** directly 
 
 ## What is WebGL?
 
-The literal definition of WebGL is "Web Graphics Library". However, it is not a 3D library that offers us an easy to use API, where to say: put a light here, a camera there, draw a character here, etc.
+The literal definition of WebGL is "Web Graphics Library". However, it is not a 3D library that offers us an easy-to-use API to say: «put a light here, a camera there, draw a character here, etc».
 
-It's more at a low-level, that given **vertices**, it convert into **pixels**. So we can understand WebGL as a rasterization engine. It's based on OpenGL ES 3.0 graphical API (WebGL 2.0, the old version of WebGL is based on ES 2.0).
+It's in a low-level that converts **vertices** into **pixels**. We can understand WebGL as a rasterization engine. It's based on OpenGL ES 3.0 graphical API (WebGL 2.0, unlike the old version that is based on ES 2.0).
 
 <img style="max-width: 600px" src="/images/blog-images/webgl-schema.png" class="center" alt="WebGL Schema" />
 
-The 3d libraries that exist on the web (like [THREE.js](https://threejs.org/) or [Babylon.js](https://github.com/BabylonJS/Babylon.js)), use WebGL below. Because they need a way to communicate to the GPU and tell what to draw.
+The existing 3d libraries on the web (like [THREE.js](https://threejs.org/) or [Babylon.js](https://github.com/BabylonJS/Babylon.js)) use WebGL below. They need a way to communicate to the GPU to tell what to draw.
 
-The example we are going to use here could be solved directly with THREE.js, using the `THREE.Triangle`. You can see an example [here](https://stackoverflow.com/a/29843694/4467741). However, the idea of this tutorial is to understand how it works underneath, i.e. how these 3d libraries communicate with the GPU via WebGL. So we are going to render a triangle without the help of any 3d library.
+This example could also be directly solved with THREE.js, using the `THREE.Triangle`. You can see an example [here](https://stackoverflow.com/a/29843694/4467741). However, the purpose of this tutorial is to understand how it works underneath, i.e. how these 3d libraries communicate with the GPU via WebGL. We are going to render a triangle without the help of any 3d library.
 
 <img style="max-width: 600px" src="/images/blog-images/3dlibraries_underthehood.png" class="center" alt="Let's explore how to do a triangle without 3D libraries" />
 
 ## Creating a WebGL canvas
 
-In order to draw a triangle, first we need the define the area where this triangle is going to be rendered via WebGL.
+In order to draw a triangle, we need to define the area where it is going to be rendered via WebGL.
 
 We are going to use the element canvas of HTML5, retrieving the context as `webgl2`.
 
@@ -69,15 +69,17 @@ export default function Triangle() {
 }
 ```
 
-The `clearColor` is setting the background color of the canvas, using a kind of RGBA, that the values instead of 0-255, are from 0 to 1.
+The `clearColor` method sets the background color of the canvas using RGBA (with values from 0 to 1).
 
-The `clear` what it does is clears buffers to preset values. The values of the used constants depends on your GPU capacity.
+Furthermore, the `clear` method clears buffers to preset values. Used constants values are going to depend on your GPU capacity.
 
-Once we have the canvas created, we are ready to render the triangle inside using WebGL... Although it's not that simple. Let's see how to do it in the following sections.
+Once we have the canvas created, we are ready to render the inside triangle using WebGL... Let's see how.
 
 ## Vertex coordinates
 
-Once we have our canvas created, we need to know that all vectors that we are going to define inside the canvas, are from -1 to 1. So, the corners of the canvas are:
+First of all, we need to know that all these vectors range from -1 to 1.
+
+Corners of the canvas:
 
 <img style="max-width: 400px" src="/images/blog-images/coordinates-webgl.png" alt="Coordinates" class="center" />
 
@@ -87,7 +89,7 @@ Once we have our canvas created, we need to know that all vectors that we are go
 - **(-1, 1)** - Top left
 - **(-1, -1)** - Bottom left
 
-So, the triangle we want to draw, is going to use these three points:
+The triangle we want to draw has these three points:
 
 <img style="max-width: 400px" src="/images/blog-images/triangle_webgl.png" alt="Coordinates" class="center" />
 
@@ -103,15 +105,15 @@ A shader is a type of computer program used in computer graphics to calculate re
 
 <img src="/images/blog-images/shaders.png" class="center" alt="WebGL Shaders" />
 
-Each WebGL program that we are going to run is composed by two shaders functions; the **vertex shader** and the **fragment shader**.
+Each WebGL program that we are going to run is composed by two shader functions; the **vertex shader** and the **fragment shader**.
 
-Almost all the WebGL API is for running in different ways these two functions (vertex and fragment shaders).
+Almost all the WebGL API is made to run these two functions (vertex and fragment shaders) in different ways.
 
 ### Vertex shader
 
-The job of the vertex shader is to compute the positions of the vertex. The result (**gl_Position**) is able to locate points, lines and triangles on the viewport.
+The job of the vertex shader is to compute the positions of the vertices. With this result (**gl_Position**) the GPU locates points, lines and triangles on the viewport.
 
-To write a triangle, we are going to create this vertex shader:
+To write the triangle, we are going to create this vertex shader:
 
 ```js
 const vertexShader = `#version 300 es
@@ -126,19 +128,17 @@ const vertexShader = `#version 300 es
 
 We can save it for now in our JavaScript code as a template string.
 
-The first line, `#version 300 es`, tells the version of GLSL that we are using.
+The first line (`#version 300 es`) tells the version of GLSL we are using.
 
-The second line, `precision mediump float;`, determines how much precision the GPU uses when calculating floats. The available options are `highp`, `mediump` and `lowp`), however, some systems doesn't support `highp`.
+The second line (`precision mediump float;`) determines how much precision the GPU uses to calculate floats. The available options are `highp`, `mediump` and `lowp`), however, some systems don't support `highp`.
 
-The third line, `in vec2 position;`, we are defining an input variable for the GPU of 2 dimensions **(X, Y)**. Because each point of the triangle is in two dimensions.
+In the third line (`in vec2 position;`) we define an input variable for the GPU of 2 dimensions **(X, Y)**. Each vector of the triangle is in two dimensions.
 
-The `main` function, like C / C++ is called at program startup after initialization. So the GPU is going to run the content of the `main` function.
-
-The content of the `main` function, `gl_Position = vec4(position.x, position.y, 0.0, 1.0);`, is saving to the `gl_Position` the position of the current vertex. The first and second argument are the `x` and `y` from our `vec2` position, the third argument is the `z` axis, in this case is `0.0` because we are creating a geometry in 2D and not in 3D. And the last argument is `w`, by default, this should be set to `1.0`.
+The `main` function is called at program startup after initialization (like in C / C++). The GPU is going to run its content (`gl_Position = vec4(position.x, position.y, 0.0, 1.0);`) by saving to the `gl_Position` the position of the current vertex. The first and second argument are `x` and `y` from our `vec2` position. The third argument is the `z` axis, in this case is `0.0` because we are creating a geometry in 2D, not 3D. The last argument is `w`, by default this should be set to `1.0`.
 
 The GLSL identifies and uses internally the value of `gl_Position`.
 
-Once we created the shader, we should compile it:
+Once we create the shader, we should compile it:
 
 ```js
 const vs = gl.createShader(gl.VERTEX_SHADER)
@@ -156,7 +156,7 @@ if (!gl.getShaderParameter(vs, gl.COMPILE_STATUS)) {
 
 After the "vertex shader", the "fragment shader" is executed. The job of this shader is to compute the color of each pixel corresponding to each location.
 
-For the triangle, let's make the filling the same color:
+For the triangle, let's fill with the same color:
 
 ```js
 const fragmentShader = `#version 300 es
@@ -178,7 +178,7 @@ if (!gl.getShaderParameter(fs, gl.COMPILE_STATUS)) {
 }
 ```
 
-The syntax is very similar to the previous one, but the vect4 we return here refers to the color of each pixel. Since we want the fill color of the triangle to `rgba(179, 229, 252, 1)`, we will translate it by dividing each rgb number by 255.
+The syntax is very similar to the previous one, although the `vect4` we return here refers to the color of each pixel. Since we want to fill the triangle with `rgba(179, 229, 252, 1)`, we'll translate it by dividing each RGB number by 255.
 
 ## Create program from shaders
 
@@ -199,7 +199,7 @@ if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 
 ## Create buffers
 
-We are going to use a buffer to allocate memory to GPU, and bind this memory to a channel to communicate CPU-GPU. We are going to use this channel to send our triangle coordinates that we defined [before](#vertex-coordinates) to the GPU.
+We are going to use a buffer to allocate memory to GPU, and bind this memory to a channel for CPU-GPU communications. We are going to use this channel to send [our triangle coordinates](#vertex-coordinates) to the GPU.
 
 ```js
 // allowcate memory to gpu
@@ -212,9 +212,9 @@ gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
 gl.bufferData(
   gl.ARRAY_BUFFER,
   new Float32Array(coordinates),
-  // In our case is an static triangle, so is better to tell
-  // how we'll use the data in order that WebGL optimize certain
-  // things.
+  // In our case is a static triangle, so it's better to tell
+  // how are we going to use the data so the WebGL can optimize
+  // certain things.
   gl.STATIC_DRAW
 )
 
@@ -226,15 +226,15 @@ gl.bindBuffer(gl.ARRAY_BUFFER, null)
 
 ## Link data from CPU to GPU
 
-In our [vertex shader](#vertex-shader), we defined an input variable named `position`. However, we haven't yet specified that this variable should take the value that we are passing through the buffer. So we must indicate it in the following way:
+In our [vertex shader](#vertex-shader), we defined an input variable named `position`. However, we haven't yet specified that this variable should take the value that we are passing through the buffer. We must indicate it in the following way:
 
 ```js
 const position = gl.getAttribLocation(program, 'position')
 gl.enableVertexAttribArray(position)
 gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
 gl.vertexAttribPointer(
-  position, // location of the vertex attribute
-  2, // dimension - 2D
+  position, // Location of the vertex attribute
+  2, // Dimension - 2D
   gl.FLOAT, // Type of data we are going to send to GPU
   gl.FALSE, // If data should be normalized
   0, // Stride
@@ -244,7 +244,7 @@ gl.vertexAttribPointer(
 
 ## Drawing the triangle
 
-Once we have created the program with the shaders for our triangle, the buffer with the triangle coordinates and linked the data so that the GPU can receive this buffer. We can finally tell the GPU to render the triangle!
+Once we have created the program with the shaders for our triangle and created the linked buffer to send data from the CPU to the GPU, we can finally tell the GPU to render the triangle!
 
 <img src="/images/blog-images/triangle_result.png" alt="Triangle exercice" class="center" />
 
@@ -256,11 +256,11 @@ gl.drawArrays(
 )
 ```
 
-This method renders primitives from array data. The primitives are points, lines or triangles. In our case, we want to draw a triangle.
+This method renders primitives from array data. The primitives are points, lines or triangles. Let's specify `gl.TRIANGLES`.
 
 ## All the code together
 
-I've uploaded the article code to CodeSandbox in case you want to explore it a bit.
+I've uploaded the article code to CodeSandbox in case you want to explore it.
 
 <iframe
   src="https://codesandbox.io/embed/webgl-triangle-e90o1?fontsize=14&hidenavigation=0&theme=dark"
@@ -272,9 +272,9 @@ I've uploaded the article code to CodeSandbox in case you want to explore it a b
 
 ## Conclusion
 
-With WebGL is only possible to draw triangles, lines or points because it only rasterize, so you can only do what the vectors can do. This means that WebGL is conceptually simple, but the process is quite complex... And gets more and more complex depending what you want to develop. It's not the same to rasterize a 2D triangle, as to develop a 3D videogame with textures, varyings, transformations...
+With WebGL it is only possible to draw triangles, lines or points because it only rasterizes, so you can only do what the vectors can do. This means that WebGL is conceptually simple, while the process is quite complex... And gets more and more complex depending on what you want to develop. It's not the same to rasterize a 2D triangle than a 3D videogame with textures, varyings, transformations...
 
-I hope this article has been useful to understand a little bit how WebGL works, and help you learn more about it. I recommend a reading of the references below.
+I hope this article has been useful to understand a little bit of how WebGL works. I recommend a reading of the references below.
 
 ## References
 
