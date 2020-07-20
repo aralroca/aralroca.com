@@ -18,13 +18,13 @@
     "gray-matter": "4.0.2",
     "highlight.js": "10.1.1",
     "js-paging": "0.1.1",
-    "marked": "1.1.0",
+    "marked": "1.1.1",
     "next": "9.4.4",
-    "preact": "10.4.5",
-    "preact-render-to-string": "5.1.9",
+    "preact": "10.4.6",
+    "preact-render-to-string": "5.1.10",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@1.0.1",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.0",
     "reading-time": "1.2.0"
   },
   "devDependencies": {

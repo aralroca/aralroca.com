@@ -7,6 +7,7 @@ cover_image: /images/cover-images/13_cover_image.jpg
 cover_image_mobile: /images/cover-images/13_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/13_cover_image_vert.jpg
 cover_color: '#BBB6AE'
+dev_to: first-steps-in-webgl-385c
 ---
 
 In this article we'll see what WebGL is and how to draw a **triangle** by talking to the graphics processing unit (GPU). Although this simple example could be solved in better ways, such as using a canvas with a 2d context or even with CSS, what we want is to start with WebGL. Like a "hello world", to understand how it works.
