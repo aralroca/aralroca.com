@@ -253,7 +253,7 @@ Once we have created the program with the shaders for our triangle and created t
 gl.drawArrays(
   gl.TRIANGLES, // Type of primitive
   0, // Start index in the array of vector points
-  3 // Number of indices to be rendered
+  3 // Number of vertices to be rendered
 )
 ```
 
