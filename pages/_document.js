@@ -5,7 +5,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#ad1457" />
           <link
             rel="preconnect"
@@ -20,7 +19,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
             rel="stylesheet"
           />
-         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"></script>
         </Head>
         <body className="light">
           <script
