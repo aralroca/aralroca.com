@@ -7,6 +7,7 @@ cover_image: /images/cover-images/14_cover_image.jpg
 cover_image_mobile: /images/cover-images/14_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/14_cover_image_vert.jpg
 cover_color: '#98B0D7'
+dev_to: static-readme-regeneration-4pf2
 ---
 
 GitHub has recently introduced a "secret" feature to show a markdown template on your profile page. You may have heard about this. All you need to do is create a repo named with your username and create the `README.md` file there.
@@ -148,6 +149,7 @@ fn get_blog_rss() -> Vec<FeedItem> {
     items
 }
 ```
+
 <br />
 
 ### GitHub Action with a cron
@@ -160,9 +162,9 @@ In order to create an Action, I recommend first uploading your script to the mas
 
 We're going to replace some things from the default yaml in order to:
 
-* Schedule a cron
-* Run the script *(`cargo run` instead of `cargo build && cargo test`)*
-* Commit the regenerated README *(only if has changes)*
+- Schedule a cron
+- Run the script _(`cargo run` instead of `cargo build && cargo test`)_
+- Commit the regenerated README _(only if has changes)_
 
 <small><b>> .github/workflows/rust.yml</b></small>
 
@@ -170,41 +172,37 @@ We're going to replace some things from the default yaml in order to:
 name: Rust
 
 on:
-
   # Schedule a cron
   schedule:
-    - cron: "0 0 */1 * *" # each day at 00:00 UTC
+    - cron: '0 0 */1 * *' # each day at 00:00 UTC
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
+      - uses: actions/checkout@v2
+      - name: Build
 
-    # Replace "cargo build" to "cargo run" to run the script
-      run: cargo run
+        # Replace "cargo build" to "cargo run" to run the script
+        run: cargo run
 
-    # Commit the regenerated README only when it change 
-    # (git diff --quiet && git diff --staged --quiet )
-    - run: |
-        git config user.name aralroca
-        git config user.email aral-rg@hotmail.com
-        git add README.md
-        git diff --quiet && git diff --staged --quiet || git commit -m "[gh-action] Update README"
-        git push origin master
+      # Commit the regenerated README only when it change
+      # (git diff --quiet && git diff --staged --quiet )
+      - run: |
+          git config user.name aralroca
+          git config user.email aral-rg@hotmail.com
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || git commit -m "[gh-action] Update README"
+          git push origin master
 ```
-
 
 ## Conclusion
 
 To conclude, although in most repos the README file is always static, thanks to GitHub Actions and this new feature of GitHub we can build our `README.md` to always have our profile up to date with the latest updates (releases, pr, tweets, posts...).
-
 
 ## References
 
