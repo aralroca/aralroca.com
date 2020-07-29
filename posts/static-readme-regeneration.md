@@ -48,7 +48,7 @@ Let's create a `README.md.tpl` file, the `.tpl` format is used in template files
 
 The main difference is that we'll add what we want to be dynamic with some **interpolation symbols**. This way, our script will be able to replace them with dynamic content.
 
-<img style="max-width: 700px" src="/images/blog-images/tpl.png" alt="README.md.tpl diagram" class="center" />
+<img src="/images/blog-images/tpl.png" alt="README.md.tpl diagram" class="center" />
 <small class="center">Diagram about interpolation from <code>.md.tpl</code> to <code>.md</code></small>
 
 ### Script to generate the README.md
