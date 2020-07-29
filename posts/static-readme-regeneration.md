@@ -11,7 +11,7 @@ cover_color: '#98B0D7'
 
 GitHub has recently introduced a "secret" feature to show a markdown template on your profile page. You may have heard about this. All you need to do is create a repo named with your username and create the `README.md` file there.
 
-When we think of a template markdown on GitHub we normally think of static content. However, in this article I want to go a little further. I'll tell you how to add content that is going to be **updated from time to time**; whether it's about your latest tweets, your latest youtube video or your latest blog posts.
+When we think of a template markdown on GitHub we normally think of static content. However, in this article, I want to go a little further. I'll tell you how to add content that is going to be **updated from time to time**; whether it's about your latest tweets, your latest youtube video or your latest blog posts.
 
 <img src="/images/blog-images/my-gh-profile.png" alt="My GH profile" class="center" />
 
@@ -62,7 +62,7 @@ The script have to:
 <br />
 <img style="max-width: 700px" src="/images/blog-images/script.png" alt="Steps to implement" class="center" />
 
-This can be implemented in any language; JavaScript, Rust, Python, Go, C... In this case I chose **Rust**, mostly because I have no experience with it and so I took the opportunity to learn a little _(feel free to create an issue on the repo if you are a Rust expert and see things that could be improved)_.
+This can be implemented in any language; JavaScript, Rust, Python, Go, C... In this case, I chose **Rust**, mostly because I have no experience with it and so I took the opportunity to learn a little _(feel free to create an issue on the repo if you are a Rust expert and see things that could be improved)_.
 
 <small><b>> main.rs</b></small>
 
@@ -158,7 +158,7 @@ In order to create an Action, I recommend first uploading your script to the mas
 
 <img src="/images/blog-images/action-tab.png" alt="GitHub Actions tab" class="center" />
 
-We're going to replace some things of the default yaml in order to:
+We're going to replace some things from the default yaml in order to:
 
 * Schedule a cron
 * Run the script *(`cargo run` instead of `cargo build && cargo test`)*
