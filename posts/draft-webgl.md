@@ -1,3 +1,14 @@
+---
+title: DRAFT
+created: 06/20/2021
+description: Learn what WebGL is and how it works by drawing a triangle.
+tags: javascript, webgl, react
+cover_image: /images/cover-images/13_cover_image.jpg
+cover_image_mobile: /images/cover-images/13_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/13_cover_image_vert.jpg
+cover_color: '#BBB6AE'
+---
+
 # WebGL apunts 2.0 (continuació del article First steps in webGL)
 
 ## Render a rectangle
@@ -299,4 +310,18 @@ Codesandbox: https://codesandbox.io/s/webgl-dynamic-lines-fg3m4?file=/src/index.
 
 Ho farem amb punts.
 
-@todo: https://codesandbox.io/s/webgl-dynamic-circle-f4mfm
+CodeSandbox: https://codesandbox.io/s/webgl-dynamic-circle-f4mfm
+
+## Drawing a country flag
+
+Es un bon exemple per aprendre a printar diferents "shapes". Creem una funció que es diu `drawShape` per de forma genèrica poder dibuixar diferents figures sense haver de repetir tan de codi. Només indicant el color i vertices.
+
+CodeSandbox: https://codesandbox.io/s/webgl-flag-xbpsy?file=/src/index.js
+
+## Drawing an analog clock
+
+Es creen diferents buffers. (@todo)
+
+## More resources:
+
+- https://github.com/lesnitsky/webgl-month
