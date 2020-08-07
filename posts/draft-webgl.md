@@ -322,6 +322,56 @@ CodeSandbox: https://codesandbox.io/s/webgl-flag-xbpsy?file=/src/index.js
 
 Es creen diferents buffers. (@todo)
 
+## Textures
+
+Imatges/video que es coloquen en certes coordenades.
+
+Les coordenades funcionen diferent! Enlloc d'anar del -1 al 1. Van del 0 al 1! Així que es com si el grid fos diferent. Perquè? (investigar).
+
+vertex shader:
+
+```glsl
+#version 300 es
+precision mediump float;
+in vect2 position;
+in vec2 textCoords;
+out vec2 textureCoords;
+
+void main() {
+  gl_Position = vec4(position, 0.0, 1.0);
+  textureCoords = textCoords;
+}
+```
+
+fragment shader:
+
+```glsl
+#version 300 es
+precision mediump float;
+in vec2 textureCoords;
+uniform sampler2D u_image;
+out vec4 color;
+
+void main() {
+  color = texture(u_image, textureCoords);
+}
+```
+
+```js
+const image = new Image()
+image.src = './my-image.jpg'
+image.onload = () => {
+  const texture = gl.createTexture()
+  gl.bindTexture(gl.TEXTURE_2D, texture)
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image)
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST)
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
+  gl.bindTexture(gl.TEXTURE_2D, null) // alliberar la memoria
+}
+```
+
 ## More resources:
 
 - https://github.com/lesnitsky/webgl-month
