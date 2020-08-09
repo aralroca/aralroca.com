@@ -8,6 +8,7 @@ cover_image_mobile: /images/cover-images/15_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/15_cover_image_vert.jpg
 series: 'Learning WebGL'
 cover_color: '#342A2C'
+dev_to: how-to-draw-gears-in-webgl-5481
 ---
 
 In this article we continue what we started in "[First steps in WebGL](https://aralroca.com/blog/first-steps-in-webgl)", where we saw [what it is and how it works](https://aralroca.com/blog/first-steps-in-webgl#what-is-webgl) internally: the [shaders](https://aralroca.com/blog/first-steps-in-webgl#glsl-and-shaders), the [program](https://aralroca.com/blog/first-steps-in-webgl#create-program-from-shaders), [buffers](https://aralroca.com/blog/first-steps-in-webgl#create-buffers), how to [link data from CPU to GPU](https://aralroca.com/blog/first-steps-in-webgl#create-buffers), and finally how to [render a triangle](https://aralroca.com/blog/first-steps-in-webgl#drawing-the-triangle). To understand all this well, I recommend first reading the previous chapter.
@@ -37,14 +38,14 @@ Here, instead of rendering a triangle, we'll see how to render more complex stru
 
 ## Identifying shapes
 
-The gears we want to draw are composed of **circles**. Among these circles there are certain varieties: circle with teeth, circle with colored border and circle filled with a color.
+The gears we want to draw are composed of **circles**. Among these circles there are certain varieties: a circle with teeth, a circle with colored border and circle filled with a color.
 
 <figure align="center">
   <img src="/images/blog-images/gear-shapes.png" alt="Indentifying gear shapes" class="center" />
   <figcaption><small>Fig 2: three different circles</small></figcaption>
 </figure>
 
-Therefore, this confirms that we can draw these gears by drawing circles but, as we saw in the previous article, in WebGL you can only rasterize triangles, points and lines... So, what's the difference between these circles and how can we make each of them?
+Therefore, this confirms that we can draw these gears by drawing circles but, as we saw in the previous article, in WebGL you can only rasterize triangles, points, and lines... So, what's the difference between these circles and how can we make each of them?
 
 ### Circle with border
 
@@ -71,7 +72,7 @@ The drawing mode needed for this is **Triangle strip**:
 
 ### Circle with teeth
 
-For the gear teeth we'll also use **triangles**. This time, without the "strip" mode. This way we'll draw triangles that go from the center of the circumference to the outside.
+For the gear teeth, we'll also use **triangles**. This time, without the "strip" mode. This way we'll draw triangles that go from the center of the circumference to the outside.
 
 <figure align="center">
   <img src="/images/blog-images/teeth-shape.gif" alt="Teeth of gear" class="center" />
@@ -245,7 +246,7 @@ rotationMatrix * positionMatrix // This is not what we want.
 
 We've got every gear doing its rotation but the axis of rotation is always the center of the canvas, and that's incorrect. We want them to rotate on their own center.
 
-In order to fix this, first we'll use a transformation named `translate` to move our gear to the center of the canvas. Then we'll apply the right rotation (the axis will be the center of the canvas again, but in this case it's also the center of the gear), and finally we'll move the gear back to its original position (by using `translate` again).
+In order to fix this, first, we'll use a transformation named `translate` to move our gear to the center of the canvas. Then we'll apply the right rotation (the axis will be the center of the canvas again, but in this case, it's also the center of the gear), and finally, we'll move the gear back to its original position (by using `translate` again).
 
 The translation matrix can be defined as follows:
 
@@ -315,7 +316,7 @@ void main () {
 
 Unlike the vertex shader we used in the previous article, we'll pass the `u_translation`, `u_rotation`, and `u_moveOrigin` matrices, so the `gl_Position` will be the product of the four matrices (along with the position matrix). This way we **apply the rotation** as we have seen in the previous section. In addition, we'll **define the size of each point** we draw (which will be useful for the circle with the border) using `gl_PointSize`.
 
-> **Note**: Matrix multiplication is something we could do directly on the CPU with JavaScript and already pass the final matrix here, but the truth is that the GPU is made precisely for matrix operations so it's much better for performance to do it on the shader. Besides, from JavaScript we would need a helper to do this multiplication, since we can't multiply arrays directly.
+> **Note**: Matrix multiplication is something we could do directly on the CPU with JavaScript and already pass the final matrix here, but the truth is that the GPU is made precisely for matrix operations so it's much better for performance to do it on the shader. Besides, from JavaScript, we would need a helper to do this multiplication, since we can't multiply arrays directly.
 
 Let's write the **fragment shader** to compute the color of each pixel corresponding to each location:
 
@@ -331,7 +332,7 @@ void main () {
 `
 ```
 
-As we can see there is no magic added to this fragment, it's the same than in the previous article. Given a defined color in the CPU with JavaScript, we'll pass it to the GPU to color our figures.
+As we can see there is no magic added to this fragment, it's the same as in the previous article. Given a defined color in the CPU with JavaScript, we'll pass it to the GPU to color our figures.
 
 Now we can create our program with the shaders, adding the lines to get the uniform locations that we defined in the vertex shader. This way, later while running our script we can send each matrix to each uniform location per each frame.
 
