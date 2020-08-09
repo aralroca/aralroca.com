@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import fs from 'fs'
 
+import BlogSeries from '../../components/BlogSeries'
 import Newsletter from '../../components/Newsletter'
 import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
@@ -9,12 +10,13 @@ import getMorePosts from '../../utils/getMorePosts'
 import readPost from '../../utils/readPost'
 
 export default function Post({
-  date,
-  slug,
   __html,
   data,
-  timeToRead,
+  date,
   morePosts,
+  series,
+  slug,
+  timeToRead,
 }) {
   const tags = data.tags.split(',')
 
@@ -62,7 +64,14 @@ export default function Post({
           <Tag key={tag} label={tag} />
         ))}
       </div>
+      <BlogSeries key="series-top" title={data.series} series={series} />
       <div className="post" dangerouslySetInnerHTML={{ __html }} />
+      <BlogSeries
+        style={{ marginTop: 40 }}
+        key="series-bottom"
+        title={data.series}
+        series={series}
+      />
       <div className="end-post">
         {data.dev_to && (
           <>
@@ -98,16 +107,16 @@ export default function Post({
         </a>
       </div>
       <Newsletter />
-      {
-        morePosts.length > 0 && (
-          <>
-            <b className="related-posts-title">More...</b>
-            <div className="related-posts">
-            {morePosts.map(p => <PostItem key={p.slug} {...p} />)}
-            </div>
-          </>
-        )
-      }
+      {morePosts.length > 0 && (
+        <>
+          <b className="related-posts-title">More...</b>
+          <div className="related-posts">
+            {morePosts.map((p) => (
+              <PostItem key={p.slug} {...p} />
+            ))}
+          </div>
+        </>
+      )}
     </>
   )
 }
@@ -124,14 +133,15 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const post = readPost(slug)
-  const morePosts = await getMorePosts(post, slug)
+  const [morePosts, series] = await getMorePosts(post, slug)
 
   return {
     props: {
       ...post,
-      slug,
-      morePosts,
       __html: post.__html.replace(/<img /g, '<img loading="lazy" '),
+      morePosts,
+      series,
+      slug,
     },
   }
 }
