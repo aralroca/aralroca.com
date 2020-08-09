@@ -6,6 +6,7 @@ tags: javascript, webgl, react
 cover_image: /images/cover-images/15_cover_image.jpg
 cover_image_mobile: /images/cover-images/15_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/15_cover_image_vert.jpg
+series: 'Learning WebGL'
 cover_color: '#342A2C'
 ---
 
@@ -264,7 +265,7 @@ So for the expected result, we will need to do this matrix multiplication:
 
 ```glsl
 // Now they will turn on their axis
-translationMatrix * rotationMatrix * translationToOriginMatrix * positionMatrix 
+translationMatrix * rotationMatrix * translationToOriginMatrix * positionMatrix
 ```
 
 <figure align="center">
@@ -294,7 +295,7 @@ Let's see how to do it with JavaScript and GLSL.
 
 ### Initialize program with shaders
 
-Let's write the **vertex shader** to compute the positions of the vertices: 
+Let's write the **vertex shader** to compute the positions of the vertices:
 
 ```js
 const vertexShader = `#version 300 es
@@ -309,14 +310,14 @@ void main () {
   gl_Position = vec4(movedPosition, 0.0, 1.0);
   gl_PointSize = 1.0;
 }
-`;
+`
 ```
 
 Unlike the vertex shader we used in the previous article, in this one we will pass the `u_translation`, `u_rotation`, and `u_moveOrigin` matrices, this way the `gl_Position` will be the product of the four matrices (along with the position matrix). This way we **apply the rotation** as we have seen in the previous section. In addition, we will **define the size of each point** we draw (which will be useful for the circle with the border) using `gl_PointSize`.
 
 > **Note**: Matrix multiplication is something we could do directly on the CPU with JavaScript and already pass the final matrix here, but the truth is that the GPU is made precisely for matrix operations, so it's much better for performance to do it on the shader. Besides, from JavaScript we would need a helper to do this multiplication, since we can't multiply arrays directly.
 
-Let's write the **fragment shader** to compute the color of each pixel corresponding to each location: 
+Let's write the **fragment shader** to compute the color of each pixel corresponding to each location:
 
 ```js
 const fragmentShader = `#version 300 es
@@ -327,7 +328,7 @@ uniform vec3 inputColor;
 void main () {
    color = vec4(inputColor, 1.0);
 }
-`;
+`
 ```
 
 As we can see, there is no magic added to this fragment. It's exactly the same as the previous article. Given a color that we'll define in the CPU with JavaScript, we'll pass it to the GPU to color our figures.
@@ -335,56 +336,56 @@ As we can see, there is no magic added to this fragment. It's exactly the same a
 Now we can create our program with the shaders, adding the lines to get the uniform locations that we defined in the vertex shader. This way, later running our script we can send each matrix to each uniform location per each frame.
 
 ```js
-const gl = getGLContext(canvas);
-const vs = getShader(gl, vertexShader, gl.VERTEX_SHADER);
-const fs = getShader(gl, fragmentShader, gl.FRAGMENT_SHADER);
-const program = getProgram(gl, vs, fs);
-const rotationLocation = gl.getUniformLocation(program, 'u_rotation');
-const translationLocation = gl.getUniformLocation(program, 'u_translation');
-const moveOriginLocation = gl.getUniformLocation(program, 'u_moveOrigin');
+const gl = getGLContext(canvas)
+const vs = getShader(gl, vertexShader, gl.VERTEX_SHADER)
+const fs = getShader(gl, fragmentShader, gl.FRAGMENT_SHADER)
+const program = getProgram(gl, vs, fs)
+const rotationLocation = gl.getUniformLocation(program, 'u_rotation')
+const translationLocation = gl.getUniformLocation(program, 'u_translation')
+const moveOriginLocation = gl.getUniformLocation(program, 'u_moveOrigin')
 
-run(); // Let's see this in the next section
+run() // Let's see this in the next section
 ```
 
 The `getGLContext`, `getShader` and `getProgram` helpers do what we saw in the [previous article](https://aralroca.com/blog/first-steps-in-webgl#create-program-from-shaders). I put them down here:
 
 ```js
 function getGLContext(canvas, bgColor) {
-  const gl = canvas.getContext('webgl2');
-  const defaultBgColor = [1, 1, 1, 1];
+  const gl = canvas.getContext('webgl2')
+  const defaultBgColor = [1, 1, 1, 1]
 
-  gl.clearColor(...(bgColor || defaultBgColor));
-  gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
+  gl.clearColor(...(bgColor || defaultBgColor))
+  gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT)
 
-  return gl;
+  return gl
 }
 
 function getShader(gl, shaderSource, shaderType) {
-  const shader = gl.createShader(shaderType);
+  const shader = gl.createShader(shaderType)
 
-  gl.shaderSource(shader, shaderSource);
-  gl.compileShader(shader);
+  gl.shaderSource(shader, shaderSource)
+  gl.compileShader(shader)
 
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-    console.error(gl.getShaderInfoLog(shader));
+    console.error(gl.getShaderInfoLog(shader))
   }
 
-  return shader;
+  return shader
 }
 
 function getProgram(gl, vs, fs) {
-  const program = gl.createProgram();
+  const program = gl.createProgram()
 
-  gl.attachShader(program, vs);
-  gl.attachShader(program, fs);
-  gl.linkProgram(program);
-  gl.useProgram(program);
+  gl.attachShader(program, vs)
+  gl.attachShader(program, fs)
+  gl.linkProgram(program)
+  gl.useProgram(program)
 
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.error(gl.getProgramInfoLog(program));
+    console.error(gl.getProgramInfoLog(program))
   }
 
-  return program;
+  return program
 }
 ```
 
@@ -396,31 +397,30 @@ The `run` function we have seen called in the previous section will be responsib
 // step for a gear of 1 teeth
 // gears for more steps will be calculated with this formula:
 // realRotationStep = rotationStep / numberOfTeeth
-const rotationStep = 0.2;
+const rotationStep = 0.2
 
 // Angles are all initialized to 0
-const angles = Array.from({ length: gears.length }).map((v) => 0);
+const angles = Array.from({ length: gears.length }).map((v) => 0)
 
 function run() {
   // Calculate the angles of this frame, for each gear
   gears.forEach((gear, index) => {
-    const direction = gear.direction === 'clockwise' ? 1 : -1;
-    const step = direction * (rotationStep / gear.numberOfTeeth);
+    const direction = gear.direction === 'clockwise' ? 1 : -1
+    const step = direction * (rotationStep / gear.numberOfTeeth)
 
-    angles[index] = (angles[index] + step) % 360;
-  });
+    angles[index] = (angles[index] + step) % 360
+  })
 
-  drawGears(); // Let's see this in the next section
+  drawGears() // Let's see this in the next section
 
   // Render next frame
-  window.requestAnimationFrame(run);
+  window.requestAnimationFrame(run)
 }
 ```
 
 Given the previous data we have in the `gears` array, we know how many **teeth** and in which **direction** each gear rotates. With this, we can **calculate the angle of each gear** on each frame. Once we save the new calculated angles, we call the function `drawGears` to draw each gear with the correct angle, and then recursively call the `run` function again (wrapped with `window.requestAnimationFrame` to make sure that i's called again only in the next animation cycle).
 
-We will probably wondering why we don't implicitly tell to **clean the canvas** before each frame. The reason is that it does so automatically when drawing. If it detects that we change the input variables, by default it will clean the previous buffer. If for some reason *(**not this case**)* we want the canvas not to be cleaned, then we should have obtained the context with an additional parameter `const gl = canvas.getContext('webgl', { preserveDrawingBuffer: true });`.
-
+We will probably wondering why we don't implicitly tell to **clean the canvas** before each frame. The reason is that it does so automatically when drawing. If it detects that we change the input variables, by default it will clean the previous buffer. If for some reason _(**not this case**)_ we want the canvas not to be cleaned, then we should have obtained the context with an additional parameter `const gl = canvas.getContext('webgl', { preserveDrawingBuffer: true });`.
 
 ### Draw gears
 
@@ -429,53 +429,53 @@ For each gear in each frame, we will pass to the GPU the necessary matrices for 
 ```js
 function drawGears() {
   gears.forEach((gear, index) => {
-    const [centerX, centerY] = gear.center;
+    const [centerX, centerY] = gear.center
 
     // u_translation
     gl.uniformMatrix3fv(
       translationLocation,
       false,
-      translation(centerX, centerY),
-    );
+      translation(centerX, centerY)
+    )
 
     // u_rotation
-    gl.uniformMatrix3fv(rotationLocation, false, rotation(angles[index]));
+    gl.uniformMatrix3fv(rotationLocation, false, rotation(angles[index]))
 
     // u_moveOrigin
     gl.uniformMatrix3fv(
       moveOriginLocation,
       false,
-      translation(-centerX, -centerY),
-    );
+      translation(-centerX, -centerY)
+    )
 
     // Render the gear + each gear piece
-    renderGearPiece(gear);
-    if (gear.children) gear.children.forEach(renderGearPiece);
-  });
+    renderGearPiece(gear)
+    if (gear.children) gear.children.forEach(renderGearPiece)
+  })
 }
 ```
 
 We will draw each piece of the gear with the same function:
 
 ```js
- function renderGearPiece({
+function renderGearPiece({
   center,
   radius,
   fillColor,
   strokeColor,
   numberOfTeeth,
 }) {
-  const { TRIANGLE_STRIP, POINTS, TRIANGLES } = gl;
-  const coords = getCoords(gl, center, radius);
+  const { TRIANGLE_STRIP, POINTS, TRIANGLES } = gl
+  const coords = getCoords(gl, center, radius)
 
-  if (fillColor) drawShape(coords, fillColor, TRIANGLE_STRIP);
-  if (strokeColor) drawShape(coords, strokeColor, POINTS);
+  if (fillColor) drawShape(coords, fillColor, TRIANGLE_STRIP)
+  if (strokeColor) drawShape(coords, strokeColor, POINTS)
   if (numberOfTeeth) {
     drawShape(
       getCoords(gl, center, radius, numberOfTeeth),
       fillColor,
-      TRIANGLES,
-    );
+      TRIANGLES
+    )
   }
 }
 ```
@@ -488,25 +488,24 @@ Implemented with various "ifs", we allow us to create a circle filled with one c
 
 The coordinates of the filled circle and the circle with border, even if one is made with triangles and the other with points, are exactly the same coordinates. The one that does have different coordinates is the circle with teeth, but we'll use the same helper to get the coordinates:
 
-
 ```js
 export default function getCoords(gl, center, radiusX, teeth = 0) {
-  const toothSize = teeth ? 0.05 : 0;
-  const step = teeth ? 360 / (teeth * 3) : 1;
-  const [centerX, centerY] = center;
-  const positions = [];
-  const radiusY = (radiusX / gl.canvas.height) * gl.canvas.width;
+  const toothSize = teeth ? 0.05 : 0
+  const step = teeth ? 360 / (teeth * 3) : 1
+  const [centerX, centerY] = center
+  const positions = []
+  const radiusY = (radiusX / gl.canvas.height) * gl.canvas.width
 
   for (let i = 0; i <= 360; i += step) {
     positions.push(
       centerX,
       centerY,
       centerX + (radiusX + toothSize) * Math.cos(2 * Math.PI * (i / 360)),
-      centerY + (radiusY + toothSize) * Math.sin(2 * Math.PI * (i / 360)),
-    );
+      centerY + (radiusY + toothSize) * Math.sin(2 * Math.PI * (i / 360))
+    )
   }
 
-  return positions;
+  return positions
 }
 ```
 
@@ -514,20 +513,15 @@ And what we still need to see, would be the helper `drawShape`, although it is e
 
 ```js
 function drawShape(coords, color, drawingMode) {
-  const data = new Float32Array(coords);
-  const buffer = createAndBindBuffer(
-    gl,
-    gl.ARRAY_BUFFER,
-    gl.STATIC_DRAW,
-    data,
-  );
+  const data = new Float32Array(coords)
+  const buffer = createAndBindBuffer(gl, gl.ARRAY_BUFFER, gl.STATIC_DRAW, data)
 
-  gl.useProgram(program);
-  linkGPUAndCPU(gl, { program, buffer, gpuVariable: 'position' });
+  gl.useProgram(program)
+  linkGPUAndCPU(gl, { program, buffer, gpuVariable: 'position' })
 
-  const inputColor = gl.getUniformLocation(program, 'inputColor');
-  gl.uniform3fv(inputColor, color);
-  gl.drawArrays(drawingMode, 0, coords.length / 2);
+  const inputColor = gl.getUniformLocation(program, 'inputColor')
+  gl.uniform3fv(inputColor, color)
+  gl.drawArrays(drawingMode, 0, coords.length / 2)
 }
 ```
 

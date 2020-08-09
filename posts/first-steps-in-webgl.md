@@ -7,6 +7,7 @@ cover_image: /images/cover-images/13_cover_image.jpg
 cover_image_mobile: /images/cover-images/13_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/13_cover_image_vert.jpg
 cover_color: '#BBB6AE'
+series: 'Learning WebGL'
 dev_to: first-steps-in-webgl-385c
 ---
 

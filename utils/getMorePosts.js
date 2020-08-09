@@ -4,13 +4,14 @@ export default function getMorePosts({ data }, slug) {
   const tags = data.tags.split(',').map((l) => l.trim())
   const posts = getAllPosts()
 
-  const series = posts // already sorted by date
+  const series = posts
     .filter(
       (p) =>
         typeof p.metadata.series === 'string' &&
         p.metadata.series === data.series
     )
     .map(({ metadata, slug }) => ({ title: metadata.title, slug }))
+    .reverse() // sort asc instead of desc
 
   const related = posts
     .filter((p) => p.slug !== slug)
