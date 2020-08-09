@@ -7,6 +7,7 @@ cover_image: /images/cover-images/13_cover_image.jpg
 cover_image_mobile: /images/cover-images/13_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/13_cover_image_vert.jpg
 cover_color: '#BBB6AE'
+series: 'Learning WebGL'
 dev_to: first-steps-in-webgl-385c
 ---
 
@@ -253,7 +254,7 @@ Once we have created the program with the shaders for our triangle and created t
 gl.drawArrays(
   gl.TRIANGLES, // Type of primitive
   0, // Start index in the array of vector points
-  3 // Number of indices to be rendered
+  3 // Number of vertices to be rendered
 )
 ```
 
