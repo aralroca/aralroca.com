@@ -1,8 +1,10 @@
-module.exports = {
+const withPrefresh = require('@prefresh/next')
+
+const nextConfig = {
   experimental: {
     modern: true,
   },
-  webpack(config, { isServer }) {
+  webpack(config, { dev, isServer }) {
     // Generate Sitemap + RSS on build time
     if (isServer) {
       require('./utils/generateSitemap')()
@@ -28,6 +30,22 @@ module.exports = {
       }
     }
 
+    // Install webpack aliases:
+    const aliases = config.resolve.alias || (config.resolve.alias = {})
+    aliases.react = aliases['react-dom'] = 'preact/compat'
+
+    // inject Preact DevTools
+    if (dev && !isServer) {
+      const entry = config.entry
+      config.entry = () =>
+        entry().then((entries) => {
+          entries['main.js'] = ['preact/debug'].concat(entries['main.js'] || [])
+          return entries
+        })
+    }
+
     return config
   },
 }
+
+module.exports = withPrefresh(nextConfig)

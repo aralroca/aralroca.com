@@ -19,22 +19,24 @@
     "highlight.js": "10.1.2",
     "js-paging": "0.1.1",
     "marked": "1.1.1",
-    "next": "9.5.0",
-    "preact": "10.4.6",
+    "next": "9.5.2",
+    "preact": "10.4.7",
     "preact-render-to-string": "5.1.10",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.0",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.1",
     "reading-time": "1.2.0"
   },
   "devDependencies": {
-    "babel-jest": "26.1.0",
+    "@prefresh/next": "0.4.0",
+    "babel-jest": "26.3.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-minify": "0.5.1",
     "husky": "4.2.5",
-    "jest": "26.1.0",
+    "jest": "26.3.0",
     "prettier": "2.0.5",
-    "pretty-quick": "2.0.1"
+    "pretty-quick": "2.0.1",
+    "react-refresh": "0.8.3"
   },
   "husky": {
     "hooks": {
