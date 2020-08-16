@@ -1,7 +1,7 @@
 ---
 title: How to draw gears in WebGL
 created: 08/09/2020
-description: Learn how to draw dynamic 2D complex shapes in WebGL by drawing gears
+description: Learn how to draw dynamic 2D complex shapes in WebGL by drawing gears.
 tags: javascript, webgl, react
 cover_image: /images/cover-images/15_cover_image.jpg
 cover_image_mobile: /images/cover-images/15_cover_image_mobile.jpg
@@ -253,7 +253,7 @@ The translation matrix can be defined as follows:
 ```js
 function translation(tx, ty) {
   return [
-    1, 0, 0, 
+    1, 0, 0,
     0, 1, 0, 
     tx, ty, 1
   ]
