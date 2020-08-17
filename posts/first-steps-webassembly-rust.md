@@ -18,7 +18,7 @@ In this article we will see how to **run native code in the browser**, doing web
 - [Execute Rust code from JavaScript](#execute-rust-code-from-javascript)
   - [Rust code](#rust-code)
   - [Compilation](#compilation)
-  - [Use .wasm from JavaScript](#use-wasm-from-javascript)
+  - [Use the compiled code on our JS project](#use-the-compiled-code-on-our-js-project)
 - [Execute JavaScript code from Rust
   ](#execute-javascript-code-from-rust)
 - [Performance - JavaScript vs Rust
@@ -89,7 +89,7 @@ Let's create a new Rust project for the "Hello world":
 > cargo new helloworld --lib
 ```
 
-And on `Cargo.toml` we are going to add the `cdylib` for `wasm` final artifacts, and [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) to facilitate high-level interactions between Wasm modules and JavaScript.
+And on `Cargo.toml` we are going to add the next:
 
 ```toml
 [package]
@@ -109,11 +109,12 @@ wasm-bindgen = "0.2.67"
 wasm-opt = ["-Oz", "--enable-mutable-globals"]
 ```
 
-The latest part about `--enable-mutable-globals` in principle in upcoming `wasm-bindgen` releases should not be needed, but for this tutorial it's necessary, otherwise [we can not work with Strings](https://github.com/rustwasm/wasm-pack/issues/886#issuecomment-667669802).
+- `cdylib` lib for `wasm` final artifacts.
+- [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) dependency to facilitate high-level interactions between Wasm modules and JavaScript.
 
-> **Note**: WebAssembly only supports the i32, u32, i64 and u64 types. So if you want to work with other types, such as String or Objects, you must first encode them. However, the **wasm-bindgen** does these bindings for us. So there's no need to worry about it anymore.
+> **Note**: The latest part about `--enable-mutable-globals` in principle in upcoming `wasm-bindgen` releases should not be needed, but for this tutorial it's necessary, otherwise [we can not work with Strings](https://github.com/rustwasm/wasm-pack/issues/886#issuecomment-667669802).
 
-Let's write our "Hello world" function in `src/lib.rs`:
+WebAssembly only supports the i32, u32, i64 and u64 types. So if you want to work with other types, such as String or Objects, you normally must first encode them. However, the **wasm-bindgen** does these bindings for us. So there's no need to worry about it anymore. That said, let's create our `helloworld` function to return a String in `src/lib.rs`:
 
 ```rs
 use wasm_bindgen::prelude::*;
@@ -139,7 +140,7 @@ We are using the web target, however there are different targets that we can use
 - **--target no-modules** - for the web without ECMAScript module.
 - **--target nodejs** - for Node.js
 
-After executing the above command, a `pkg` directory will have been created with our JavaScript library containing the code we have made in Rust! It even generates the types files of TypeScript.
+After executing the above command, a `pkg` directory will **have been created** with our JavaScript library containing the code we have made in Rust! It even generates the types files of TypeScript.
 
 ```bh
 > ls -l pkg
@@ -152,9 +153,11 @@ total 72
 -rw-r--r--  1 aralroca  staff    289 Aug 15 13:38 package.json
 ```
 
-As we can see, the size of the wasm, although it is a little bigger than the code we would write in JavaScript, is still small.
+And it's ready as a JavaScript package, so we an use it in our project or even upload the package to NPM as we can see later.
 
-### Use .wasm from JavaScript
+The `.js` file contains the necessary "glue" code to don't have to worry about working outside the `pkg` with buffers, text decoders, etc.
+
+### Use the compiled code on our JS project
 
 In order to use the `wasm` file in our JavaScript, we can import the generated `pkg` module to our project. To test it, we can create an `index.html` on the root of the Rust project with this:
 
@@ -180,7 +183,7 @@ In order to use the `wasm` file in our JavaScript, we can import the generated `
 </html>
 ```
 
-As you can see, before using the `add` function is important to call the asyncronous `init` function in order to load the `wasm` file. Then, we can use the public rust functions in an easy way!
+As you can see, before using the `helloworld` function is important to call the asyncronous `init` function in order to load the `wasm` file. Then, we can use the public Rust functions in an easy way!
 
 To test it, you can do `npx serve .` and open `http://localhost:5000`.
 
@@ -192,6 +195,8 @@ To test it, you can do `npx serve .` and open `http://localhost:5000`.
 ## Execute JavaScript code from Rust
 
 It is possible within Rust to use JavaScript code, for example to use `window` variables, write in the DOM or call internal functions such as `console.log`. All we have to do is declare the JavaScript bindings we want to use inside `extern "C"`.
+
+As an example we are going to use the function `console.log` inside Rust:
 
 ```rs
 use wasm_bindgen::prelude::*;
@@ -208,7 +213,9 @@ pub fn example() {
 }
 ```
 
-And in JS:
+As we can see, inside the `extern "C"` we have to indicate the `js_namespace` (console), and then indicate the function that we will use inside the namespace (log). In this case we've put only one string as a parameter but if we wanted to execute a `console.log` with multiple parameters they would have to be declared.
+
+And in our JS:
 
 ```js
 import init, { example } from './pkg/helloworld.js'
@@ -223,7 +230,7 @@ run()
 
 ## Performance - JavaScript vs Rust
 
-To make a performance test between Rust and JavaScript, I will compare the fibonacci function in the two languages:
+Let's do a comparison of a slightly more expensive function, such as the [fibonacci](https://en.wikipedia.org/wiki/Fibonacci_sequence) function, to see how they perform in both Rust and JavaScript:
 
 ```rs
 use wasm_bindgen::prelude::*;
@@ -237,7 +244,7 @@ pub fn fibonacci(n: u32) -> u32 {
 }
 ```
 
-And let's compare it with JavaScript using the `console.time` to measure the performance of each one:
+Using the `console.time` function we can measure the performance of each one:
 
 ```js
 import init, { fibonacci } from './pkg/helloworld.js'
@@ -326,8 +333,7 @@ Although we have used Rust, it is possible to use many other languages, although
 
 ## References
 
+- https://www.rust-lang.org/
+- https://rustwasm.github.io/docs/wasm-pack/
 - https://rustwasm.github.io/book/why-rust-and-webassembly.html
-- https://depth-first.com/articles/2020/07/07/rust-and-webassembly-from-scratch-hello-world-with-strings/
-- https://kripken.github.io/blog/binaryen/2018/04/18/rust-emscripten.html
-- https://github.com/webassembly/wabt
 - https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71/#:~:text=What%20WebAssembly%20enables%20you%20to,JavaScript%2C%20it%20works%20alongside%20JavaScript.
