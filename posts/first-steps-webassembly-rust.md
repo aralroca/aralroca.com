@@ -24,6 +24,7 @@ In this article we will see how to **run native code in the browser**, doing web
 - [Performance - JavaScript vs Rust
   ](#performance---javascript-vs-rust)
 - [Debugging](#debugging)
+- [Publishing to NPM](#publishing-to-npm)
 - [Code from the article](#code-from-the-article)
 - [Conclusions](#conclusions)
 - [References](#references)
@@ -74,10 +75,10 @@ Maybe we wonder why in [Rust](https://www.rust-lang.org/), having so many langua
 
 ## Execute Rust code from JavaScript
 
-We are going to implement the typical "hello world" in Rust + wasm. As a prerequisit, we need to have [wasm-pack](https://github.com/rustwasm/wasm-pack) installed:
+Assuming you have both [NPM](https://www.npmjs.com/) (for JS) and [Cargo](https://doc.rust-lang.org/cargo/) (for Rust), another prerequisite we need to be installed is [wasm-pack](https://github.com/rustwasm/wasm-pack):
 
 ```
-cargo install wasm-pack
+> cargo install wasm-pack
 ```
 
 ### Rust code
@@ -85,7 +86,7 @@ cargo install wasm-pack
 Let's create a new Rust project for the "Hello world":
 
 ```
-cargo new helloworld --lib
+> cargo new helloworld --lib
 ```
 
 And on `Cargo.toml` we are going to add the `cdylib` for `wasm` final artifacts, and [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) to facilitate high-level interactions between Wasm modules and JavaScript.
@@ -110,7 +111,9 @@ wasm-opt = ["-Oz", "--enable-mutable-globals"]
 
 The latest part about `--enable-mutable-globals` in principle in upcoming `wasm-bindgen` releases should not be needed, but for this tutorial it's necessary, otherwise [we can not work with Strings](https://github.com/rustwasm/wasm-pack/issues/886#issuecomment-667669802).
 
-And we are going to write our "Hello world" function in `lib.rs`:
+> **Note**: WebAssembly only supports the i32, u32, i64 and u64 types. So if you want to work with other types, such as String or Objects, you must first encode them. However, the **wasm-bindgen** does these bindings for us. So there's no need to worry about it anymore.
+
+Let's write our "Hello world" function in `src/lib.rs`:
 
 ```rs
 use wasm_bindgen::prelude::*;
@@ -126,10 +129,17 @@ pub fn helloworld() -> String {
 Let's compile Rust's code with:
 
 ```
-wasm-pack build --target web
+> wasm-pack build --target web
 ```
 
-A `pkg` directory will have been created with our JavaScript library containing the code we have made in Rust! It even generates the types files of TypeScript.
+We are using the web target, however there are different targets that we can use depending how we want to use that `wasm` file:
+
+- **--target bundler** - for bundlers like Webpack, Parcel or Rollup.
+- **--target web** - for the web as ECMAScript module.
+- **--target no-modules** - for the web without ECMAScript module.
+- **--target nodejs** - for Node.js
+
+After executing the above command, a `pkg` directory will have been created with our JavaScript library containing the code we have made in Rust! It even generates the types files of TypeScript.
 
 ```bh
 > ls -l pkg
@@ -273,11 +283,34 @@ However, it's important to note that not all functions we implement in Rust will
 
 If in the `devtools -> source` we look inside our files for our `.wasm` file, we will see that instead of binary, it shows us the WAT file so that it is more understandable and we can debug it in a better way than with wasm directly.
 
-In order to debug the Rust code with the Devtools, you can compile it with the `--debug` flag.
+<figure align="center">
+  <img src="/images/blog-images/debug-wasm.jpg" alt="Debug WASM in Chrome dev tools" class="center" />
+  <figcaption><small>Debug WASM in Chrome dev tools</small></figcaption>
+</figure>
+
+For a better debugging experience, you can use the `--debug` flag to display the names of the functions you have used in Rust.
 
 ```
-wasm-pack build --target web --debug
+> wasm-pack build --target web --debug
 ```
+
+For now using `wasm-bindgen` it's not possible to use source-maps to display the code in Rust on devtools. But I guess in the future it will be available.
+
+## Publishing to NPM
+
+Once we have our pkg directory generated, we can package it with:
+
+```
+>  wasm-pack pack myproject/pkg
+```
+
+And publish it at npm with:
+
+```
+> wasm-pack publish
+```
+
+They work the same way as with `npm pack` and `npm publish`, so we could use the same flags as `wasm-pack publish --tag next`.
 
 ## Code from the article
 
@@ -297,5 +330,4 @@ Although we have used Rust, it is possible to use many other languages, although
 - https://depth-first.com/articles/2020/07/07/rust-and-webassembly-from-scratch-hello-world-with-strings/
 - https://kripken.github.io/blog/binaryen/2018/04/18/rust-emscripten.html
 - https://github.com/webassembly/wabt
-- https://twitter.com/ChromeDevTools/status/1192803818024710145
 - https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71/#:~:text=What%20WebAssembly%20enables%20you%20to,JavaScript%2C%20it%20works%20alongside%20JavaScript.
