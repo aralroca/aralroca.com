@@ -6,10 +6,11 @@ tags: javascript, rust, webassembly
 cover_image: /images/cover-images/16_cover_image.jpg
 cover_image_mobile: /images/cover-images/16_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/16_cover_image_vert.jpg
+dev_to: first-steps-with-webassembly-in-rust-37im
 cover_color: '#130913'
 ---
 
-We'll see how to **run native code in the browser**, doing faster web applications, being able to reuse old code like retro videogames and at the same time learning the future of web development.
+We'll see how to **run native code in the browser**, doing faster web applications, being able to reuse old code like retro videogames, and at the same time learning the future of web development.
 
 **We'll cover the following:**
 
@@ -31,9 +32,9 @@ We'll see how to **run native code in the browser**, doing faster web applicatio
 
 ## What is WebAssembly?
 
-In all current browsers there is a JavaScript engine that interprets and executes the code. This has allowed us to implement very rich web applications because JavaScript is getting better and more complete everyday. However, it's a high-level language but still not ideal for some tasks because it has **not been developed to be a fast language** with a lot of performance.
+In all current browsers, there is a JavaScript engine that interprets and executes the code. This has allowed us to implement very rich web applications because JavaScript is getting better and more complete every day. However, it's a high-level language but still not ideal for some tasks because it has **not been developed to be a fast language** with a lot of performance.
 
-WebAssembly (**WASM**) is a new portable **binary-code format** that can be executed in modern browsers. It is complemented with a **text format** (**WAT**) to make it more **readable/debuggable** for us, in addition to allow us to code directly in a kind of "assembly" code. It's an open [W3C standard](https://www.w3.org/TR/wasm-core-1/) still in progress that allows us to write **fast and efficient** code for the web in other languages than JavaScript and it runs with a **similar performance to the native language**. It's not here to replace JavaScript, but to complement it.
+WebAssembly (**WASM**) is a new portable **binary-code format** that can be executed in modern browsers. It is complemented with a **text format** (**WAT**) to make it more **readable/debuggable** for us, in addition, to allow us to code directly in a kind of "assembly" code. It's an open [W3C standard](https://www.w3.org/TR/wasm-core-1/) still in progress that allows us to write **fast and efficient** code for the web in other languages than JavaScript and it runs with a **similar performance to the native language**. It's not here to replace JavaScript, but to complement it.
 
 <figure align="center">
   <img src="/images/blog-images/js-engine.png" alt="JavaScript engine" class="center transparent" />
@@ -42,7 +43,7 @@ WebAssembly (**WASM**) is a new portable **binary-code format** that can be exec
 
 Another purpose of WebAssembly is to keep the web **secure**, light and fast, keeping a **small** `.wasm` **file size** and always maintaining **backwards-compatibility** in new WASM features, so the web doesn't break.
 
-There are more than [40 supported languages](https://github.com/appcypher/awesome-wasm-langs) for WebAssembly, the most common are C, C++ and Rust for their performance and maturity, although you also can write code for WASM with high-level languages as Python, PHP or even JavaScript!
+There are more than [40 supported languages](https://github.com/appcypher/awesome-wasm-langs) for WebAssembly, the most common are C, C++, and Rust for their performance and maturity, although you also can write code for WASM with high-level languages like Python, PHP or even JavaScript!
 
 Some **practical uses** of WebAssembly:
 
@@ -114,7 +115,7 @@ wasm-opt = ["-Oz", "--enable-mutable-globals"]
 
 > **Note**: The latest part about `--enable-mutable-globals` in principle, in upcoming `wasm-bindgen` releases, should not be needed but for this tutorial it's necessary. Otherwise [we can not work with Strings](https://github.com/rustwasm/wasm-pack/issues/886#issuecomment-667669802).
 
-WebAssembly only supports the i32, u32, i64 and u64 types. If you want to work with other types, such as String or Objects, you normally must first encode them. However, **wasm-bindgen** does these bindings for us. There's no need to worry about it anymore. That said, let's create our `helloworld` function to return a String in `src/lib.rs`:
+WebAssembly only supports the i32, u32, i64, and u64 types. If you want to work with other types, such as String or Objects, you normally must first encode them. However, **wasm-bindgen** does these bindings for us. There's no need to worry about it anymore. That said, let's create our `helloworld` function to return a String in `src/lib.rs`:
 
 ```rs
 use wasm_bindgen::prelude::*;
@@ -133,14 +134,14 @@ Let's compile Rust's code with:
 > wasm-pack build --target web
 ```
 
-We are using the web target, however there are different targets we can use depending on how we want to use that `wasm` file:
+We are using the web target, however, there are different targets we can use depending on how we want to use that `wasm` file:
 
-- **--target bundler** - for bundlers like Webpack, Parcel or Rollup.
+- **--target bundler** - for bundlers like Webpack, Parcel, or Rollup.
 - **--target web** - for the web as ECMAScript module.
 - **--target no-modules** - for the web without ECMAScript module.
 - **--target nodejs** - for Node.js
 
-After executing the above command, a `pkg` directory will have been created with our JavaScript library containing the code we have made in Rust! It even generates the types files of TypeScript.
+After executing the above command, a `pkg` directory will have been created with our JavaScript library containing the code we have made in Rust! It even generates the "types" files of TypeScript.
 
 ```bh
 > ls -l pkg
@@ -183,7 +184,7 @@ In order to use the `wasm` file in our JavaScript, we can import the generated `
 </html>
 ```
 
-As you can see, before using the `helloworld` function it's important to call the asyncronous `init` function in order to load the `wasm` file. Then, we can use the public Rust functions more easily!
+As you can see, before using the `helloworld` function it's important to call the asynchronous `init` function in order to load the `wasm` file. Then, we can use the public Rust functions more easily!
 
 To test it, you can do `npx serve .` and open `http://localhost:5000`.
 
@@ -194,7 +195,7 @@ To test it, you can do `npx serve .` and open `http://localhost:5000`.
 
 ## Execute JavaScript code from Rust
 
-It is possible to use JavaScript code within Rust, for example to use `window` variables, write in the DOM or call internal functions such as `console.log`. All we have to do is to declare the JavaScript bindings we want to use inside `extern "C"`.
+It is possible to use JavaScript code within Rust, for example, to use `window` variables, write in the DOM or call internal functions such as `console.log`. All we have to do is to declare the JavaScript bindings we want to use inside `extern "C"`.
 
 As an example we are going to use the function `console.log` inside Rust:
 
@@ -213,7 +214,7 @@ pub fn example() {
 }
 ```
 
-As we can see, inside the `extern "C"` we have to indicate the `js_namespace` (console) declaring the function that we'll use inside the namespace (log). In this case we've put only one string as a parameter but if we wanted to execute a `console.log` with multiple parameters they would have to be declared.
+As we can see, inside the `extern "C"` we have to indicate the `js_namespace` (console) declaring the function that we'll use inside the namespace (log). In this case, we've put only one string as a parameter but if we wanted to execute a `console.log` with multiple parameters they would have to be declared.
 
 And in our JS:
 
@@ -327,9 +328,9 @@ I've uploaded the code used in this article to my GitHub:
 
 ## Conclusions
 
-In this article we've seen a bit of what WebAssembly is and what is necessary to start creating web applications with Rust.
+In this article, we've seen a bit of what WebAssembly is and what is necessary to start creating web applications with Rust.
 
-We have used Rust because is one of the best integrated but it's possible to use many other languages. This way, we can bring back to life old applications made with languages like C, C++ , and implement more futuristic and portable applications for VR or AR. All this thanks to the browser!
+We have used Rust because is one of the best integrated but it's possible to use many other languages. This way, we can bring back to life old applications made with languages like C or C++, and implement more futuristic and portable applications for VR or AR. All this thanks to the browser!
 
 ## References
 
