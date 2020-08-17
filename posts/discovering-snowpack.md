@@ -1,7 +1,7 @@
 ---
 title: Discovering Snowpack
 created: 06/22/2020
-description: Discover how Snowpack fits into the JavaScript ecosystem
+description: Discover how Snowpack fits into the JavaScript ecosystem.
 tags: javascript, react
 cover_image: /images/cover-images/11_cover_image.jpg
 cover_image_mobile: /images/cover-images/11_cover_image_mobile.jpg

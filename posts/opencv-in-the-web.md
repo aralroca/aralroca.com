@@ -2,7 +2,7 @@
 title: OpenCV directly in the browser (webassembly + webworker)
 created: 05/05/2020
 description: Learn how to use OpenCV in the web without a lot of headaches.
-tags: nextjs, javascript, react, experimental, machine-learning
+tags: nextjs, javascript, react, experimental, machine-learning, webassembly
 cover_image: /images/cover-images/6_cover_image.jpg
 cover_image_mobile: /images/cover-images/6_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/6_cover_image_vert.jpg
