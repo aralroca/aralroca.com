@@ -80,7 +80,11 @@ main {
 }
 
 .supporters .description {
-  margin: 50px 0 60px;
+  margin: 30px 0 30px;
+}
+
+.supporters h2 {
+  margin: 70px 0 30px 0;
 }
 
 u {
@@ -89,7 +93,7 @@ u {
   border-bottom: 2px dotted var(--secondary-color);
 }
 
-.donate-wrapper-separator {
+.wrapper-separator {
   border-top: 1px solid var(--separator);
   border-bottom: 1px solid var(--separator);
   border-left: 1px solid var(--separator);
@@ -473,6 +477,26 @@ h2 {
 .tag.active {
   color: var(--bg-color);
   background-color: var(--tag);
+}
+
+.support-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.donate-btn {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+}
+
+.donate-btn:hover {
+  background-color: var(--hover-nav);
 }
 
 .newsletter {

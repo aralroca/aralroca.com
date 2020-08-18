@@ -1,7 +1,7 @@
 {
   "redirects": [
-    { 
-      "source": "/2019/06/10/exploring-htmlportalelement-with-react/", 
+    {
+      "source": "/2019/06/10/exploring-htmlportalelement-with-react/",
       "destination": "/blog/exploring-htmlportalelement-with-react"
     },
     {
@@ -11,6 +11,10 @@
     {
       "source": "/2018/08/24/first-steps-with-tensorflow-js/",
       "destination": "/blog/first-steps-with-tensorflowjs"
+    },
+    {
+      "source": "/donate",
+      "destination": "/thanks"
     }
   ]
 }
