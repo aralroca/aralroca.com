@@ -7,6 +7,7 @@ cover_image: /images/cover-images/8_cover_image.jpg
 cover_image_mobile: /images/cover-images/8_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/8_cover_image_vert.jpg
 cover_color: '#6A6A6C'
+series: 'Learning Deno'
 dev_to: learn-deno-chat-app-37f0
 ---
 

@@ -7,6 +7,7 @@ cover_image: /images/cover-images/10_cover_image.jpg
 cover_image_mobile: /images/cover-images/10_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/10_cover_image_vert.jpg
 cover_color: '#353133'
+series: 'Learning Deno'
 dev_to: from-node-to-deno-5gpn
 ---
 

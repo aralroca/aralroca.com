@@ -19,6 +19,7 @@
   --separator: #263238;
   --post-item-bg: #1c2529;
   --tag: #4e8abb;
+  --serie: #1c2529;
 }
 
 .dark img:not(.logo img) {
@@ -33,6 +34,7 @@
   --bg-color-main: white;
   --bg-color: rgb(250, 250, 250);
   --color-header: black;
+  --serie: rgb(250, 250, 250);
   --color-shadow: rgba(102, 102, 102, 0.5);
   --color: black;
   --home-h2: #4a4a4a;
