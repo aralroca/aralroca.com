@@ -1,10 +1,10 @@
 .blogSeries {
   width: 100%;
   max-width: 500px;
-  border: 1px solid var(--color-shadow);
   margin: 0 auto;
+  box-shadow: 1px 1px 5px 0px var(--color-shadow);
   font-size: 0.88em;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .blogSeries > * {
@@ -13,7 +13,6 @@
 
 .blogSerie {
   display: block;
-  border-top: 1px solid var(--color-shadow);
   text-decoration: none;
   color: var(--color);
   white-space: nowrap;
@@ -22,10 +21,12 @@
 }
 
 .active {
-  background-color: var(--separator);
+  box-shadow: 1px 1px 5px 1px var(--color-shadow);
+  background-color: var(--serie);
 }
 
 .title {
+  background-color: var(--separator);
   font-size: 0.96em;
   font-weight: bold;
 }
