@@ -1,0 +1,24 @@
+{
+  "name": "Aral Roca",
+  "description": "Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.",
+  "short_name": "Aral Roca",
+  "icons": [
+    {
+      "src": "/images/logo-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/logo-192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logo-512.png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#ad1457",
+  "background_color": "#ad1457",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "start_url": "/blog"
+}

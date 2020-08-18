@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ad1457" />
           <link
             rel="preconnect"
-            href="https://fonts.gstatic.com/"
+            href="https://fonts.googleapis.com/"
             crossorigin
           />
           <link
@@ -19,6 +19,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
             rel="stylesheet"
           />
+          <link rel="manifest" href="/manifest.json" />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"></script>
         </Head>
         <body className="light">
