@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
+
+import PostInfo from '../components/PostInfo'
 import useLoadOnViewport from '../hooks/useLoadOnViewport'
 
 export default function PostItem({ slug, metadata, date, timeToRead }) {
@@ -34,7 +36,7 @@ export default function PostItem({ slug, metadata, date, timeToRead }) {
             <h2>{metadata.title}</h2>
           </a>
         </Link>
-        <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
+        <PostInfo date={date} timeToRead={timeToRead} hideAuthor />
         <p>{metadata.description}</p>
       </div>
     </div>

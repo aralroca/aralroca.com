@@ -3,6 +3,7 @@ import fs from 'fs'
 
 import BlogSeries from '../../components/BlogSeries'
 import Newsletter from '../../components/Newsletter'
+import PostInfo from '../../components/PostInfo'
 import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
 import clearPage from '../../utils/clearPage'
@@ -58,7 +59,7 @@ export default function Post({
         }}
       />
       <h1 className="post-title">{data.title}</h1>
-      <p className="post-info">{`${date} • ${timeToRead.text}`}</p>
+      <PostInfo date={date} timeToRead={timeToRead} />
       <div className="tags" style={{ marginBottom: 30 }}>
         {tags.map((tag) => (
           <Tag key={tag} label={tag} />
