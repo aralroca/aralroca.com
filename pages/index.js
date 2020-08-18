@@ -7,7 +7,7 @@ export default function Home() {
         alt="Aral Roca profile's picture"
       />
       <h1>Aral Roca</h1>
-      <h2>Full-Stack JavaScript developer</h2>
+      <h2>Software Engineer</h2>
       <p>
         Creator and maintainer of{' '}
         <a
