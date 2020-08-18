@@ -491,7 +491,7 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
-  color: var(--bg-color);
+  color: white;
   background-color: var(--primary-color);
 }
 
