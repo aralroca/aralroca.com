@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Fragment } from 'react'
 
 import Newsletter from '../../components/Newsletter'
 import Pagination from '../../components/Paginator'
@@ -45,11 +45,11 @@ export default function Blog({ posts, tags }) {
   }
 
   // Update state from param
-  useEffect(() => setSearch(query.q), [query.q])
+  useEffect(() => setSearch(query.q || ''), [query.q])
   useEffect(() => setCurrentPage(parseInt(query.page) || 1), [query.page])
 
   return (
-    <>
+    <Fragment key={`${query.q}-${query.page}`}>
       <Head>
         <title key="title">Blog - Aral Roca</title>
 
@@ -98,7 +98,7 @@ export default function Blog({ posts, tags }) {
         </div>
       )}
       <Newsletter />
-    </>
+    </Fragment>
   )
 }
 
