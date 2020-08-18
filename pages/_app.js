@@ -80,10 +80,8 @@ export default function Layout({ Component, pageProps }) {
             <a className={isActive('/blog')}>Blog</a>
           </Link>
           <Link href="/thanks">
-            <a className={isActive('/thanks')}>Supporters</a>
-          </Link>
-          <Link href="/donate">
-            <a className={isActive('/donate')}>Donate</a>
+            <a className={isActive('/thanks')}>Support
+            </a>
           </Link>
         </nav>
       </header>
