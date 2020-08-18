@@ -18,7 +18,7 @@
   ],
   "theme_color": "#ad1457",
   "background_color": "#ad1457",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
   "start_url": "/blog"
 }
