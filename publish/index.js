@@ -14,10 +14,13 @@ function getNewPost() {
   const today = new Date()
 
   return fs.readdirSync('posts')
-    .map((slug) => matter(
-      fs.readFileSync(path.join('posts', slug))
-    ))
-    .find(p => {
+    .map((slug) => {
+      const post = matter(
+        fs.readFileSync(path.join('posts', slug))
+      )
+      return { ...post, slug }
+    })
+    .filter(p => {
       const created = new Date(p.data.created)
 
       return (
@@ -27,6 +30,28 @@ function getNewPost() {
         created.getFullYear() === today.getFullYear()
       )
     })
+    .map(({ slug, data, content }) => {
+      const id = slug.replace('.md', '')
+      const img = data.cover_image || ''
+      const canonical = `https://aralroca.com/blog/${id}`
+      const body = `***Original article: ${canonical}***\n` + content
+        .replace(/src="\//g, 'src="https://aralroca.com/')
+        .replace(/href="\//g, 'href="https://aralroca.com/')
+        .replace(/\[.*\]\(\/.*\)/g, r => r.replace('(/', '(https://aralroca.com/'))
+
+      return {
+        body_markdown: body,
+        canonical_url: canonical,
+        created: data.created,
+        description: data.description,
+        main_image: img.startsWith('http') ? img : `https://aralroca.com${img}`,
+        published: true,
+        series: data.series,
+        slug,
+        tags: data.tags,
+        title: data.title,
+      }
+    })[0]
 }
 
 async function deploy() {

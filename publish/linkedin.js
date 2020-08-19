@@ -1,5 +1,5 @@
 async function deployToLinkedin() {
-  console.log('@todo deployToLinkedin')
+  console.log('linkedin -> @todo')
 }
 
 module.exports = deployToLinkedin
