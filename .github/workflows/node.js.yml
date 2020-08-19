@@ -1,0 +1,34 @@
+name: Publishing post
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: "0 17 */1 * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Publishing post
+      env:
+         DEV_TO: ${{secrets.DEV_TO}}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm run publish:post
+    - run: |
+        git config user.name aralroca
+        git config user.email aral-rg@hotmail.com
+        git add README.md
+        git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Add dev.to link to last post"
+        git push origin master
+
