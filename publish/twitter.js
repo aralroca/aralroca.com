@@ -1,5 +1,5 @@
 async function deployToTwitter() {
-  console.log('@todo deployToTwitter')
+  console.log('twitter -> @todo')
 }
 
 module.exports = deployToTwitter

@@ -1,5 +1,5 @@
 async function newsletter() {
-  console.log('@todo newsletter')
+  console.log('newsletter -> @todo')
 }
 
 module.exports = newsletter

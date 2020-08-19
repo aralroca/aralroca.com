@@ -1,5 +1,5 @@
 async function deployToHackerNews() {
-  console.log('@todo deployToHackerNews')
+  console.log('hackernews -> @todo')
 }
 
 module.exports = deployToHackerNews

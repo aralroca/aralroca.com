@@ -1,5 +1,5 @@
 async function deployToEcho() {
-  console.log('@todo deployToEcho')
+  console.log('echo.js -> @todo')
 }
 
 module.exports = deployToEcho

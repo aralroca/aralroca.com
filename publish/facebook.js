@@ -1,5 +1,5 @@
 async function deployToFacebook() {
-  console.log('@todo deployToFacebook')
+  console.log('facebook -> @todo')
 }
 
 module.exports = deployToFacebook
