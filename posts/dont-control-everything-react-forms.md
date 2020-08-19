@@ -165,9 +165,7 @@ Now, we can use this new approach by only changing one character, from “form�
 
 Both approaches; controlled and uncontrolled forms are great for different reasons. We have to know the difference to choose the best for any occasion. My advice would be: use normally uncontrolled unless you really need the state to do dynamic checks or to change dynamically the text of each input.
 
-> It’s my preferred way of deal with forms. If I don’t need the value to be controlled, then I don’t control it ![👍](https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f44d.png)[https://t.co/0TGb3Lrs9Y](https://t.co/0TGb3Lrs9Y)
->
-> — Kent C. Dodds (@kentcdodds) [8 de julio de 2018](https://twitter.com/kentcdodds/status/1015954912075644930?ref_src=twsrc%5Etfw)
+{% twitter 1015954912075644930 %}
 
 If you want to try the Form component, I added in npm:
 
