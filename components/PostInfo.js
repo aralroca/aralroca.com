@@ -8,7 +8,7 @@ export default function PostInfo({ date, timeToRead, hideAuthor }) {
   return (
     <p className="post-info">
       {authorElement}
-      {`${date} • ${timeToRead.text}`}
+      {`${date} • ${timeToRead.text.replace(/ /g, '\u00A0')}`}
     </p>
   )
 }
