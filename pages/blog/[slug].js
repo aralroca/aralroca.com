@@ -6,6 +6,7 @@ import Newsletter from '../../components/Newsletter'
 import PostInfo from '../../components/PostInfo'
 import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
+import addCustomPostWidgets from '../../utils/addCustomPostWidgets'
 import clearPage from '../../utils/clearPage'
 import getMorePosts from '../../utils/getMorePosts'
 import readPost from '../../utils/readPost'
@@ -31,6 +32,7 @@ export default function Post({
           name="description"
           content={data.description}
         />
+        <meta name="twitter:widgets:theme" />
         <meta name="keywords" content={data.tags} />
         <meta name="twitter:title" content={data.title} />
         <meta key="og:type" property="og:type" content="article" />
@@ -139,7 +141,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   return {
     props: {
       ...post,
-      __html: post.__html.replace(/<img /g, '<img loading="lazy" '),
+      __html: await addCustomPostWidgets(post.__html),
       morePosts,
       series,
       slug,

@@ -92,10 +92,20 @@ export default function ChangeTheme() {
     light: 27,
   }[theme]
 
+  function onChangeTwitterEmbedTheme() {
+    const theme = document.body.className
+    parent.document.querySelectorAll('iframe[src]').forEach((iframe) => {
+      if (!iframe.src.startsWith('https://platform.twitter.com')) return
+      if (!iframe.src.includes('theme=')) iframe.src += `&theme=${theme}`
+      else iframe.src = iframe.src.replace(/theme=(dark|light)/g, `theme=${theme}`)
+    })
+  }
+
   function onChangeTheme(e) {
     const { value } = e.target
     window.__setPreferredTheme(value)
     setTheme(value)
+    onChangeTwitterEmbedTheme()
   }
 
   if (isNode) return null

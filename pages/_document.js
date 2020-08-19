@@ -20,7 +20,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="manifest" href="/manifest.json" />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"></script>
+          <script
+            defer
+            src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"
+          ></script>
         </Head>
         <body className="light">
           <script
@@ -32,9 +35,13 @@ export default class MyDocument extends Document {
                 function setTheme(newTheme) {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
-                  document.body.className = newTheme === 'system'
-                    ? darkQuery.matches ? 'dark' : 'light'
-                    : newTheme;
+                  var theme = newTheme === 'system'
+                  ? darkQuery.matches ? 'dark' : 'light'
+                  : newTheme;
+                  document.body.className = theme;
+                  var twitter = parent.document.querySelector('meta[name="twitter:widgets:theme"]');
+                  if(twitter) twitter.content = theme;
+                    
                   window.__onThemeChange(newTheme);
                 }
                 var preferredTheme;
