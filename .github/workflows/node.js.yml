@@ -23,8 +23,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run publish:post
+      - run: yarn install --frozen-lockfile
+      - run: yarn run publish:post
       - run: |
           git config user.name aralroca
           git config user.email aral-rg@hotmail.com
