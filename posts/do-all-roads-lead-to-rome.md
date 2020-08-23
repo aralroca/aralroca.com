@@ -107,7 +107,7 @@ From my point of view, I think that in a short term the answer is "no". Although
 
 In my opinion, JavaScript ecosystem is too fragmented right now, you usually need to have a bunch of dependencies installed for most things. New projects like Rome or Deno, even though many people think that they're fragmenting even more the ecosystem, I think it's just the opposite. They're tools that aim to fix that fragmentation, and that's positive. 
 
-You may be wondering if one of the pieces doesn't fit 100% your needs and you still want to use your old tool. For example you could prefer to continue using Webpack as compiler. The good thing about Rome is that if you only want to use one piece, you can. Thus, you can also use all of Rome's pieces except the compiler, to continue using Webpack or another one.
+You may be wondering if one of the pieces doesn't fit 100% your needs and you still want to use your old tool. For example you could prefer to continue using webpack as compiler. The good thing about Rome is that if you only want to use one piece, you can. Thus, you can also use all of Rome's pieces except the compiler, to continue using webpack or another one.
 
 <figure align="center">
  <img src="/images/blog-images/me.jpg" alt="Aral Roca (me) in philosophical mode" class="center" />
