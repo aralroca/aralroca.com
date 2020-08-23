@@ -45,7 +45,7 @@ Who benefits?
 
 ## Only one configuration file
 
-Right now we need to configure too many tools for a simple feature, for example, to work with absolute imports you need to configure ESLint, TS and also Webpack! 
+Right now we need to configure too many tools for a simple feature, for example, to work with absolute imports you need to configure ESLint, TS and also webpack! 
 
 <figure align="center">
  <img src="/images/blog-images/config-duplication.png" alt="Config duplication" class="center transparent" />
