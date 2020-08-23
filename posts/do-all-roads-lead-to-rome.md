@@ -80,7 +80,7 @@ With Rome, many of these `devDependencies` disappear, moreover [**Rome has zero 
 So we have:
 
 - **Stronger security**: The chance to have a vulnerability decreases because we drastically reduce all dependencies.
-- **Better maintenance and evolution of your project**: Before, updating a new release of some tool could broke the integration with another one. Now all is under one well integrated big tool.
+- **Better maintenance and evolution of your project**: Before, updating a new release of some tool could have broken the integration with another one. Now all is under one well integrated big tool.
 - **Better maintanance and evolution of Rome**: Rome has no dependencies, this means it has a lot of flexibility and a great innovator potential. For example, if they wanted to migrate to another language using wasm, they could do it.
 - **Faster installation**: You won't have to wait so long after doing `npm install`. Less things to install.
 
