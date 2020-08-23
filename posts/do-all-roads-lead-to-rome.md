@@ -97,7 +97,7 @@ We feel more encouraged to start learning something new if we see that it has an
 
 In order to take the first steps in Rome, you only need to [install it](https://romefrontend.dev/#installation) via `yarn` or `npm`, and then run `rome init` to create the default `.config/rome.rjson`. 
 
-Finally you can use every command of the CLI using `rome [command]`, as `rome check` for linting a set of files, `rome format` to format a single file, `rome start` to start a daemon, etc. You can see all the available commands by running `rome --help`.
+Finally you can use every command of the CLI using `rome [command]`, as `rome check` for linting and formatting a set of files, `rome format` to format a single file, `rome start` to start a daemon, etc. You can see all the available commands by running `rome --help`.
 
 ## Do all roads lead to Rome? My thoughs about it
 
