@@ -39,8 +39,8 @@ When all these tasks become the only tool (Rome), we'll be able to reuse the AST
 
 Who benefits?
 
-- **Maintainers/contributors**: Simplifies all unnecessary duplications.
-- **Developers**: A faster development experience with less consumption of resources.
+- **Maintainers/contributors**: simplifies all unnecessary duplications.
+- **Developers**: a faster development experience with less consumption of resources.
 
 
 ## Only one configuration file
