@@ -114,7 +114,7 @@ You may be wondering if one of the pieces doesn't fit 100% your needs and you st
   <figcaption><small>Aral Roca (me) in philosophical mode</small></figcaption>
 </figure>
 
-Now it's your turn, what do you think about the future of JavaScript / Typescript tooling?
+Now it's your turn, what do you think about the future of JavaScript / TypeScript tooling?
 
 ## References
 
