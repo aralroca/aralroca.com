@@ -70,7 +70,7 @@ Who benefits?
 
 In the JavaScript ecosystem we're used to work with many `devDependencies` for all the tools and their plugins: Jest, Babel, Prettier, webpack. Besides, each of them have their own dependencies.
 
-With Rome, many of these `devDependencies` disappear, moreover [**Rome has zero sub-dependencies**](https://github.com/romefrontend/rome/blob/4fdfc5fb7252085ede73a342d895457328dca46e/package.json#L8).
+With Rome, many of these `devDependencies` disappear, moreover [**Rome has zero dependencies**](https://github.com/romefrontend/rome/blob/4fdfc5fb7252085ede73a342d895457328dca46e/package.json#L8).
 
 <figure align="center">
  <img src="/images/blog-images/dependencies-rome.gif" alt="Webpack vs Rome dependencies tree" class="center" />
