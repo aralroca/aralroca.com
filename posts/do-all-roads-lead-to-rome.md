@@ -30,7 +30,7 @@ The person behind this project is [Sebastian McKenzie](https://twitter.com/sebmc
 
 Current tools as Webpack, TS, Babel or ESlint, among others, **run their own parser** to generate an [**Abstract Syntax Tree**](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST). After this, they manipulate and process their own AST. 
 
-When all those tasks become an only tool (Rome), we'll be able to reuse the AST for each task, parsing the files **only once**. Also, some processes will be simplified, for example; watching files, dependency verification or integration with your editor.
+When all these tasks become the only tool (Rome), we'll be able to reuse the AST for each task, parsing the files **only once**. Also, some processes will be simplified, for example: watching files, dependency verification or integration with your editor.
 
 <figure align="center">
  <img src="/images/blog-images/ast-toolchain.png" alt="Reusing the AST" class="center transparent" />
