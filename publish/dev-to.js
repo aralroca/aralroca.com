@@ -6,16 +6,21 @@ function createPost(article) {
   return fetch('https://dev.to/api/articles', {
     method: 'POST',
     headers: {
-      'api-key': process.env.DEV_TO
+      api_key: process.env.DEV_TO,
     },
-    body: JSON.stringify({ article })
+    body: JSON.stringify({ article }),
   })
-    .then(r => r.json())
-    .then(res => {
-      console.log('dev.to -> OK', res.slug, res)
+    .then((r) => r.json())
+    .then((res) => {
+      console.log(
+        'dev.to -> OK',
+        res.slug,
+        res,
+        (process.env.DEV_TO || '').length
+      )
       return res.slug
     })
-    .catch(e => {
+    .catch((e) => {
       console.log('dev.to -> KO', e)
     })
 }
@@ -29,11 +34,14 @@ async function deployToDevTo(article) {
   const post = fs.readFileSync(postPath).toString()
   let occurrences = 0
 
-  fs.writeFileSync(postPath, post.replace(/---/g, m => {
-    occurrences += 1;
-    if (occurrences === 2) return `dev_to: ${devToId}\n${m}`
-    return m
-  }))
+  fs.writeFileSync(
+    postPath,
+    post.replace(/---/g, (m) => {
+      occurrences += 1
+      if (occurrences === 2) return `dev_to: ${devToId}\n${m}`
+      return m
+    })
+  )
 
   return devToId
 }
