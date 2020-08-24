@@ -13,7 +13,7 @@ We'll see what [Rome](https://github.com/romefrontend/rome) is, how it fits into
 
 ## What is Rome?
 
-[**Rome**](https://github.com/romefrontend/rome) is a CLI that unifies the JavaScript and Typescript development toolchain: bundling, compiling, documentation generation, formatting, linting, minification, testing, type checking, etc. It tries to be a "**one-in-all**" solution, being able to do all these tasks under one CLI.
+[**Rome**](https://github.com/romefrontend/rome) is a full toolchain (can be used via CLI, VSCode extension, and in the future via API for testing purposes) that unifies the JavaScript and Typescript development: bundling, compiling, documentation generation, formatting, linting, minification, testing, type checking, etc. It tries to be a "**one-in-all**" solution, being able to do all these tasks under one CLI.
 
 Perhaps you wonder if we can handle Webpack, Babel, Prettier, Jest, etc with this Rome CLI? The answer is **NO**... Rome implemented all these toolchain **from scratch**, without any dependency, using the same configuration file for everything.
 
@@ -24,7 +24,7 @@ The person behind this project is [Sebastian McKenzie](https://twitter.com/sebmc
   <figcaption><small>All tools lead to Rome</small></figcaption>
 </figure>
 
-> Rome is **still in beta**, and right now the only current area fully implemented is **linting**. The other areas are still in development.
+> Rome is **still in beta**, and right now the current areas fully implemented are **linting and formatting**. The other areas are still in development.
 
 ## Better performance
 
@@ -95,7 +95,7 @@ We feel more encouraged to start learning something new if we see that it has an
   <figcaption><small>Photo by Annie Spratt on Unsplash</small></figcaption>
 </figure>
 
-In order to take the first steps in Rome, you only need to [install it](https://romefrontend.dev/#installation) via `yarn` or `npm`, and then run `rome init` to create the default `.config/rome.rjson`. 
+In order to take the first steps in Rome, you can [install it](https://romefrontend.dev/#installation) via `yarn` or `npm`, and then run `npx rome init` / `yarn rome init` to create the default `.config/rome.rjson`. 
 
 Finally you can use every command of the CLI using `rome [command]`, as `rome check` for linting and formatting a set of files, `rome format` to format a single file, `rome start` to start a daemon, etc. You can see all the available commands by running `rome --help`.
 
