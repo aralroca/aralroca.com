@@ -6,7 +6,7 @@ function createPost(article) {
   return fetch('https://dev.to/api/articles', {
     method: 'POST',
     headers: {
-      api_key: process.env.DEV_TO,
+      'api-key': process.env.DEV_TO,
     },
     body: JSON.stringify({ article }),
   })
