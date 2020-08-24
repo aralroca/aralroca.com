@@ -7,6 +7,7 @@ function createPost(article) {
     method: 'POST',
     headers: {
       'api-key': process.env.DEV_TO,
+      'content-type': 'application/json',
     },
     body: JSON.stringify({ article }),
   })
