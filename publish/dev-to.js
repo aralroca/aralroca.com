@@ -13,13 +13,7 @@ function createPost(article) {
   })
     .then((r) => r.json())
     .then((res) => {
-      console.log(
-        'dev.to -> OK',
-        res.slug,
-        res,
-        (process.env.DEV_TO || '').length,
-        { article }
-      )
+      console.log('dev.to -> OK', `https://dev.to/aralroca/${res.slug}`)
       return res.slug
     })
     .catch((e) => {
