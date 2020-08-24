@@ -26,6 +26,6 @@ jobs:
       - run: |
           git config user.name aralroca
           git config user.email aral-rg@hotmail.com
-          git add README.md
+          git add -A
           git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Add dev.to link to last post"
           git push origin master

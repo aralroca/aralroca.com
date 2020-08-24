@@ -7,6 +7,7 @@ cover_image: /images/cover-images/17_cover_image.jpg
 cover_image_mobile: /images/cover-images/17_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/17_cover_image_vert.jpg
 cover_color: '#BFB094'
+dev_to: do-all-roads-lead-to-rome-3154
 ---
 
 We'll see what [Rome](https://github.com/romefrontend/rome) is, how it fits into the JavaScript ecosystem, and my thoughts about it. **Will Rome replace all the current tooling?** Let's see.
@@ -28,7 +29,7 @@ The person behind this project is [Sebastian McKenzie](https://twitter.com/sebmc
 
 ## Better performance
 
-Current tools as webpack, TS, Babel, or ESlint, among others, **run their own parser** to generate an [**Abstract Syntax Tree**](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST). After this, they manipulate and process their own AST. 
+Current tools as webpack, TS, Babel, or ESlint, among others, **run their own parser** to generate an [**Abstract Syntax Tree**](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST). After this, they manipulate and process their own AST.
 
 When all these tasks become the only tool (Rome), we'll be able to reuse the AST for each task, parsing the files **only once**. Also, some processes will be simplified, for example: watching files, dependency verification, or integration with your editor.
 
@@ -42,10 +43,9 @@ Who benefits?
 - **Maintainers/contributors**: simplifies all unnecessary duplications.
 - **Developers**: a faster development experience with less consumption of resources.
 
-
 ## Only one configuration file
 
-Right now we need to configure too many tools for a simple feature, for example, to work with absolute imports you need to configure ESLint, TS, and also webpack! 
+Right now we need to configure too many tools for a simple feature, for example, to work with absolute imports you need to configure ESLint, TS, and also webpack!
 
 <figure align="center">
  <img src="/images/blog-images/config-duplication.png" alt="Config duplication" class="center transparent" />
@@ -86,7 +86,7 @@ So we have:
 
 ## Friendly for beginners
 
-As we've seen in the previous sections, Rome makes it much **easier to start** a project. 
+As we've seen in the previous sections, Rome makes it much **easier to start** a project.
 
 We feel more encouraged to start learning something new if we see that it has an easy start. In the last years starting JavaScript projects without frameworks was really complicated. Simplifying all this tooling will encourage many to learn and enter the world of JavaScript in a much more enjoyable way.
 
@@ -95,17 +95,17 @@ We feel more encouraged to start learning something new if we see that it has an
   <figcaption><small>Photo by Annie Spratt on Unsplash</small></figcaption>
 </figure>
 
-In order to take the first steps in Rome, you can [install it](https://romefrontend.dev/#installation) via `yarn` or `npm`, and then run `npx rome init` / `yarn rome init` to create the default `.config/rome.rjson`. 
+In order to take the first steps in Rome, you can [install it](https://romefrontend.dev/#installation) via `yarn` or `npm`, and then run `npx rome init` / `yarn rome init` to create the default `.config/rome.rjson`.
 
 Finally, you can use every command of the CLI using `rome [command]`, as `rome check` for linting and formatting a set of files, `rome format` to format a single file, `rome start` to start a daemon, etc. You can see all the available commands by running `rome --help`.
 
 ## Do all roads lead to Rome? My thoughts about it
 
-We started the article questioning about if **Rome is going to replace all current toolchain**. It's a question that will be answered over time, depending on the adoption of Rome within the community and the evolution of Rome and the current tools. 
+We started the article questioning about if **Rome is going to replace all current toolchain**. It's a question that will be answered over time, depending on the adoption of Rome within the community and the evolution of Rome and the current tools.
 
 From my point of view, I think that in the short term the answer is "no". Although it replaces the functionality of those tools, that doesn't obsolete them. There are still a lot of projects that depend on them. However, in the long term I think the answer would be "yes". It may not be Rome, maybe another similar approach like Deno adopting a similar philosophy of having everything integrated.
 
-In my opinion, the JavaScript ecosystem is too fragmented right now, you usually need to have a bunch of dependencies installed for most things. New projects like Rome or Deno, even though many people think that they're fragmenting even more the ecosystem, I think it's just the opposite. They're tools that aim to fix that fragmentation, and that's positive. 
+In my opinion, the JavaScript ecosystem is too fragmented right now, you usually need to have a bunch of dependencies installed for most things. New projects like Rome or Deno, even though many people think that they're fragmenting even more the ecosystem, I think it's just the opposite. They're tools that aim to fix that fragmentation, and that's positive.
 
 You may be wondering if one of the pieces doesn't fit 100% your needs and you still want to use your old tool. For example, you could prefer to continue using webpack as a compiler. The good thing about Rome is that if you only want to use one piece, you can. Thus, you can also use all of Rome's pieces except the compiler, to continue using webpack or another one.
 
