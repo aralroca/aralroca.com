@@ -16,7 +16,8 @@ function createPost(article) {
         'dev.to -> OK',
         res.slug,
         res,
-        (process.env.DEV_TO || '').length
+        (process.env.DEV_TO || '').length,
+        { article }
       )
       return res.slug
     })
