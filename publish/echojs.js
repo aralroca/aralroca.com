@@ -15,6 +15,7 @@ async function deployToEcho({ title }, url) {
       news_id: -1,
     }),
   })
+    .then((r) => r.json())
     .then((r) => console.log('echo.js -> OK', r))
     .catch((e) => console.log('echo.js -> KO', e))
 }

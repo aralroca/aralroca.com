@@ -62,8 +62,8 @@ async function deploy() {
 
   // @todo remove (just for testing)
   await deployToEcho(
-    { title: 'Fish follow' },
-    'https://github.com/aralroca/fishFollow-posenet-tfjs'
+    { title: 'First steps with WebAssembly in Rust' },
+    'https://dev.to/aralroca/first-steps-with-webassembly-in-rust-37im'
   )
 
   if (!post) {
