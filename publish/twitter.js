@@ -6,14 +6,13 @@ async function deployToTwitter(article) {
   return fetch('https://api.twitter.com/1.1/statuses/update.json', {
     method: 'POST',
     headers: {
-      Authorization: `OAuth
-      oauth_consumer_key="${process.env.TWITTER_KEY}",
-      oauth_nonce="${process.env.TWITTER_KEY_TOKEN}",
-      oauth_signature="${process.env.TWITTER_ACCESS_KEY}",
-      oauth_signature_method="HMAC-SHA1",
-      oauth_timestamp="${Date.now()}",
-      oauth_token="${process.env.TWITTER_ACCESS_TOKEN}",
-      oauth_version="1.0"`,
+      authorization: `OAuth oauth_consumer_key="${
+        process.env.TWITTER_KEY
+      }", oauth_nonce="${process.env.TWITTER_KEY_TOKEN}", oauth_signature="${
+        process.env.TWITTER_ACCESS_KEY
+      }", oauth_signature_method="HMAC-SHA1", oauth_timestamp="${Date.now()}", oauth_token="${
+        process.env.TWITTER_ACCESS_TOKEN
+      }", oauth_version="1.0"`,
       'content-type': 'application/json',
     },
     body: JSON.stringify({
