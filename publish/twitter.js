@@ -18,10 +18,7 @@ const post = (data) =>
 async function deployToTwitter(article) {
   const url = `https://aralroca.com/blog/${article.slug}`
 
-  return post({
-    status: getStatus(url, article),
-    attachment_url: url,
-  })
+  return post({ status: getStatus(url, article) })
     .then(() => console.log('twitter -> OK'))
     .catch((e) => console.log('twitter -> KO', e))
 }
@@ -48,6 +45,8 @@ ${hashtags}`
     
 ${description}
 
+${url}
+
 ${hashtags}`
     case 3:
       return `I just wrote a new post ☄️
@@ -61,6 +60,8 @@ ${hashtags}`
       return `"${title}" · New post 🚀
 
 ${description}
+
+${url}
 
 ${hashtags}`
     case 5:
