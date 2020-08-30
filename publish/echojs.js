@@ -3,9 +3,11 @@ const fetch = require('isomorphic-unfetch')
 async function deployToEcho({ title }, url) {
   return fetch('https://www.echojs.com/api/submit', {
     method: 'post',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
       Referer: 'https://www.echojs.com/submit',
+      Cookie: `auth=${process.env.ECHO_AUTH}`,
     },
     body: JSON.stringify({
       apisecret: process.env.ECHO_JS,
