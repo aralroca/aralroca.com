@@ -1,30 +1,28 @@
-const fetch = require('isomorphic-unfetch')
+const Twitter = require('twitter')
+
+const client = new Twitter({
+  consumer_key: process.env.TWITTER_KEY,
+  consumer_secret: process.env.TWITTER_KEY_TOKEN,
+  access_token_key: process.env.TWITTER_ACCESS_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN,
+})
+
+const post = (data) =>
+  new Promise((res, rej) =>
+    client.post('statuses/update', data, (error) => {
+      if (error) rej(error)
+      else res()
+    })
+  )
 
 async function deployToTwitter(article) {
   const url = `https://aralroca.com/blog/${article.slug}`
 
-  return fetch('https://api.twitter.com/1.1/statuses/update.json', {
-    method: 'POST',
-    headers: {
-      authorization: `OAuth oauth_consumer_key="${
-        process.env.TWITTER_KEY
-      }", oauth_nonce="${process.env.TWITTER_KEY_TOKEN}", oauth_signature="${
-        process.env.TWITTER_ACCESS_KEY
-      }", oauth_signature_method="HMAC-SHA1", oauth_timestamp="${Date.now()}", oauth_token="${
-        process.env.TWITTER_ACCESS_TOKEN
-      }", oauth_version="1.0"`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      status: getStatus(url, article),
-      attachment_url: url,
-    }),
+  return post({
+    status: getStatus(url, article),
+    attachment_url: url,
   })
-    .then((r) => r.json())
-    .then((r) => {
-      console.log(r)
-      console.log('twitter -> OK')
-    })
+    .then(() => console.log('twitter -> OK'))
     .catch((e) => console.log('twitter -> KO', e))
 }
 
