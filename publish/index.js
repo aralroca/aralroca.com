@@ -60,7 +60,7 @@ function getNewPost() {
 async function deploy() {
   const post = getNewPost()
 
-  // @todo remove (just for test)
+  // @todo remove (just for testing)
   await deployToTwitter({
     slug: 'do-all-roads-lead-to-rome',
     title: 'Do all roads lead to Rome?',
