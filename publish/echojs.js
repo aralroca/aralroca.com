@@ -5,11 +5,10 @@ async function deployToEcho({ title }, url) {
     method: 'post',
     credentials: 'include',
     headers: {
-      'Content-Type': 'application/json',
       Referer: 'https://www.echojs.com/submit',
       Cookie: `auth=${process.env.ECHO_AUTH}`,
     },
-    body: JSON.stringify({
+    body: new URLSearchParams({
       apisecret: process.env.ECHO_JS,
       text: '',
       url,
@@ -18,7 +17,10 @@ async function deployToEcho({ title }, url) {
     }),
   })
     .then((r) => r.json())
-    .then((r) => console.log('echo.js -> OK', r))
+    .then((r) => {
+      if (r.status === 'err') console.log('echo.js -> KO', r.error)
+      else console.log('echo.js -> OK')
+    })
     .catch((e) => console.log('echo.js -> KO', e))
 }
 
