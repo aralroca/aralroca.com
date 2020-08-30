@@ -61,7 +61,7 @@ async function deploy() {
   const post = getNewPost()
 
   // @todo remove (just for test)
-  deployToTwitter({
+  await deployToTwitter({
     slug: 'do-all-roads-lead-to-rome',
     title: 'Do all roads lead to Rome?',
     description:
@@ -71,7 +71,7 @@ async function deploy() {
 
   if (!post) {
     console.log('No new post detected to publish.')
-    return // process.exit()
+    process.exit()
   }
 
   const devToLink = await deployToDevTo(post)
