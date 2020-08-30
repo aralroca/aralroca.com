@@ -57,6 +57,14 @@ function getNewPost() {
 async function deploy() {
   const post = getNewPost()
 
+  // @todo remove (just for test)
+  deployToTwitter({
+    slug: 'do-all-roads-lead-to-rome',
+    title: 'Do all roads lead to Rome?',
+    description: 'Learn what Rome is, how it fits into the JavaScript ecosystem and my thoughts about it... Will Rome replace all the current tooling?',
+    tags: 'webdev, javascript'
+  })
+
   if (!post) {
     console.log('No new post detected to publish.')
     process.exit()
