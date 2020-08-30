@@ -60,6 +60,12 @@ function getNewPost() {
 async function deploy() {
   const post = getNewPost()
 
+  // @todo remove (just for testing)
+  await deployToEcho(
+    { title: 'Fish follow' },
+    'https://github.com/aralroca/fishFollow-posenet-tfjs'
+  )
+
   if (!post) {
     console.log('No new post detected to publish.')
     process.exit()

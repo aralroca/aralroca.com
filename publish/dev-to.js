@@ -39,7 +39,7 @@ async function deployToDevTo(article) {
     })
   )
 
-  return devToId
+  return `https://dev.to/aralroca/${devToId}`
 }
 
 module.exports = deployToDevTo
