@@ -13,14 +13,13 @@ const newsletter = require('./newsletter')
 function getNewPost() {
   const today = new Date()
 
-  return fs.readdirSync('posts')
+  return fs
+    .readdirSync('posts')
     .map((slug) => {
-      const post = matter(
-        fs.readFileSync(path.join('posts', slug))
-      )
+      const post = matter(fs.readFileSync(path.join('posts', slug)))
       return { ...post, slug }
     })
-    .filter(p => {
+    .filter((p) => {
       const created = new Date(p.data.created)
 
       return (
@@ -34,10 +33,14 @@ function getNewPost() {
       const id = slug.replace('.md', '')
       const img = data.cover_image || ''
       const canonical = `https://aralroca.com/blog/${id}`
-      const body = `***Original article: ${canonical}***\n` + content
-        .replace(/src="\//g, 'src="https://aralroca.com/')
-        .replace(/href="\//g, 'href="https://aralroca.com/')
-        .replace(/\[.*\]\(\/.*\)/g, r => r.replace('(/', '(https://aralroca.com/'))
+      const body =
+        `***Original article: ${canonical}***\n` +
+        content
+          .replace(/src="\//g, 'src="https://aralroca.com/')
+          .replace(/href="\//g, 'href="https://aralroca.com/')
+          .replace(/\[.*\]\(\/.*\)/g, (r) =>
+            r.replace('(/', '(https://aralroca.com/')
+          )
 
       return {
         body_markdown: body,
@@ -61,13 +64,14 @@ async function deploy() {
   deployToTwitter({
     slug: 'do-all-roads-lead-to-rome',
     title: 'Do all roads lead to Rome?',
-    description: 'Learn what Rome is, how it fits into the JavaScript ecosystem and my thoughts about it... Will Rome replace all the current tooling?',
-    tags: 'webdev, javascript'
+    description:
+      'Learn what Rome is, how it fits into the JavaScript ecosystem and my thoughts about it... Will Rome replace all the current tooling?',
+    tags: 'webdev, javascript',
   })
 
   if (!post) {
     console.log('No new post detected to publish.')
-    process.exit()
+    return // process.exit()
   }
 
   const devToLink = await deployToDevTo(post)
@@ -88,7 +92,7 @@ deploy()
     console.log('Published!')
     process.exit()
   })
-  .catch(e => {
+  .catch((e) => {
     console.log('ERROR publishing:', e)
     process.exit()
   })
