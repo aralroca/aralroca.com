@@ -4,10 +4,10 @@ async function deployToEcho({ title }, url) {
   return fetch('https://www.echojs.com/api/submit', {
     method: 'post',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
       Referer: 'https://www.echojs.com/submit',
     },
-    body: new URLSearchParams({
+    body: JSON.stringify({
       apisecret: process.env.ECHO_JS,
       text: '',
       url,
