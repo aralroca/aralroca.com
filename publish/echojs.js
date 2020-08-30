@@ -5,6 +5,7 @@ async function deployToEcho({ title }, url) {
     method: 'post',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
+      Referer: 'https://www.echojs.com/submit',
     },
     body: new URLSearchParams({
       apisecret: process.env.ECHO_JS,
@@ -14,7 +15,7 @@ async function deployToEcho({ title }, url) {
       news_id: -1,
     }),
   })
-    .then(() => console.log('echo.js -> OK'))
+    .then((r) => console.log('echo.js -> OK', r))
     .catch((e) => console.log('echo.js -> KO', e))
 }
 
