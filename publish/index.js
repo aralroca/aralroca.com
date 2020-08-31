@@ -60,12 +60,6 @@ function getNewPost() {
 async function deploy() {
   const post = getNewPost()
 
-  // @todo remove (just for testing)
-  await deployToEcho(
-    { title: 'WebGL Gears' },
-    'https://github.com/aralroca/webgl-gears'
-  )
-
   if (!post) {
     console.log('No new post detected to publish.')
     process.exit()
