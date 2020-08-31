@@ -6,16 +6,17 @@ function createPost(article) {
   return fetch('https://dev.to/api/articles', {
     method: 'POST',
     headers: {
-      'api-key': process.env.DEV_TO
+      'api-key': process.env.DEV_TO,
+      'content-type': 'application/json',
     },
-    body: JSON.stringify({ article })
+    body: JSON.stringify({ article }),
   })
-    .then(r => r.json())
-    .then(res => {
-      console.log('dev.to -> OK', res.slug, res)
+    .then((r) => r.json())
+    .then((res) => {
+      console.log('dev.to -> OK', `https://dev.to/aralroca/${res.slug}`)
       return res.slug
     })
-    .catch(e => {
+    .catch((e) => {
       console.log('dev.to -> KO', e)
     })
 }
@@ -29,13 +30,16 @@ async function deployToDevTo(article) {
   const post = fs.readFileSync(postPath).toString()
   let occurrences = 0
 
-  fs.writeFileSync(postPath, post.replace(/---/g, m => {
-    occurrences += 1;
-    if (occurrences === 2) return `dev_to: ${devToId}\n${m}`
-    return m
-  }))
+  fs.writeFileSync(
+    postPath,
+    post.replace(/---/g, (m) => {
+      occurrences += 1
+      if (occurrences === 2) return `dev_to: ${devToId}\n${m}`
+      return m
+    })
+  )
 
-  return devToId
+  return `https://dev.to/aralroca/${devToId}`
 }
 
 module.exports = deployToDevTo

@@ -18,16 +18,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Publishing post
-        env:
-          DEV_TO: ${{secrets.DEV_TO}}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile
-      - run: yarn run publish:post
+      - run: yarn install --pure-lockfile
+      - run: DEV_TO=${{secrets.DEV_TO}} TWITTER_KEY=${{secrets.TWITTER_KEY}} TWITTER_KEY_SECRET=${{secrets.TWITTER_KEY_SECRET}} TWITTER_ACCESS_KEY=${{secrets.TWITTER_ACCESS_KEY}} TWITTER_ACCESS_TOKEN=${{secrets.TWITTER_ACCESS_TOKEN}} ECHO_JS=${{secrets.ECHO_JS}} ECHO_AUTH=${{secrets.ECHO_AUTH}} yarn run publish:post
       - run: |
           git config user.name aralroca
           git config user.email aral-rg@hotmail.com
-          git add README.md
+          git add -A
           git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Add dev.to link to last post"
           git push origin master
