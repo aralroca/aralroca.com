@@ -62,8 +62,8 @@ async function deploy() {
 
   // @todo remove (just for testing)
   await deployToEcho(
-    { title: 'First steps with WebAssembly in Rust' },
-    'https://dev.to/aralroca/first-steps-with-webassembly-in-rust-37im'
+    { title: 'WebGL Gears' },
+    'https://github.com/aralroca/webgl-gears'
   )
 
   if (!post) {
