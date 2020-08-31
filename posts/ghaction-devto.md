@@ -3,13 +3,13 @@ title: GitHub action to publish your blog post to dev.to
 created: 12/11/2021
 description: todo
 tags: webdev, javascript
-cover_image: /images/cover-images/4_cover_image.jpg
-cover_image_mobile: /images/cover-images/4_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/4_cover_image_vert.jpg
-cover_color: '#6A6A6C'
+cover_image: /images/cover-images/18_cover_image.jpg
+cover_image_mobile: /images/cover-images/18_cover_image_mobile.jpg
+cover_image_vert: /images/cover-images/18_cover_image_vert.jpg
+cover_color: '#09081A'
 ---
 
-Since I joined the [dev.to](https://dev.to/) community in 2017 I started to write some articles. I didn't have a blog before and joining the community motivated me to start writing. 
+Since I joined the [dev.to](https://dev.to/) community in 2017 I started to write some articles. I didn't have a blog before and joining the community motivated me to start writing.
 
 After some articles in dev.to I decided to create my own personal [blog](https://aralroca.com/blog). However, I've always wanted to continue contributing to dev.to, so what I do now is post articles on my personal blog and then share them on dev.to with the canonical. I suppose it's standard practice and more than one of you are doing it.
 
@@ -56,27 +56,24 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Publishing post
-        env:
-          DEV_TO: ${{secrets.DEV_TO}}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile
-      - run: yarn run publish:post
+      - run: yarn install --pure-lockfile
+      - run: DEV_TO=${{secrets.DEV_TO}} yarn run publish:post
       - run: |
           git config user.name aralroca
           git config user.email aral-rg@hotmail.com
-          git add README.md
+          git add -A
           git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Published to dev.to"
           git push origin master
-
 ```
 
 What it does?
 
 - Program the action on **push to master** and **every day at 17:00** UTC using a cron.
+- Install dependencies with `yarn install --pure-lockfile`
 - Set environment variable `DEV_TO` using [GitHub secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). This is required for our script.
-- Install dependencies with `yarn install --frozen-lockfile`
 - Run our script to publish to dev.to
 - Commit and push to master only when there are changes.
 
@@ -87,7 +84,7 @@ In our `package.json` file we have to indicate that the script runs our node fil
 ```json
 {
   "scripts": {
-    "publish:post": "node ./publish/index.js",
+    "publish:post": "node ./publish/index.js"
   }
 }
 ```
@@ -112,7 +109,7 @@ deploy()
     console.log('Published!')
     process.exit()
   })
-  .catch(e => {
+  .catch((e) => {
     console.log('ERROR publishing:', e)
     process.exit()
   })
@@ -130,41 +127,42 @@ const deployToDevTo = require('./dev-to')
 function getNewPost() {
   const today = new Date()
 
-  return fs.readdirSync('posts')
-    .map((slug) => {
-      const post = matter(
-        fs.readFileSync(path.join('posts', slug))
-      )
-      return { ...post, slug }
-    })
-    .filter(p => {
-      const created = new Date(p.data.created)
+  return (
+    fs
+      .readdirSync('posts')
+      .map((slug) => {
+        const post = matter(fs.readFileSync(path.join('posts', slug)))
+        return { ...post, slug }
+      })
+      .filter((p) => {
+        const created = new Date(p.data.created)
 
-      return (
-        !p.data.published_devto &&
-        created.getDate() === today.getDate() &&
-        created.getMonth() === today.getMonth() &&
-        created.getFullYear() === today.getFullYear()
-      )
-    })
-    .map(({ slug, data, content }) => {
-      const id = slug.replace('.md', '')
-      const canonical = `https://aralroca.com/blog/${id}`
-      const body = `***Original article: ${canonical}***\n${content}`
+        return (
+          !p.data.published_devto &&
+          created.getDate() === today.getDate() &&
+          created.getMonth() === today.getMonth() &&
+          created.getFullYear() === today.getFullYear()
+        )
+      })
+      .map(({ slug, data, content }) => {
+        const id = slug.replace('.md', '')
+        const canonical = `https://aralroca.com/blog/${id}`
+        const body = `***Original article: ${canonical}***\n${content}`
 
-      return {
-        body_markdown: body,
-        canonical_url: canonical,
-        created: data.created,
-        description: data.description,
-        main_image: data.cover_image,
-        published: true,
-        series: data.series,
-        slug,
-        tags: data.tags,
-        title: data.title,
-      }
-    })[0] || null
+        return {
+          body_markdown: body,
+          canonical_url: canonical,
+          created: data.created,
+          description: data.description,
+          main_image: data.cover_image,
+          published: true,
+          series: data.series,
+          slug,
+          tags: data.tags,
+          title: data.title,
+        }
+      })[0] || null
+  )
 }
 ```
 
@@ -181,16 +179,17 @@ function createPost(article) {
   return fetch('https://dev.to/api/articles', {
     method: 'POST',
     headers: {
-      'api-key': process.env.DEV_TO
+      'api-key': process.env.DEV_TO,
+      'content-type': 'application/json',
     },
-    body: JSON.stringify({ article })
+    body: JSON.stringify({ article }),
   })
-    .then(r => r.json())
-    .then(res => {
+    .then((r) => r.json())
+    .then((res) => {
       console.log('dev.to -> OK', `https://dev.to/aralroca/${res.slug}`)
       return res.slug
     })
-    .catch(e => {
+    .catch((e) => {
       console.log('dev.to -> KO', e)
     })
 }
@@ -205,11 +204,14 @@ async function deployToDevTo(article) {
   let occurrences = 0
 
   // Write 'published_devto' metadata before the second occourrence of ---
-  fs.writeFileSync(postPath, post.replace(/---/g, m => {
-    occurrences += 1;
-    if (occurrences === 2) return `published_devto: true\n${m}`
-    return m
-  }))
+  fs.writeFileSync(
+    postPath,
+    post.replace(/---/g, (m) => {
+      occurrences += 1
+      if (occurrences === 2) return `published_devto: true\n${m}`
+      return m
+    })
+  )
 }
 ```
 
