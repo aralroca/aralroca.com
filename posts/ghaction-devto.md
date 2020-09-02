@@ -1,7 +1,7 @@
 ---
 title: GitHub action to publish your blog post to dev.to
-created: 09/03/2020
-description: to do
+created: 09/02/2020
+description: Learn how to automatize publishing to dev.to from your GitHub repo.
 tags: webdev, javascript
 cover_image: /images/cover-images/18_cover_image.jpg
 cover_image_mobile: /images/cover-images/18_cover_image_mobile.jpg
