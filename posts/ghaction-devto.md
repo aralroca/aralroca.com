@@ -1,7 +1,7 @@
 ---
 title: GitHub action to publish your blog post to dev.to
-created: 12/11/2021
-description: todo
+created: 09/03/2020
+description: to do
 tags: webdev, javascript
 cover_image: /images/cover-images/18_cover_image.jpg
 cover_image_mobile: /images/cover-images/18_cover_image_mobile.jpg
@@ -9,19 +9,19 @@ cover_image_vert: /images/cover-images/18_cover_image_vert.jpg
 cover_color: '#09081A'
 ---
 
-Since I joined the [dev.to](https://dev.to/) community in 2017 I started to write some articles. I didn't have a blog before and joining the community motivated me to start writing.
+I started writing when I joined [dev.to](https://dev.to/) in 2017, joining the community motivated me.
 
-After some articles in dev.to I decided to create my own personal [blog](https://aralroca.com/blog). However, I've always wanted to continue contributing to dev.to, so what I do now is post articles on my personal blog and then share them on dev.to with the canonical. I suppose it's standard practice and more than one of you are doing it.
+After a few articles I decided to create my own personal [blog](https://aralroca.com/blog). However, I've always wanted to continue contributing to dev.to. That's why I post articles on my personal blog and then share them on dev.to with the canonical. I suppose it's a standard practice and more than one of you are doing it.
 
-So to make life a little easier, I've made a GitHub action that posts directly to dev.to when it detects a new article on my blog. Let's see how I did it.
+In order to make my life a little easier, I've recently made a GitHub action that posts directly to dev.to when it detects a new article on my blog.
 
-## How I detect when is a new post
+## How I detect a new post
 
-To know if the article is new and needs to be published, you can find out through the markdown metadata. In my case as a metadata I keep the **date of publication** (in case I want to publish it another day even if it's merged to master).
+To know if the article is new and needs to be published, you can use the markdown metadata to find out. In my case, I keep the **date of publication** as metadata (in case I want to publish it another day even if it's merged to master).
 
-Then, once it's posted to dev.to with the GitHub action what I do is create another metadata to know that it's already been published.
+Then, once it's posted to dev.to with the GitHub action I create another metadata so it gets tagged as published.
 
-This is because the GitHub action will run:
+Why? Because the GitHub action will run:
 
 - Whenever something is **pushed to master**.
 - **Every day** at 17:00 UTC.
@@ -71,11 +71,11 @@ jobs:
 
 What it does?
 
-- Program the action on **push to master** and **every day at 17:00** UTC using a cron.
-- Install dependencies with `yarn install --pure-lockfile`
-- Set environment variable `DEV_TO` using [GitHub secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). This is required for our script.
-- Run our script to publish to dev.to
-- Commit and push to master only when there are changes.
+- Programs the action on **push to master** and **every day at 17:00** UTC using a cron.
+- Installs dependencies with `yarn install --pure-lockfile`
+- Sets environment variable `DEV_TO` using [GitHub secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). This is required for our script.
+- Runs our script to publish to dev.to
+- Commits and pushes to master only when there are changes.
 
 ## Script to publish to dev.to
 
@@ -89,7 +89,7 @@ In our `package.json` file we have to indicate that the script runs our node fil
 }
 ```
 
-This is the content of our script that publish articles to **dev.to**:
+This is the content of our script that publishes articles to **dev.to**:
 
 ```js
 async function deploy() {
@@ -115,7 +115,7 @@ deploy()
   })
 ```
 
-When the `getNewPost` function return the post formatted in the way that **dev.to** needs to publish or `null` in case that there aren't new posts:
+The `getNewPost` function returns the post already formatted in the way **dev.to** needs, `null` in case that there aren't new posts:
 
 ```js
 const fs = require('fs')
@@ -166,9 +166,9 @@ function getNewPost() {
 }
 ```
 
-To retrieve the markdown metadata and content I use the `gray-matter` library.
+I use the `gray-matter` library to retrieve the markdown metadata and its content.
 
-And the `deployToDevTo` function used in our script:
+Here's the `deployToDevTo` function used in our script:
 
 ```js
 const fetch = require('isomorphic-unfetch')
@@ -215,8 +215,8 @@ async function deployToDevTo(article) {
 }
 ```
 
-Here what we basically do is request to the [dev.to API](https://docs.dev.to/api/) to upload the article, and then modify our markdown file to add the `published_devto: true` metadata. This way, our GitHub action then detects that there are changes to upload to master.
+We request to the [dev.to API](https://docs.dev.to/api/) to upload the article and then modify our markdown file to add the `published_devto: true` metadata. This way, our GitHub action will detect that there are changes to upload to master.
 
 ## Conclusions
 
-In this short article we have seen how to create a GitHub action to post our personal blog new articles to [dev.to](https://dev.to). I hope it can be useful to someone.
+In this short article we've seen how to create a GitHub action to post automatically our personal blog new articles to [dev.to](https://dev.to). I hope you find it useful.
