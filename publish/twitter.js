@@ -16,9 +16,7 @@ const post = (data) =>
   )
 
 async function deployToTwitter(article) {
-  const url = `https://aralroca.com/blog/${article.slug}`
-
-  return post({ status: getStatus(url, article) })
+  return post({ status: getStatus(article.canonical_url, article) })
     .then(() => console.log('twitter -> OK'))
     .catch((e) => console.log('twitter -> KO', e))
 }
