@@ -21,6 +21,8 @@
     "js-paging": "0.1.2",
     "marked": "1.1.1",
     "next": "9.5.3",
+    "nodemailer": "6.4.11",
+    "nodemailer-mandrill-transport": "1.2.0",
     "preact": "10.4.8",
     "preact-render-to-string": "5.1.10",
     "react": "github:preact-compat/react#1.0.0",
@@ -30,7 +32,6 @@
   },
   "devDependencies": {
     "@prefresh/next": "1.1.0",
-    "twitter": "1.7.1",
     "babel-jest": "26.3.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-minify": "0.5.1",
@@ -39,7 +40,8 @@
     "jest": "26.4.2",
     "prettier": "2.1.1",
     "pretty-quick": "3.0.0",
-    "react-refresh": "0.8.3"
+    "react-refresh": "0.8.3",
+    "twitter": "1.7.1"
   },
   "husky": {
     "hooks": {
