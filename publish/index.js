@@ -60,6 +60,8 @@ function getNewPost() {
 async function deploy() {
   const post = getNewPost()
 
+  await newsletter() // @todo remove
+
   if (!post) {
     console.log('No new post detected to publish.')
     process.exit()
