@@ -173,4 +173,4 @@ If you want to try the Form component, I added in npm:
 npm install react-form-uncontrolled --save
 ```
 
-Repo: https://github.com/SylcatOfficial/react-form-uncontrolled
+Repo: https://github.com/aralroca/react-form-uncontrolled
