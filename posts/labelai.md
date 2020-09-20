@@ -7,6 +7,7 @@ cover_image: /images/cover-images/19_cover_image.jpeg
 cover_image_mobile: /images/cover-images/19_cover_image_mobile.jpeg
 cover_image_vert: /images/cover-images/19_cover_image_vert.jpeg
 cover_color: '#EFF0F2'
+dev_to: labelai-speed-up-training-your-ai-models-with-a-free-open-source-app-51ld
 ---
 
 I'd like to tell you why I made **[Labelai](https://github.com/aralroca/labelai)**, a tool that makes it easier to train image recognition AI models (ImageNet, YOLO and its variants) from any device ensuring security.
