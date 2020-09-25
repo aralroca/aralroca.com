@@ -26,33 +26,36 @@ export default function Layout({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {
-          isDefaultMeta && (
-            <>
-              <title key="title">{data.title}</title>
-              <meta key="meta-title" name="title" content={data.title} />
-              <meta
-                key="meta-description"
-                name="description"
-                content={data.description}
-              />
-              <meta key="meta-tags" name="keywords" content={data.tags} />
-              <meta name="twitter:title" content={data.title} />
-              <meta key="og:type" property="og:type" content="website" />
-              <meta
-                key="meta-og-image"
-                property="og:image"
-                content={data.cover_image}
-              />
-              <meta key="meta-og:title" property="og:title" content={data.title} />
-              <meta
-                key="meta-og:description"
-                property="og:description"
-                content={data.description}
-              />
-            </>
-          )
-        }
+        {isDefaultMeta && (
+          <>
+            <title key="title">{data.title}</title>
+            <meta name="monetization" content="$ilp.uphold.com/QjjKbnm6Dazp" />
+            <meta key="meta-title" name="title" content={data.title} />
+            <meta
+              key="meta-description"
+              name="description"
+              content={data.description}
+            />
+            <meta key="meta-tags" name="keywords" content={data.tags} />
+            <meta name="twitter:title" content={data.title} />
+            <meta key="og:type" property="og:type" content="website" />
+            <meta
+              key="meta-og-image"
+              property="og:image"
+              content={data.cover_image}
+            />
+            <meta
+              key="meta-og:title"
+              property="og:title"
+              content={data.title}
+            />
+            <meta
+              key="meta-og:description"
+              property="og:description"
+              content={data.description}
+            />
+          </>
+        )}
         <meta name="twitter:creator" content="@aralroca" />
         <meta key="meta-og:url" property="og:url" content={data.url} />
         <link key="canonical" rel="canonical" href={data.url} />
@@ -80,8 +83,7 @@ export default function Layout({ Component, pageProps }) {
             <a className={isActive('/blog')}>Blog</a>
           </Link>
           <Link href="/thanks">
-            <a className={isActive('/thanks')}>Support
-            </a>
+            <a className={isActive('/thanks')}>Support</a>
           </Link>
         </nav>
       </header>
