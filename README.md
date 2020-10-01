@@ -1,7 +1,7 @@
 <p align="center">
   <img width="100" src="/public/images/logo.svg" alt="logo" />
 </p>
-<p align="center"><b>Aral Roca</b>'s personal webpage / blog.</p>
+<p align="center"><b>ARAL ROCA</b>'s personal webpage / blog.</p>
 
 <p align="center">
   <i>Visit here 👉 https://aralroca.com </i>
