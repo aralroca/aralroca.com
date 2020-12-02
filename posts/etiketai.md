@@ -1,16 +1,16 @@
 ---
-title: Labelai - speed up training your AI models with a free open source app
+title: Etiketai - speed up training your AI models with a free open source app
 created: 09/20/2020
-description: I've launched Labelai. Training AI models are now more friendlier. Use it from any device ensuring security. It has support for ImageNet and YOLO.
+description: I've launched Etiketai. Training AI models are now more friendlier. Use it from any device ensuring security. It has support for ImageNet and YOLO.
 tags: machine-learning, tensorflow, javascript
 cover_image: /images/cover-images/19_cover_image.jpeg
 cover_image_mobile: /images/cover-images/19_cover_image_mobile.jpeg
 cover_image_vert: /images/cover-images/19_cover_image_vert.jpeg
 cover_color: '#EFF0F2'
-dev_to: labelai-speed-up-training-your-ai-models-with-a-free-open-source-app-51ld
+dev_to: etiketai-speed-up-training-your-ai-models-with-a-free-open-source-app-51ld
 ---
 
-I'd like to tell you why I made **[Labelai](https://github.com/aralroca/labelai)**, a tool that makes it easier to train image recognition AI models (ImageNet, YOLO and its variants) from any device ensuring security.
+I'd like to tell you why I made **[Etiketai](https://github.com/aralroca/etiketai)**, a tool that makes it easier to train image recognition AI models (ImageNet, YOLO and its variants) from any device ensuring security.
 
 ## A little bit of context
 
@@ -26,7 +26,7 @@ Currently, there are not many alternative tools for this labeling process. The b
 - **Updates are not automatic**. Related to the previous point, many updates are made for security reasons, especially if it has dependencies. The fact that updates are not done automatically makes it your responsibility to keep your application up to date.
 
 
-## Launching Labelai
+## Launching Etiketai
 
 Using labelImg during the last months, I realized that a **web application** inspired by it would solve several of these problems:
 
@@ -38,10 +38,10 @@ Using labelImg during the last months, I realized that a **web application** ins
 
 So during my August holiday, I took the opportunity to implement the first POC of my idea. And today, I announce that its **first version is out**.
 
-<a href="https://github.com/aralroca/labelai">
+<a href="https://github.com/aralroca/etiketai">
   <figure align="center">
-    <img class="center" src="/images/blog-images/labelai.png" alt="Labelai logo" />
-    <figcaption><small>Labelai</small></figcaption>
+    <img class="center" src="/images/blog-images/etiketai.png" alt="Etiketai logo" />
+    <figcaption><small>Etiketai</small></figcaption>
   </figure>
 </a>
 
@@ -52,8 +52,8 @@ In addition, I tried to improve the user experience when labeling by making it l
 Currently, I have some future ideas to expand the features so that it does not remain only as an annotation tool, but to train models after labeling the images.
 
 <figure align="center">
-  <img class="center" src="/images/blog-images/demo.gif" alt="Labelai demo" />
-  <figcaption><small>Labelai demo</small></figcaption>
+  <img class="center" src="/images/blog-images/demo.gif" alt="Etiketai demo" />
+  <figcaption><small>Etiketai demo</small></figcaption>
 </figure>
 
 
@@ -71,7 +71,7 @@ Any further improvements you would like to make? Please let me know in the comme
 
 I encourage you to try the app and contribute to GitHub to evolve this tool according to the community.
 
-* App: https://labelai.vercel.app/
-* GitHub: https://github.com/aralroca/labelai
+* App: https://etiketai.vercel.app/
+* GitHub: https://github.com/aralroca/etiketai
 
 To help me boost this project, please, let me know that you like it by **starring on GitHub**.
