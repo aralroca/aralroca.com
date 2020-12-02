@@ -1,16 +1,12 @@
 {
   "redirects": [
     {
-      "source": "/2019/06/10/exploring-htmlportalelement-with-react/",
-      "destination": "/blog/exploring-htmlportalelement-with-react"
+      "source": "/blog/labelai",
+      "destination": "/blog/etiketai"
     },
     {
-      "source": "/2018/11/02/dont-control-everything-react-forms/",
-      "destination": "/blog/dont-control-everything-react-forms"
-    },
-    {
-      "source": "/2018/08/24/first-steps-with-tensorflow-js/",
-      "destination": "/blog/first-steps-with-tensorflowjs"
+      "source": "/images/blog-images/labelai.png",
+      "destination": "/images/blog-images/etiketai.png"
     },
     {
       "source": "/donate",
