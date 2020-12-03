@@ -27,7 +27,6 @@ Today is the day. The Vinissimus Team is very proud and happy to announce the mu
 - Make it easy to integrate translations on pages
 - Make it easy to migrate to future changes in the Next.js core
 
-
 ## What does version 1.0 provide?
 
 ### Next.js plugin

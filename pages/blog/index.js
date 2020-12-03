@@ -37,6 +37,7 @@ export default function Blog({ posts, tags }) {
   const pages = Math.ceil(filteredPosts.length / itemsPerPage)
   const lastIndex = itemsPerPage * currentPage
   const firstIndex = lastIndex - itemsPerPage
+  const postsToShow = filteredPosts.slice(firstIndex, lastIndex)
 
   function onSearch(e) {
     const val = e.target.value.toLowerCase()
@@ -49,7 +50,7 @@ export default function Blog({ posts, tags }) {
   useEffect(() => setCurrentPage(parseInt(query.page) || 1), [query.page])
 
   return (
-    <Fragment key={`${query.q}-${query.page}`}>
+    <Fragment key={postsToShow.length ? 'non-empty' : 'empty'}>
       <Head>
         <title key="title">Blog - Aral Roca</title>
 
@@ -72,7 +73,7 @@ export default function Blog({ posts, tags }) {
         ))}
       </div>
 
-      {filteredPosts.slice(firstIndex, lastIndex).map((post) => (
+      {postsToShow.map((post) => (
         <PostItem key={post.slug} {...post} />
       ))}
 
