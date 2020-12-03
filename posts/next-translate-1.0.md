@@ -7,6 +7,7 @@ cover_image: /images/cover-images/20_cover_image.jpg
 cover_image_mobile: /images/cover-images/20_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/20_cover_image_vert.jpg
 cover_color: '#EFECEC'
+canonical: https://prova.com
 ---
 
 Today is the day. The Vinissimus Team is very proud and happy to announce the much-anticipated [version 1.0](https://github.com/vinissimus/next-translate/releases/tag/1.0.0) of [Next-translate](https://github.com/vinissimus/next-translate) library. Besides, we also announced that just [a year ago](https://aralroca.com/blog/next-translate-released) we released the first version `0.1`, and now, a year later we finally released `1.0`.
