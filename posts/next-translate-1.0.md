@@ -1,6 +1,6 @@
 ---
 title: Next-translate - Version 1.0 Released
-created: 12/07/2020
+created: 12/09/2020
 description: Next-translate is an i18n library to keep the translations as simple as possible in a Next.js environment. Today we announce the release of version 1.0.
 tags: nextjs, javascript, react, i18n
 cover_image: /images/cover-images/20_cover_image.jpg
@@ -25,7 +25,7 @@ Today is the day. The Vinissimus Team is very proud and happy to announce the mu
 - Cover the i18n basics: interpolation, plurals, Trans component, t function, nested translations, fallbacks...
 - Only load the necessary translations for each page and language. If you navigate to `/en/about`, just load the `about` namespace in English.
 - Support automatic page optimization (SSG).
-- ∫Make it easy to integrate translations on pages.
+- Make it easy to integrate translations on pages.
 - Make it easy to migrate to future changes in the Next.js core.
 
 ## What does version 1.0 provide?
@@ -48,6 +48,8 @@ The plugin is needed to cover the last two goals mentioned in the previous point
 - Make it easy to integrate translations on pages.
 - Make it easy to migrate to future changes in the Next.js core.
 
+> _If you don't want the plugin to inject the webpack loader so you can have control over how to load the namespaces on each page, you can use the `loader=false` in the configuration, and then manually load the namespaces with [loadNamespaces](https://github.com/vinissimus/next-translate/tree/1.0.0#loadnamespaces)._
+
 ### Improve plurals support
 
 In version `0.x` the support of plurals was quite simple. Now with `1.0` we've [improved the support](https://github.com/vinissimus/next-translate/tree/1.0.0#5-plurals) by adding 6 plural forms (taken from [CLDR Plurals page](http://cldr.unicode.org/index/cldr-spec/plural-rules)):
@@ -58,6 +60,39 @@ In version `0.x` the support of plurals was quite simple. Now with `1.0` we've [
 - `few` (paucal)
 - `many` (also used for fractions if they have a separate class)
 - `other` (required—general plural form—also used if the language only has a single form)
+
+### Consume translations outside pages / components
+
+We add the [getT](https://github.com/vinissimus/next-translate/tree/1.0.0#gett) asynchronous function to load the `t` function outside components / pages. It works on both server-side and client-side.
+
+Unlike the useTranslation hook, we can use here any namespace. It doesn't have to be a namespace defined in the "pages" configuration. It will **download the namespace** indicated as a parameter **on runtime**.
+
+Example inside `getStaticProps`:
+
+```js
+import getT from 'next-translate/getT'
+// ...
+export async function getStaticProps({ locale }) {
+  const t = await getT(locale, 'common')
+  const title = t('title')
+  return { props: { title } }
+}
+```
+
+Example inside API Route, ex: `/fr/api/example`:
+
+```js
+import getT from 'next-translate/getT'
+
+export default async function handler(req, res) {
+  const t = await getT(req.query.__nextLocale, 'common')
+  const title = t('title')
+
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'application/json')
+  res.end(JSON.stringify({ title }))
+}
+```
 
 ## Useful links
 

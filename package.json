@@ -17,7 +17,7 @@
   "dependencies": {
     "globby": "11.0.1",
     "gray-matter": "4.0.2",
-    "highlight.js": "10.4.0",
+    "highlight.js": "10.4.1",
     "js-paging": "0.1.2",
     "marked": "1.2.5",
     "next": "10.0.3",
