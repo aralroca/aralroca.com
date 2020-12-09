@@ -58,7 +58,11 @@ export default function Layout({ Component, pageProps }) {
         )}
         <meta name="twitter:creator" content="@aralroca" />
         <meta key="meta-og:url" property="og:url" content={data.url} />
-        <link key="canonical" rel="canonical" href={data.url} />
+        <link
+          key="canonical"
+          rel="canonical"
+          href={pageProps.data?.canonical || data.url}
+        />
         <link
           rel="search"
           href="https://aralroca.com/search.xml"
