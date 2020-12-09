@@ -8,6 +8,7 @@ cover_image_mobile: /images/cover-images/20_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/20_cover_image_vert.jpg
 cover_color: '#EFECEC'
 canonical: https://dev-blog.vinissimus.com/next-translate-1.0
+dev_to: next-translate-version-1-0-released-4bg6
 ---
 
 Today is the day. The Vinissimus Team is very proud and happy to announce the much-anticipated [version 1.0](https://github.com/vinissimus/next-translate/releases/tag/1.0.0) of [Next-translate](https://github.com/vinissimus/next-translate) library. It's been a year since the first [version 0.1](https://aralroca.com/blog/next-translate-released) and a lot happened _(+160 closed issues)_.
