@@ -62,7 +62,7 @@ a {
 
 body,
 html {
-  font-family: Raleway;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   padding: 0;
   text-rendering: optimizeLegibility;
   color: var(--color);
@@ -241,7 +241,7 @@ footer {
 
 .post-list-item h2 {
   font-size: 20px;
-  font-family: Raleway;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin-bottom: 0;
 }
 
@@ -362,13 +362,6 @@ table th {
   margin: 0;
 }
 
-header,
-footer,
-h1,
-h2 {
-  font-family: Ruluko;
-}
-
 .homepage {
   text-align: center;
 }
@@ -402,7 +395,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Ruluko;
 }
 
 .change-theme select {
