@@ -8,6 +8,7 @@ cover_image_mobile: /images/cover-images/21_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/21_cover_image_vert.jpg
 cover_color: '#20282D'
 canonical: https://dev-blog.vinissimus.com/food-pairing-classifier
+dev_to: virtual-sommelier-text-classifier-in-the-browser-2502
 ---
 
 ## Introduction
@@ -175,7 +176,7 @@ FastText expects a text file with different labels and texts with a similar form
 __label__1606 __label__433 rabbit with mushrooms
 ```
 
- The text `rabbit with mushrooms` is related to the labels with the id `1606` _(id of the "rabbit with mushrooms" label)_ and `433` _(id of the "rabbit" label)_.
+The text `rabbit with mushrooms` is related to the labels with the id `1606` _(id of the "rabbit with mushrooms" label)_ and `433` _(id of the "rabbit" label)_.
 
 The initial problem is that we don't start from ready-made sentences because the search engine didn't exist before, so we have to generate them from each label we have.
 
