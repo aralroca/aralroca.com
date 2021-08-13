@@ -22,7 +22,7 @@
     "highlight.js": "10.7.2",
     "js-paging": "0.1.2",
     "marked": "2.0.3",
-    "next": "10.2.0",
+    "next": "11.1.0",
     "next-plugin-preact": "3.0.4",
     "nodemailer": "6.6.0",
     "nodemailer-mandrill-transport": "1.2.0",
