@@ -191,13 +191,20 @@ export default function createStore(store = {}) {
   // returning a hook to consume the context of each property
   const storeUtils = keys.reduce((o, key) => {
     const context = createContext(store[key]) // Property context
+    const keyCapitalized = capitalize(key)
+
+    if (keyCapitalized === 'Store') {
+      console.error(
+        'Avoid to use the "store" name at the first level, it\'s reserved for the "useStore" hook.'
+      )
+    }
 
     return {
       ...o,
       // All contexts
       contexts: [...(o.contexts || []), { context, key }],
       // Hook to consume the property context
-      [`use${capitalize(key)}`]: () => useContext(context),
+      [`use${keyCapitalized}`]: () => useContext(context),
     }
   }, {})
 
@@ -223,10 +230,10 @@ export default function createStore(store = {}) {
     return <Component>{children}</Component>
   }
 
-  // As a bonus, we create the useUnfragmentedStore hook to return all the
+  // As a bonus, we create the useStore hook to return all the
   // state. Also to return an updater that uses all the created hooks at
   // the same time
-  storeUtils.useUnfragmentedStore = () => {
+  storeUtils.useStore = () => {
     const state = {}
     const updates = {}
     keys.forEach((k) => {
