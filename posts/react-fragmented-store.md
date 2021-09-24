@@ -129,8 +129,8 @@ In case you want to update several fields of the store, you can consume the whol
 ```jsx
 import createStore from 'fragmented-store'
 
-// Special hook useUnfragmentedStore
-const { Provider, useUnfragmentedStore } = createStore({
+// Special hook useStore
+const { Provider, useStore } = createStore({
   username: 'Aral',
   age: 31,
 })
@@ -145,7 +145,7 @@ function App() {
 
 // Consume all fields of the store
 function AllStoreComponent() {
-  const [store, update] = useUnfragmentedStore()
+  const [store, update] = useStore()
 
   console.log({ store }) // all store
 
