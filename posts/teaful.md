@@ -7,7 +7,7 @@ series: 'React state management'
 cover_image: /images/cover-images/23_cover_image.jpg
 cover_image_mobile: /images/cover-images/23_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/23_cover_image_vert.jpg
-cover_color: '#0C152C'
+cover_color: '#D7FCD5'
 ---
 
 I've recently talked about Fragmented-store in [another article](react-fragmented-store), a library I was developing, explaining future improvements. Well, we have made a reimplementation to make it tinier, easier to use and more powerful, and we have renamed it to **Teaful**. In this article I will talk about its benefits and how to use it.
@@ -312,4 +312,6 @@ If you want to try it out, I encourage you to go to the [README](https://github.
 
 Teaful is still at an early stage (version 0.x), so there may still be several improvements in the library to make version 1.0 even more tiny, easy and powerful. Any contribution to the library or suggestions will be very welcome.
 
-For the short life of the library, the community is growing fast and I thank all those who have contributed 👏 😊
+For the short life of the library, the community is growing fast and I thank all those who have contributed.  
+
+[@danielart](https://github.com/danielart), [@niexq](https://github.com/niexq), [@shinshin86](https://github.com/shinshin86), [@dididy](https://github.com/dididy). 👏 😊
