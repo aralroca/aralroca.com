@@ -24,7 +24,7 @@ export default function Supporters() {
         <u>You're awesome!</u>
       </p>
 
-      <h2>Sponsors list</h2>
+      {/* <h2>Sponsors list</h2>
 
       <h3>🌕 Platinum</h3>
       <em>None.</em>
@@ -46,7 +46,7 @@ export default function Supporters() {
       <em>None.</em>
 
       <h3>Supporters</h3>
-      <em>None.</em>
+      <em>None.</em> */}
 
       <hr className="wrapper-separator" />
       <h2 id="donate">Donate</h2>
