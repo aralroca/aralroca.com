@@ -1,7 +1,7 @@
 ---
 title: 'Teaful: tiny, easy and powerful React state management'
 created: 11/05/2021
-description: 'Teaful is a new npm package where you can manage with less than 1kb your stores without the need of boilerplate: reducers, actions, selectors, connect, etc. And without unnecessary rerenders! It subscribes only to the changes of the properties you use.'
+description: 'Teaful is a new npm package where you can manage your stores with less than 1kb without the need of boilerplate: reducers, actions, selectors, connect, etc. And without unnecessary rerenders! It subscribes only to the changes of the used properties.'
 tags: react, javascript, redux
 series: 'React state management'
 cover_image: /images/cover-images/23_cover_image.jpg
@@ -10,9 +10,9 @@ cover_image_vert: /images/cover-images/23_cover_image_vert.jpg
 cover_color: '#0C152C'
 ---
 
-Recently, I talked about Fragmented-store in [another article](react-fragmented-store), a library I was developing, explaining improvements that this library will have in the future. Well, we have made a reimplementation to make it tinier, easier to use and more powerful, so we have renamed it to **Teaful**. In this article I will talk about its benefits and how you can use it.
+I've recently talked about Fragmented-store in [another article](react-fragmented-store), a library I was developing, explaining future improvements. Well, we have made a reimplementation to make it tinier, easier to use and more powerful, and we have renamed it to **Teaful**. In this article I will talk about its benefits and how to use it.
 
-This is **the final name**. From what little life the library has, it has been called:
+This is **the final name**. Since the library was created, it has been called:
 
 * ~~`Fragmented-store`~~ -> ~~`Fragstore`~~ -> **`Teaful`** <small>_([Teaful GitHub](https://github.com/teafuljs/teaful) )_.</small>
 
@@ -23,7 +23,7 @@ This is **the final name**. From what little life the library has, it has been c
 
 ## Why tiny?
 
-Teaful is **less than 1kb**, and makes you have to write much less code. In other words, it will make your project much more lightweight.
+Teaful is **less than 1kb** and you won't need to write so much code. In other words, it will make your project much more lightweight.
 
 ```sh
 874 B: index.js.gz
@@ -38,7 +38,7 @@ Teaful is **less than 1kb**, and makes you have to write much less code. In othe
 
 ## Why easy?
 
-To consume and modify store properties sometimes requires a lot of boilerplate: actions, reducers, selectors, connect, etc. The goal of Teaful is to be **very easy to use**, to be able to consume a property and overwrite it **without any boilerplate**. It's also linked to "tiny" and "powerful", because if you have to write a lot to do a simple thing you make your project take more kb and be less maintainable.
+To consume and modify store properties sometimes requires a lot of boilerplate: actions, reducers, selectors, connect, etc. Teaful's goal is to be **very easy to use**, to consume a property and overwrite it **without any boilerplate**. "Tiny" and "powerful", because if you have to write a lot to do a simple thing, your project takes more kb and becomes less maintainable.
 
 <figure align="center">
   <img class="center" src="/images/blog-images/easy.png" alt="Teaful easy to use" />
@@ -48,7 +48,7 @@ To consume and modify store properties sometimes requires a lot of boilerplate: 
 
 ## Why powerful?
 
-Besides doing the code more maintainable because it is better understood, you avoid many **unnecessary rerenders**. When you update only one property of the store, is not necessary to notify all the components that use the store. It's only necessary notify who consumes that property that was updated.
+Besides doing the code more maintainable, you avoid many **unnecessary rerenders** while the performance of your website gets better. When you only update one property of the store, it's not necessary to notify all the components that use the store. It only requires to notify who's consuming that updated property.
 
 <figure align="center">
   <img class="center" src="/images/blog-images/rerenders.gif" alt="Teaful rerenders" />
@@ -58,9 +58,13 @@ Besides doing the code more maintainable because it is better understood, you av
 
 ## What other benefits does it have?
 
-### Create store properties on fly
+In this section of the article we'll see a few of the many things that can be done.
 
-You can consume and update properties that do not yet exist in the store and define them on fly.
+If you use Teaful in a small project you'll be able to move fast without tools like Redux or Mobx that can be overkill. Also, if you use it in large projects they will be more maintainable and won't grow in code.
+
+### Creating store properties on the fly
+
+You can consume and update nonexistent store properties and define them on the fly.
 
 ```js
 const { useStore } = createStore()
@@ -111,9 +115,9 @@ export function Counter({ counterIndex = 0 }) {
 }
 ```
 
-### Reset a store property to the initial value
+### Reseting a store property to the initial value
 
-Unlike hooks like React's useState, here we have a third element to return the property to its initial value.
+Unlike hooks like React's useState, in Teaful there is a third element to reset the property to its initial value.
 
 ```js
 const { useStore } = createStore({ count: 0 })
@@ -138,7 +142,7 @@ export function Counter() {
 }
 ```
 
-and it is in all levels, if you want to return all the store to its initial value you can do it with:
+It's in all levels, if you want to reset the whole store to its initial value you can do it with:
 
 ```js
 const [store, setStore, resetStore] = useStore();
@@ -146,7 +150,7 @@ const [store, setStore, resetStore] = useStore();
 resetStore()
 ```
 
-### Use more than one store
+### Using more than one store
 
 Although it is not necessary, you can have several stores and rename the hooks with more personalized names.
 
@@ -157,7 +161,7 @@ export const { useStore: useCart } = createStore({ price: 0, items: [] });
 export const { useStore: useCounter } = createStore({ count: 0 });
 ```
 
-And use them in your components:
+You can also use them in your components:
 
 
 ```js
@@ -174,7 +178,7 @@ function Counter() {
 }
 ```
 
-### Uses customized updaters
+### Using customized updaters
 
 If you want several components to use the same updaters without reimplementing them, you can predefine them thanks to the `getStore` helper.
 
@@ -213,7 +217,7 @@ export function Counter() {
 
 ### Optimistic updates
 
-If you want to make an optimistic update (Update the store, save the value by calling the api, if the api request fails revert to the previous value). You can do it thanks to the `onAfterUpdate` function.
+If you want to make an optimistic update (when you update the store and save the value by calling the api, if the api request fails revert to the previous value). You can do it thanks to the `onAfterUpdate` function.
 
 ```js
 import createStore from "teaful";
@@ -230,7 +234,7 @@ function onAfterUpdate({ store, prevStore }) {
 }
 ```
 
-And your components don't need any changes:
+Your components won't need any changes:
 
 ```js
 import { useStore } from "./store";
@@ -252,7 +256,7 @@ export function Counter() {
 }
 ```
 
-If you want the optimize value to be only for one component and not for all you can register it with:
+If you want the optimistic update to be only for one component and not for all, you can register it with:
 
 ```js
 const [count, setCount] = useStore.count(0, onAfterUpdate);
@@ -287,7 +291,7 @@ function calculatePriceFromItems() {
 }
 ```
 
-And your components don't need any changes:
+Your components won't need any changes:
 
 ```js
 import { useStore } from "./store";
@@ -302,8 +306,10 @@ export function Counter() {
 
 ## Learn more about Teaful
 
-If you want to try it out, I encourage you to go to the [README](https://github.com/teafuljs/teaful/blob/0.7.0/README.md) to read the Teaful documentation, see all the options and learn how to get started. There is also an example section where you can try it out, and we will upload more examples over time.
+If you want to try it out, I encourage you to go to the [README](https://github.com/teafuljs/teaful/blob/0.7.0/README.md) to read the Teaful documentation, see all the options and learn how to get started. There is also an example section where you can try it. We will upload more examples over time.
 
 ## Conclusions
 
 Teaful is still at an early stage (version 0.x), so there may still be several improvements in the library to make version 1.0 even more tiny, easy and powerful. Any contribution to the library or suggestions will be very welcome.
+
+For the short life of the library, the community is growing fast and I thank all those who have contributed 👏 😊
