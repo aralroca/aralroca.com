@@ -8,13 +8,14 @@ cover_image: /images/cover-images/23_cover_image.jpg
 cover_image_mobile: /images/cover-images/23_cover_image_mobile.jpg
 cover_image_vert: /images/cover-images/23_cover_image_vert.jpg
 cover_color: '#D7FCD5'
+dev_to: teaful-tiny-easy-and-powerful-react-state-management-3j9k
 ---
 
 I've recently talked about Fragmented-store in [another article](react-fragmented-store), a library I was developing, explaining future improvements. Well, we have made a reimplementation to make it tinier, easier to use and more powerful, and we have renamed it to **Teaful**. In this article I will talk about its benefits and how to use it.
 
 This is **the final name**. Since the library was created, it has been called:
 
-* ~~`Fragmented-store`~~ -> ~~`Fragstore`~~ -> **`Teaful`** <small>_([Teaful GitHub](https://github.com/teafuljs/teaful) )_.</small>
+- ~~`Fragmented-store`~~ -> ~~`Fragstore`~~ -> **`Teaful`** <small>_([Teaful GitHub](https://github.com/teafuljs/teaful) )_.</small>
 
 <figure align="center">
   <img class="center" width="200" src="/images/blog-images/teaful-logo.svg" alt="Teaful logo" />
@@ -45,7 +46,6 @@ To consume and modify store properties sometimes requires a lot of boilerplate: 
   <figcaption><small>Teaful: Easy to use without boilerplate</small></figcaption>
 </figure>
 
-
 ## Why powerful?
 
 Besides doing the code more maintainable, you avoid many **unnecessary rerenders** while the performance of your website gets better. When you only update one property of the store, it's not necessary to notify all the components that use the store. It only requires to notify who's consuming that updated property.
@@ -54,7 +54,6 @@ Besides doing the code more maintainable, you avoid many **unnecessary rerenders
   <img class="center" src="/images/blog-images/rerenders.gif" alt="Teaful rerenders" />
   <figcaption><small>Teaful rerenders</small></figcaption>
 </figure>
-
 
 ## What other benefits does it have?
 
@@ -70,17 +69,13 @@ You can consume and update nonexistent store properties and define them on the f
 const { useStore } = createStore()
 
 export function Counter() {
-  const [count, setCount] = useStore.count(0); // 0 as initial value
+  const [count, setCount] = useStore.count(0) // 0 as initial value
 
   return (
     <div>
       <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>
-        Increment counter
-      </button>
-      <button onClick={() => setCount(c => c - 1)}>
-        Decrement counter
-      </button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment counter</button>
+      <button onClick={() => setCount((c) => c - 1)}>Decrement counter</button>
     </div>
   )
 }
@@ -92,24 +87,18 @@ You can consume / manipulate any property wherever it is in the store.
 
 ```js
 const { useStore } = createStore({
-  username: "Aral",
-  counters: [
-    { name: "My first counter", counter: { count: 0 } }
-  ]
+  username: 'Aral',
+  counters: [{ name: 'My first counter', counter: { count: 0 } }],
 })
 
 export function Counter({ counterIndex = 0 }) {
-  const [count, setCount] = useStore.counters[counterIndex].counter.count();
+  const [count, setCount] = useStore.counters[counterIndex].counter.count()
 
   return (
     <div>
       <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>
-        Increment counter
-      </button>
-      <button onClick={() => setCount(c => c - 1)}>
-        Decrement counter
-      </button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment counter</button>
+      <button onClick={() => setCount((c) => c - 1)}>Decrement counter</button>
     </div>
   )
 }
@@ -123,20 +112,14 @@ Unlike hooks like React's useState, in Teaful there is a third element to reset 
 const { useStore } = createStore({ count: 0 })
 
 export function Counter() {
-  const [count, setCount, resetCounter] = useStore.count();
+  const [count, setCount, resetCounter] = useStore.count()
 
   return (
     <div>
       <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>
-        Increment counter
-      </button>
-      <button onClick={() => setCount(c => c - 1)}>
-        Decrement counter
-      </button>
-      <button onClick={resetCounter}>
-        Reset counter
-      </button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment counter</button>
+      <button onClick={() => setCount((c) => c - 1)}>Decrement counter</button>
+      <button onClick={resetCounter}>Reset counter</button>
     </div>
   )
 }
@@ -145,7 +128,7 @@ export function Counter() {
 It's in all levels, if you want to reset the whole store to its initial value you can do it with:
 
 ```js
-const [store, setStore, resetStore] = useStore();
+const [store, setStore, resetStore] = useStore()
 // ...
 resetStore()
 ```
@@ -155,25 +138,24 @@ resetStore()
 Although it is not necessary, you can have several stores and rename the hooks with more personalized names.
 
 ```js
-import createStore from "teaful";
+import createStore from 'teaful'
 
-export const { useStore: useCart } = createStore({ price: 0, items: [] });
-export const { useStore: useCounter } = createStore({ count: 0 });
+export const { useStore: useCart } = createStore({ price: 0, items: [] })
+export const { useStore: useCounter } = createStore({ count: 0 })
 ```
 
 You can also use them in your components:
 
-
 ```js
-import { useCounter, useCart } from "./store";
+import { useCounter, useCart } from './store'
 
 function Cart() {
-  const [price, setPrice] = useCart.price();
+  const [price, setPrice] = useCart.price()
   // ... rest
 }
 
 function Counter() {
-  const [count, setCount] = useCounter.count();
+  const [count, setCount] = useCounter.count()
   // ... rest
 }
 ```
@@ -183,33 +165,29 @@ function Counter() {
 If you want several components to use the same updaters without reimplementing them, you can predefine them thanks to the `getStore` helper.
 
 ```js
-import createStore from "teaful";
+import createStore from 'teaful'
 
-export const { useStore, getStore } = createStore({ count: 0 });
+export const { useStore, getStore } = createStore({ count: 0 })
 
 const [, setCount] = getStore.count()
 
-export const incrementCount = () => setCount(c => c + 1)
-export const decrementCount = () => setCount(c => c - 1)
+export const incrementCount = () => setCount((c) => c + 1)
+export const decrementCount = () => setCount((c) => c - 1)
 ```
 
 And use them in your components:
 
 ```js
-import { useStore, incrementCount, decrementCount } from "./store";
+import { useStore, incrementCount, decrementCount } from './store'
 
 export function Counter() {
-  const [count] = useStore.count();
+  const [count] = useStore.count()
 
   return (
     <div>
       <span>{count}</span>
-      <button onClick={incrementCount}>
-        Increment counter
-      </button>
-      <button onClick={decrementCount}>
-        Decrement counter
-      </button>
+      <button onClick={incrementCount}>Increment counter</button>
+      <button onClick={decrementCount}>Decrement counter</button>
     </div>
   )
 }
@@ -220,16 +198,17 @@ export function Counter() {
 If you want to make an optimistic update (when you update the store and save the value by calling the api, if the api request fails revert to the previous value). You can do it thanks to the `onAfterUpdate` function.
 
 ```js
-import createStore from "teaful";
+import createStore from 'teaful'
 
-export const { useStore, getStore } = createStore({ count: 0 }, onAfterUpdate);
+export const { useStore, getStore } = createStore({ count: 0 }, onAfterUpdate)
 
 function onAfterUpdate({ store, prevStore }) {
-  if(store.count !== prevStore.count) {
+  if (store.count !== prevStore.count) {
     const [count, setCount, resetCount] = getStore.count()
-  
-    fetch('/api/count', { method: 'PATCH', body: count })
-    .catch(e => setCount(prevStore.count))
+
+    fetch('/api/count', { method: 'PATCH', body: count }).catch((e) =>
+      setCount(prevStore.count)
+    )
   }
 }
 ```
@@ -237,20 +216,16 @@ function onAfterUpdate({ store, prevStore }) {
 Your components won't need any changes:
 
 ```js
-import { useStore } from "./store";
+import { useStore } from './store'
 
 export function Counter() {
-  const [count, setCount] = useStore.count();
+  const [count, setCount] = useStore.count()
 
   return (
     <div>
       <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>
-        Increment counter
-      </button>
-      <button onClick={() => setCount(c => c - 1)}>
-        Decrement counter
-      </button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment counter</button>
+      <button onClick={() => setCount((c) => c - 1)}>Decrement counter</button>
     </div>
   )
 }
@@ -259,7 +234,7 @@ export function Counter() {
 If you want the optimistic update to be only for one component and not for all, you can register it with:
 
 ```js
-const [count, setCount] = useStore.count(0, onAfterUpdate);
+const [count, setCount] = useStore.count(0, onAfterUpdate)
 ```
 
 ### Calculated store properties
@@ -274,8 +249,8 @@ export const { useStore, getStore } = createStore(
       items: ['apple', 'banana'],
     },
   },
-  onAfterUpdate,
-);
+  onAfterUpdate
+)
 
 function onAfterUpdate({ store, prevStore }) {
   calculatePriceFromItems()
@@ -283,21 +258,21 @@ function onAfterUpdate({ store, prevStore }) {
 }
 
 function calculatePriceFromItems() {
-  const [price, setPrice] = getStore.cart.price(); 
-  const [items] = getStore.cart.items();
-  const calculatedPrice = items.length * 3;
+  const [price, setPrice] = getStore.cart.price()
+  const [items] = getStore.cart.items()
+  const calculatedPrice = items.length * 3
 
-  if (price !== calculatedPrice) setPrice(calculatedPrice);
+  if (price !== calculatedPrice) setPrice(calculatedPrice)
 }
 ```
 
 Your components won't need any changes:
 
 ```js
-import { useStore } from "./store";
+import { useStore } from './store'
 
 export function Counter() {
-  const [price] = useStore.cart.price();
+  const [price] = useStore.cart.price()
 
   // 6€
   return <div>{price}€</div>
@@ -312,6 +287,6 @@ If you want to try it out, I encourage you to go to the [README](https://github.
 
 Teaful is still at an early stage (version 0.x), so there may still be several improvements in the library to make version 1.0 even more tiny, easy and powerful. Any contribution to the library or suggestions will be very welcome.
 
-For the short life of the library, the community is growing fast and I thank all those who have contributed.  
+For the short life of the library, the community is growing fast and I thank all those who have contributed.
 
 [@danielart](https://github.com/danielart), [@niexq](https://github.com/niexq), [@shinshin86](https://github.com/shinshin86), [@dididy](https://github.com/dididy). 👏 😊
