@@ -3,6 +3,7 @@ title: React state with a fragmented store
 created: 09/24/2021
 description: Fragmented store concept and how to apply it with React Context
 tags: react, javascript
+series: 'React state management'
 cover_image: /images/cover-images/22_cover_image.jpg
 cover_image_mobile: /images/cover-images/22_cover_image_mobile.jpg
 dev_to: react-state-with-a-fragmented-store-18ff
