@@ -12,7 +12,7 @@ cover_color: '#010101'
 
 Very recently, **2 weeks ago**, we released [Teaful](https://github.com/teafuljs/teaful); a tiny, easy and powerful React State management. If you want to know more about Teaful, I recommend [this article](https://aralroca.com/blog/teaful).
 
-Teaful was **well received** (~500 GH stars) and one of the most requested features was to implement a devtool to debug the stores. Today we released **[Teaful DevTools](https://github.com/teafuljs/teaful-devtools)**. In this short article I will explain a little about how to use it and its benefits.
+Teaful was **well received** (+500 GH stars) and one of the most requested features was to implement a devtool to debug the stores. Today we released **[Teaful DevTools](https://github.com/teafuljs/teaful-devtools)**. In this short article I will explain a little about how to use it and its benefits.
 
 <img alt="Teaful DevTools" src="/images/blog-images/teaful-devtools.png" />
 
