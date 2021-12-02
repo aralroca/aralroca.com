@@ -1,6 +1,6 @@
 ---
 title: 'Teaful DevTools Released!'
-created: 11/29/2021
+created: 12/02/2021
 description: 'Teaful DevTools is a browser extension to inspect Teaful applications'
 tags: react, javascript, teaful
 series: 'React state management'
@@ -21,7 +21,7 @@ Teaful was **well received** (+500 GH stars) and one of the most requested featu
 
 4 simple steps: 
 
-- **Install DevTools extension**: For the moment only in Chrome.
+- **Install DevTools extension**: For the moment only in [Chrome](https://chrome.google.com/webstore/detail/teaful-devtools/lficdnnjoackdnaddfcgllmjdocofadc).
 - **Install the bridge**: `yarn add teaful-devtools`
 - **Use the bridge**: `import 'teaful-devtools'` <small>(~200 B)</small> Must be the first import.
     ```js
