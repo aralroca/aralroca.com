@@ -35,6 +35,16 @@ export default function Home() {
           <a
             target="blank"
             rel="noopener noreferrer"
+            href="https://github.com/teafuljs/teaful-devtools"
+          >
+            Teaful DevTools
+          </a>{' '}
+          Browser extension for inspection Teaful applications.
+        </li>
+        <li>
+          <a
+            target="blank"
+            rel="noopener noreferrer"
             href="https://github.com/teafuljs/teaful"
           >
             Etiketai

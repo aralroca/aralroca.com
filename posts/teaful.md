@@ -2,7 +2,7 @@
 title: 'Teaful: tiny, easy and powerful React state management'
 created: 11/05/2021
 description: 'Teaful is a new npm package where you can manage your stores with less than 1kb without the need of boilerplate: reducers, actions, selectors, connect, etc. And without unnecessary rerenders! It subscribes only to the changes of the used properties.'
-tags: react, javascript, redux
+tags: react, javascript, teaful
 series: 'React state management'
 cover_image: /images/cover-images/23_cover_image.jpg
 cover_image_mobile: /images/cover-images/23_cover_image_mobile.jpg
@@ -102,35 +102,6 @@ export function Counter({ counterIndex = 0 }) {
     </div>
   )
 }
-```
-
-### Reseting a store property to the initial value
-
-Unlike hooks like React's useState, in Teaful there is a third element to reset the property to its initial value.
-
-```js
-const { useStore } = createStore({ count: 0 })
-
-export function Counter() {
-  const [count, setCount, resetCounter] = useStore.count()
-
-  return (
-    <div>
-      <span>{count}</span>
-      <button onClick={() => setCount((c) => c + 1)}>Increment counter</button>
-      <button onClick={() => setCount((c) => c - 1)}>Decrement counter</button>
-      <button onClick={resetCounter}>Reset counter</button>
-    </div>
-  )
-}
-```
-
-It's in all levels, if you want to reset the whole store to its initial value you can do it with:
-
-```js
-const [store, setStore, resetStore] = useStore()
-// ...
-resetStore()
 ```
 
 ### Using more than one store
