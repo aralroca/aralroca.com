@@ -8,6 +8,7 @@ cover_image: /images/cover-images/24_cover_image.jpeg
 cover_image_mobile: /images/cover-images/24_cover_image_mobile.jpeg
 cover_image_vert: /images/cover-images/24_cover_image_vert.jpeg
 cover_color: '#010101'
+dev_to: teaful-devtools-released-37lp
 ---
 
 Very recently, **2 weeks ago**, we released [Teaful](https://github.com/teafuljs/teaful); a tiny, easy and powerful React State management. If you want to know more about Teaful, I recommend [this article](https://aralroca.com/blog/teaful).
@@ -16,21 +17,22 @@ Teaful was **well received** (+500 GH stars) and one of the most requested featu
 
 <img alt="Teaful DevTools" src="/images/blog-images/teaful-devtools.png" />
 
-
 ## How to use it
 
-4 simple steps: 
+4 simple steps:
 
 - **Install DevTools extension**: For the moment only in [Chrome](https://chrome.google.com/webstore/detail/teaful-devtools/lficdnnjoackdnaddfcgllmjdocofadc).
 - **Install the bridge**: `yarn add teaful-devtools`
 - **Use the bridge**: `import 'teaful-devtools'` <small>(~200 B)</small> Must be the first import.
-    ```js
-    import 'teaful-devtools'
-    import { render } from 'preact';
-    import App from './components/App';
 
-    render(<App />, document.getElementById('root'));
-    ```
+  ```js
+  import 'teaful-devtools'
+  import { render } from 'preact'
+  import App from './components/App'
+
+  render(<App />, document.getElementById('root'))
+  ```
+
 - **Open the DevTools and try it**.
 
 More details in the [README](https://github.com/teafuljs/teaful-devtools).
@@ -74,7 +76,6 @@ The dark / light theme adapts to your devtools configuration.
 <img alt="Teaful DevTools dark theme" src="/images/blog-images/teaful-devtools-dark.png" />
 <img alt="Teaful DevTools light theme" src="/images/blog-images/teaful-devtools-light.png" />
 
-
 ## View rerenders / performance
 
 It's a feature that has not been implemented in Teaful DevTools because we consider that React DevTools does it very well.
@@ -91,25 +92,24 @@ Most bundlers allow you strip out code when they detect that a branch inside an 
 
 ```js
 // Must be the first import
-if (process.env.NODE_ENV==='development') {
+if (process.env.NODE_ENV === 'development') {
   // Must use require here as import statements are only allowed
   // to exist at top-level.
-  require("teaful-devtools");
+  require('teaful-devtools')
 }
 
-import { render } from 'preact';
-import App from './components/App';
+import { render } from 'preact'
+import App from './components/App'
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'))
 ```
 
 Make sure to set the `NODE_ENV` variable to the correct value in your build tool.
 
-
-## Conclusions 
+## Conclusions
 
 We have released Teaful DevTools to debug the changes from the stores: when, what, where, who, how, why. And vice versa, to trigger a change from Teaful DevTools to see how the UI reacts.
 
 At the moment it's only available for Chrome, but in future releases it will also be available for Firefox and Edge.
 
-You can leave any suggestions on [GitHub](https://github.com/teafuljs/teaful-devtools) _(issue / PR)_ and it will be taken into account. Remember that [Teaful project](https://github.com/teafuljs/teaful) is still in an early version 0.X and together we'll make it evolve. 
+You can leave any suggestions on [GitHub](https://github.com/teafuljs/teaful-devtools) _(issue / PR)_ and it will be taken into account. Remember that [Teaful project](https://github.com/teafuljs/teaful) is still in an early version 0.X and together we'll make it evolve.
