@@ -24,6 +24,7 @@ Teaful was **well received** (+500 GH stars) and one of the most requested featu
 - **Install DevTools extension**:
     - [Chrome](https://chrome.google.com/webstore/detail/teaful-devtools/lficdnnjoackdnaddfcgllmjdocofadc)
     - [Firefox](https://addons.mozilla.org/es/firefox/addon/teaful-devtools/)
+    - [Edge](https://microsoftedge.microsoft.com/addons/detail/teaful-devtools/kcplohinngjiammdehjlimgdpamhhkmn?hl=en-GB)
 - **Install the bridge**: `yarn add teaful-devtools`
 - **Use the bridge**: `import 'teaful-devtools'` <small>(~200 B)</small> Must be the first import.
 
