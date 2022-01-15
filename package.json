@@ -21,7 +21,7 @@
     "gray-matter": "4.0.3",
     "highlight.js": "11.3.1",
     "js-paging": "0.1.2",
-    "marked": "3.0.4",
+    "marked": "4.0.10",
     "next": "10.2.0",
     "next-plugin-preact": "3.0.6",
     "nodemailer": "6.7.0",
