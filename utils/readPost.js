@@ -1,5 +1,5 @@
 const fs = require('fs')
-const marked = require('marked')
+const { marked } = require('marked')
 const matter = require('gray-matter')
 const path = require('path')
 const readingTime = require('reading-time')
