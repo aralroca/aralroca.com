@@ -61,7 +61,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --pure-lockfile
-      - run: DEV_TO=${{secrets.DEV_TO}} yarn run publish:post
+      - run: yarn run publish:post
+        env:
+          DEV_TO: ${{ secrets.DEV_TO }} 
       - run: |
           git config user.name aralroca
           git config user.email aral-rg@hotmail.com
@@ -70,13 +72,13 @@ jobs:
           git push origin master
 ```
 
-What it does?
+What does it do?
 
-- Programs the action on **push to master** and **every day at 17:00** UTC using a cron.
-- Installs dependencies with `yarn install --pure-lockfile`
-- Sets environment variable `DEV_TO` using [GitHub secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). This is required for our script.
-- Runs our script to publish to dev.to
-- Commits and pushes to master only when there are changes.
+1. Programs the action on **push to master** and **every day at 17:00** UTC using a cron.
+1. Installs dependencies with `yarn install --pure-lockfile`
+1. Sets environment variable `DEV_TO` using [GitHub secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). This is required for our script.
+1. Runs our script to publish to dev.to
+1. Commits and pushes to master only when there are changes.
 
 ## Script to publish to dev.to
 
@@ -112,7 +114,7 @@ deploy()
   })
   .catch((e) => {
     console.log('ERROR publishing:', e)
-    process.exit()
+    process.exit(1)
   })
 ```
 
@@ -204,7 +206,7 @@ async function deployToDevTo(article) {
   const post = fs.readFileSync(postPath).toString()
   let occurrences = 0
 
-  // Write 'published_devto' metadata before the second occourrence of ---
+  // Write 'published_devto' metadata before the second occurrence of ---
   fs.writeFileSync(
     postPath,
     post.replace(/---/g, (m) => {
