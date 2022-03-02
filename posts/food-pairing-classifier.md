@@ -5,7 +5,6 @@ description: How to develop a food text classifier to suggest the best wines to 
 tags: machine-learning, fasttext, javascript, react, tensorflow
 cover_image: /images/cover-images/21_cover_image.jpg
 cover_image_mobile: /images/cover-images/21_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/21_cover_image_vert.jpg
 cover_color: '#20282D'
 canonical: https://dev-blog.vinissimus.com/food-pairing-classifier
 dev_to: virtual-sommelier-text-classifier-in-the-browser-2502

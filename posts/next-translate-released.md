@@ -5,7 +5,6 @@ description: i18n for Next.js static pages
 tags: nextjs, javascript, react, i18n
 cover_image: /images/cover-images/4_cover_image.jpg
 cover_image_mobile: /images/cover-images/4_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/4_cover_image_vert.jpg
 cover_color: '#6A6A6C'
 dev_to: next-translate-released-12ek
 ---

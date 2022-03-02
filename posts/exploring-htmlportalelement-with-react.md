@@ -5,7 +5,6 @@ tags: experimental, javascript, react
 created: 06/10/2019
 cover_image: /images/cover-images/3_cover_image.jpg
 cover_image_mobile: /images/cover-images/3_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/3_cover_image_vert.jpg
 cover_color: '#D2C9BE'
 dev_to: exploring-htmlportalelement-with-react-1m56
 ---

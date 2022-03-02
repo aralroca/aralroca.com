@@ -1,9 +1,8 @@
 # Cover images notes
 
 * **cover_image**: 960x432
-* **cover_image_mobile**: 490x219
-* **cover_image_vert**: 70x165
-* **cover_color**: Principal color of the image. There are online tools like http://mkweb.bcgsc.ca/color-summarizer/?analyze
+* **cover_image_mobile**: 110x50
+* **cover_color**: Principal color of the image. There are online tools like http://mkweb.bcgsc.ca/color-summarizer/?analyze and https://png-pixel.com/
 
 To crop the images, it's easy to do it with Gimp.
 

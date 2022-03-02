@@ -5,7 +5,6 @@ description: Discover how Snowpack fits into the JavaScript ecosystem.
 tags: javascript, react
 cover_image: /images/cover-images/11_cover_image.jpg
 cover_image_mobile: /images/cover-images/11_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/11_cover_image_vert.jpg
 cover_color: '#7C7671'
 dev_to: discovering-snowpack-29f3
 ---

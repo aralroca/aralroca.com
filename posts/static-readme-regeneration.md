@@ -5,7 +5,6 @@ description: Use a cron with Github Actions to always have your GitHub README.md
 tags: webdev, rust
 cover_image: /images/cover-images/14_cover_image.jpg
 cover_image_mobile: /images/cover-images/14_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/14_cover_image_vert.jpg
 cover_color: '#98B0D7'
 dev_to: static-readme-regeneration-4pf2
 ---

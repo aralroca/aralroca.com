@@ -5,7 +5,6 @@ description: Learn how to re-use pagination badges logic in all your projects.
 tags: javascript, react
 cover_image: /images/cover-images/9_cover_image.jpg
 cover_image_mobile: /images/cover-images/9_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/9_cover_image_vert.jpg
 cover_color: '#4B2017'
 dev_to: how-to-create-pagination-badges-4mh0
 ---

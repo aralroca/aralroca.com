@@ -5,7 +5,6 @@ description: I've launched Etiketai. Training AI models are now more friendlier.
 tags: machine-learning, tensorflow, javascript
 cover_image: /images/cover-images/19_cover_image.jpeg
 cover_image_mobile: /images/cover-images/19_cover_image_mobile.jpeg
-cover_image_vert: /images/cover-images/19_cover_image_vert.jpeg
 cover_color: '#EFF0F2'
 dev_to: etiketai-speed-up-training-your-ai-models-with-a-free-open-source-app-51ld
 ---

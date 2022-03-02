@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import fs from 'fs'
 
 import BlogSeries from '../../components/BlogSeries'
@@ -48,18 +49,15 @@ export default function Post({
           content={data.description}
         />
       </Head>
-      <div
-        style={{
-          backgroundColor: data.cover_color,
-          backgroundImage: `url(${data.cover_image})`,
-          backgroundSize: 'cover',
-          marginLeft: -30,
-          marginTop: -30,
-          maxWidth: 'calc(100% + 60px)',
-          paddingTop: '48%',
-          width: 960,
-        }}
+      <div style={{ '--cover-color': data.cover_color }} className="cover-image">
+      <Image 
+        priority 
+        loading="eager" 
+        src={data.cover_image} 
+        width="960" 
+        height="432"
       />
+      </div>
       <h1 className="post-title">{data.title}</h1>
       <PostInfo date={date} timeToRead={timeToRead} />
       <div className="tags" style={{ marginBottom: 30 }}>
@@ -111,14 +109,12 @@ export default function Post({
       </div>
       <Newsletter />
       {morePosts.length > 0 && (
-        <>
+        <div style={{ marginBottom: 50 }}>
           <b className="related-posts-title">More...</b>
-          <div className="related-posts">
-            {morePosts.map((p) => (
-              <PostItem key={p.slug} {...p} />
-            ))}
-          </div>
-        </>
+          {morePosts.map((p) => (
+            <PostItem key={p.slug} {...p} />
+          ))}
+        </div>
       )}
     </>
   )

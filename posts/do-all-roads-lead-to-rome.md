@@ -5,7 +5,6 @@ description: Learn what Rome is, how it fits into the JavaScript ecosystem and m
 tags: webdev, javascript
 cover_image: /images/cover-images/17_cover_image.jpg
 cover_image_mobile: /images/cover-images/17_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/17_cover_image_vert.jpg
 cover_color: '#BFB094'
 dev_to: do-all-roads-lead-to-rome-3154
 ---
