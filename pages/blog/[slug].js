@@ -49,14 +49,18 @@ export default function Post({
           content={data.description}
         />
       </Head>
-      <div style={{ '--cover-color': data.cover_color }} className="cover-image">
-      <Image 
-        priority 
-        loading="eager" 
-        src={data.cover_image} 
-        width="960" 
-        height="432"
-      />
+      <div
+        key={slug}
+        style={{ '--cover-color': data.cover_color }}
+        className="cover-image"
+      >
+        <Image
+          priority
+          loading="eager"
+          src={data.cover_image}
+          width="960"
+          height="432"
+        />
       </div>
       <h1 className="post-title">{data.title}</h1>
       <PostInfo date={date} timeToRead={timeToRead} />
