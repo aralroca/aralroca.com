@@ -11,6 +11,7 @@ export default function Layout({ Component, pageProps }) {
   const { pathname, asPath } = useRouter()
   const isActive = (link) => (pathname.startsWith(link) ? 'active' : '')
   const isDefaultMeta = pathname !== '/blog/[slug]'
+  const mainClass = pathname.startsWith('/blog/') ? 'blog' : ''
 
   const data = {
     url: getCanonical(asPath),
@@ -92,7 +93,7 @@ export default function Layout({ Component, pageProps }) {
         </nav>
       </header>
 
-      <main>
+      <main className={mainClass}>
         <Component {...pageProps} />
       </main>
       <footer>

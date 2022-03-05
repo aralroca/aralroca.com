@@ -5,7 +5,6 @@ description: Learn how to use OpenCV in the web without a lot of headaches.
 tags: nextjs, javascript, react, experimental, machine-learning, webassembly
 cover_image: /images/cover-images/6_cover_image.jpg
 cover_image_mobile: /images/cover-images/6_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/6_cover_image_vert.jpg
 cover_color: '#2D2B30'
 dev_to: opencv-directly-in-the-browser-webassembly-webworker-423i
 ---

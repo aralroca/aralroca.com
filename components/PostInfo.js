@@ -6,9 +6,9 @@ export default function PostInfo({ date, timeToRead, hideAuthor }) {
     : <>{`by `}<Link href="/"><a>aralroca</a></Link>{` on `}</>
 
   return (
-    <p className="post-info">
+    <time datetime={date} className="post-info">
       {authorElement}
       {`${date} • ${timeToRead.text.replace(/ /g, '\u00A0')}`}
-    </p>
+    </time>
   )
 }

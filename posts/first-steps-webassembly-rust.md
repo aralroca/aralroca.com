@@ -5,7 +5,6 @@ description: Discover how to start with WebAssembly in an easy way with Rust.
 tags: javascript, rust, webassembly
 cover_image: /images/cover-images/16_cover_image.jpg
 cover_image_mobile: /images/cover-images/16_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/16_cover_image_vert.jpg
 dev_to: first-steps-with-webassembly-in-rust-37im
 cover_color: '#130913'
 ---

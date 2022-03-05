@@ -5,7 +5,6 @@ description: Next-translate is an i18n library to keep the translations as simpl
 tags: nextjs, javascript, react, i18n
 cover_image: /images/cover-images/20_cover_image.jpg
 cover_image_mobile: /images/cover-images/20_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/20_cover_image_vert.jpg
 cover_color: '#EFECEC'
 canonical: https://dev-blog.vinissimus.com/next-translate-1.0
 dev_to: next-translate-version-1-0-released-4bg6

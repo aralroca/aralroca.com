@@ -5,7 +5,6 @@ description: Use uncontrolled forms as default way to handle forms.
 tags: react,forms,hooks
 cover_image: /images/cover-images/2_cover_image.jpg
 cover_image_mobile: /images/cover-images/2_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/2_cover_image_vert.jpg
 cover_color: '#5D6667'
 dev_to: dont-control-everything-react-forms-4d9
 ---

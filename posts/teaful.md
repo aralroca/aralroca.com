@@ -6,7 +6,6 @@ tags: react, javascript, teaful
 series: 'React state management'
 cover_image: /images/cover-images/23_cover_image.jpg
 cover_image_mobile: /images/cover-images/23_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/23_cover_image_vert.jpg
 cover_color: '#D7FCD5'
 dev_to: teaful-tiny-easy-and-powerful-react-state-management-3j9k
 ---

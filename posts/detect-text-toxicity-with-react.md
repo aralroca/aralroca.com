@@ -5,7 +5,6 @@ tags: tensorflow, machine-learning, javascript, react, hooks
 created: 04/28/2020
 cover_image: /images/cover-images/5_cover_image.jpg
 cover_image_mobile: /images/cover-images/5_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/5_cover_image_vert.jpg
 cover_color: '#B4AF9E'
 dev_to: detect-text-toxicity-using-react-2d46
 ---

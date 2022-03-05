@@ -7,7 +7,6 @@ series: 'React state management'
 cover_image: /images/cover-images/22_cover_image.jpg
 cover_image_mobile: /images/cover-images/22_cover_image_mobile.jpg
 dev_to: react-state-with-a-fragmented-store-18ff
-cover_image_vert: /images/cover-images/22_cover_image_vert.jpg
 cover_color: '#E4E8EB'
 ---
 

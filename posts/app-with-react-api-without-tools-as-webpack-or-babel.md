@@ -5,7 +5,6 @@ description: Learn how to make an application without tools as Webpack or Babel 
 tags: javascript, react, experimental
 cover_image: /images/cover-images/7_cover_image.jpg
 cover_image_mobile: /images/cover-images/7_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/7_cover_image_vert.jpg
 cover_color: '#171920'
 dev_to: app-with-react-api-without-tools-as-webpack-or-babel-4170
 ---

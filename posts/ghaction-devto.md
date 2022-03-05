@@ -5,7 +5,6 @@ description: Learn how to automatize publishing to dev.to from your GitHub repo.
 tags: webdev, javascript
 cover_image: /images/cover-images/18_cover_image.jpg
 cover_image_mobile: /images/cover-images/18_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/18_cover_image_vert.jpg
 cover_color: '#09081A'
 dev_to: github-action-to-publish-your-blog-post-to-dev-to-1jcc
 ---

@@ -5,7 +5,6 @@ created: 8/24/2018
 tags: tensorflow, javascript, machine-learning
 cover_image: /images/cover-images/1_cover_image.jpg
 cover_image_mobile: /images/cover-images/1_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/1_cover_image_vert.jpg
 cover_color: '#393537'
 dev_to: first-steps-with-tensorflowjs-197p
 ---

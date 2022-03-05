@@ -58,19 +58,17 @@ export default function Blog({ posts, tags }) {
           <meta key="noIndex" name="robots" content="noindex, follow" />
         )}
       </Head>
-      <h1>Blog</h1>
+ 
+        
+      <div className="blog-page-content">
 
-      <Searcher key={key.current} search={search} onSearch={onSearch} />
+      <div className="posts-box">
 
-      <div className="tags" style={{ marginTop: 10 }}>
-        {tags.map((tag) => (
-          <Tag
-            onClick={() => (key.current = Date.now())}
-            key={tag}
-            label={tag}
-            search={search}
-          />
-        ))}
+      <div className="blog-title">
+        <h1>Blog</h1>
+        <div>
+          {filteredPosts.length} posts
+        </div>
       </div>
 
       {postsToShow.map((post) => (
@@ -98,7 +96,26 @@ export default function Blog({ posts, tags }) {
           .
         </div>
       )}
+      </div>
+
+      <aside className="searcher-box">
+        <div className="sticky">
+      <Searcher key={key.current} search={search} onSearch={onSearch} />
+
+      <div className="tags" style={{ marginTop: 10 }}>
+        {tags.map((tag) => (
+          <Tag
+            onClick={() => (key.current = Date.now())}
+            key={tag}
+            label={tag}
+            search={search}
+          />
+        ))}
+      </div>
       <Newsletter />
+      </div>
+      </aside>
+      </div>
     </Fragment>
   )
 }

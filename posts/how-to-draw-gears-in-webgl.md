@@ -5,7 +5,6 @@ description: Learn how to draw dynamic 2D complex shapes in WebGL by drawing gea
 tags: javascript, webgl, react
 cover_image: /images/cover-images/15_cover_image.jpg
 cover_image_mobile: /images/cover-images/15_cover_image_mobile.jpg
-cover_image_vert: /images/cover-images/15_cover_image_vert.jpg
 series: 'Learning WebGL'
 cover_color: '#342A2C'
 dev_to: how-to-draw-gears-in-webgl-5481
