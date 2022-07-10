@@ -45,8 +45,8 @@
     "twitter": "1.7.1"
   },
   "engines": {
-    "node": "16.10.0",
-    "npm": "7.24.0"
+    "node": "<=16",
+    "npm": "<=7"
   },
   "prettier": {
     "trailingComma": "es5",
