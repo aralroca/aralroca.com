@@ -205,7 +205,7 @@ At Next-translate, we have chosen not to re-implement this functionality, as we 
 
 However, all the support currently available is with the `lang` parameter. That is, `/page-name?lang=es` renders the page `app/page-name/page.js`, where we have internal access to the `lang` parameter, and you **do not need** to do **anything extra** other than using the `useTranslation` hook to consume your translations.
 
-For now, you can use the middleware to add the `param`:
+For now, you can use the middleware to add the `lang` param:
 
 ```js
 // middleware.ts
