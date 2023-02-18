@@ -205,7 +205,7 @@ At Next-translate, we have chosen not to re-implement this functionality, as we 
 
 However, all the support currently available is with the `lang` parameter. That is, `/page-name?lang=es` renders the page `app/page-name/page.js`, where we have internal access to the `lang` parameter, and you **do not need** to do **anything extra** other than using the `useTranslation` hook to consume your translations.
 
-All the same, if you wish to use the language as a subpath `/es/page-name`, you can utilize middleware to append the lang parameter and perform a rewrite:
+All the same, if you wish to use the language as a subpath `/es/page-name` without the param, you can utilize middleware to append the `lang` parameter and perform a rewrite:
 
 ```js
 // middleware.ts
@@ -219,6 +219,8 @@ export function middleware(request: NextRequest) {
   return NextResponse.rewrite(request.nextUrl)
 }
 ```
+
+Here in the middleware, we are **not adding** the **locale** as a **subpath**, but rather eliminating the need to manually add the `lang` parameter. By default, the subpath still exists, but you cannot use `useRouter` from `next/router` to access the `locale` within the components of the `app` directory. Therefore, we **still need the parameter**, even if we hide it from view.
 
 And to navigate:
 
