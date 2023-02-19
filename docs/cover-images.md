@@ -11,4 +11,4 @@ To crop the images, it's easy to do it with Gimp.
 * File -> Export as
 * Compress image with online tools: https://compressjpeg.com/es/ https://compresspng.com/
 
-@todo automatize this process.
+- @todo automatize this process.
