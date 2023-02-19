@@ -6,18 +6,17 @@ tags: nextjs, javascript, react, i18n
 cover_image: /images/cover-images/25_cover_image.jpg
 cover_image_mobile: /images/cover-images/25_cover_image_mobile.jpg
 cover_color: '#3D441D'
+dev_to: i18n-translations-in-nextjs-13s-app-dir-for-serverclient-components-4ek8
 ---
 
 In this post, I will explain how to easily load and use translations in the pages within the **[`app` directory](https://beta.nextjs.org/docs/app-directory-roadmap)** of Next.js 13, a **new paradigm** for managing your pages that, if mismanaged, **can lead to headaches**.
-
-
 
 ## Before we begin... A little context
 
 First, let me tell you about **[Next-translate](https://github.com/aralroca/next-translate)**. It is one of the most widely used libraries for **loading** and **using translations** in **Next.js pages** (~70k weekly downloads) and has existed since Next.js 9.
 
-
 By default, translations are stored in _**locales/**{lang}/{namespace}.json_:
+
 ```bash
 .
 ├── en
@@ -28,7 +27,7 @@ By default, translations are stored in _**locales/**{lang}/{namespace}.json_:
     └── home.json
 ```
 
-<small>*However, they can also be loaded from a CDN or integrated with an online internationalization platform like localize.</small>
+<small>\*However, they can also be loaded from a CDN or integrated with an online internationalization platform like localize.</small>
 
 🦄 One of the library's goals is to be **easy to use**. With a little [configuration](https://github.com/aralroca/next-translate/tree/master#3-configuration) in the `i18n.js` file, you can already consume these translations in your pages and components:
 
@@ -49,7 +48,6 @@ I won't go into further detail on how the library works. I invite you to read th
 
 <img width="200" height="200" src="/images/blog-images/nt-logo.svg" alt="Next-translate logo" class="center">
 
-
 Now that I have introduced the library, let's see if it is still easy to use, lightweight, and has all the i18n essentials in the **new paradigm** that Next.js 13 introduced in late 2022: the **app directory**...
 
 ## What is the app dir?
@@ -58,7 +56,7 @@ The app directory in Next.js 13 (beta) introduces a new routing and data fetchin
 
 Server components are a new type of React component that executes on the server and on the **server only**. This means that they are never shipped to the client, resulting in a significant reduction in the amount of code that needs to be shipped to the browser. This reduction in the amount of code can **improve the performance** of React applications, especially those dealing with large amounts of data.
 
-They were originally thought of as a way to **solve** the **"waterfall problem"** in React applications. This **occurs when** a React component **requires data** from a server, but that data **is not available yet**. This can result in a "waterfall" of network requests, as **each component waits** for the data it needs before it can render, **causing significant delays** in rendering and impacting the user experience. 
+They were originally thought of as a way to **solve** the **"waterfall problem"** in React applications. This **occurs when** a React component **requires data** from a server, but that data **is not available yet**. This can result in a "waterfall" of network requests, as **each component waits** for the data it needs before it can render, **causing significant delays** in rendering and impacting the user experience.
 
 With Server components **allows** the server to **fetch all** the required data in one go, instead of going back and forth with the client. This results in a significant **improvement** in the **performance** of React applications.
 
@@ -70,9 +68,7 @@ However, if there are parts of your code that require interactivity with the use
 <img width="500" src="/images/blog-images/merch-islands-example.png" alt="Merch islands example" class="center">  <figcaption><small>Image of islands, from Deno <a href="https://deno.com/blog/the-future-and-past-is-server-side-rendering" target="_blank">post</a> blog</small></figcaption>
 </figure>
 
-
 One of the challenges with this paradigm shift of working with server components and client islands is that they function differently and are like **two separate worlds**. Therefore, the **goal** is to **find a way** to make the **usage of both** as **simple** and **consistent** as possible.
-
 
 ## Server components headaches
 
@@ -85,7 +81,6 @@ One of the main challenges could be the need to **maintain coherence** between t
 Finally, there may be **challenges** in **integrating libraries** used to work with Server Components and Client Components. Ensuring that these tools work well together can be a challenge. So let's see how we have dealt with these problems at Next-translate.
 
 ## Load and consume translations in Next.js 13 app dir
-
 
 In **[Next-translate 2.0](https://github.com/aralroca/next-translate/releases/tag/2.0.0)**, we have struggled with this issue to make the solution as **user-friendly as possible**. In the end, we achieved this goal, and no additional configuration is necessary in your `i18n.js` setup. 🎉
 
@@ -120,8 +115,8 @@ Our **[plugin](https://github.com/aralroca/next-translate-plugin)**, which was a
 
 To consume these translations, use the **[useTranslation](https://github.com/aralroca/next-translate#usetranslation)** hook or the **[Trans](https://github.com/aralroca/next-translate#trans-component)** component:
 
-
 **🌊 Server page (+0kb): `app/page.js`:**
+
 ```js
 import useTranslation from 'next-translate/useTranslation'
 
@@ -135,8 +130,9 @@ export default function HomePage() {
 In this case, we are dealing with a server page, as pages are by default server components. Under the hood, the `next-translate-plugin` **dynamically** loads translations **directly**, without the need for the `useEffect` hook or `context`. It also sets the **language** and **namespace** in the **HTML**, enabling other components, such as client-side islands, to hydrate and consume the same translations loaded for the page.
 
 **🏝️ Client page (+498B): `app/checkout/page.js`**
+
 ```js
-"use client"
+'use client'
 import useTranslation from 'next-translate/useTranslation'
 
 export default function CheckoutPage() {
@@ -148,10 +144,10 @@ export default function CheckoutPage() {
 
 For client pages, which are not the default in Next.js, it is necessary to indicate that they are client-side using the **`"use client"`** line, which is a new feature in the `app` directory of Next.js 13. By default, if this line is not present, the page is server-side. Under the hood, the `next-translate-plugin` loads translations for these pages using the `useEffect` hook. In this case, there is no need to add **anything to the HTML** because all components will **already** have **access** to the **translations** without the need for hydration.
 
-
 **🏝️ Client component (+498B): `components/ClientIsland`**
+
 ```js
-"use client"
+'use client'
 import useTranslation from 'next-translate/useTranslation'
 
 export default function ClientIsland() {
@@ -164,8 +160,8 @@ The same logic applies to components: if they do not have the `"use client"` lin
 
 In this case, the `next-translate-plugin` will check whether hydration is necessary, since it is possible that the translations are already accessible if the parent page or component was also a client.
 
-
 **🌊 Server component (+0kb): `components/ServerSea`**
+
 ```js
 import useTranslation from 'next-translate/useTranslation'
 
@@ -178,6 +174,7 @@ export default function ServerSea() {
 For server components, the **plugin does not perform any transformation**, as translations have already been loaded at the page level, and direct access to the translations is available within the `useTranslation` hook.
 
 **🌊🏝️🏝️ Server page with client islands (+498B): `app/page.js`**
+
 ```js
 import ServerSea from '@components/ServerSea' // this part 0kb
 import ClientIsland from '@components/ClientIsland'
@@ -195,9 +192,9 @@ export default function HomePage() {
 
 However, if there is a server page with client components, the client components must hydrate what has been provided from the server page and rerender.
 
-## i18n routing with app dir 
+## i18n routing with app dir
 
-Next.js 10 introduced [i18n routing](https://nextjs.org/docs/advanced-features/i18n-routing) support, allowing pages to be rendered by navigating to `/es/page-name`, where the page `pages/page-name.js` was accessed using the `useRouter` hook to obtain the `locale`. 
+Next.js 10 introduced [i18n routing](https://nextjs.org/docs/advanced-features/i18n-routing) support, allowing pages to be rendered by navigating to `/es/page-name`, where the page `pages/page-name.js` was accessed using the `useRouter` hook to obtain the `locale`.
 
 However, since the pages have been moved from the `pages` dir to the **app dir**, this i18n routing **no longer works correctly**.
 
@@ -226,7 +223,9 @@ Here in the middleware, we are not adding the locale as a subpath, but rather el
 And to navigate:
 
 ```js
-<Link href={`/?lang=${locale}`} as={`/${locale}`}>{locale}</Link>
+<Link href={`/?lang=${locale}`} as={`/${locale}`}>
+  {locale}
+</Link>
 ```
 
 If you need more i18n routing features like automatic locale detection you can follow these steps from the Next.js documentation:
@@ -242,7 +241,6 @@ If you need more i18n routing features like automatic locale detection you can f
 
 To conclude, if you are eager to try an example application using Next.js with the `app` directory and Next-translate, you can take a look at this example:
 
-
 - [Codesandbox](https://codesandbox.io/p/sandbox/next-translate-app-dir-fw68h2?file=%2Fsrc%2Fapp%2Fpage.tsx&selection=%5B%7B%22endColumn%22%3A1%2C%22endLineNumber%22%3A6%2C%22startColumn%22%3A1%2C%22startLineNumber%22%3A6%7D%5D)
 
 ## Conclusion
@@ -251,9 +249,7 @@ This article discusses the Next.js 13 paradigm shift in managing pages, which in
 
 The article also discusses the **Next-translate** library, which is one of the most widely used libraries for loading and using translations in Next.js pages. It aims to be easy to use, have all the i18n essentials, and be as lightweight as possible. The article evaluates whether Next-translate is still easy to use, lightweight, and has all the i18n essentials in the **new paradigm** of **Next.js 13**, and **explains how to use it**.
 
-
 <img width="500" height="347" src="/images/blog-images/learning-js.jpg" alt="Image from unsplash" class="center">
-
 
 ## References
 
