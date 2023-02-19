@@ -203,7 +203,7 @@ However, since the pages have been moved from the `pages` dir to the **app dir**
 
 At Next-translate, we have chosen not to re-implement this functionality, as we aim to be a library for translating pages, rather than routing them. We hope that in the future, this feature will be implemented in the `app` directory, as it is still in beta and many features still need to be supported.
 
-However, all the support currently available is with the `lang` parameter. That is, `/page-name?lang=es` renders the page `app/page-name/page.js`, where we have internal access to the `lang` parameter, and you **do not need** to do **anything extra** other than using the `useTranslation` hook to consume your translations.
+However, all the support currently available is with the `lang` parameter. That is, `/es/page-name?lang=es` renders the page `app/page-name/page.js`, where we have internal access to the `lang` parameter, and you **do not need** to do **anything extra** other than using the `useTranslation` hook to consume your translations.
 
 All the same, if you wish to use the language as a subpath `/es/page-name` without the param, you can utilize middleware to append the `lang` parameter and perform a rewrite:
 
@@ -213,6 +213,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import i18n from './i18n'
 
+// /es/page-name -> rewrites to -> /es/page-name?lang=es
 export function middleware(request: NextRequest) {
   const locale = request.nextUrl.locale || i18n.defaultLocale
   request.nextUrl.searchParams.set('lang', locale)
@@ -220,7 +221,7 @@ export function middleware(request: NextRequest) {
 }
 ```
 
-Here in the middleware, we are **not adding** the **locale** as a **subpath**, but rather eliminating the need to manually add the `lang` parameter. By default, the subpath still exists, but you cannot use `useRouter` from `next/router` to access the `locale` within the components of the `app` directory. Therefore, we **still need the parameter**, even if we hide it from view.
+Here in the middleware, we are not adding the locale as a subpath, but rather eliminating the need to manually add the `lang` parameter. By default, the **subpath still exists**, but you **cannot use `useRouter`** from `next/router` to access the `locale` within the components of the `app` directory. Therefore, we **still need the parameter**, even if we hide it from view.
 
 And to navigate:
 
@@ -256,10 +257,11 @@ The article also discusses the **Next-translate** library, which is one of the m
 
 ## References
 
-- https://github.com/aralroca/next-translate
-- https://github.com/aralroca/next-translate-plugin
-- https://beta.nextjs.org/docs/guides/internationalization
-- https://nextjs.org/docs/advanced-features/i18n-routing
-- https://deno.com/blog/the-future-and-past-is-server-side-rendering
-- https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html
-- https://reactjs.org/blog/2022/03/29/react-v18.html
+- Next-translate repo: https://github.com/aralroca/next-translate
+- Next-translate 2.0 release: https://github.com/aralroca/next-translate/releases/tag/2.0.0
+- Next-translate-plugin repo: https://github.com/aralroca/next-translate-plugin
+- Next.js app dir docu: https://beta.nextjs.org/docs/guides/internationalization
+- Next.js i18n routing docu (before app dir):https://nextjs.org/docs/advanced-features/i18n-routing
+- Deno article about client islands: https://deno.com/blog/the-future-and-past-is-server-side-rendering
+- React server components: https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html
+- React 18 features: https://reactjs.org/blog/2022/03/29/react-v18.html
