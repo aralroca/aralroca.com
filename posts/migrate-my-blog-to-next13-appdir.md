@@ -1,11 +1,17 @@
 ---
-title: 'Migrated my blog from Preact to React 18'
+title: 'Is React 18 smaller in size compared to Preact?'
 created: 03/01/2023
 description: 'TODO'
 tags: react, javascript, preact
 cover_image: /images/cover-images/23_cover_image.jpg
 cover_image_mobile: /images/cover-images/23_cover_image_mobile.jpg
 ---
+
+React 18 and Preact are both JavaScript libraries commonly used for building user interfaces. A key consideration when selecting a library is its size, as larger libraries can lead to slower load times and negatively impact website performance.
+
+In this case, the inquiry is focused on the size comparison between React 18 and Preact. Specifically, the question asks whether React 18 is smaller in kilobytes than Preact.
+
+## Next.js 12 with Preact (~50.9 kB)
 
 ```
 Page                                                              Size     First Load JS
@@ -36,3 +42,37 @@ Page                                                              Size     First
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
 ```
+
+## Next.js 13 with React, without app dir (~82.4 kB)
+
+```
+Route (pages)                                                              Size     First Load JS
+┌ ○ /                                                                      1.02 kB          78 kB
+├   /_app                                                                  0 B              77 kB
+├ ○ /404                                                                   311 B          77.3 kB
+├ λ /api/mailer                                                            0 B              77 kB
+├ ● /blog                                                                  2.32 kB        79.3 kB
+├ ● /blog/[slug] (3933 ms)                                                 5.46 kB        82.4 kB
+├   └ css/e1d337323d1ab4f7.css                                             314 B
+├   ├ /blog/dont-control-everything-react-forms (678 ms)
+├   ├ /blog/app-with-react-api-without-tools-as-webpack-or-babel (362 ms)
+├   ├ /blog/cat-dog-classifier (361 ms)
+├   ├ /blog/discovering-snowpack (352 ms)
+├   ├ /blog/detect-text-toxicity-with-react (351 ms)
+├   ├ /blog/do-all-roads-lead-to-rome
+├   ├ /blog/etiketai
+├   └ [+19 more paths]
+└ ○ /thanks                                                                918 B          77.9 kB
++ First Load JS shared by all                                              80.2 kB
+  ├ chunks/framework-2c79e2a64abdb08b.js                                   45.2 kB
+  ├ chunks/main-b1241a9a70bb7dcd.js                                        26.9 kB
+  ├ chunks/pages/_app-c11e652a6abeaba0.js                                  4.07 kB
+  ├ chunks/webpack-8fa1640cc84ba8fe.js                                     750 B
+  └ css/e2a04055582976c7.css                                               3.18 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+```
+
+## Next.js 13 with React, with app dir ()
