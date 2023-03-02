@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Arrows(props) {
   return (
@@ -26,11 +26,11 @@ function Dark() {
       width="16"
       height="16"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       fill="none"
-      shape-rendering="geometricPrecision"
+      shapeRendering="geometricPrecision"
     >
       <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
     </svg>
@@ -44,11 +44,11 @@ function Light() {
       width="16"
       height="16"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       fill="none"
-      shape-rendering="geometricPrecision"
+      shapeRendering="geometricPrecision"
     >
       <circle cx="12" cy="12" r="5"></circle>
       <path d="M12 1v2"></path>
@@ -82,10 +82,7 @@ function System() {
 }
 
 export default function ChangeTheme() {
-  const isNode = typeof window === 'undefined'
-  const [theme, setTheme] = useState(
-    isNode ? undefined : window.__theme || 'system'
-  )
+  const [theme, setTheme] = useState('system')
   const right = {
     dark: 30,
     system: 15,
@@ -108,7 +105,9 @@ export default function ChangeTheme() {
     onChangeTwitterEmbedTheme()
   }
 
-  if (isNode) return null
+  useEffect(() => {
+    if (window.__theme !== theme) onChangeTheme({ target: { value: window.__theme } })
+  }, [])
 
   return (
     <div className="change-theme">

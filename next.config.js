@@ -1,5 +1,3 @@
-const withPreact = require('next-plugin-preact')
-
 const nextConfig = {
   webpack(config, { dev, isServer }) {
     // Generate Sitemap + RSS on build time
@@ -12,4 +10,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPreact(nextConfig)
+module.exports = nextConfig

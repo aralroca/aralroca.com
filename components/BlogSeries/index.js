@@ -33,8 +33,9 @@ export default function BlogSeries({ title, series, ...props }) {
             href={`/blog/[slug]?slug=${serie.slug}`}
             as={`/blog/${serie.slug}`}
             key={key}
+            className={styles.blogSerie}
           >
-            <a className={styles.blogSerie}>{title}</a>
+            {title}
           </Link>
         )
       })}

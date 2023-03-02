@@ -18,10 +18,8 @@ export default function Tag({ label, search = '', onClick }) {
   }
 
   return (
-    <Link href={href}>
-      <a onClick={onClick} className={`tag ${isActive ? 'active' : ''}`}>
-        {label}
-      </a>
+    <Link href={href} onClick={onClick} className={`tag ${isActive ? 'active' : ''}`}>
+      {label}
     </Link>
   )
 }

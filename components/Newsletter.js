@@ -5,13 +5,13 @@ export default function Newsletter() {
       action="https://aralroca.us8.list-manage.com/subscribe/post?u=29d99171aa3f671bde658475a&amp;id=9f1a0b31e3"
       method="post"
       target="_blank"
-      novalidate
+      noValidate
     >
       <h2>Subscribe to new posts! 📩</h2>
       <input
         type="email"
-        value=""
-        ariaLabel="Email address"
+        defaultValue=""
+        aria-label="Email address"
         name="EMAIL"
         id="mce-EMAIL"
         placeholder="Email address"

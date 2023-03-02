@@ -72,23 +72,21 @@ export default function Layout({ Component, pageProps }) {
         />
       </Head>
       <header>
-        <Link href="/">
-          <a title="Go to homepage" className="logo">
-            <img
-              alt="Aral Roca's personal web site"
-              src="/images/logo.svg"
-              width={48}
-              height={48}
-            />
-            <span>Aral Roca.</span>
-          </a>
+        <Link href="/" title="Go to homepage" className="logo">
+          <img
+            alt="Aral Roca's personal web site"
+            src="/images/logo.svg"
+            width={48}
+            height={48}
+          />
+          <span>Aral Roca.</span>
         </Link>
         <nav>
-          <Link href="/blog">
-            <a className={isActive('/blog')}>Blog</a>
+          <Link href="/blog" className={isActive('/blog')}>
+            Blog
           </Link>
-          <Link href="/thanks">
-            <a className={isActive('/thanks')}>Support</a>
+          <Link href="/thanks" className={isActive('/thanks')}>
+            Support
           </Link>
         </nav>
       </header>

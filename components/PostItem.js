@@ -25,9 +25,7 @@ export default function PostItem({ slug, metadata, date, timeToRead }) {
           href={`/blog/[slug]?slug=${slug}`}
           as={`/blog/${slug}`}
         >
-          <a>
-            <h2>{metadata.title}</h2>
-          </a>
+          <h2>{metadata.title}</h2>
         </Link>
         <PostInfo date={date} timeToRead={timeToRead} hideAuthor />
       </div>

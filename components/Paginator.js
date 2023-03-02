@@ -10,15 +10,15 @@ export default function Pagination({ href, currentPage, pages }) {
             key={`page-${num}`}
             href={href(num)}
             shallow
+            className={`badge ${num === currentPage ? 'current' : ''}`}
           >
-            <a className={`badge ${num === currentPage ? 'current' : ''}`}
-            >{num} </a>
+            {num}
           </Link>
         ) : (
-            <span key={`separator-${index}`} className="separator">
-              ...
-            </span>
-          )
+          <span key={`separator-${index}`} className="separator">
+            ...
+          </span>
+        )
       )}
     </div>
   )
