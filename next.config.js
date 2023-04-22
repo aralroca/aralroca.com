@@ -1,4 +1,5 @@
 const nextConfig = {
+  experimental: { appDir: true },
   webpack(config, { dev, isServer }) {
     // Generate Sitemap + RSS on build time
     if (isServer) {

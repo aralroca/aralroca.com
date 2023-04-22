@@ -1,10 +1,13 @@
+"use client"
+
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useSearchParams } from 'next/navigation'
 
 import styles from './styles.module.css'
 
 export default function BlogSeries({ title, series, ...props }) {
-  const { query } = useRouter()
+  const params = useSearchParams()
+  const slug = params.get('slug')
 
   if (!series || !series.length) return null
 
@@ -17,7 +20,7 @@ export default function BlogSeries({ title, series, ...props }) {
         const title = `${index + 1}) ${serie.title}`
         const key = `serie-${serie.slug}`
 
-        if (serie.slug === query.slug) {
+        if (serie.slug === slug) {
           return (
             <div
               key={key}

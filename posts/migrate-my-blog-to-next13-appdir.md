@@ -75,4 +75,21 @@ Route (pages)                                                              Size 
 ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
 ```
 
-## Next.js 13 with React, with app dir ()
+## Next.js 13 with React, with app dir 
+
+
+```
+Route (app)                                                       Size     First Load JS
+┌ ○ /                                                             137 B            68 kB
+├ ○ /blog                                                         2.23 kB          76 kB
+├ ● /blog/[slug]                                                  5.77 kB        79.5 kB
+├   ├ /blog/app-with-react-api-without-tools-as-webpack-or-babel
+├   ├ /blog/cat-dog-classifier
+├   ├ /blog/detect-text-toxicity-with-react
+├   └ [+23 more paths]
+└ ○ /thanks                                                       822 B          68.7 kB
++ First Load JS shared by all                                     67.8 kB
+  ├ chunks/701-71f90890018839ed.js                                65.5 kB
+  ├ chunks/main-app-9f65b0c4430c92c5.js                           204 B
+  └ chunks/webpack-0bd2b127f97e03e1.js                            2.12 kB
+```

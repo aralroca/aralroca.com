@@ -1,13 +1,12 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useState, useEffect, useRef, Fragment } from 'react'
+"use client"
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useState, useEffect, useRef, Fragment, use } from 'react'
 
 import Newsletter from '../../components/Newsletter'
 import Pagination from '../../components/Paginator'
 import PostItem from '../../components/PostItem'
 import Tag from '../../components/Tag'
 import filterSearch from '../../utils/filterSearch'
-import getAllPosts from '../../utils/getAllPosts'
 
 const itemsPerPage = 10
 
@@ -28,12 +27,14 @@ function Searcher({ search, onSearch }) {
 
 export default function Blog({ posts, tags }) {
   const router = useRouter()
-  const { query } = router
+  const params = useSearchParams()
+  const q = params.get('q')
+  const page = params.get('page')
   const key = useRef(Date.now())
-  const [search, setSearch] = useState(query.q || '')
+  const [search, setSearch] = useState(q || '')
 
   const filteredPosts = search ? posts.filter(filterSearch(search)) : posts
-  const [currentPage, setCurrentPage] = useState(parseInt(query.page) || 1)
+  const [currentPage, setCurrentPage] = useState(parseInt(page) || 1)
   const pages = Math.ceil(filteredPosts.length / itemsPerPage)
   const lastIndex = itemsPerPage * currentPage
   const firstIndex = lastIndex - itemsPerPage
@@ -46,19 +47,11 @@ export default function Blog({ posts, tags }) {
   }
 
   // Update state from param
-  useEffect(() => setSearch(query.q || ''), [query.q])
-  useEffect(() => setCurrentPage(parseInt(query.page) || 1), [query.page])
+  useEffect(() => setSearch(q || ''), [q])
+  useEffect(() => setCurrentPage(parseInt(page) || 1), [page])
 
   return (
     <Fragment key={postsToShow.length ? 'non-empty' : 'empty'}>
-      <Head>
-        <title key="title">Blog - Aral Roca</title>
-
-        {router.asPath !== router.pathname && (
-          <meta key="noIndex" name="robots" content="noindex, follow" />
-        )}
-      </Head>
-
 
       <div className="blog-page-content">
 
@@ -77,7 +70,7 @@ export default function Blog({ posts, tags }) {
 
           {pages > 1 && (
             <Pagination
-              href={(p) => `/blog?q=${query.q || ''}&page=${p}`}
+              href={(p) => `/blog?q=${q || ''}&page=${p}`}
               currentPage={currentPage}
               pages={pages}
             />
@@ -120,16 +113,3 @@ export default function Blog({ posts, tags }) {
   )
 }
 
-export const getStaticProps = async () => {
-  const posts = getAllPosts()
-  const tags = posts.reduce((t, post) => {
-    const postTags = post.metadata.tags.split(',')
-    postTags.forEach((tag) => {
-      const trimmedTag = tag.trim()
-      if (!t.includes(trimmedTag)) t.push(trimmedTag)
-    })
-    return t
-  }, [])
-
-  return { props: { posts, tags } }
-}

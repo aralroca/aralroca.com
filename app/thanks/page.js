@@ -1,22 +1,18 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import DonateButton from "../../components/Donate";
+
+export const metadata = {
+  title: 'Supporters - Aral Roca',
+};
 
 export default function Supporters() {
-  function donate() {
-    const donateEl = document.querySelector('#donate')
-    donateEl.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <div className="supporters">
-      <Head>
-        <title key="title">Supporters - Aral Roca</title>
-      </Head>
       <div className="support-head">
         <h1>Support</h1>
-        <div onClick={donate} role="button" className="donate-btn">
+        <DonateButton>
           Donate 🧡
-        </div>
+        </DonateButton>
       </div>
 
       <p className="description">

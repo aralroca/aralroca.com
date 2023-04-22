@@ -1,26 +1,60 @@
 import Head from 'next/head'
+import { cache } from 'react'
 import Image from 'next/image'
 import fs from 'fs'
 
-import BlogSeries from '../../components/BlogSeries'
-import Newsletter from '../../components/Newsletter'
-import PostInfo from '../../components/PostInfo'
-import PostItem from '../../components/PostItem'
-import Tag from '../../components/Tag'
-import addCustomPostWidgets from '../../utils/addCustomPostWidgets'
-import clearPage from '../../utils/clearPage'
-import getMorePosts from '../../utils/getMorePosts'
-import readPost from '../../utils/readPost'
+import BlogSeries from '../../../components/BlogSeries'
+import Newsletter from '../../../components/Newsletter'
+import PostInfo from '../../../components/PostInfo'
+import PostItem from '../../../components/PostItem'
+import Tag from '../../../components/Tag'
+import addCustomPostWidgets from '../../../utils/addCustomPostWidgets'
+import clearPage from '../../../utils/clearPage'
+import getMorePosts from '../../../utils/getMorePosts'
+import readPost from '../../../utils/readPost'
 
-export default function Post({
-  __html,
-  data,
-  date,
-  morePosts,
-  series,
-  slug,
-  timeToRead,
-}) {
+export async function generateMetadata({ params }) {
+  const { data, slug } = await loadData(params.slug)
+  const coverImage = 'https://aralroca.com' + data.cover_image
+
+  return {
+    title: data.title,
+    description: data.description,
+    keywords: data.tags,
+    twitter: {
+      card: 'summary_large_image',
+      title: data.title,
+      description: data.description,
+      creator: '@aralroca',
+      images: [coverImage],
+    },
+    openGraph: {
+      title: data.title,
+      type: 'website',
+      description: data.description,
+      url: 'https://aralroca.com/blog/' + slug,
+      images: [
+        {
+          url: coverImage,
+          width: 960,
+          height: 432,
+        },
+      ],
+      locale: 'en-US',
+    }
+  }
+}
+
+export default async function Post({ params }) {
+  const {
+    __html,
+    data,
+    date,
+    morePosts,
+    series,
+    slug,
+    timeToRead,
+  } = await loadData(params.slug)
   const tags = data.tags.split(',')
 
   return (
@@ -134,17 +168,15 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const loadData = cache(async (slug) => {
   const post = readPost(slug)
   const [morePosts, series] = await getMorePosts(post, slug)
 
   return {
-    props: {
-      ...post,
-      __html: await addCustomPostWidgets(post.__html),
-      morePosts,
-      series,
-      slug,
-    },
+    ...post,
+    __html: await addCustomPostWidgets(post.__html),
+    morePosts,
+    series,
+    slug,
   }
-}
+})

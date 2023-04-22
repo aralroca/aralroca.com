@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from 'react'
 
 function Arrows(props) {
@@ -100,7 +102,7 @@ export default function ChangeTheme() {
 
   function onChangeTheme(e) {
     const { value } = e.target
-    window.__setPreferredTheme(value)
+    window.__setPreferredTheme?.(value)
     setTheme(value)
     onChangeTwitterEmbedTheme()
   }
