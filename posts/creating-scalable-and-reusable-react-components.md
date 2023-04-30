@@ -6,6 +6,7 @@ tags: react, javascript
 cover_image: /images/cover-images/26_cover_image.jpg
 cover_image_mobile: /images/cover-images/26_cover_image_mobile.jpg
 cover_color: '#82B5E1'
+dev_to: creating-scalable-and-reusable-react-components-5h08
 ---
 
 ## TLDR;
