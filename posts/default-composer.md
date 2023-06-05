@@ -1,7 +1,7 @@
 ---
 title: '👋 Say Goodbye to Spread Operator: Use Default Composer'
 created: 06/05/2023
-description: 
+description: '"Default-composer" is a tiny library that simplifies setting default values for nested objects'
 tags: javascript, node, react
 cover_image: /images/cover-images/27_cover_image.jpg
 cover_image_mobile: /images/cover-images/27_cover_image_mobile.jpg
