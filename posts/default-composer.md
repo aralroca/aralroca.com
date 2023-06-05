@@ -8,7 +8,7 @@ cover_image_mobile: /images/cover-images/27_cover_image_mobile.jpg
 cover_color: '#2A343A'
 ---
 
-When working with objects in JavaScript, it is common to need to set default values for empty `strings`/`objects`/`arrays`, `null`, or `undefined` properties. When dealing with nested objects, this can become even more complicated and require complex programming logic. However, with the "**[default-composer](https://github.com/aralroca/default-composer)**" library, this task is made simple and easy.
+When working with objects in JavaScript, it is common to need to set default values for empty `strings`/`objects`/`arrays`, `null`, or `undefined` properties. When dealing with nested objects, this can become even more complicated and require complex programming logic. However, with the "**[default-composer](https://github.com/aralroca/default-composer)**" library, this task becomes simple and easy.
 
 ## What is "default-composer"?
 
@@ -24,11 +24,11 @@ When working with objects in JavaScript, it is common to need to set default val
 
 ## Benefits over Spread Operator and Object.assign
 
-While the [`...spread` operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) can also be used to set default values for objects, "**[`default-composer`](https://github.com/aralroca/default-composer)**" provides several benefits over these methods.
+While [`...spread` operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) can also be used to set default values for objects, "**[`default-composer`](https://github.com/aralroca/default-composer)**" provides several benefits over these methods.
 
 * Works with **nested objects**, whereas the spread operator and `Object.assign()` only work with shallow objects.
-* More concise and **easier to read** than the spread operator or `Object.assign()`. The code required to set default values with these methods can become very verbose and difficult to read, especially when dealing with nested objects.
-* More granular **control** over which **properties** should be **set to default values**. With the spread operator and `Object.assign()`.
+* More concise and **easier to read** than spread operator or `Object.assign()`. The code required to set default values with these methods can become very verbose and difficult to read, especially when dealing with nested objects.
+* More granular **control** over which **properties** should be **set to default values**. With spread operator and `Object.assign()`.
 
 Imagine we have this original object:
 
@@ -137,7 +137,7 @@ Maintaining this can be very tidious, especially with huge, heavily nested objec
 </figure>
 
 
-With `defaultComposer` we could use only this:
+With `defaultComposer` we could only use this:
 
 ```js
 import defaultComposer from 'default-composer'; // 300B
@@ -164,7 +164,7 @@ setConfig({
   isDefaultableValue: (
     // - key: key of original or default object
     // - value: value in the original object
-    // - defaultableValue: pre-calculed boolean, you can used or not, 
+    // - defaultableValue: pre-calculed boolean, you can use or not, 
     //   depending if all the rules of the default-composer library are correct
     //   for your project or you need a totally different ones.
     { key, value, defaultableValue }
@@ -180,10 +180,10 @@ setConfig({
 
 ## Conclusions
 
-The article introduces the "[default-composer](https://github.com/aralroca/default-composer)" library as a solution for setting **default values** for **nested objects** in JavaScript. 
+I've introduced the "[default-composer](https://github.com/aralroca/default-composer)" library as a solution for setting **default values** for **nested objects** in JavaScript. 
 
 The library is lightweight and provides more concise and easier-to-read code than the spread operator and `Object.assign` methods. It also offers more granular control over which properties should be set to default values. 
 
-The article provides examples of how to use the library and how it simplifies the code for maintaining nested objects. 
+In this article I provide examples of how to use the library and how it simplifies the code for maintaining nested objects. 
 
-Finally, the article explains how the library **can be configured** to handle **special cases** where a different replacement logic is required. Overall, "[default-composer](https://github.com/aralroca/default-composer)" is a useful library for simplifying the task of setting default values for nested objects in JavaScript.
+Finally, I explain how the library **can be configured** to handle **special cases** where a different replacement logic is required. Overall, "[default-composer](https://github.com/aralroca/default-composer)" is a useful library for simplifying the task of setting default values for nested objects in JavaScript.
