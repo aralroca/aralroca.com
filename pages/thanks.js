@@ -24,7 +24,23 @@ export default function Supporters() {
         <u>You're awesome!</u>
       </p>
 
-      {/* <h2>Sponsors list</h2>
+      <h2>Sponsors list 🙏</h2>
+
+      <h3>Open-Source Supporter</h3>
+      <ul>
+        <li>
+          <a href="https://github.com/phanan" target="_blank">
+            Phan An
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/rkalis" target="_blank">
+            Rosco Kalis
+          </a>
+        </li>
+      </ul>
+
+      {/*}
 
       <h3>🌕 Platinum</h3>
       <em>None.</em>
@@ -42,8 +58,6 @@ export default function Supporters() {
       <h3>Top Supporters</h3>
       <em>None.</em>
 
-      <h3>Open-Source Supporter</h3>
-      <em>None.</em>
 
       <h3>Supporters</h3>
       <em>None.</em> */}
