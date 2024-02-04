@@ -26,13 +26,17 @@ export default function Supporters() {
 
       <h2>Sponsors list 🙏</h2>
 
-      <h3>Open-Source Supporter</h3>
+      <h3>Open-Source Top Supporters</h3>
       <ul>
         <li>
           <a href="https://github.com/taehee-ww" target="_blank">
             Taehee Kim (비행토끼)
           </a>
         </li>
+      </ul>
+
+      <h3>Open-Source Supporters</h3>
+      <ul>
         <li>
           <a href="https://github.com/phanan" target="_blank">
             Phan An
