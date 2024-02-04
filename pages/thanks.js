@@ -29,6 +29,11 @@ export default function Supporters() {
       <h3>Open-Source Supporter</h3>
       <ul>
         <li>
+          <a href="https://github.com/taehee-ww" target="_blank">
+            Taehee Kim (비행토끼)
+          </a>
+        </li>
+        <li>
           <a href="https://github.com/phanan" target="_blank">
             Phan An
           </a>
