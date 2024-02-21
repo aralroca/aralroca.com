@@ -62,7 +62,7 @@ This would be an example to make it visually understandable _(it's normally more
 ```ts
 return new Response(
   new ReadableStream({
-    start(controller) {
+    async start(controller) {
       const suspensePromises = []
 
       controller.enqueue(encoder.encode('<html lang="en">'))
@@ -71,6 +71,7 @@ return new Response(
       controller.enqueue(
         enconder.encode('<script src="unsuspense.js"></script>')
       )
+      controller.enqueue(encoder.encode('</head>'))
       controller.enqueue(encoder.encode('<body>'))
 
       // Add a placeholder (suspense)
@@ -327,7 +328,7 @@ We talked about more technical concepts such as [RPC](#rpcs-ex-server-actions), 
 
 We have also talked about [parse-html-stream](https://github.com/aralroca/parse-html-stream), a small library that I have recently put in open-source so that anyone can use it.
 
-On a final note, the web was invented to stream hypermedia (HTML) and after using JSON and a lot of client code over the last years, I hope to see more [Hypermedia-Driven applications](https://htmx.org/essays/hypermedia-driven-applications/) available to make life easier for developers and make websites lighter with almost no JavaScript code, so I see great promise for the future of HTML streaming beyond the initial load.
+On a final note, the web was invented to transfer hypermedia (HTML) and after using JSON and a lot of client code over the last years, I hope to see more [Hypermedia-Driven applications](https://htmx.org/essays/hypermedia-driven-applications/) available to make life easier for developers and make websites lighter with almost no JavaScript code, so I see great promise for the future of HTML streaming beyond the initial load.
 
 ## References
 
