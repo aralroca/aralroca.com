@@ -6,6 +6,7 @@ tags: webdev, javascript, experimental
 cover_image: /images/cover-images/28_cover_image.jpg
 cover_image_mobile: /images/cover-images/28_cover_image_mobile.jpg
 cover_color: '#EAEEF5'
+dev_to: html-streaming-and-dom-diffing-algorithm-62f
 ---
 
 In recent years browsers have supported streaming HTML and JavaScript. In this article we will talk about the benefits of this, and what else we can do that browsers don't do automatically to take full advantage of streaming.
