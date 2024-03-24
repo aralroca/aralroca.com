@@ -6,6 +6,7 @@ tags: javascript, bun, react, brisa, experimental
 cover_image: /images/cover-images/29_cover_image.jpg
 cover_image_mobile: /images/cover-images/29_cover_image_mobile.jpg
 cover_color: '#0B1B2B'
+dev_to: power-of-partial-prerendering-with-bun-5f62
 ---
 
 In modern web development, optimizing the performance of web applications is paramount. One approach gaining traction is **partial prerendering**, a technique that combines static and dynamic content rendering to enhance both the bundle size and runtime speed. In this article, we'll delve into the concept of partial prerendering and explore its benefits, especially when implemented through Ahead of Time ([AOT](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)) rendering.
