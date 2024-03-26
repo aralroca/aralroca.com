@@ -109,7 +109,7 @@ With [Prerender Macro](https://github.com/aralroca/prerender-macro) I add my gra
 
 ## Demos
 
-There are demos for [Brisa](https://github.com/aralroca/prerender-macro/examples/brisa/), [React](https://github.com/aralroca/prerender-macro/examples/react/) and [Preact](https://github.com/aralroca/prerender-macro/examples/preact/). But feel free to [add](https://github.com/aralroca/prerender-macro/fork) more JSX frameworks to help people understand the plugin configuration they need to adapt to the framework.
+There are demos for [Brisa](https://github.com/aralroca/prerender-macro/tree/main/examples/brisa), [React](https://github.com/aralroca/prerender-macro/tree/main/examples/react) and [Preact](https://github.com/aralroca/prerender-macro/tree/main/examples/preact). But feel free to [add](https://github.com/aralroca/prerender-macro/fork) more JSX frameworks to help people understand the plugin configuration they need to adapt to the framework.
 
 <figure align="center">
     <img src="/images/blog-images/we-got-it.jpg">
