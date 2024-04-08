@@ -7,6 +7,7 @@ series: 'HTML streaming'
 cover_image: /images/cover-images/30_cover_image.jpg
 cover_image_mobile: /images/cover-images/30_cover_image_mobile.jpg
 cover_color: '#0B0E13'
+dev_to: https://dev.to/aralroca/html-streaming-over-the-wire-a-deep-dive-2n20
 ---
 
 In our previous article in the series, we introduced the Diff DOM Algorithm briefly without delving into its technical intricacies. In this installment, we present the [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming) library, an open-source solution designed to facilitate HTML Streaming Over the Wire using the Diff DOM Algorithm. This library is intended not only for use within other frameworks and libraries but also as a standalone solution.
@@ -28,7 +29,6 @@ Given that modern browsers have supported HTML streaming for years, why limit ou
   <img src="/images/blog-images/http.png" width="200px" height="103px" alt="HyperText Transfer Protocol" class="center" />
   <figcaption><small>HyperText Transfer Protocol</small></figcaption>
 </figure>
-
 
 For some time now, I've been immersed in developing Brisa, an experimental framework slated for public release this summer _(If you are interested in knowing more, [subscribe](https://aralroca.com/blog) to my blog newsletter for now)_. One of our primary objectives has been to minimize client-side JavaScript code for server interactions. Drawing inspiration from server actions and HTMX concepts, we've achieved the capability to build single-page applications (SPAs) with just 800 bytes—equivalent to the RPC ([Remote Procedure Call](https://en.wikipedia.org/wiki/Remote_procedure_call)) for server communication. In cases requiring client components, they seamlessly transform into web components with signals, expanding the code to a mere 3KB.
 
@@ -85,8 +85,8 @@ Server code:
 
 ```ts
 export function POST(request: Request) {
-  const data = await req.json();
-  return new Response(null, { status: data.code === 'foo' ? 200 : 401 });
+  const data = await req.json()
+  return new Response(null, { status: data.code === 'foo' ? 200 : 401 })
 }
 ```
 
@@ -109,9 +109,9 @@ Server component:
 ```tsx
 export function ServerComponent({}, request: RequestContext) {
   async function handleInputOnServer(e) {
-    if(e.target.value === 'foo') {
-      request.store.set('display-content', true);
-      rerenderInAction();
+    if (e.target.value === 'foo') {
+      request.store.set('display-content', true)
+      rerenderInAction()
     }
   }
 
@@ -132,7 +132,6 @@ This new workflow adds zero bytes of client-side code for each server interactio
 
 By eliminating JSON transmission, we can leverage streaming for significantly faster and more progressive UI updates, even enabling "suspense" without additional client-side code.
 
-
 ## Diff DOM Algorithm with Streaming
 
 The Diff DOM (Document Object Model) algorithm has been utilized for years to simulate React's "Virtual DOM" without virtualization. Instead, it operates directly on the "Browser DOM," comparing two HTML nodes efficiently and updating the first DOM tree based on the modifications present in the second.
@@ -146,11 +145,10 @@ In essence, HTML Over the Wire (without streaming) has been achievable for years
 
 React, for instance, avoids using HTML for transmission between server components (RSCs) to facilitate streaming in single-page applications and communication with server actions. It relies on progressively loaded JSON with "holes", which must be processed before employing the Virtual DOM. [Dan Abramov](https://twitter.com/dan_abramov2) elucidated this in a [tweet](https://twitter.com/dan_abramov2/status/1762099439303295409) a few months ago. I inquired further in another [tweet](https://twitter.com/aralroca/status/1762113683784614065) regarding the feasibility of HTML Streaming, to which he cited two obstacles:
 
-
-> 1) doesn’t help with passing new data to stateful stuff (like a list of todos to an already mounted todo list component)
+> 1. doesn’t help with passing new data to stateful stuff (like a list of todos to an already mounted todo list component)
 >
-> 2) you’d have to either parse HTML yourself (non-trivial to do correctly) or create throwaway DOM nodes
- 
+> 2. you’d have to either parse HTML yourself (non-trivial to do correctly) or create throwaway DOM nodes
+
 Upon analysis, I found these obstacles to be surmountable.
 
 Regarding the first point, Brisa obviates the need to pass data for stateful components, as client components utilize real DOM elements, namely web components. When attributes are modified, they react to changes using signals, updating their content while preserving the state. Hence, use native constructs—web components, signals (currently as a [proposal](https://github.com/proposal-signals/proposal-signals) in TC39 with stage 0), and HyperText Markup Language—made more sense.
@@ -172,17 +170,16 @@ Therefore, to support the Diff DOM Algorithm with HTML Streaming, three aspects 
 
 I've open-sourced [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming), a library weighing only 1KB. Most of the time, you'll load it lazily since user interaction triggers its need, eliminating the necessity of loading it upfront.
 
-
 ```ts
-import diff from "https://unpkg.com/diff-dom-streaming@latest";
+import diff from 'https://unpkg.com/diff-dom-streaming@latest'
 
 // ...
 
-const res = await fetch(/* some url */);
+const res = await fetch(/* some url */)
 
 // Apply diff DOM between the current document
 // and the stream reader:
-await diff(document, res.body.getReader());
+await diff(document, res.body.getReader())
 ```
 
 This library heralds the reality of HTML Streaming Over the Wire, accessible not just to Brisa but to numerous other libraries and frameworks. You can even employ it in vanilla JavaScript without any additional libraries.
@@ -199,4 +196,4 @@ Here's the [demo of the boxes](https://stackblitz.com/edit/diff-dom-streaming?fi
 
 ## Conclusion
 
-HTML Streaming Over the Wire, empowered by the Diff DOM algorithm, promises a return to the web's core principles, paving the way for a faster, more responsive, and scalable web experience for all.  The future of this technology holds immense potential, and I'm eager to see how it unfolds in more frameworks and libraries.
+HTML Streaming Over the Wire, empowered by the Diff DOM algorithm, promises a return to the web's core principles, paving the way for a faster, more responsive, and scalable web experience for all. The future of this technology holds immense potential, and I'm eager to see how it unfolds in more frameworks and libraries.
