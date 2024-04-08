@@ -6,6 +6,7 @@ tags: webdev, javascript, experimental
 cover_image: /images/cover-images/28_cover_image.jpg
 cover_image_mobile: /images/cover-images/28_cover_image_mobile.jpg
 cover_color: '#EAEEF5'
+series: 'HTML streaming'
 dev_to: html-streaming-and-dom-diffing-algorithm-62f
 ---
 
