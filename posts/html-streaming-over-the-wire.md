@@ -6,10 +6,19 @@ tags: javascript, experimental, brisa
 series: 'HTML streaming'
 cover_image: /images/cover-images/30_cover_image.jpg
 cover_image_mobile: /images/cover-images/30_cover_image_mobile.jpg
-cover_color: '#C3CAD2'
+cover_color: '#0B0E13'
 ---
 
 In our previous article in the series, we introduced the Diff DOM Algorithm briefly without delving into its technical intricacies. In this installment, we present the [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming) library, an open-source solution designed to facilitate HTML Streaming Over the Wire using the Diff DOM Algorithm. This library is intended not only for use within other frameworks and libraries but also as a standalone solution.
+
+- [Why HTML Streaming Over the Wire?](#why-html-streaming-over-the-wire)
+  - [Interaction with JSON](#interaction-with-json)
+  - [Interaction with HTML Streaming](#interaction-with-html-streaming)
+- [Diff DOM Algorithm with Streaming](#diff-dom-algorithm-with-streaming)
+- [Show me the code](#show-me-the-code)
+  - [Community Support and Adoption](#community-support-and-adoption)
+- [Show me some example](#show-me-some-example)
+- [Conclusion](#conclusion)
 
 ## Why HTML Streaming Over the Wire?
 
