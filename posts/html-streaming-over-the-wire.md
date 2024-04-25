@@ -1,6 +1,6 @@
 ---
 title: 'HTML Streaming Over the Wire 🥳: A Deep Dive'
-created: 05/08/2024
+created: 04/08/2024
 description: Explore HTML Streaming Over the Wire! We explain the Diff DOM algorithm with streaming to make only the necessary modifications, insertions, and deletions between a DOM node and an HTML stream reader.
 tags: javascript, experimental, brisa
 series: 'HTML streaming'
