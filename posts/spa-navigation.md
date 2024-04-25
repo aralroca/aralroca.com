@@ -7,6 +7,7 @@ series: 'HTML streaming'
 cover_image: /images/cover-images/31_cover_image.webp
 cover_image_mobile: /images/cover-images/31_cover_image_mobile.webp
 cover_color: '#212329'
+dev_to: spa-like-navigation-preserving-web-component-state-lh3
 ---
 
 In this third and final article in the series on HTML Streaming, we will explore the practical implementation of the [**Diff DOM Streaming**](https://github.com/aralroca/diff-dom-streaming) library in web browsing. This approach will allow **any website** using **web components** to **retain its state during browsing**. We will discuss in detail how to achieve this step by step using **VanillaJS** and [**Bun**](https://bun.sh/).
