@@ -1,15 +1,17 @@
 ---
 title: 'SPA-Like Navigation Preserving Web Component State'
-created: 04/22/2024
+created: 04/25/2024
 description: Learn how to keep your web components' state intact while navigating, just like in a SPA!
 tags: javascript, experimental, brisa
 series: 'HTML streaming'
-cover_image: /images/cover-images/30_cover_image.jpg
-cover_image_mobile: /images/cover-images/30_cover_image_mobile.jpg
-cover_color: '#0B0E13'
+cover_image: /images/cover-images/31_cover_image.webp
+cover_image_mobile: /images/cover-images/31_cover_image_mobile.webp
+cover_color: '#212329'
 ---
 
-In this third and final article in the series on HTML Streaming, we will explore the practical implementation of the [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming) library in web browsing. This approach will allow any website using web components to retain its state during browsing. We will discuss in detail how to achieve this step by step using VanillaJS and Bun. It is important to note that it is not necessary to have a complex server, as we can use static files. However, we will also explore how this technique works with HTML streaming and we will stream from Bun. Join us as we take the web browsing experience to the next level with diff DOM Streaming!
+In this third and final article in the series on HTML Streaming, we will explore the practical implementation of the [**Diff DOM Streaming**](https://github.com/aralroca/diff-dom-streaming) library in web browsing. This approach will allow **any website** using **web components** to **retain its state during browsing**. We will discuss in detail how to achieve this step by step using **VanillaJS** and [**Bun**](https://bun.sh/).
+
+It is important to note that it is not necessary to have a complex server, as we can use static files. However, we will also explore how this technique works with HTML streaming and we will stream from Bun.
 
 ## Table of Contents
 
@@ -64,6 +66,11 @@ bun run index.ts
 ```
 
 And we open [http://localhost:1234](http://localhost:1234) We will see our page with an `h1` that says `Hello, World!`. Ok, all good.
+
+<figure align="center">
+  <img src="/images/blog-images/hello-world.png" width="300px" height="122px" alt="Hello World with Bun" class="center" />
+  <figcaption><small>Hello World with Bun</small></figcaption>
+</figure>
 
 ## 2. Adding more than one page
 
@@ -128,6 +135,11 @@ In addition, we have added three `a` elements to navigate between pages 👌
 
 For now, there is nothing special about this type of navigation, it is the default navigation of the browsers.
 
+<figure align="center">
+  <img src="/images/blog-images/hello-world-mpa.webp" width="500px" height="216px" alt="Hello World using MPA with Bun" class="center" />
+  <figcaption><small>Hello World using MPA with Bun</small></figcaption>
+</figure>
+
 ## 3. Adding a Web Component
 
 For the example, we are going to add a web component with VanillaJS that acts as a counter, since it is a simple example to test a client interaction:
@@ -162,7 +174,7 @@ if (!customElements.get('counter-component')) {
 }
 ```
 
-To add it, after using the [CustomElementRegistry](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define), we can consume it as another HTML element with `<counter-component />`.
+To add it, after using the [CustomElementRegistry](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define), we can consume it as another HTML element with `<counter-component></counter-component>`.
 
 What we are going to do is to add it under the heading of each page:
 
@@ -217,7 +229,14 @@ console.log(`Done! http://${server.hostname}:${server.port}`)
 
 Now if we run it again we will see that there is a counter on each page and we can interact with it to change its value!
 
-However, when we navigate between pages, the counter is reset to 0. The thing is that each navigation loads the page again and therefore the web component script is loaded again and returns to its initial state.
+<figure align="center">
+  <img src="/images/blog-images/web-component.webp" width="500px" height="259px" alt="Our first web component" class="center" />
+  <figcaption><small>Our first web component</small></figcaption>
+</figure>
+
+However, when we navigate between pages, the counter is reset to 0 😬
+
+The thing is that each navigation loads the page again and therefore the web component script is loaded again and returns to its initial state.
 
 The browsers traditional navigation what they do is to replace all the current document, for the new one. What we want is that it only updates what has changed of the DOM, if the web component does not change, why reset it?
 
@@ -233,12 +252,13 @@ if ('navigation' in window) {
 }
 ```
 
-Now what would be missing would be to implement the logic of the `spaNavigation` function to do the diff. As we have commented previously, we are going to use the library [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming). For it, we will only intercept the navigations that are with the same origin:
+Now what would be missing would be to implement the logic of the `spaNavigation` function to do the diff. As we have commented previously, we are going to use the library [`Diff DOM Streaming`](https://github.com/aralroca/diff-dom-streaming). For it, we will only intercept the navigations that are with the same origin:
 
 ```ts
 function spaNavigation(event) {
   const url = new URL(event.destination.url)
 
+  // Avoid intercepting different origins
   if (location.origin !== url.origin) return
 
   event.intercept({
@@ -288,7 +308,14 @@ In the `handler` the first thing we do is to abort if there was another request 
 
 In this way, it now only updates the parts that change during browsing and therefore keeps the web components alive without resetting them again.
 
-Now if we run the file and check the navigation, we see that it keeps the last state of the counter! Ok, we are doing well!
+Now if we run the file and check the navigation, we see that it keeps the last state of the counter!
+
+<figure align="center">
+  <img src="/images/blog-images/web-component-state-perserve.webp" width="500px" height="259px" alt="Preserving Web Component State" class="center" />
+  <figcaption><small>Preserving Web Component State</small></figcaption>
+</figure>
+
+Ok, we are doing well!
 
 ## 5. Manage new scripts of the page to be navigated to
 
@@ -296,9 +323,14 @@ If we put another script with a `console.log` of the `name` (what you see as hea
 
 If we add it, we see that this does not happen, it only runs on the initial loading of the first page, but then during navigation the `console.log` is not repeated again!
 
+<figure align="center">
+  <img src="/images/blog-images/console-log-fail.webp" width="500px" height="259px" alt="New scripts are not executed" class="center" />
+  <figcaption><small>New scripts are not executed</small></figcaption>
+</figure>
+
 **How can we solve it?**
 
-The `diff-dom-streaming`, only makes a change at DOM level, however, to execute the new scripts in this one we can do it by means of an extension:
+The Diff DOM Streaming, only makes a change at DOM level, however, to execute the new scripts in this one we can do it by means of an extension:
 
 ```ts
 registerCurrentScripts()
@@ -346,6 +378,11 @@ function loadScripts(node) {
 ```
 
 What the previous code does is that during the application of the diff, all the scripts that have been detected that have some change and at the same time have not been executed previously, we execute them.
+
+<figure align="center">
+  <img src="/images/blog-images/console-log.webp" width="500px" height="259px" alt="New scripts now are executed" class="center" />
+  <figcaption><small>New scripts now are executed</small></figcaption>
+</figure>
 
 If we now run it again, we will see that:
 
@@ -413,13 +450,18 @@ In order to create the suspense, it's important to take into account the followi
 
 Suspense with streaming by default works both for the initial load, as well as during normal browser navigation. Nevertheless, with our navigation implementation it also works 🥳
 
+<figure align="center">
+  <img src="/images/blog-images/suspense.webp" width="500px" height="259px" alt="SPA that works with suspense and streaming" class="center" />
+  <figcaption><small>SPA that works with suspense and streaming</small></figcaption>
+</figure>
+
 So we already have a SPA that works with suspense and streaming! And we haven't had to make any changes to our client code. However, we have benefits, while navigating to the other page with suspense mode, we can interact with our web components, this is wonderful!
 
 ## 7. Transitions between pages (View Transition API)
 
 By using our own implementation, apart from making SPA-like navigation behave without having to handle the navigation history with [`pushState`](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState) and being able to use more standard things like `location.assign` or HTML hyperlinks (`a`), we can also add styled transitions thanks to the [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
 
-The View Transitions API provides a mechanism for easily creating animated transitions between different DOM states while also updating the DOM contents in a single step, and yes, they can be used during streaming, and divide it into different steps. To activate it, it is only necessary to pass the `transition: true` setting to [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming) library:
+The View Transitions API provides a mechanism for easily creating animated transitions between different DOM states while also updating the DOM contents in a single step, and yes, they can be used during streaming, and divide it into different steps. To activate it, it is only necessary to pass the `transition: true` setting to [Diff DOM Streaming](https://github.com/aralroca/diff-dom-streaming) library:
 
 ```diff
 await diff(document, res.body.getReader(), {
@@ -450,6 +492,13 @@ The chunk of the "unsuspense" script can also be set to use the View Transition 
 </script>
 ```
 
+The Diff DOM Streaming library exposes the `window.lastDiffTransition` so we can get the [`ViewTransition`](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition) and do things like wait for it to be done to make sure the template is rendered.
+
+<figure align="center">
+  <img src="/images/blog-images/view-transition.webp" width="800px" height="308px" alt="SPA with suspense, streaming and View Transition API" class="center" />
+  <figcaption><small>SPA with suspense, streaming and View Transition API</small></figcaption>
+</figure>
+
 To better visualize the transition animation, we can exaggerate its timing with CSS:
 
 ```html
@@ -465,13 +514,27 @@ To better visualize the transition animation, we can exaggerate its timing with 
 
 Naturally, if you have already visited the page before, it should be cached during navigation, so that it would not be necessary to display the suspense again and show the actual content of the page directly.
 
-To make this possible, from Bun we can add the following header to the `Response`:
+To make this possible, from Bun we can add the following header to the [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response):
 
 ```ts
-headers: {
-  "cache-control": "public, max-age=31536000, immutable"
-}
+return new Response(
+  new ReadableStream({
+    /* ... chunks of html ... */
+  }),
+  {
+    headers: {
+      'cache-control': 'public, max-age=31536000, immutable',
+    },
+  }
+)
 ```
+
+<figure align="center">
+  <img src="/images/blog-images/cached-suspense.webp" width="700px" height="516px" alt="The suspense is no longer shown when caching" class="center" />
+  <figcaption><small>The suspense is no longer shown when caching</small></figcaption>
+</figure>
+
+When being cached instead of receiving different chunks in streaming and processing the suspense while waiting for the expensive chunk, the diff have everything at once and therefore the suspense stops coming out because the browser has already cached the real content.
 
 > 👉 In development it will be better to set `"no-store, must-revalidate"` to be able to work and see the changes without being cached.
 
@@ -480,10 +543,17 @@ headers: {
 Sometimes it is necessary to use `prefetch`, because we can know what will be the next page that the user will visit. An example would be if an e-commerce checkout process has different steps on different pages, we know what the next page will be and we want that when the user performs the action it is displayed as easy as possible. In this case, we could add using the normal `prefetch` of the platform that would continue to work with our SPA-like implementation:
 
 ```html
-<link rel="prefetch" href="/foo" />
+<link rel="prefetch" href="/foo"></link>
 ```
 
 In this case, even if we clear the cache, navigating to `/foo` will always go fast, because on the previous page its HTML is requested to improve navigation.
+
+<figure align="center">
+  <img src="/images/blog-images/prefetch.webp" width="700px" height="455px" alt="Prefetching the /foo page" class="center" />
+  <figcaption><small>Prefetching the /foo page</small></figcaption>
+</figure>
+
+If we look at the Network tab, refreshing the home page already downloads the foo page, so that navigating to it is instantaneous without showing the suspense.
 
 ## 10. Pros and Cons of Using HTML Streaming for Web Navigation
 
@@ -499,21 +569,33 @@ In this case, even if we clear the cache, navigating to `/foo` will always go fa
 
 5. **Prefetching:** Prefetching capability anticipates user actions and prepares corresponding pages in advance, enhancing responsiveness and load speed.
 
+<figure align="center">
+  <img src="/images/blog-images/positive.webp" width="700px" alt="Image from lexica.art" class="center" />
+  <figcaption><small>Image from lexica.art</small></figcaption>
+</figure>
+
 ### Cons:
 
 1. **Limited Compatibility:** The functionality of intercepting navigation with the `navigate` event may have limited compatibility, as it currently only supports certain browsers. This may limit portability and widespread adoption of the proposed solution.
 
 2. **Limitations in Using Component Libraries:** Those familiar with development using component libraries like React may find limitations in not being able to fully leverage the potential of HTML Streaming over the wire. Instead, they may need to resort to other strategies to maintain component state during navigation.
 
+<figure align="center">
+  <img src="/images/blog-images/negative.webp" width="700px" alt="Image from lexica.art" class="center" />
+  <figcaption><small>Image from lexica.art</small></figcaption>
+</figure>
+
 ## Final conclusions
 
-Concluding this series on HTML Streaming, we've explored the practical application of the [`diff-dom-streaming`](https://github.com/aralroca/diff-dom-streaming) library in web browsing. By integrating this approach, websites utilizing web components can maintain their state during browsing sessions. Throughout this journey, we've delved into detailed implementations using VanillaJS and Bun.
+Concluding this series on HTML Streaming, we've explored the practical application of the [Diff DOM Streaming](https://github.com/aralroca/diff-dom-streaming) library in web browsing. By integrating this approach, websites utilizing web components can maintain their state during browsing sessions. Throughout this journey, we've delved into detailed implementations using VanillaJS and Bun.
 
 If you want to see the final code that we have been talking about in the article, you can access here:
 
-- [Code example](https://github.com/aralroca/diff-dom-streaming/blob/28a840d6046a9700ee5df20ab5d99d361794624f/examples/spa-like/README.md)
+- [Code example](https://github.com/aralroca/diff-dom-streaming/tree/396241d044dd891a1337a386b686ade14c210cc0/examples/spa-like)
 
 As a note, we have disabled the cache and prefetch so you can comfortably test the suspense and see how the animations look when browsing, but feel free to play and test.
+
+**Final note**:
 
 In Brisa, the framework we are developing, one of the features is that you can write web components as JSX components to make it more comfortable, in fact it is very similar to Brisa server components, the only difference is that instead of web components they are translated to pure HTML, and using signals you can share state between pages to make the pages react. I invite you to [subscribe to my blog newsletter to be notified when we release Brisa open-source](https://aralroca.com/blog) in a few months and you can try it.
 
