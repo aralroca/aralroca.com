@@ -505,6 +505,19 @@ To better visualize the transition animation, we can exaggerate its timing with 
 </style>
 ```
 
+### Incremental vs full transition
+
+Many times it will make more sense to use a complete transition instead of incremental, especially if we do not use suspense and we want a single transition at once instead of several, in this case, instead of using the configuration, we can use the View Transition API directly:
+
+```diff
++ document.startViewTransition(async () => {
+await diff(document, res.body.getReader(), {
+  onNextNode: loadScripts,
+-  transition: true,
+});
++});
+```
+
 ## 8. Caching the navigation
 
 Naturally, if you have already visited the page before, it should be cached during navigation, so that it would not be necessary to display the suspense again and show the actual content of the page directly.
