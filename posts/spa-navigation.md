@@ -271,8 +271,6 @@ function spaNavigation(event) {
 The `event.intercept` allows us to add a `handler` to implement our own navigation, the browser will change the URL automatically, but instead of processing the request and updating the DOM by the browser here it will be done by us:
 
 ```ts
-let controller = new AbortController()
-
 function spaNavigation(event) {
   const url = new URL(event.destination.url)
 
@@ -280,12 +278,8 @@ function spaNavigation(event) {
 
   event.intercept({
     async handler() {
-      // Abort previous navigations that have not been terminated
-      controller.abort()
-      controller = new AbortController()
-
       // Fetch new HTML Streaming document
-      const res = await fetch(url.pathname, { signal: controller.signal })
+      const res = await fetch(url.pathname, { signal: event.signal })
 
       if (res.ok) {
         // Lazy import of the diff-dom-streaming library
@@ -305,7 +299,7 @@ function spaNavigation(event) {
 }
 ```
 
-In the `handler` the first thing we do is to abort if there was another request in the middle, this is also useful so that the HTML stream stops and does not continue doing the diff. Then we create another `AbortController` so that the `fetch` has this signal. Once the request has been processed, we load the library in a lazy way (it will only do it the first time), make the page scroll up and apply the diff with the reader.
+In the `handler` the first thing we do is request the new page, once the request has been processed, we load the library in a lazy way (it will only do it the first time), make the page scroll up and apply the diff with the reader.
 
 In this way, it now only updates the parts that change during browsing and therefore keeps the web components alive without resetting them again.
 
@@ -592,7 +586,7 @@ Concluding this series on HTML Streaming, we've explored the practical applicati
 
 If you want to see the final code that we have been talking about in the article, you can access here:
 
-- [Code example](https://github.com/aralroca/diff-dom-streaming/tree/396241d044dd891a1337a386b686ade14c210cc0/examples/spa-like)
+- [Code example](https://github.com/aralroca/diff-dom-streaming/tree/0266ec80d6d61093318a41040e67bf835e3a605f/examples/spa-like)
 
 As a note, we have disabled the cache and prefetch so you can comfortably test the suspense and see how the animations look when browsing, but feel free to play and test.
 
