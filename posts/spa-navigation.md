@@ -25,7 +25,7 @@ It is important to note that it is not necessary to have a complex server, as we
 - [7. Transitions between pages (View Transition API)](#7-transitions-between-pages-view-transition-api)
 - [8. Caching the navigation](#8-caching-the-navigation)
 - [9. Prefetch the navigation](#9-prefetch-the-navigation)
-- [10. Pros and Cons of Using Diff DOM Streaming for Web Navigation](#10-pros-and-cons-of-using-html-streaming-for-web-navigation)
+- [10. Pros and Cons of Using Diff DOM Streaming for Web Navigation](#10-pros-and-cons-of-using-diff-dom-streaming-for-web-navigation)
 - [Final conclusions](#final-conclusions)
 - [References](#references)
 
