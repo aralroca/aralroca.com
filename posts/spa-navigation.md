@@ -586,7 +586,7 @@ Concluding this series on HTML Streaming, we've explored the practical applicati
 
 If you want to see the final code that we have been talking about in the article, you can access here:
 
-- [Code example](https://github.com/aralroca/diff-dom-streaming/tree/0266ec80d6d61093318a41040e67bf835e3a605f/examples/spa-like)
+- [Code example](https://github.com/aralroca/diff-dom-streaming/tree/7dd2981b01eb8fb8eed6dc8512742e2c5487dca8/examples/spa-like)
 
 As a note, we have disabled the cache and prefetch so you can comfortably test the suspense and see how the animations look when browsing, but feel free to play and test.
 
