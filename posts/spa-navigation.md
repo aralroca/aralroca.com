@@ -25,7 +25,7 @@ It is important to note that it is not necessary to have a complex server, as we
 - [7. Transitions between pages (View Transition API)](#7-transitions-between-pages-view-transition-api)
 - [8. Caching the navigation](#8-caching-the-navigation)
 - [9. Prefetch the navigation](#9-prefetch-the-navigation)
-- [10. Pros and Cons of Using HTML Streaming for Web Navigation](#10-pros-and-cons-of-using-html-streaming-for-web-navigation)
+- [10. Pros and Cons of Using Diff DOM Streaming for Web Navigation](#10-pros-and-cons-of-using-html-streaming-for-web-navigation)
 - [Final conclusions](#final-conclusions)
 - [References](#references)
 
@@ -563,13 +563,13 @@ In this case, even if we clear the cache, navigating to `/foo` will always go fa
 
 If we look at the Network tab, refreshing the home page already downloads the foo page, so that navigating to it is instantaneous without showing the suspense.
 
-## 10. Pros and Cons of Using HTML Streaming for Web Navigation
+## 10. Pros and Cons of Using Diff DOM Streaming for Web Navigation
 
 ### Pros:
 
 1. **State Maintenance:** The implementation allows for maintaining the state of web components during navigation, enhancing user experience by avoiding data loss.
 
-2. **Load Optimization:** Utilizing HTML Streaming can significantly improve page load times by streaming and updating only the elements that have changed, rather than reloading the entire page. This avoids reloading a lot of resources.
+2. **Load Optimization:** Utilizing Diff DOM Streaming can significantly improve page load times by streaming and updating only the elements that have changed, rather than reloading the entire page. This avoids reloading a lot of resources.
 
 3. **Smooth Transitions:** Integration with the View Transition API enables adding animated transitions between different page states, improving aesthetics and the feeling of fluidity in the application.
 
