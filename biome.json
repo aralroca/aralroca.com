@@ -2,18 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "files": {
     "include": ["packages", "scripts"],
-    "ignore": [
-      "**/out/*",
-      "**/out-*/*",
-      "**/build/*",
-      "**/brisa/test/*",
-      "**/brisa/server/*",
-      "**/brisa/client/*",
-      "**/brisa/jsx-runtime/*",
-      "**/brisa/jsx-dev-runtime/*",
-      "**/docs/.vitepress/cache/*",
-      "**/docs/.vitepress/dist/*"
-    ]
+    "ignore": ["**/out/*", "**/out-*/*", "**/build/*"]
   },
   "formatter": {
     "enabled": true,
