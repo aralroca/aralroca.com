@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100" src="/public/images/logo.svg" alt="logo" />
+  <img width="100" src="/src/public/images/logo.svg" alt="logo" />
 </p>
 <p align="center"><b>Aral Roca</b>'s personal webpage / blog.</p>
 

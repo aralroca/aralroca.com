@@ -1,58 +1,29 @@
 {
   "name": "aralroca.com",
-  "version": "0.1.0",
-  "packageManager": "yarn@1.22.21",
-  "private": true,
+  "module": "src/pages/index.tsx",
+  "type": "module",
   "scripts": {
-    "build": "next build",
-    "deploy": "yarn build && yarn export && cd out && now && cd ..",
-    "dev": "next dev",
-    "export": "next export",
-    "format": "pretty-quick",
-    "husky": "yarn format && git add .",
-    "publish:post": "node ./publish/index.js",
-    "start": "next start",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
-    "prepare": "husky install"
+    "dev": "brisa dev",
+    "dev:debug": "brisa dev --debug",
+    "build": "brisa build",
+    "start": "brisa start",
+    "prepare": "bun install @biomejs/biome@1.8.3 --no-save --ignore-scripts",
+    "format": "bun run biome format --write .",
+    "lint": "bun run biome lint --write .",
+    "symlink": "cd ../brisa/packages/brisa && bun run build && cp -R * ../../../aralroca.com/node_modules/brisa/ && cd ../../../aralroca.com && bun dev"
   },
   "dependencies": {
-    "globby": "11.0.3",
+    "brisa": "0.0.113",
+    "reading-time": "1.5.0",
     "gray-matter": "4.0.3",
     "highlight.js": "11.5.1",
     "js-paging": "0.1.2",
-    "marked": "4.0.17",
-    "next": "12.2.2",
-    "next-plugin-preact": "3.0.7",
-    "nodemailer": "6.7.7",
-    "nodemailer-mandrill-transport": "1.2.0",
-    "preact": "10.9.0",
-    "preact-render-to-string": "5.2.0",
-    "react": "npm:@preact/compat@17.1.1",
-    "react-dom": "npm:@preact/compat@17.1.1",
-    "reading-time": "1.5.0",
-    "scheduler": "0.23.0"
+    "marked": "4.0.17"
   },
   "devDependencies": {
-    "babel-jest": "28.1.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
-    "babel-preset-minify": "0.5.2",
-    "husky": "8.0.1",
-    "isomorphic-unfetch": "3.1.0",
-    "jest": "28.1.2",
-    "prettier": "2.7.1",
-    "pretty-quick": "3.1.3",
-    "twitter": "1.7.1"
+    "@types/bun": "latest"
   },
-  "engines": {
-    "node": "<=16",
-    "npm": "<=7"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true
+  "peerDependencies": {
+    "typescript": "latest"
   }
 }
