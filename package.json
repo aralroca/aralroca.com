@@ -11,6 +11,7 @@
     "rss": "bun run src/utils/generateRss.tsx",
     "prepare": "bun install @biomejs/biome@1.8.3 --no-save --ignore-scripts",
     "format": "bun run biome format --write .",
+    "check": "bun run biome check --write .",
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
