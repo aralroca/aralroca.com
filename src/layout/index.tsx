@@ -34,10 +34,6 @@ export default function Layout({ children }: any, { route }: RequestContext) {
         <link rel="stylesheet" href="/styles/main.css"></link>
         <link rel="stylesheet" href="/styles/highlightcode.css"></link>
         <link rel="manifest" href="/manifest.json" />
-        <script
-          defer
-          src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"
-        ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {hasParams && <meta id="noIndex" name="robots" content="noindex, follow" />}
         {isDefaultMeta && (
@@ -78,6 +74,10 @@ export default function Layout({ children }: any, { route }: RequestContext) {
           type="application/opensearchdescription+xml"
           title="Aral Roca"
         />
+        <script
+          defer
+          src="https://www.googletagmanager.com/gtag/js?id=UA-80705550-1"
+        ></script>
       </head>
       <body class="light">
         <script id="theme-loader">
