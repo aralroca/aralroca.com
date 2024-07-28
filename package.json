@@ -9,7 +9,6 @@
     "start": "brisa start",
     "sitemap": "bun run src/utils/generateSitemap.tsx",
     "rss": "bun run src/utils/generateRss.tsx",
-    "prepare": "bun install @biomejs/biome@1.8.3 --no-save --ignore-scripts",
     "format": "bun run biome format --write .",
     "check": "bun run biome check --write .",
     "lint": "bun run biome lint --write ."
@@ -23,9 +22,8 @@
     "marked": "4.0.17"
   },
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/bun": "latest",
     "typescript": "latest"
   }
 }
