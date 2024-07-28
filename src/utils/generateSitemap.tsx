@@ -1,19 +1,13 @@
-const fs = require('node:fs')
-const path = require('node:path')
-const globby = require('globby')
-const clearPage = require('./clearPage')
+import fs from 'node:fs';
+import path from 'node:path';
+import clearPage from './clearPage';
 
 const POSTS_PATH = path.join(process.cwd(), 'src', 'posts')
-const allowedPages = [
-  'pages',
-  '!pages/_*',
-  '!pages/**/[*',
-  '!pages/404.js',
-]
+const PUBLIC_FILE = path.join(process.cwd(), 'src', 'public', 'sitemap.xml')
 
 async function generateSitemap() {
-  const posts = fs.readdirSync(POSTS_PATH).map(clearPage)
-  const pages = (await globby(allowedPages)).map(clearPage)
+  const posts = fs.readdirSync(POSTS_PATH).map(clearPage).filter(p => !p.startsWith('draft-'))
+  const pages = ['', '/thanks', '/blog']
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${posts
@@ -34,7 +28,8 @@ async function generateSitemap() {
       .join('')}
     </urlset>`
 
-  fs.writeFileSync('public/sitemap.xml', sitemap)
+  fs.writeFileSync(PUBLIC_FILE, sitemap)
 }
 
-module.exports = generateSitemap
+console.log('Generating sitemap...')
+generateSitemap();

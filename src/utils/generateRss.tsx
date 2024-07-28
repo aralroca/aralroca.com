@@ -1,9 +1,13 @@
-const fs = require('fs')
-const clearPage = require('./clearPage')
-const readPost = require('./readPost')
+import fs from 'node:fs';
+import path from 'node:path';
+import clearPage from './clearPage'
+import readPost from './readPost';
+
+const POSTS_PATH = path.join(process.cwd(), 'src', 'posts')
+const PUBLIC_FILE = path.join(process.cwd(), 'src', 'public', 'rss.xml')
 
 async function generateRss() {
-  const posts = fs.readdirSync('posts').map(clearPage)
+  const posts = fs.readdirSync(POSTS_PATH).map(clearPage)
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
       <channel>
@@ -38,7 +42,8 @@ async function generateRss() {
       </channel>
     </rss>`
 
-  fs.writeFileSync('public/rss.xml', rss)
+  fs.writeFileSync(PUBLIC_FILE, rss)
 }
 
-module.exports = generateRss
+console.log('Generating RSS...')
+generateRss();
