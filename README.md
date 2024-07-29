@@ -11,7 +11,7 @@
 <p align="center">
   If you found some issue/typo in my blog feel free to create an issue or PR! 😄
 </p>
-<h2>Used stack:</h2>
+<h2>3B stack:</h2>
 <ul>
   <li><a href="https://brisa.build/">Brisa framework</a></li>
   <li><a href="https://biomejs.dev/">Biomejs</a></li>
