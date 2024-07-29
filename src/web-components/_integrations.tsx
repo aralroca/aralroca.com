@@ -1,23 +1,29 @@
-import type { WebContext, WebContextPlugin } from "brisa";
+import type { WebContext, WebContextPlugin } from 'brisa';
 
 function paramsPlugin(ctx: WebContext) {
   Object.assign(ctx, {
     get params() {
-      let params = ctx.state<{ [k: string]: string; }>()
+      let params = ctx.state<{ [k: string]: string }>();
 
       ctx.effect(() => {
-        params.value = Object.fromEntries(new URLSearchParams(window.location.search).entries())
+        params.value = Object.fromEntries(
+          new URLSearchParams(window.location.search).entries(),
+        );
 
         const navigate = (e: any) => {
-          params.value = Object.fromEntries(new URL(e.destination.url).searchParams.entries())
-        }
+          params.value = Object.fromEntries(
+            new URL(e.destination.url).searchParams.entries(),
+          );
+        };
 
-        window.navigation?.addEventListener('navigate', navigate)
-        ctx.cleanup(() => window.navigation?.removeEventListener('navigate', navigate))
+        window.navigation?.addEventListener('navigate', navigate);
+        ctx.cleanup(() =>
+          window.navigation?.removeEventListener('navigate', navigate),
+        );
       });
 
       return params;
-    }
+    },
   });
 
   return ctx;
@@ -30,6 +36,6 @@ declare global {
     navigation?: {
       addEventListener: (event: string, cb: (e: any) => void) => void;
       removeEventListener: (event: string, cb: (e: any) => void) => void;
-    }
+    };
   }
 }

@@ -49,17 +49,24 @@ export default function Home() {
             >
               Etiketai
             </a>{' '}
-            Etiketai is an online tool designed to label images, useful to
-            train AI models.
+            Etiketai is an online tool designed to label images, useful to train
+            AI models.
           </li>
-          <li style={{ fontStyle: 'italic' }}>... <a target="blank"
-            rel="noopener noreferrer"
-            href="https://github.com/aralroca?tab=repositories&q=&type=source&language=&sort=stargazers">More</a></li>
+          <li style={{ fontStyle: 'italic' }}>
+            ...{' '}
+            <a
+              target="blank"
+              rel="noopener noreferrer"
+              href="https://github.com/aralroca?tab=repositories&q=&type=source&language=&sort=stargazers"
+            >
+              More
+            </a>
+          </li>
         </ul>
 
         <p>
-          I've also contributed to other libraries resolving issues or developing
-          new features.
+          I've also contributed to other libraries resolving issues or
+          developing new features.
         </p>
         <p>
           A few years ago I realized that I wanted to focus my efforts on being
@@ -68,5 +75,5 @@ export default function Home() {
         </p>
       </div>
     </div>
-  )
+  );
 }

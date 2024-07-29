@@ -1,5 +1,5 @@
 import getCanonical from '@/utils/getCanonical';
-import { dangerHTML, type RequestContext } from 'brisa'
+import { dangerHTML, type RequestContext } from 'brisa';
 
 const TITLE_BY_PATHNAME: Record<string, string> = {
   '/': 'Aral Roca',
@@ -8,11 +8,11 @@ const TITLE_BY_PATHNAME: Record<string, string> = {
 } as const;
 
 export default function Layout({ children }: any, { route }: RequestContext) {
-  const { name, params, pathname } = route
-  const isActive = (link: string) => name.startsWith(link) ? 'active' : ''
-  const isDefaultMeta = name !== '/blog/[slug]'
-  const mainClass = name.startsWith('/blog/') ? 'blog' : ''
-  const hasParams = Object.keys(params).length > 0
+  const { name, params, pathname } = route;
+  const isActive = (link: string) => (name.startsWith(link) ? 'active' : '');
+  const isDefaultMeta = name !== '/blog/[slug]';
+  const mainClass = name.startsWith('/blog/') ? 'blog' : '';
+  const hasParams = Object.keys(params).length > 0;
 
   const data = {
     url: getCanonical(pathname),
@@ -20,11 +20,10 @@ export default function Layout({ children }: any, { route }: RequestContext) {
     description:
       "Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.",
     cover_image: 'https://aralroca.com/images/profile_full.jpg',
-    tags:
-      'javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain',
-  }
+    tags: 'javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain',
+  };
 
-  // TODO: Remove styles after this issue: 
+  // TODO: Remove styles after this issue:
   // https://github.com/brisa-build/brisa/issues/156#issuecomment-2228440081
   return (
     <html lang="en">
@@ -35,7 +34,9 @@ export default function Layout({ children }: any, { route }: RequestContext) {
         <link rel="stylesheet" href="/styles/highlightcode.css"></link>
         <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {hasParams && <meta id="noIndex" name="robots" content="noindex, follow" />}
+        {hasParams && (
+          <meta id="noIndex" name="robots" content="noindex, follow" />
+        )}
         {isDefaultMeta && (
           <>
             <title id="title">{data.title}</title>
@@ -47,18 +48,18 @@ export default function Layout({ children }: any, { route }: RequestContext) {
               content={data.description}
             />
             <meta id="meta-keywords" name="keywords" content={data.tags} />
-            <meta id="meta-twitter-title" name="twitter:title" content={data.title} />
+            <meta
+              id="meta-twitter-title"
+              name="twitter:title"
+              content={data.title}
+            />
             <meta id="og:type" property="og:type" content="website" />
             <meta
               id="meta-og-image"
               property="og:image"
               content={data.cover_image}
             />
-            <meta
-              id="meta-og:title"
-              property="og:title"
-              content={data.title}
-            />
+            <meta id="meta-og:title" property="og:title" content={data.title} />
             <meta
               id="meta-og:description"
               property="og:description"
@@ -101,14 +102,16 @@ export default function Layout({ children }: any, { route }: RequestContext) {
             <span>Aral Roca.</span>
           </a>
           <nav>
-            <a class={isActive('/blog')} href="/blog">Blog</a>
-            <a href="/thanks" class={isActive('/thanks')}>Support</a>
+            <a class={isActive('/blog')} href="/blog">
+              Blog
+            </a>
+            <a href="/thanks" class={isActive('/thanks')}>
+              Support
+            </a>
           </nav>
         </header>
 
-        <main class={mainClass}>
-          {children}
-        </main>
+        <main class={mainClass}>{children}</main>
         <footer>
           <a
             title="RSS Feed"
@@ -150,7 +153,7 @@ export default function Layout({ children }: any, { route }: RequestContext) {
         </footer>
       </body>
     </html>
-  )
+  );
 }
 function DarkSVG() {
   return (
@@ -168,7 +171,7 @@ function DarkSVG() {
     >
       <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
     </svg>
-  )
+  );
 }
 
 function LightSVG() {
@@ -195,7 +198,7 @@ function LightSVG() {
       <path d="M4.22 19.78l1.42-1.42"></path>
       <path d="M18.36 5.64l1.42-1.42"></path>
     </svg>
-  )
+  );
 }
 
 function SystemElement() {
@@ -214,6 +217,5 @@ function SystemElement() {
     >
       <path d="M2 13.381h20M8.66 19.05V22m6.84-2.95V22m-8.955 0h10.932M4 19.05h16a2 2 0 002-2V4a2 2 0 00-2-2H4a2 2 0 00-2 2v13.05a2 2 0 002 2z"></path>
     </svg>
-  )
+  );
 }
-

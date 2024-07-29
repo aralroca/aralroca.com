@@ -134,5 +134,5 @@ export default function Supporters() {
         </div>
       </div>
     </div>
-  )
+  );
 }

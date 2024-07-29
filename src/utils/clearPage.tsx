@@ -3,5 +3,5 @@ export default function clearPage(page: string) {
     .replace('pages', '')
     .replace('.js', '')
     .replace('.md', '')
-    .replace('/index', '')
+    .replace('/index', '');
 }

@@ -26,22 +26,22 @@ const POST_PATH = path.join(process.cwd(), 'src', 'posts');
 export default function readPost(slug: string): PostContent {
   const markdownWithMetadata = fs
     .readFileSync(path.join(POST_PATH, slug + '.md'))
-    .toString()
+    .toString();
 
   marked.setOptions({
     highlight: (code: string, language: string) => {
-      const hljs = require('highlight.js')
-      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext'
-      return hljs.highlight(code, { language: validLanguage }).value
+      const hljs = require('highlight.js');
+      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+      return hljs.highlight(code, { language: validLanguage }).value;
     },
-  })
+  });
 
-  const { data, content } = matter(markdownWithMetadata)
+  const { data, content } = matter(markdownWithMetadata);
 
   return {
     data,
     date: niceDateText(new Date(data.created)),
     __html: marked(content),
     timeToRead: readingTime(content),
-  }
+  };
 }

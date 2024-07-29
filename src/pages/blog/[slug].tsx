@@ -1,21 +1,22 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { dangerHTML, type RequestContext } from 'brisa'
-import type { MatchedRoute } from 'bun'
+import fs from 'node:fs';
+import path from 'node:path';
+import { dangerHTML, type RequestContext } from 'brisa';
+import type { MatchedRoute } from 'bun';
 
-import BlogSeries from '@/components/BlogSeries'
-import Newsletter from '@/components/Newsletter'
-import PostInfo from '@/components/PostInfo'
-import PostItem from '@/components/PostItem'
-import addCustomPostWidgets from '@/utils/addCustomPostWidgets'
-import clearPage from '@/utils/clearPage'
-import getMorePosts from '@/utils/getMorePosts'
-import readPost from '@/utils/readPost'
-import getCanonical from '@/utils/getCanonical'
+import BlogSeries from '@/components/BlogSeries';
+import Newsletter from '@/components/Newsletter';
+import PostInfo from '@/components/PostInfo';
+import PostItem from '@/components/PostItem';
+import addCustomPostWidgets from '@/utils/addCustomPostWidgets';
+import clearPage from '@/utils/clearPage';
+import getMorePosts from '@/utils/getMorePosts';
+import readPost from '@/utils/readPost';
+import getCanonical from '@/utils/getCanonical';
 
-export default async function Post({ }, { store, route }: RequestContext) {
+export default async function Post({}, { store, route }: RequestContext) {
   const { slug } = route.params;
-  const { data, date, morePosts, series, __html, tags, timeToRead } = store.get('post')
+  const { data, date, morePosts, series, __html, tags, timeToRead } =
+    store.get('post');
 
   return (
     <>
@@ -30,8 +31,9 @@ export default async function Post({ }, { store, route }: RequestContext) {
           style={{ viewTransitionName: 'img:' + slug, aspectRatio: '960/432' }}
         />
       </div>
-      <h1 style={{ viewTransitionName: 'title:' + slug }}
-        class="post-title">{data.title}</h1>
+      <h1 style={{ viewTransitionName: 'title:' + slug }} class="post-title">
+        {data.title}
+      </h1>
       <PostInfo date={date} timeToRead={timeToRead} />
       <div class="tags" style={{ marginBottom: 30 }}>
         {tags.map((tag: string) => (
@@ -41,9 +43,7 @@ export default async function Post({ }, { store, route }: RequestContext) {
         ))}
       </div>
       <BlogSeries key="series-top" title={data.series} series={series} />
-      <div class="post">
-        {dangerHTML(__html)}
-      </div>
+      <div class="post">{dangerHTML(__html)}</div>
       <BlogSeries
         style={{ marginTop: 40 }}
         key="series-bottom"
@@ -66,7 +66,7 @@ export default async function Post({ }, { store, route }: RequestContext) {
         )}
         <a
           href={`https://twitter.com/search?q=${encodeURI(
-            `https://aralroca.com/blog/${slug}`
+            `https://aralroca.com/blog/${slug}`,
           )}`}
           rel="noopener noreferrer"
           target="_blank"
@@ -94,11 +94,13 @@ export default async function Post({ }, { store, route }: RequestContext) {
         </div>
       )}
     </>
-  )
+  );
 }
 
 async function loadPostData(route: MatchedRoute) {
-  const { params: { slug } } = route;
+  const {
+    params: { slug },
+  } = route;
   const post = readPost(slug);
   const [morePosts, series] = await getMorePosts(post, slug);
   const __html = await addCustomPostWidgets(post.__html);
@@ -108,13 +110,13 @@ async function loadPostData(route: MatchedRoute) {
   return { data, date, morePosts, series, __html, tags, timeToRead };
 }
 
-export async function Head({ }, { store, route }: RequestContext) {
+export async function Head({}, { store, route }: RequestContext) {
   const post = await loadPostData(route);
   const { data } = post;
 
   store.set('post', post);
 
-  // TODO: Remove styles after this issue: 
+  // TODO: Remove styles after this issue:
   // https://github.com/brisa-build/brisa/issues/156#issuecomment-2228440081
   return (
     <>
@@ -155,6 +157,6 @@ export async function Head({ }, { store, route }: RequestContext) {
 
 export const prerender = async () => {
   const POST_PATH = path.join(process.cwd(), 'src', 'posts');
-  const files = fs.readdirSync(POST_PATH).map(clearPage)
-  return files.map((slug) => ({ slug }))
-}
+  const files = fs.readdirSync(POST_PATH).map(clearPage);
+  return files.map((slug) => ({ slug }));
+};

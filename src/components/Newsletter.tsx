@@ -20,5 +20,5 @@ export default function Newsletter() {
       />
       <button>Subscribe</button>
     </form>
-  )
+  );
 }
