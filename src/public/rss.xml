@@ -5,7 +5,7 @@
         <title>Aral Roca</title>
         <description>Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.</description>
         <link>https://aralroca.com</link>
-        <lastBuildDate>Wed Jul 31 2024 01:55:46 GMT+0200 (Central European Summer Time)</lastBuildDate>
+        <lastBuildDate>Sun Aug 11 2024 19:06:30 GMT+0200 (Central European Summer Time)</lastBuildDate>
       
             <item>
               <title>Detect text toxicity using React</title>
@@ -3675,90 +3675,25 @@ await diff(document, res.body.getReader(), {
 ]]></content:encoded>
             </item>
             <item>
-              <title>Next.js to Brisa: My Blog Migration</title>
+              <title>Get Ready for Brisa: The Game-Changing Framework </title>
               <description>A quick overview of my blog's migration from Next.js to Brisa</description>
               <link>https://aralroca.com/blog/draft-migrate-to-brisa</link>
               <guid isPermaLink="false">https://aralroca.com/blog/draft-migrate-to-brisa/</guid>
               <pubDate>Mon Jul 22 2024 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
-              <content:encoded><![CDATA[<p>Seguramente es raro ver un artículo hablando de Brisa, un framework que saldrà en Septiembre de 2024 y aún no está público. Pero aquí estamos, sustituyendo Next.js de mi blog por Brisa y todo su código està open source en GitHub.</p>
-<h2 id="¿por-qué-migrar">¿Por qué migrar?</h2>
-<p>Primero, no hay nada malo con Next.js. Es un framework increíble y lo he usado por años y ha sido una de las motivaciones para crear Brisa. No obstante, me quedé en la versión 12 de Next.js porqué preferia usar Preact en lugar de React.</p>
-<p>Preact es una librería más pequeña y rápida que React, no obstante, tras el cambio de paradigma de las nuevas versiones de React con las server actions, etc, Preact ha tomado un camino diferente y no es tan compatible con las nuevas versiones del framework de Next.js.</p>
-<h2 id="¿por-qué-he-creado-brisa">¿Por qué he creado Brisa?</h2>
-<p>Al principio me planteé migrar a Fresh, un framework de Deno junto con Preact, me gustó bastante, aunque en este momento preferia buscar alternativas con Bun. Luego empezé a buscar más alternativas, a probar Qwik, Solidjs, Sveltekit, etc. Todos ellos son increíbles y muchos de ellos han servido de inspiración para Brisa. No obstante, no encontré ninguno que me convenciera del todo, me gustaba mucho la idea de las server actions de React, pero no quería usar React y tampoco me convencian del todo como estaban implementadas. </p>
-<p>En julio de 2023, Misko Hevery, creador de Angular y Qwik, vino a Barcelona y habló de Qwik como si fuera su bebé, su motivación me motivó a empezar a poner mis ideas en un framework. Además, mi compañero de trabajo, Phanan, del core de Vue, me dio mucho apoyo para empezar con Brisa. Así que decidí crear Brisa, un framework que me permitiera tener un control total sobre el código y que me permitiera usar Bun y poder aplicar todas mis ideas.</p>
-<p>Empecé a probar Bun y facilitó mucho el proceso inicial, ya que JSX y TypeScript venian por defecto a parte de tener API para el enrutado parecido al de Next.js y con pocos dias ya tenia el renderizado con streaming hecho. Pero realmente no quería que Brisa fuera sólo para web estàticas, así que empecé a escribir el route-map de la versión 0.1 de Brisa, dónde muchas de las ideas que escribia sabía que serian positivas para la web, pero no sabía cómo las haría. Y fue parte de la diversión, ir descubriendo cómo implementarlas y aprender haciendo.</p>
-<p>Oficialmente empecé en Septiembre de 2023 a crear Brisa, dónde ya mi motivación ya no era migrar mi blog, sino contribuir en hacer una web mejor, desde mi punto de vista y mis propias ideas, y de aprender mucho en el proceso. Ahora el route-map de la versión 0.1 de Brisa está al 95% hecho y este 5% restante calculo que me llevará 1 mes más, por lo que en Septiembre de 2024, Brisa será público.</p>
-<h2 id="¿qué-es-brisa">¿Qué es Brisa?</h2>
-<p>Brisa es un framework escrito con JSX de web components junto con server components. La idea es que esté escrito de forma muy parecida a Next.js con React, pero luego actue como si fueran Web Components junto con signals para las interacciones de cliente y parecido a HTMX y las server actions de React para las interacciones de servidor.</p>
-<p>En Brisa por defecto todo corre sólo en el servidor (o build si decides exportar tu web), excepto el directorio <code>src/web-components</code>, que es donde se encuentran los web components que corren por defecto tanto en el servidor como en el cliente (SSR), aunque puedes hacer un skip de SSR si lo deseas.</p>
-<p>Con Brisa tienes separación de conceptos, en un fichero de servidor no tienes importaciones de cliente y viceversa, lo que hace que sea muy fácil de entender y de mantener. Además, puedas distinguir facilmente qué es un web component y qué es un server component.</p>
-<pre><code class="language-tsx">&lt;<span class="hljs-title class_">ServerComponent</span> /&gt;
-<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">web-component</span> /&gt;</span></span>
-</code></pre>
-<p>Bàsicamente, los server components estan consumidos de la misma forma que los componentes de React, mientras que los web components estan consumidos de la misma forma que los web components nativos, pero con la ventaja que TypeScript te hace type-safe para que sepas cuales puedes consumir y que attributos usar. En Brisa, no hace falta escribir directivas como <code>&quot;user client&quot;;</code> o <code>&quot;use server&quot;;</code>, y lo que nos hemos enfocado es en mejorar la comunicación entre ambos mundos.</p>
-<p>Para esta comunicación entre web/server components, ha habido distintos puntos:</p>
+              <content:encoded><![CDATA[<p>In the ever-evolving landscape of web development, staying ahead with the latest tools and frameworks is crucial. Today, we&#39;re excited to introduce <a href="https://brisa.build">Brisa</a>, a revolutionary framework designed to simplify and enhance the development process. Whether you&#39;re a seasoned developer or just starting out, Brisa offers a suite of features that will elevate your web projects to new heights. </p>
+<p>We&#39;re thrilled to announce that Brisa will be available to the public between <strong>September</strong> and <strong>October</strong>, so mark your calendars!</p>
+<h2 id="key-features-of-brisa">Key Features of Brisa</h2>
+<p>Brisa comes packed with a range of features that make it a standout framework:</p>
 <ul>
-<li>Hacer que todos los eventos se puedan capturar en el servidor mediante un RPC de Brisa (2kb), no sólo el <code>onSubmit</code> de un formulario, sino también el <code>onInput</code> de un input, el <code>onClick</code> de un botón, o cualquier evento de un web component, ejemplo: <code>onSomeEvent={serverAction}</code>.</li>
-<li>Crear el concepto de <strong>Action signal</strong>, dónde desde una server action puedes hacer reaccionar los web components sin la necesidad de hacer un re-render de la página. Aunque también puedes hacer un re-render tanto de la página como del propio server component si es necesario.</li>
-<li>Ideas de HTMX para extender los atributos de HTMX para tener mayor control, ejemplos como el <code>indicator</code> para mostrar un spinner mientras se ejecuta la server action, o el <code>debounce</code> para hacer debounce de una server action. Sin añadir código JS cliente.</li>
+<li><strong>JSX, TS, Server/Web Components, and More</strong>: Brisa supports a comprehensive set of technologies including JSX, TypeScript, server and web components, SSR, streaming, suspense, signals, websockets, middleware, layouts, and more.</li>
+<li><strong>Speed</strong>: Designed for rapid development, Brisa ensures fast start, build, test, deploy, and runtime speeds.</li>
+<li><strong>Internationalization</strong>: It supports text translation and routing, carrying only the translations you need.</li>
+<li><strong>Tiny Footprint</strong>: Brisa’s default size is 0B, expanding to 2kB with server actions and 3kB with web components.</li>
+<li><strong>Versatile Output</strong>: Easily change your web output from server to static, desktop, Android, or iOS with a single configuration command.</li>
 </ul>
-<h3 id="tamaño">Tamaño</h3>
-<p>Brisa por defecto ocupa 0kb en el cliente, no obstante, si usas web components con signals, el tamaño de Brisa es de 3kb, y si usas server actions, el tamaño de Brisa augmenta 2kb por el RPC. Así que si usas ambos, el tamaño de Brisa es de 5kb.</p>
-<p>No obstante, aunque el RPC de Brisa es de 2kb, es linear, es decir, si tienes 100 server components con server actions, el tamaño de Brisa seguirá siendo el mismo. Por otro lado, si usas web components con signals, el tamaño de Brisa es de 3kb, pero si tienes 100 web components, el tamaño de Brisa crecerá proporcionalmente pero de forma muy pequeña, ya que hacemos optimizaciones para que el tamaño de tus web components sea lo más pequeño posible.</p>
-<p>Ejemplo de un web component con signals sin build:</p>
-<pre><code class="language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyCounter</span>(<span class="hljs-params">{ children }, { state }</span>) {
-  <span class="hljs-keyword">const</span> count = <span class="hljs-title function_">state</span>(<span class="hljs-number">0</span>);
-
-  <span class="hljs-keyword">return</span> (
-    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> count.value--}&gt;-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> count.value++}&gt;+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-      {count.value}
-      {/* This children can be a Server Component: */}
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-  );
-}
-</code></pre>
-<p>Después del build, su JS cliente será:</p>
-<pre><code class="language-js"><span class="hljs-keyword">let</span> n=<span class="hljs-keyword">function</span>(<span class="hljs-params">{children:r},{state:e}</span>){
-  <span class="hljs-keyword">const</span> l=<span class="hljs-title function_">e</span>(<span class="hljs-number">0</span>);
-
-  <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;div&quot;</span>,{},
-    [[<span class="hljs-string">&quot;button&quot;</span>,{<span class="hljs-attr">onClick</span>:<span class="hljs-function">()=&gt;</span>l.<span class="hljs-property">value</span>--},<span class="hljs-string">&quot;-&quot;</span>],
-    [<span class="hljs-string">&quot;button&quot;</span>,{<span class="hljs-attr">onClick</span>:<span class="hljs-function">()=&gt;</span>l.<span class="hljs-property">value</span>++},<span class="hljs-string">&quot;+&quot;</span>],
-    [<span class="hljs-literal">null</span>,{},<span class="hljs-function">()=&gt;</span>l.<span class="hljs-property">value</span>],[<span class="hljs-string">&quot;div&quot;</span>,{},r]]
-  ]
-}
-<span class="hljs-title function_">h</span>(<span class="hljs-string">&quot;my-counter&quot;</span>,<span class="hljs-title function_">s</span>(n));
-</code></pre>
-<p>Dónde <code>h</code>  es para registrar los web components y <code>s</code> para definir el web component de la forma nativa.</p>
-<h3 id="output">Output</h3>
-<p>Brisa te permite usar Bun de servidor <em>(para el routemap de la 1.0 haremos que sea runtime-agnostic, pero ahora para la 0.1 dependerá de Bun)</em>, exportar tu web a un CDN, exportar tu web a un APK o a un IPA, o incluso a un desktop app con integración de Tauri. Además, Brisa te permite hacer una web híbrida, es decir, tener páginas estáticas y dinámicas en la misma web. El i18n funciona con todos los tipos de exportación, así que facilmente también puedes hacer una web multilenguaje con Brisa.</p>
-<h3 id="algunas-otras-features">Algunas otras features</h3>
-<ul>
-<li>Suspense y error handling en web/server components.</li>
-<li>Context API en web/server components.</li>
-<li>Soporte de websockets.</li>
-<li>Middleware</li>
-<li>Layouts</li>
-<li>Soporte de i18n (tanto routing como traducciones)</li>
-</ul>
-<p>Al trabajar con Brisa, se tiene que pensar en interacciones. Nos podemos hacer esta série de preguntas:</p>
-<ul>
-<li>Se pueden hacer esta interacción solo con HTML/CSS? Entonces será un component, y la pagina puede ser estática y no requiera de un servidor, sino pasar el renderizado del componente en build-time.</li>
-<li>Es una interacción dónde está involucadro el servidor? Entonces será component pero si requerirá de un servidor.</li>
-<li>Es una interacción puramente de cliente y no se puede hacer con solo HTML/CSS? Entonces será un web component.</li>
-</ul>
-<p>La nomenglatura &quot;component&quot; vs &quot;web component&quot;, en Next.js/React se conoce como &quot;server component&quot; y &quot;client component&quot;. Aquí podemos hablar de &quot;component&quot; directamente para referirnos cuando el componente corre en el servidor o en build-time, es decir, que no es un web component y se traduce a puro HTML, este proceso de renderizado puede estar hecho tanto en el servidor como el build-time, pero nunca será visible la lógica del código en la web, en la web ya se recibirá únicamente el HTML. La nomenglatura de &quot;web component&quot; es porque se transpila el JSX para ser usado como un web component nativo.</p>
-<h2 id="migración-de-nextjs-a-brisa">Migración de Next.js a Brisa</h2>
-<p>Uno de los puntos de desarrollar Brisa ya era la idea de que se parezca a Next.js para que los desarrolladores estén familiarizados, así que la mayoría de los ficheros los he podido mantener tal cual, ya que era solo componentes &quot;dummy&quot; de JSX. Estos ficheros al no tener estado y ser solo JSX, son 100% compatibles con Brisa. Brisa por dfecto corre en el servidor, así que sabemos que no se llevará JS cliente para estos ficheros. Entre estas páginas son la home y la página de &quot;thanks&quot;. La página donde hay el listado de artículos y luego la pagina dinàmica de artículos si tiene un poco de lógica un poco distinta a Next.js y React donde hay que hacer adaptaciones.</p>
-<p>Ejemplo de la home:</p>
-<ul>
-<li>TODO: add link home</li>
-</ul>
-<p>En cambio, para la página de artículos, he tenido que hacer una pequeña adaptación, ya que en Next.js se hace dentro de <code>getStaticProps</code>, mientras en Brisa se hace dentro de la función <code>prerender</code>. No obstante, la lógica es la misma.</p>
+<h2 id="want-to-know-more">Want to know more?</h2>
+<p>Well, version 0.1 is not public yet, but my blog <a href="https://github.com/aralroca/aralroca.com">aralroca.com</a> is already in Brisa and it&#39;s open-source.</p>
+<h3 id="good-summer-🌞-and-stay-tunned"><em>Good summer! 🌞 and <a href="https://brisa.build">stay tunned</a>!</em></h3>
 ]]></content:encoded>
             </item>
             <item>
