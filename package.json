@@ -9,12 +9,13 @@
     "start": "brisa start",
     "sitemap": "bun run src/utils/generateSitemap.tsx",
     "rss": "bun run src/utils/generateRss.tsx",
+    "symlink": "cd ../brisa/packages/brisa && bun run build && cp -R * ../../../aralroca.com/node_modules/brisa/ && cd ../../../aralroca.com && bun dev",
     "format": "bun run biome format --write .",
     "check": "bun run biome check --write .",
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
-    "brisa": "0.0.172",
+    "brisa": "0.0.173",
     "gray-matter": "4.0.3",
     "highlight.js": "11.5.1",
     "js-paging": "0.2.0",
@@ -23,7 +24,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "brisa-adapter-vercel": "0.0.172",
+    "brisa-adapter-vercel": "0.0.173",
     "@types/bun": "1.1.6",
     "typescript": "5.5.4"
   }
