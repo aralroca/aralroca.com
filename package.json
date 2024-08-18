@@ -15,7 +15,7 @@
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
-    "brisa": "0.0.175-canary.2",
+    "brisa": "0.0.176",
     "gray-matter": "4.0.3",
     "highlight.js": "11.5.1",
     "js-paging": "0.2.0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "brisa-adapter-vercel": "0.0.174",
+    "brisa-adapter-vercel": "0.0.176",
     "@types/bun": "1.1.6",
     "typescript": "5.5.4"
   }
