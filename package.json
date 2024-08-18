@@ -9,7 +9,6 @@
     "start": "brisa start",
     "sitemap": "bun run src/utils/generateSitemap.tsx",
     "rss": "bun run src/utils/generateRss.tsx",
-    "symlink": "cd ../brisa/packages/brisa && bun run build && cp -R * ../../../aralroca.com/node_modules/brisa/ && cd ../../../aralroca.com && bun dev",
     "format": "bun run biome format --write .",
     "check": "bun run biome check --write .",
     "lint": "bun run biome lint --write ."
