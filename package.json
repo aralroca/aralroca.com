@@ -15,7 +15,7 @@
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
-    "brisa": "0.0.175-canary.1",
+    "brisa": "0.0.175-canary.2",
     "gray-matter": "4.0.3",
     "highlight.js": "11.5.1",
     "js-paging": "0.2.0",
