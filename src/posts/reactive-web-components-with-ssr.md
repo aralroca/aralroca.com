@@ -225,7 +225,7 @@ If you want to see the GitHub repository of the example of the counter that we h
 
 ## Conclusion
 
-In this post, we have seen how to build reactive Web Components that work with SSR and with any JavaScript or Vanilla JS framework. We have used Brisa to build the Web Component and we have seen how to load it in a Vanilla JS project and how to do SSR with it.
+In this post, we have seen how to build reactive Web Components that work with SSR and with any JavaScript framework or Vanilla JS. We have used Brisa to build the Web Component and we have seen how to load it in a Vanilla JS project and how to do SSR with it.
 
 I hope you have enjoyed this post and that you have learned something new. If you have any questions, do not hesitate to ask me in the comments below. I will be happy to help you.
 
