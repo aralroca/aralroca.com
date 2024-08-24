@@ -110,7 +110,7 @@ So, how do we load the Web Component?
 
 ## Loading the Web Component in a Vanilla JS project
 
-To do this, you need to add the importmap in the HTML with `brisa/client` and then import the `counter-wc.client.js` file:
+To do this, you need to add the importmap in the HTML with `brisa/client` and then load the `counter-wc.client.js` module:
 
 ```html
 <!doctype html>
