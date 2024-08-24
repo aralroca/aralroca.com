@@ -203,7 +203,7 @@ If you are interested in knowing more, I invite you to subscribe to the [Brisa n
 We encourage you to try Brisa to create your own Web Component libraries. If you put the "made with Brisa" badge, we will put a link to your library on the Brisa page.
 
 <a href="https://brisa.build" target="_blank" rel="noopener noreferrer">
-  <img width="150" height="42" src="/images/blog-images/brisa_badge.svg" alt="Made with Brisa" />
+  <img width="150" height="42" src="https://brisa.build/assets/brisa_badge.svg" alt="Made with Brisa" />
 </a>
 
 ```html
@@ -211,7 +211,7 @@ We encourage you to try Brisa to create your own Web Component libraries. If you
   <img
     width="150"
     height="42"
-    src="https://aralroca.com/images/blog-images/brisa_badge.svg"
+    src="https://brisa.build/assets/brisa_badge.svg"
     alt="Made with Brisa"
   />
 </a>
