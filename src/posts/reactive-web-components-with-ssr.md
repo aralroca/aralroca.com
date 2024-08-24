@@ -193,7 +193,7 @@ export default {
 
 In this way, SSR and TypeScript types are automatically integrated into your project. And you can use the Web Component in any Server Component or within another Web Component.
 
-<img src="/images/blog-images/types.avif" alt="Typescript types" />
+<img src="/images/blog-images/types.gif" alt="Typescript types" />
 
 If you are interested in knowing more, I invite you to subscribe to the [Brisa newsletter](https://brisa.build) to receive the latest news and updates on Brisa. We estimate that by the end of September it will be ready for launch.
 
