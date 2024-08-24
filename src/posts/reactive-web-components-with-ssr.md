@@ -6,6 +6,7 @@ tags: javascript, brisa, bun
 cover_image: /images/cover-images/32_cover_image.jpg
 cover_image_mobile: /images/cover-images/32_cover_image_mobile.jpg
 cover_color: "#212121"
+dev_to: build-reactive-web-components-with-ssr-3pb9
 ---
 
 Traditional way of writing Web Components is not very SSR (Server Side Rendering) friendly. In this post, I show you how you can build reactive Web Components that work with SSR and with any JavaScript framework (Vue, React, Svelte, Solid, Brisa) or Vanilla JS.
