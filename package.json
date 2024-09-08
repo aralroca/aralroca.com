@@ -14,18 +14,18 @@
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
-    "brisa": "0.0.182",
+    "brisa": "0.0.200",
     "gray-matter": "4.0.3",
     "highlight.js": "11.10.0",
     "marked-highlight": "2.1.4",
     "js-paging": "0.2.0",
-    "marked": "14.0.0",
+    "marked": "14.1.1",
     "reading-time": "1.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "brisa-adapter-vercel": "0.0.182",
-    "@types/bun": "1.1.7",
+    "brisa-adapter-vercel": "0.0.200",
+    "@types/bun": "1.1.8",
     "typescript": "5.5.4"
   }
 }
