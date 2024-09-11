@@ -2,16 +2,7 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
           <url>
-            <loc>https://aralroca.com/blog/etiketai</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/default-composer</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/app-with-react-api-without-tools-as-webpack-or-babel</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/dont-control-everything-react-forms</loc>
+            <loc>https://aralroca.com/blog/detect-text-toxicity-with-react</loc>
           </url>
           <url>
             <loc>https://aralroca.com/blog/do-all-roads-lead-to-rome</loc>
@@ -20,82 +11,91 @@
             <loc>https://aralroca.com/blog/how-to-draw-gears-in-webgl</loc>
           </url>
           <url>
-            <loc>https://aralroca.com/blog/react-fragmented-store</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/food-pairing-classifier</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/cat-dog-classifier</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/pagination-badges</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/partial-prerendering</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/learn-deno-chat-app</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/spa-navigation</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/creating-scalable-and-reusable-react-components</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/detect-text-toxicity-with-react</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/html-node-streaming</loc>
-          </url>
-          <url>
             <loc>https://aralroca.com/blog/exploring-htmlportalelement-with-react</loc>
           </url>
           <url>
-            <loc>https://aralroca.com/blog/first-steps-with-tensorflowjs</loc>
+            <loc>https://aralroca.com/blog/etiketai</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/static-readme-regeneration</loc>
           </url>
           <url>
             <loc>https://aralroca.com/blog/ghaction-devto</loc>
           </url>
           <url>
+            <loc>https://aralroca.com/blog/next-translate-1.0</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/dont-control-everything-react-forms</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/default-composer</loc>
+          </url>
+          <url>
             <loc>https://aralroca.com/blog/reactive-web-components-with-ssr</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/teaful-devtools</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/first-steps-webassembly-rust</loc>
           </url>
           <url>
             <loc>https://aralroca.com/blog/html-streaming-over-the-wire</loc>
           </url>
           <url>
-            <loc>https://aralroca.com/blog/discovering-snowpack</loc>
+            <loc>https://aralroca.com/blog/partial-prerendering</loc>
           </url>
           <url>
-            <loc>https://aralroca.com/blog/from-node-to-deno</loc>
+            <loc>https://aralroca.com/blog/food-pairing-classifier</loc>
           </url>
           <url>
             <loc>https://aralroca.com/blog/i18n-translations-nextjs-13-app-dir</loc>
           </url>
           <url>
-            <loc>https://aralroca.com/blog/teaful</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/next-translate-1.0</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/opencv-in-the-web</loc>
-          </url>
-          <url>
-            <loc>https://aralroca.com/blog/next-translate-released</loc>
+            <loc>https://aralroca.com/blog/html-node-streaming</loc>
           </url>
           <url>
             <loc>https://aralroca.com/blog/first-steps-in-webgl</loc>
           </url>
           <url>
-            <loc>https://aralroca.com/blog/static-readme-regeneration</loc>
+            <loc>https://aralroca.com/blog/creating-scalable-and-reusable-react-components</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/discovering-snowpack</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/pagination-badges</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/spa-navigation</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/from-node-to-deno</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/opencv-in-the-web</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/teaful</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/app-with-react-api-without-tools-as-webpack-or-babel</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/first-steps-webassembly-rust</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/cat-dog-classifier</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/teaful-devtools</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/first-steps-with-tensorflowjs</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/react-fragmented-store</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/learn-deno-chat-app</loc>
+          </url>
+          <url>
+            <loc>https://aralroca.com/blog/next-translate-released</loc>
           </url>
       
             <url>
