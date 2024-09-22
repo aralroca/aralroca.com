@@ -5,16 +5,15 @@
   "scripts": {
     "dev": "brisa dev",
     "dev:debug": "brisa dev --debug",
-    "build": "bun run sitemap && bun run rss && brisa build",
+    "build": "bun run rss && brisa build",
     "start": "brisa start",
-    "sitemap": "bun run src/utils/generateSitemap.tsx",
     "rss": "bun run src/utils/generateRss.tsx",
     "format": "bun run biome format --write .",
     "check": "bun run biome check --write .",
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
-    "brisa": "0.0.210",
+    "brisa": "0.0.219",
     "gray-matter": "4.0.3",
     "highlight.js": "11.10.0",
     "marked-highlight": "2.1.4",
@@ -23,9 +22,9 @@
     "reading-time": "1.5.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "brisa-adapter-vercel": "0.0.210",
-    "@types/bun": "1.1.9",
+    "@biomejs/biome": "1.9.2",
+    "brisa-adapter-vercel": "0.0.219",
+    "@types/bun": "1.1.10",
     "typescript": "5.6.2"
   }
 }
