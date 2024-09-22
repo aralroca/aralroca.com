@@ -25,8 +25,6 @@ export default function ChangeTheme({}, { state }: WebContext) {
     setPreferredTheme(e.matches ? 'dark' : 'light');
   });
 
-  setTheme(theme.value || 'system');
-
   function onChangeTwitterEmbedTheme() {
     const theme = document.body.className;
     parent.document.querySelectorAll('iframe[src]').forEach((iframe) => {
