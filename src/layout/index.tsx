@@ -1,6 +1,9 @@
 import getCanonical from '@/utils/getCanonical';
 import { dangerHTML, type RequestContext } from 'brisa';
 
+import '@/styles/main.css';
+import '@/styles/highlightcode.css';
+
 const TITLE_BY_PATHNAME: Record<string, string> = {
   '/': 'Aral Roca',
   '/blog': 'Blog - Aral Roca',
@@ -30,8 +33,6 @@ export default function Layout({ children }: any, { route }: RequestContext) {
       <head>
         <meta name="theme-color" content="#ad1457" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/styles/main.css"></link>
-        <link rel="stylesheet" href="/styles/highlightcode.css"></link>
         <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {hasParams && (
