@@ -34,6 +34,11 @@ export default function Layout({ children }: any, { route }: RequestContext) {
         <meta name="theme-color" content="#ad1457" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* TODO: Remove styles when Next.js update Bun version */}
+        <link rel="stylesheet" href="/styles/main.css"></link>
+        <link rel="stylesheet" href="/styles/highlightcode.css"></link>
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {hasParams && (
           <meta id="noIndex" name="robots" content="noindex, follow" />
