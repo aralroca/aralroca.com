@@ -1,8 +1,8 @@
 import getCanonical from '@/utils/getCanonical';
 import { dangerHTML, type RequestContext } from 'brisa';
 
-import '@/styles/main.css';
-import '@/styles/highlightcode.css';
+// import '@/styles/main.css';
+// import '@/styles/highlightcode.css';
 
 const TITLE_BY_PATHNAME: Record<string, string> = {
   '/': 'Aral Roca',
