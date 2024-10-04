@@ -120,10 +120,6 @@ export async function Head({}, { store, route }: RequestContext) {
   // https://github.com/brisa-build/brisa/issues/156#issuecomment-2228440081
   return (
     <>
-      <meta name="theme-color" content="#ad1457" />
-      <link rel="shortcut icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="/styles/main.css"></link>
-      <link rel="stylesheet" href="/styles/highlightcode.css"></link>
       <link
         id="canonical"
         rel="canonical"

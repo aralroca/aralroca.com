@@ -32,11 +32,25 @@ export default function Layout({ children }: any, { route }: RequestContext) {
     <html lang="en">
       <head>
         <meta name="theme-color" content="#ad1457" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="preload" href="/styles/main.css" as="style" />
-        <link rel="preload" href="/styles/highlightcode.css" as="style" />
-        <link rel="stylesheet" href="/styles/main.css"></link>
-        <link rel="stylesheet" href="/styles/highlightcode.css"></link>
+        <link id="favicon" rel="shortcut icon" href="/favicon.ico" />
+        <link
+          id="main-preload"
+          rel="preload"
+          href="/styles/main.css"
+          as="style"
+        />
+        <link
+          id="hightlight-preload"
+          rel="preload"
+          href="/styles/highlightcode.css"
+          as="style"
+        />
+        <link id="main" rel="stylesheet" href="/styles/main.css"></link>
+        <link
+          id="hightlight"
+          rel="stylesheet"
+          href="/styles/highlightcode.css"
+        ></link>
         <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {hasParams && (
