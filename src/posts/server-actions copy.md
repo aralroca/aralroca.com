@@ -100,7 +100,6 @@ In other frameworks such as React, they have focused on actions only being part 
 ### 2. Having more HTML controls over Server Actions
 
 Many frameworks have also seen the HTMX library as a very different alternative to server actions, when in fact it has brought very good ideas that can be combined with Server Actions to have more potential by simply adding extra attributes in the HTML that the RPC Client can take into account, such as the `debounceInput` that we have seen before. Also other HTMX ideas like the `indicator` to show a spinner while making the request, or being able to handle an error in the RPC Client.
-r.
 
 ### 3. Separation of concepts
 
@@ -174,26 +173,25 @@ If within a server action some variable is used that existed at render level, at
 In Brisa, to solve this, there are different requests, where in the initial render it has a value, and in the server action you can capture the value that it has in this request. This is useful in some cases but not always, for example if you do a `Math.random` it will be different for sure. After knowing this, we created the concept of "Action Signals" which is a way to transfer data from the server store to the client store, and the developer can decide whether to encrypt it or not at will.
 To learn more, read the next section of the article.
 
-## Nuevos conceptos
+## New concepts
 
-En Brisa, hemos añadido un nuevo concepto para darle más poder aún a las Server Actions, este concepto se llama "Action Signals". La idea de las "Action Signals" es que tienes 2 stores, uno en el servidor y otro en el cliente.
+In Brisa, we have added a new concept to give even more power to the Server Actions, this concept is called "Action Signals". The idea of the "Action Signals" is that you have 2 stores, one on the server and one on the client.
 
-Porquè 2 stores?
+Why 2 stores?
 
-El store de servidor por defecto vive sólo a nivel de request, y es importante diferenciarlos para poder transmitir datos que pueden ser sensibles y no quieres que nunca estén en el cliente. Al vivir a nivel de request es imposible que haya conflictos entre diferentes request, ya que cada request tiene su propio store y no se guarda en ninguna base de datos, al terminar la request, muere por defecto.
+The default server store lives only at the request level, and it is important to differentiate them in order to be able to transmit data that may be sensitive and you don't want them never to be on the client. By living at request level it is impossible to have conflicts between different requests, since each request has its own store and is not stored in any database, when the request is finished, it dies by default.
 
-En cambio en el store de cliente, es un store que cada propiedad al consumirla es una signal, es decir, que si se actualiza, se reacciona el Web Component que estaba escuchando a esa signal.
+On the other hand, in the client store, it is a store that each property when consumed is a signal, that is to say, if it is updated, the Web Component that was listening to that signal reacts.
 
-No obstante, el nuevo concepto de "Action Signal" es que podemos extender la vida del store servidor más allá de la request. Para hacer esto es necesario usar el método `store.transferToClient(['some-key'])`, dónde datos que antes eran sensibles, ahora se transfieren al store cliente y se convierten en signals. De esta forma, muchas veces no será necesario hacer ningún re-render desde el servidor, simplemente puedes desde una Server Action hacer reaccionar las signals de los Web Components que estaban escuchando a esa signal.
+However, the new concept of "Action Signal" is that we can extend the life of the server store beyond the request. To do this it is necessary to use the `store.transferToClient(['some-key'])` method, where previously sensitive data is now transferred to the store client and converted into signals. In this way, many times it will not be necessary to make any re-rendering from the server, you can simply from a Server Action make react the signals of the Web Components that were listening to that signal.
 
-Esta transferència de store, hace que la vida del store servidor ahora sea:
+This store transfer makes the life of the server store now:
 
-Render incial del Server Component -> Cliente -> Server Action -> Cliente -> Server Action...
+Render initial Server Component -> Client -> Server Action -> Client -> Server Action...
 
-Así que pasa de vivir de sólo a nivel de request a vivir de forma permanente, compatible con la navegación entre páginas.
+So it goes from living from only at request level to live permanently, compatible with navigation between pages.
 
-### Transferir datos encriptados desde el Render inicial a la Server Action
+### Transferring encrypted data from the initial Render to the Server Action
 
-Habrá veces que quizás en vez de consultar a la Base de datos desde la Server Action te conviene más transferir datos que ya existian en el render inicial aunque requieran de una encriptación asociada. Para hacer esto, simplemente tienes que usar: 
-`store.transferToClient(["some-key"], { encrypt: true });`, la diferencia es que desde el cliente al hacer `store.get("some-key")` siempre estará
-encriptado, pero en el servidor siempre estará el valor desencriptado.
+Sometimes, instead of querying the database from the Server Action, you may want to transfer data that already exists in the initial render even if it requires an associated encryption. To do this, you simply use: 
+`store.transferToClient(["some-key"], { encrypt: true });`, the difference is that from the client when you do `store.get("some-key")` it will always be encrypted, but on the server it will always be decrypted.
