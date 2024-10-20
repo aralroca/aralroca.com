@@ -1,32 +1,35 @@
 ---
-title: "We solved Server Actions"
-created: 04/25/2024
-description: TODO
+title: "Server Actions have been fixed"
+created: 10/20/2024
+description: "Server Actions emerged as an idea to reduce client code and simplifying the interactions that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked."
 tags: javascript, experimental, brisa
-cover_image: /images/cover-images/31_cover_image.webp
-cover_image_mobile: /images/cover-images/31_cover_image_mobile.webp
-cover_color: "#212329"
+cover_image: /images/cover-images/33_cover_image.webp
+cover_image_mobile: /images/cover-images/33_cover_image_mobile.webp
+cover_color: "#1D3D71"
 ---
 
-Las Server Actions es una idea que surgió para estalviar código cliente para muchas interacciones que requieren una comunicación con el servidor. Es una idea muy buena y también hace que los desarrolladores tengan que escribir menos código. No obstante, hay varios problemas asociados a implementaciones en otros frameworks que no hay que obviar. En este artículo vamos a hablar de estos problemas y cómo en Brisa los hemos solucionado.
+[Server Actions](https://brisa.build/building-your-application/data-management/server-actions) emerged as an idea to **reduce client code** and **simplifying the interactions** that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked.
 
-## ¿Qué son las Server Actions?
+In this article we will talk about these problems and how in [**Brisa**](https://brisa.build) we have found a solution.
 
-Para entender bien que aportan las Server Actions, lo mejor es recapitular cómo era hasta entonces la comunicación con el servidor. Seguramente estarás acostumbrado a realizar estas acciones para cada interacción con el servidor:
+## Why the need for Server Actions?
 
-- Cliente: Capturar un evento del navegador
-- Cliente: Normalizar y serializar los datos
-- Cliente: Hacer una petición al servidor
-- Servidor: Procesar la petición en un API endpoint
-- Servidor: Responder con los datos necesarios
-- Cliente: Esperar la respuesta del servidor y procesarla
-- Cliente: Actualizar los datos en el cliente y que haga un renderizado para mostrar los cambios
+To understand what Server Actions provide, it is useful to review how communication with the server used to be. You are probably used to performing the following actions for each interaction with the server:
 
-Estás son 5 acciones que se tienen que hacer cada vez en el cliente. Es decir, si tenemos una pagina con 10 interacciones distintas, habrá 10 veces un código muy similar, aunque va a cambiar algunos aspectos como el tipo de petición, la URL, los datos que se envían, el estado cliente que lo gestiona, etc.
+1. Capture a browser event _(Client)_
+2. Normalize and serialize data _(Client)_
+3. Make a request to the server _(Client)_
+4. Process the request in an endpoint API _(Server)_
+5. Respond with the necessary data _(Server)_
+6. Wait for the response from the server and process it _(Client)_
+7. Update the data on the client and render the changes _(Client)_
 
-Un ejemplo que te será familiar seria:
+These seven actions are **repeated for each interaction**. For example, if you have a page with 10 different interactions, you will repeat a very similar code 10 times, changing only details such as the type of request, the URL, the data sent and the status of the customer.
 
-```js
+A familiar example would be
+a:
+
+```tsx
 <input
   onInput={(e) => {
     // debounce
@@ -47,7 +50,7 @@ Un ejemplo que te será familiar seria:
 />
 ```
 
-Y en el servidor:
+And in the server:
 
 ```js
 app.post("/api/search", async (req, res) => {
@@ -57,25 +60,45 @@ app.post("/api/search", async (req, res) => {
 });
 ```
 
-Las Server Actions son una forma de encapsular estas acciones en un Remote Procedure Call (RPC) que se encarga de hacer esta comunicación cliente-servidor. Evitando mucho código en el cliente y centralizando la lógica en el servidor:
+Increasing the client bundle size... and the frustration of developers.
 
-- RPC Cliente: Capturar un evento del navegador
-- RPC Cliente: Normalizar i serializar los datos
-- RPC CLiente: Hacer una petición al RPC servidor
-- RPC Servidor: Ejecutar la acción en el servidor junto los datos
-- Option 1:
-  - RPC Servidor: Renderizar desde el servidor y enviar streaming al cliente
-  - RPC Cliente: Processar los chunks del streaming para que se vean los cambios
-- Option 2:
-  - RPC Servidor: Responder con los datos necesarios y transferir propiedades del store servidor al store cliente
-  - RPC Cliente: Hace reaccionar a las signals que estaban escuchando a los cambios del store
+<figure align="center">
+  <img class="center" src="/images/blog-images/frustrated.jpeg" alt="Developer frustrated" />
+  <figcaption><small>Frustrated Developer</small></figcaption>
+</figure>
 
-Este seria el código desde un server component:
+## How Server Actions work
 
-```js
+Server Actions **encapsulate** these actions in a **Remote Procedure Call (RPC)**, which manages the client-server communication, reducing the code on the client and centralizing the logic on the server:
+
+1. Capture a browser event _(RPC Client)_
+2. Normalize and serialize data _(RPC Client)_
+3. Make a request to the RPC server _(RPC Client)_
+4. Execute the action on the server with the data _(RPC Server)_
+5. Option 1:
+
+- Render from the server and send streaming to the client _(RPC Server)_
+- Process the chunks of the stream so that the changes are visible _(RPC Client)_
+
+6. Option 2:
+
+- Reply with the necessary data and transfer properties from the server store to the client store _(RPC Server)_
+- Make the signals that were listening to the changes react to the changes in the store _(RPC Client)_
+
+Here everything is done for you by the Brisa RPC.
+
+<figure align="center">
+  <img class="center" src="/images/blog-images/rpc.jpeg" alt="RPC" />
+  <figcaption><small>Remote Procedure Call</small></figcaption>
+</figure>
+
+This would be the code from a **server component**:
+
+```tsx
 <input
   debounceInput={300}
   onInput={async (e) => {
+    // All this code only runs on the server
     const data = await search(e.target.value);
     store.set("query", data);
     store.transferToClient(["query"]);
@@ -83,21 +106,54 @@ Este seria el código desde un server component:
 />
 ```
 
-Aquí los desarrolladores no escriben nada de código cliente, ya que es un server component y se recibe el evento del `onInput` tras el debounce gestionado por el RPC Cliente. En este caso, el RPC Servidor usa las "Action Signals" para hacer reaccionar a los Web Components que tienen signals registradas con esta propiedad del store.
+Here, developers do not write client code, since it is a server component. The `onInput` event is received after the debounce, handled by the Client RPC, while the Server RPC uses "Action Signals" to trigger the Web Components that have signals registered with that store property.
 
-Cómo se puede observar, es mucho menos código de servidor, y la parte buena, que crece 0 bytes el código cliente para cada interacción de este tipo. Porque el código del RPC Cliente, son 2 kb fijos. Si tienes 10 interacciones o 1000 de este tipo, sigue siendo 2 kb.
+As you can see, this significantly reduces the server code and, best of all, the code size on the client does not increase with each interaction. The RPC Client code occupies a fixed 2 KB, whether you have 10 or 1000 such interactions. This means that **increase 0 bytes** in the client bundle size, with other words, doesn't increase.
 
-## Problemas de las Server Actions
+<figure align="center">
+  <img class="center" src="/images/blog-images/0-bytes.jpeg" alt="0 bytes" />
+  <figcaption><small>+0 bytes on client bundle size</small></figcaption>
+</figure>
 
-### 1. Números de eventos a capturar
+Moreover, in the case of needing a rerender, this is done on the server and is returned in HTML streaming, making the user see the changes much earlier than in the traditional way where you had to do this work on the client after the server response.
 
-En otros frameworks como React, se han centrado en que las actions sólo forme parte del `onSubmit` de formulario, en vez de cualquier evento. Esto es un problema, ya que hay muchos eventos que no son de formulario y que se pueden hacer acciones de servidor. Por ejemplo, un `onInput` de un input, un `onScroll` para cargar una infinite scroll, un `onMouseOver` para hacer un hover, etc.
+In this way:
 
-### 2. Tener más controles de HTML sobre de las Server Actions
+- **Improve** the user experience (**UX**)
+- **Improve** the development experience (**DX**)
 
-Muchos frameworks también han visto a HTMX cómo un rival, cuando ha traido ideas muy buenas que se pueden combinar con las Server Actions para que tengan más poder simplemente añadiendo atributos extras en el HTML que el RPC Cliente puede tener en cuenta, como el `debounceInput` que hemos visto antes. También ideas de HTMX como el `indicator` para mostrar un spinner mientras se hace la petición.
+<figure align="center">
+  <img class="center" src="/images/blog-images/happy.jpeg" alt="Developer happy" />
+  <figcaption><small>Happy Developer</small></figcaption>
+</figure>
 
-Cuando se introducieron las Server Actions en React, hubo un cambio de paradigma que muchos desarrolladores tenian que cambiar el chip mental a la hora de trabajar con ellas. Nosotros lo que hemos querido es que sea lo más familar posible a la Web Platform, de esta manera, puedes capturar el evento serializado desde el servidor y usar sus propiedades. Él único evento un poco distinto es el `onSubmit` que ya se ha trasferido el `FormData` y tiene la propiedad `e.formData`, no obstante, el resto de propiedades son interactuables. Este es un ejemplo reseteando un formulario:
+## Differences between Brisa Server Actions and other frameworks
+
+### 1. Numbers of events to capture
+
+In other frameworks such as React, they have focused on actions **only** being part of the **form `onSubmit`**, instead of any event.
+
+This is a problem, since there are many non-form events that should also be handled from a server component without adding client code. For example, an **`onInput`** of an input to do **automatic suggestions**, an **`onScroll`** to load an **infinite scroll**, an **`onMouseOver`** to do a **hover**, etc.
+
+<figure align="center">
+  <img class="center" src="/images/blog-images/interactivity.jpeg" alt="Interactivity" />
+  <figcaption><small>Applications are more interactive than expected</small></figcaption>
+</figure>
+
+### 2. Having more HTML controls over Server Actions
+
+Many frameworks have also seen the HTMX library as a very different alternative to server actions, when in fact it has brought very good ideas that can be combined with Server Actions to have more potential by simply adding extra attributes in the HTML that the RPC Client can take into account, such as the `debounceInput` that we have seen before. Also other HTMX ideas like the `indicator` to show a spinner while making the request, or being able to handle an error in the RPC Client.
+
+<figure align="center">
+  <img class="center" src="/images/blog-images/htmx.jpg" alt="HTMX Ideas" />
+  <figcaption><small>HTMX ideas</small></figcaption>
+</figure>
+
+### 3. Separation of concerns
+
+When Server Actions were introduced in **React**, there was a **new paradigm shift** that many developers had to change the mental chip when working with them.
+
+We wanted to make it as **familiar as possible to the Web Platform**, this way, you can capture the serialized event from the server and use its properties. The only event a little different is the `onSubmit` that has already transferred the `FormData` and has the `e.formData` property, nevertheless, the rest of **event properties** are interactable. This is an example **resetting a form**:
 
 ```tsx
 import type { RequestContext } from "brisa";
@@ -110,8 +166,8 @@ export default function FormOnServer({}, { indicate }: RequestContext) {
       indicateSubmit={pending}
       onSubmit={(e) => {
         // This code runs on the server
-        e.target.reset(); // Reset the form
         console.log("Username:", e.formData.get("username"));
+        e.target.reset(); // Tell to the RPC client to reset the form
       }}
     >
       <label>
@@ -127,64 +183,208 @@ export default function FormOnServer({}, { indicate }: RequestContext) {
 }
 ```
 
-### 3. Separación de conceptos
+In this example, there is no client code at all and during the server action you can **disable the submit button** with the `indicator`, using CSS, so that the form cannot be submitted twice, and at the same time after doing the action on the server and **access the form data** with `e.formData` and then **resetting the form** using the same API of the event.
 
-En este ejemplo, no hay nada de código cliente y durante la server action se puede desactivar el botón de submit con el `indicator`, mediante CSS, para que no se pueda enviar el formulario dos veces, y a la vez tras hacer la acción en el servidor se puede resetear el formulario y acceder a los datos del formulario con `e.formData`. Mentalmente, es muy parecido a trabajar con la Web Platform. La unica diferencia es que todos los eventos de todos los server components son server actions. De esta forma, hay una separación de conceptos real, donde no es necesario poner `"user server"` ni `"use client"` en tus componentes. Simplemente, hay que tener en cuenta que todo se ejecuta en el servidor sólo, excepción de la carpeta `src/web-components` que se ejecuta en el cliente y ahi los eventos son normales.
+Mentally, it is very **similar** to working with the **Web Platform**. The only difference is that all the events of all the server components are server actions.
 
-### 4. Propagación de eventos
+This way, there is a real separation of concerns, where it is **NOT necessary** to put **`"user server"`** or **`"use client"`** in your components **anymore**.
 
-En Brisa, las Server Actions se propagan entre Server Components como si se trataran de eventos del DOM. Es decir, desde una Server Action puedes llamar a un evento de una prop de un Server Component y se ejecuta entonces la Server Action del Server Component padre, etc.
+Just keep in mind that **everything runs only on the server**. The only **exception** is for the **`src/web-components`** folder which runs on the **client** and there the **events are normal**.
+
+<figure align="center">
+  <img class="center" src="/images/blog-images/separation-concers.jpeg" alt="Two different worlds, but in agreement" />
+  <figcaption><small>Two different worlds, but in agreement</small></figcaption>
+</figure>
+
+### 4. Event Propagation
+
+In Brisa, the Server Actions are propagated between Server Components as if they were DOM events. That is to say, from a Server Action you can call an event of a prop of a Server Component and then the Server Action of the parent Server Component is executed, etc.
 
 ```tsx
-export default function Example({ onCompleteSubmit }) {
+export default function Example({ onAfterMyAction }) {
   return (
     <ChildComponent
       indicateSubmit={pending}
       onSubmit={(e) => {
         const username = e.formData.get("username");
         /* Process data */
-        onCompleteSubmit(username);
-        e.target.reset(); // Reset the form
+        onAfterMyAction(username); // call server component prop
+        e.target.reset();
       }}
     />
   );
 }
 ```
 
-En este caso, el evento `onCompleteSubmit` se ejecuta en el componente padre y se puede hacer una acción en el servidor. Esto es muy útil para hacer acciones en el servidor que afectan a varios componentes.
+In this case, the `onAfterMyAction` event is executed on the parent component and an action can be done on the server. This is very useful to make actions on the server that effect **several server components**.
 
-### 4. Mezclar ambos mundos con separación de conceptos
+<figure align="center">
+  <img class="center" src="/images/blog-images/after-my-action.jpg" alt="Propagate action" />
+  <figcaption><small>Propagate action</small></figcaption>
+</figure>
 
-Sobretodo tras las últimas semanas los Web Components han sido un poco mal vistos tras varias discusiones en Twitter (X). No obstante, al formar parte del DOM, es la mejor manera de interactuar con las Server Actions por varias razones:
+### 4. Comunication between both worlds
 
-1. Puedes capturar cualquier evento de un Web Component desde el servidor y generar la comunicación cliente-servidor. Ejemplo `<web-component onEvent={serverAction} />`. Esto es muy potente, ya que toda la lógica de dentro del Web Component es sólo lògica de cliente sin poner nada de lógica de servidor, simplemente desde el servidor al consumir el Web Component puedes hacer acciones de servidor.
-2. Se puede usar el protocolo HTTP por lo que estubo diseñado, para transmitir Hypermedia (HTML), de esta forma si tras un re-render desde una Server Action se actualiza algún atributo de un Web Component, el algoritmo de diffing del RPC Cliente hace que sin mucho esfuerzo se actualice el Web Component, ya que los atributos en Brisa son signals y internamente se actualizan manteniendo la reactividad y su estado anterior. Este proceso en otros frameworks se hace muy complicado, haciendo que las Server Actions tengan que procesar JSON o JS over the wire, lo que hace más complicado la implementación del streaming. Transmitir HTML en streaming y procesarlo con el algoritmo de diffing es algo que expliqué en este otro [artículo](https://aralroca.com/blog/html-streaming-over-the-wire) si estás interesado.
+Especially after the last few weeks Web Components have been a bit frowned upon after several discussions on X (formelly Twitter). However, being **part of the HTML**, it is the **best way** to **interact with Server Actions** for several reasons:
 
-### 5. Datos no sensibles
+1. You can **capture** any **Web Component event** from the **server** and generate client-server communication. Example `<web-component onEvent={serverAction} />`. This is very powerful, since all the events inside the Web Component is only client logic without putting any server logic there, simply from the server when consuming the Web Component you can do server actions.
+2. The **HTTP protocol** can be used for what it was designed for, to **transfer Hypertext** (HTML) in **streaming**, this way if after a re-rendering from a Server Action any attribute of a Web Component is updated, the diffing algorithm of the RPC Client makes the Web Component to be updated without much effort. The Web Components **attributes** in Brisa **are signals** that make the internal parts of Web Component react without having to rerender. This process in other frameworks becomes very complicated, making the RPC server have to process JSON or JS over the wire, instead of HTML, which makes the streaming implementation more complicated.
 
-Si dentro de una server action se utiliza alguna variable que existia a nivel de render, a nivel de seguridad muchos frameworks como Next.js lo que hacen es encriptar estos datos para que no se puedan visualizar desde el cliente. Esta más o menos bien, pero encriptar siempre los datos tiene un coste computacional asociado y no siempre son datos sensibles.
+Using attributes in Web Components requires serialization in the same way as transmitting data from server to client without using Web Components, therefore, using both, there is **no extra serialization** to manage.
 
-En Brisa, para solucionar esto, son request distintas, donde en el render inicial tiene un valor, y en la server action puedes capturar el valor que tiene en esta request. Esto sirve en algunos casos pero no siempre, por ejemplo si haces un `Math.random` será distinto seguro. Tras saber esto, creamos el concepto de "Action Signals" que es una forma de transferir datos del store servidor al store cliente, y el desarrollador puede decidir si encriptarlos o no a su voluntad.
-Para saber más, lee la siguiente sección del artículo.
+_**Note:** Streaming HTML and processing it with the diffing algorithm is something I explained in this other [article](https://aralroca.com/blog/html-streaming-over-the-wire) if you are interested._
 
-## Nuevos conceptos
+<figure align="center">
+  <img class="center" src="/images/blog-images/hypertext-over-the-wire.jpeg" alt="Hypertext in streaming over the wire" />
+  <figcaption><small>Hypertext in streaming over the wire</small></figcaption>
+</figure>
 
-En Brisa, hemos añadido un nuevo concepto para darle más poder aún a las Server Actions, este concepto se llama "Action Signals". La idea de las "Action Signals" es que tienes 2 stores, uno en el servidor y otro en el cliente.
+### 5. New concept: Action Signals
 
-Porquè 2 stores?
+In Brisa, we have added a new concept to give even more power to the Server Actions, this concept is called [**"Action Signals"**](https://brisa.build/building-your-application/data-management/server-actions#action-signals). The idea of the "Action Signals" is that you have **2 stores**, one on the **server** and one on the **client**.
 
-El store de servidor por defecto vive sólo a nivel de request, y es importante diferenciarlos para poder transmitir datos que pueden ser sensibles y no quieres que nunca estén en el cliente. Al vivir a nivel de request es imposible que haya conflictos entre diferentes request, ya que cada request tiene su propio store y no se guarda en ninguna base de datos, al terminar la request, muere por defecto.
+**Why 2 stores?**
 
-En cambio en el store de cliente, es un store que cada propiedad al consumirla es una signal, es decir, que si se actualiza, se reacciona el Web Component que estaba escuchando a esa signal.
+The default **server store** **lives** only at the **request level**. And you can **share data** that will **not be visible** to the **client**. For example you can have the middleware set the user and have access to sensitive user data in any Server Component. By living at request level it is impossible to have conflicts between different requests, since **each request** has its **own store** and is **NOT stored in any database**, when the request is finished, it dies by default.
 
-No obstante, el nuevo concepto de "Action Signal" es que podemos extender la vida del store servidor más allá de la request. Para hacer esto es necesario usar el método `store.transferToClient(['some-key'])`, dónde datos que antes eran sensibles, ahora se transfieren al store cliente y se convierten en signals. De esta forma, muchas veces no será necesario hacer ningún re-render desde el servidor, simplemente puedes desde una Server Action hacer reaccionar las signals de los Web Components que estaban escuchando a esa signal.
+On the other hand, in the **client store**, it is a store that **each property** when consumed is a [**signal**](https://brisa.build/building-your-application/components-details/reactivity), that is to say, if it is updated, the Web Component that was listening to that signal reacts.
 
-Esta transferència de store puede servidor para:
+However, the new concept of **"Action Signal"** is that we can **extend the life of the server store beyond the request**. To do this it is necessary to use this code:
 
-Render incial del Server Component -> Cliente -> Server Action -> Cliente -> Server Action...
+```tsx
+store.transferToClient(["some-key"]);
+```
 
-Así que pasa de vivir de sólo a nivel de request a vivir de forma permanente, ya que durante las navegaciones en SPA se mantendrá el store cliente.
+This [`transferToClient`](https://brisa.build/api-reference/components/request-context#transfertoclient) method, **share server data** to the **client store** and converted into signals. In this way, many times it will not be necessary to make **any re-rendering** from the server, you can simply from a Server Action make react the signals of the Web Components that were listening to that signal.
 
-### Transferir datos encriptados desde el Render inicial a la Server Action
+This store transfer makes the **life of the server store** now:
 
-Habrá veces que quizás en vez de consultar a la Base de datos desde la Server Action te conviene más transferir datos que ya existian en el render inicial aunque requieran de una encriptación asociada. Para hacer esto, simplemente tienes que usar: `store.transferToClient(["some-key"], { encrypt: true });`, la diferencia es que desde el cliente al hacer `store.get("some-key")` siempre estará encriptado, pero en el servidor siempre estará el valor desencriptado.
+_Render initial Server Component → Client → Server Action → Client → Server Action..._
+
+So it goes from living from only at request level to **live permanently**, compatible with navigation between pages.
+
+<figure align="center">
+  <img class="center" src="/images/blog-images/share-data.jpg" alt="Share data between both worlds" />
+  <figcaption><small>Share data between both worlds (server/client)</small></figcaption>
+</figure>
+
+Example:
+
+```tsx
+export default function Form({}, { store }: RequestContext) {
+  const errors = store.get("errors");
+
+  // You extend the life of the store from request-time:
+  //  render (server) → 💀
+  // to:
+  //  render (server) → client → action (server) → rerender (server) → client → ...
+  store.transferToClient(["errors"]);
+
+  return (
+    <form
+      onSubmit={(e) => {
+        const email = e.formData.get("email");
+        const result = schema.safeParse({ email });
+
+        store.set("errors", result.success ? null : result.error.format());
+
+        // rerenderInAction is used to make the server components reactively react
+        // to the store change as well. If rerenderInAction is not used, only the
+        // web components that are listening to the store.get('errors') signal
+        // react to the changes.
+        rerenderInAction({ type: "targetComponent" });
+      }}
+    >
+      <input name="email" type="text" />
+      {errors?.email && <p>{errors.email._errors.toString()}</p>}
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+In this example, we extend the life of the `errors` store property, not to be used on the client, but to be reused in the Server Action and then finally in the rerender of the Server Action. In this case, being a non-sensitive data, it is not necessary to encrypt it. This example code all happens on the server, even the rerendering and the user will see the errors after this rendering on the server where the Server RPC will send the HTML chunks in streaming and the Client RPC will process it to make the diffing and show the errors to give feedback to the user.
+
+### 6. Encrypt only the sensitive data
+
+If within a server action some variable is used that existed at render level, at security level many frameworks like [**Next.js 14**](https://nextjs.org/blog/security-nextjs-server-components-actions#closures) what they do is to encrypt this data to create an snapshot of data used at the time of rendering. This is more or less fine, but **encrypting data always** has an associated **computational cost** and it is not always sensitive data.
+
+In Brisa, to solve this, there are different requests, where in the initial render it has a value, and in the server action you can capture the value that it has in this request.
+
+```tsx
+export default function Page() {
+  const foo = "bar";
+
+  function onServerAction() {
+    if (foo === "bar") {
+      // It works without transferring "foo" to the client
+    }
+  }
+
+  return <button onClick={onServerAction}>Click</button>;
+}
+```
+
+This is useful in some cases but not always, for example if you do a `Math.random` it will be different between the initial render and the Server Action execution for sure.
+
+```tsx
+export default function Page() {
+  const value = Math.random();
+  // Ex: 0.123456789 (Initial render) - 0.987654321 (Server Action)
+
+  function onServerAction() {
+    if (value === 0.123456789) {
+      // 😕 Ups! It's wrong condition
+    }
+  }
+
+  return <web-component onAction={onServerAction}></web-component>;
+}
+```
+
+This is why we created the concept of **"Action Signals"**, to **transfer data** from the **server store** to the **client store**, and the **developer** can **decide** whether to **encrypt** it **or not** at will.
+
+Sometimes, instead of querying the database from the Server Action, you may want to transfer data that already exists in the initial render even if it requires an associated encryption. To do this, you simply use:
+
+```js
+store.transferToClient(["some-key"], { encrypt: true });
+```
+
+When you do:
+
+```js
+const value = store.get("some-key");
+```
+
+Inside a Web Component (client) will always be encrypted, but on the server it will always be decrypted.
+
+_**Note**: Brisa uses aes-256-cbc for encryption, a combination of cryptographic algorithms used to securely encrypt information recommended by OpenSSL. Encryption keys are generated during the build of your project._
+
+<figure align="center">
+  <img class="center" src="/images/blog-images/encrypt.jpg" alt="Share encrypted data between both worlds" />
+  <figcaption><small>Share encrypted data between both worlds (server/client)</small></figcaption>
+</figure>
+
+## Conclusion
+
+In Brisa, although we like to support writing Web Components easily, the goal is to be able to make a SPA without client code and only use Web Components when it is a purely client interaction or the Web API has to be touched. That's why Server Actions are so important, as they allow interactions with the server without having to write client code.
+
+We encourage you to [try Brisa](https://brisa.build/getting-started/quick-start), you just have to run this command in the terminal: `bun create brisa`, or try some [example](https://brisa.build/examples) to see how it works.
+
+## References
+
+- [Server Actions Convetion](https://brisa.build/building-your-application/data-management/server-actions#convention)
+- [Server Actions Behavior](https://brisa.build/building-your-application/data-management/server-actions#behavior)
+- [Forms with Server Actions](https://brisa.build/building-your-application/data-management/server-actions#forms)
+- [Nested Actions](https://brisa.build/building-your-application/data-management/server-actions#nested-actions)
+- [Server-side validation and error handling](https://brisa.build/building-your-application/data-management/server-actions#server-side-validation-and-error-handling)
+- [Debounce a Server Action](https://brisa.build/building-your-application/data-management/server-actions#debounce)
+- [Optimistic Updates](https://brisa.build/building-your-application/data-management/server-actions#optimistic-updates)
+- [Re-render in Action](https://brisa.build/building-your-application/data-management/server-actions#rerenderinaction)
+- [Navigate to another page with Server Actions](https://brisa.build/building-your-application/data-management/server-actions#navigate)
+- [Access to Cookies](https://brisa.build/building-your-application/data-management/server-actions#cookies)
+- [Security in Server Actions](https://brisa.build/building-your-application/data-management/server-actions#security)
+- [Action Signals](https://brisa.build/building-your-application/data-management/server-actions#action-signals)
+- [Transfer sensitive data](https://brisa.build/building-your-application/data-management/server-actions#transfer-sensitive-data)
+- [Props in Server Actions](https://brisa.build/building-your-application/data-management/server-actions#props-in-server-actions)
+- [Using Server Actions in a Reverse Proxy](https://brisa.build/building-your-application/data-management/server-actions#using-server-actions-in-a-reverse-proxy)
