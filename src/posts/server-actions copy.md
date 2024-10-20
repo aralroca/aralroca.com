@@ -8,23 +8,24 @@ cover_image_mobile: /images/cover-images/31_cover_image_mobile.webp
 cover_color: "#212329"
 ---
 
-Las Server Actions surgieron como una idea para reducir el código en el cliente, simplificando las interacciones que requieren comunicación con el servidor. Es una excelente solución que permite a los desarrolladores escribir menos código. Sin embargo, existen varios desafíos asociados a su implementación en otros frameworks, que no deben pasarse por alto. En este artículo hablaremos sobre estos problemas y cómo en Brisa hemos encontrado una solución.
+Server Actions emerged as an idea to reduce the code on the client, simplifying the interactions that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked. In this article we will talk about these problems and how in Brisa we have found a solution.
 
-## ¿Qué son las Server Actions?
+## What are Server Actions?
 
-Para comprender lo que aportan las Server Actions, es útil repasar cómo solía ser la comunicación con el servidor. Es probable que estés acostumbrado a realizar las siguientes acciones para cada interacción con el servidor:
+To understand what Server Actions provide, it is useful to review how communication with the server used to be. You are probably used to performing the following actions for each interaction with the server:
 
-- Cliente: Capturar un evento del navegador
-- Cliente: Normalizar y serializar los datos
-- Cliente: Realizar una petición al servidor
-- Servidor: Procesar la petición en un endpoint API
-- Servidor: Responder con los datos necesarios
-- Cliente: Esperar la respuesta del servidor y procesarla
-- Cliente: Actualizar los datos en el cliente y renderizar los cambios
+- Client: Capture a browser event
+- Client: Normalize and serialize data
+- Client: Make a request to the server
+- Server: Process the request in an endpoint API
+- Server: Respond with the necessary data
+- Client: Wait for the response from the server and process it
+- Client: Update the data on the client and render the changes.
 
-Estas siete acciones se repiten en cada interacción. Por ejemplo, si tienes una página con 10 interacciones diferentes, repetirás un código muy similar 10 veces, cambiando solo detalles como el tipo de petición, la URL, los datos enviados y el estado del cliente.
+These seven actions are repeated for each interaction. For example, if you have a page with 10 different interactions, you will repeat a very similar code 10 times, changing only details such as the type of request, the URL, the data sent and the status of the customer.
 
-Un ejemplo familiar sería:
+A familiar example would be
+a:
 
 ```tsx
 <input
@@ -47,7 +48,7 @@ Un ejemplo familiar sería:
 />
 ```
 
-Y en el servidor:
+And in the server:
 
 ```js
 app.post("/api/search", async (req, res) => {
@@ -57,20 +58,21 @@ app.post("/api/search", async (req, res) => {
 });
 ```
 
-Las Server Actions encapsulan estas acciones en una llamada remota (RPC), que gestiona la comunicación cliente-servidor, reduciendo el código en el cliente y centralizando la lógica en el servidor:
+Server Actions encapsulate these actions in a remote call (RPC), which manages the client-server communication, reducing the code on the client and centralizing the logic on the server:
 
-- RPC Cliente: Capturar un evento del navegador
-- RPC Cliente: Normalizar i serializar los datos
-- RPC CLiente: Hacer una petición al RPC servidor
-- RPC Servidor: Ejecutar la acción en el servidor junto los datos
+- RPC Client: Capture a browser event.
+- RPC Client: Normalize and serialize data
+- RPC Client: Make a request to the RPC server
+- RPC Server: Execute the action on the server with the data
 - Option 1:
-  - RPC Servidor: Renderizar desde el servidor y enviar streaming al cliente
-  - RPC Cliente: Processar los chunks del streaming para que se vean los cambios
+  - RPC Server: Render from the server and send streaming to the client.
+  - RPC Client: Process the chunks of the stream so that the changes are visible
 - Option 2:
-  - RPC Servidor: Responder con los datos necesarios y transferir propiedades del store servidor al store cliente
-  - RPC Cliente: Hace reaccionar a las signals que estaban escuchando a los cambios del store
+  - RPC Server: Reply with the necessary data and transfer properties from the server store to the client store
+  - RPC Client: Make the signals that were listening to the changes react to the changes in the store.
+s of the store
 
-Este seria el código desde un server component:
+This would be the code from a server component:
 
 ```js
 <input
@@ -83,9 +85,11 @@ Este seria el código desde un server component:
 />
 ```
 
-Aquí, los desarrolladores no escriben código cliente, ya que es un server component. El evento `onInput` se recibe tras el debounce, gestionado por el RPC Cliente, mientras que el RPC Servidor utiliza "Action Signals" para activar los Web Components que tienen signals registradas con esa propiedad del store.
+Here, developers do not write client code, since it is a server component. The `onInput` event is received after the debounce, handled by the Client RPC, while the Server RPC uses "Action Signals" to trigger the Web Components that have signals registered with that store property.
 
-Como puedes ver, esto reduce significativamente el código del servidor y, lo mejor de todo, el tamaño del código en el cliente no aumenta con cada interacción. El código del RPC Cliente ocupa 2 KB fijos, ya sea que tengas 10 o 1000 interacciones de este tipo.
+As you can see, this significantly reduces the server code and, best of all, the code size on the client does not increase with each interaction. The RPC Client code occupies a fixed 2 KB, whether you have 10 or 1000 such interactions. 
+
+Moreover, in the case of needing a rerender, this is done on the server and is returned in HTML streaming, making the user see the changes much earlier than in the traditional way where you had to do this work on the client after the server response.
 
 ## Problemas de las Server Actions
 
@@ -95,7 +99,7 @@ En otros frameworks como React, se han centrado en que las actions sólo forme p
 
 ### 2. Tener más controles de HTML sobre de las Server Actions
 
-Muchos frameworks también han visto a la libreria de HTMX cómo una alternativa muy distinta a las server actions, cuando realmente ha traido ideas muy buenas que se pueden combinar con las Server Actions para que tengan más potencial simplemente añadiendo atributos extras en el HTML que el RPC Cliente puede tener en cuenta, como el `debounceInput` que hemos visto antes. También otras ideas de HTMX como el `indicator` para mostrar un spinner mientras se hace la petición.
+Muchos frameworks también han visto a la libreria de HTMX cómo una alternativa muy distinta a las server actions, cuando realmente ha traido ideas muy buenas que se pueden combinar con las Server Actions para que tengan más potencial simplemente añadiendo atributos extras en el HTML que el RPC Cliente puede tener en cuenta, como el `debounceInput` que hemos visto antes. También otras ideas de HTMX como el `indicator` para mostrar un spinner mientras se hace la petición, o poder gestionar un error.
 
 ### 3. Separación de conceptos
 
