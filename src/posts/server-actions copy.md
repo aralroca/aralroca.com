@@ -91,11 +91,13 @@ Como puedes ver, esto reduce significativamente el código del servidor y, lo me
 
 ### 1. Números de eventos a capturar
 
-En otros frameworks como React, se han centrado en que las actions sólo forme parte del `onSubmit` de formulario, en vez de cualquier evento. Esto es un problema, ya que hay muchos eventos que no son de formulario y que se pueden hacer acciones de servidor. Por ejemplo, un `onInput` de un input, un `onScroll` para cargar una infinite scroll, un `onMouseOver` para hacer un hover, etc.
+En otros frameworks como React, se han centrado en que las actions sólo forme parte del `onSubmit` de formulario, en vez de cualquier evento. Esto es un problema, ya que hay muchos eventos que no son de formulario que tambien se deben poder gestionar desde un server component sin añadir codigo cliente. Por ejemplo, un `onInput` de un input, un `onScroll` para cargar una infinite scroll, un `onMouseOver` para hacer un hover, etc.
 
-### 2. Tener más controles de HTML sobre de las Server Actions
+### 2. Tener más controles de HTML sobre de las Server Actions
 
-Muchos frameworks también han visto a HTMX cómo un rival, cuando ha traido ideas muy buenas que se pueden combinar con las Server Actions para que tengan más poder simplemente añadiendo atributos extras en el HTML que el RPC Cliente puede tener en cuenta, como el `debounceInput` que hemos visto antes. También ideas de HTMX como el `indicator` para mostrar un spinner mientras se hace la petición.
+Muchos frameworks también han visto a la libreria de HTMX cómo una alternativa muy distinta a las server actions, cuando realmente ha traido ideas muy buenas que se pueden combinar con las Server Actions para que tengan más potencial simplemente añadiendo atributos extras en el HTML que el RPC Cliente puede tener en cuenta, como el `debounceInput` que hemos visto antes. También otras ideas de HTMX como el `indicator` para mostrar un spinner mientras se hace la petición.
+
+### 3. Separación de conceptos
 
 Cuando se introducieron las Server Actions en React, hubo un cambio de paradigma que muchos desarrolladores tenian que cambiar el chip mental a la hora de trabajar con ellas. Nosotros lo que hemos querido es que sea lo más familar posible a la Web Platform, de esta manera, puedes capturar el evento serializado desde el servidor y usar sus propiedades. Él único evento un poco distinto es el `onSubmit` que ya se ha trasferido el `FormData` y tiene la propiedad `e.formData`, no obstante, el resto de propiedades son interactuables. Este es un ejemplo reseteando un formulario:
 
@@ -127,9 +129,8 @@ export default function FormOnServer({}, { indicate }: RequestContext) {
 }
 ```
 
-### 3. Separación de conceptos
 
-En este ejemplo, no hay nada de código cliente y durante la server action se puede desactivar el botón de submit con el `indicator`, mediante CSS, para que no se pueda enviar el formulario dos veces, y a la vez tras hacer la acción en el servidor se puede resetear el formulario y acceder a los datos del formulario con `e.formData`. Mentalmente, es muy parecido a trabajar con la Web Platform. La unica diferencia es que todos los eventos de todos los server components son server actions. De esta forma, hay una separación de conceptos real, donde no es necesario poner `"user server"` ni `"use client"` en tus componentes. Simplemente, hay que tener en cuenta que todo se ejecuta en el servidor sólo, excepción de la carpeta `src/web-components` que se ejecuta en el cliente y ahi los eventos son normales.
+En este ejemplo, no hay nada de código cliente y durante la server action se puede desactivar el botón de submit con el `indicator`, mediante CSS, para que no se pueda enviar el formulario dos veces, y a la vez tras hacer la acción en el servidor se puede resetear el formulario y acceder a los datos del formulario con `e.formData` y luego reseteando el form usando la misma API del evento. Mentalmente, es muy parecido a trabajar con la Web Platform. La unica diferencia es que todos los eventos de todos los server components son server actions. De esta forma, hay una separación de conceptos real, donde no es necesario poner `"user server"` ni `"use client"` en tus componentes. Simplemente, hay que tener en cuenta que todo se ejecuta sólo en el servidor, excepción de la carpeta `src/web-components` que se ejecuta en el cliente y ahi los eventos son normales.
 
 ### 4. Propagación de eventos
 
@@ -143,8 +144,8 @@ export default function Example({ onCompleteSubmit }) {
       onSubmit={(e) => {
         const username = e.formData.get("username");
         /* Process data */
-        onCompleteSubmit(username);
-        e.target.reset(); // Reset the form
+        onCompleteSubmit(username); // call server component prop
+        e.target.reset();
       }}
     />
   );
@@ -160,7 +161,7 @@ Sobretodo tras las últimas semanas los Web Components han sido un poco mal vist
 1. Puedes capturar cualquier evento de un Web Component desde el servidor y generar la comunicación cliente-servidor. Ejemplo `<web-component onEvent={serverAction} />`. Esto es muy potente, ya que toda la lógica de dentro del Web Component es sólo lògica de cliente sin poner nada de lógica de servidor, simplemente desde el servidor al consumir el Web Component puedes hacer acciones de servidor.
 2. Se puede usar el protocolo HTTP por lo que estubo diseñado, para transmitir Hypermedia (HTML), de esta forma si tras un re-render desde una Server Action se actualiza algún atributo de un Web Component, el algoritmo de diffing del RPC Cliente hace que sin mucho esfuerzo se actualice el Web Component, ya que los atributos en Brisa son signals y internamente se actualizan manteniendo la reactividad y su estado anterior. Este proceso en otros frameworks se hace muy complicado, haciendo que las Server Actions tengan que procesar JSON o JS over the wire, lo que hace más complicado la implementación del streaming. Transmitir HTML en streaming y procesarlo con el algoritmo de diffing es algo que expliqué en este otro [artículo](https://aralroca.com/blog/html-streaming-over-the-wire) si estás interesado.
 
-### 5. Datos no sensibles
+### 5. Encriptar solo los datos sensibles
 
 Si dentro de una server action se utiliza alguna variable que existia a nivel de render, a nivel de seguridad muchos frameworks como Next.js lo que hacen es encriptar estos datos para que no se puedan visualizar desde el cliente. Esta más o menos bien, pero encriptar siempre los datos tiene un coste computacional asociado y no siempre son datos sensibles.
 
@@ -179,12 +180,14 @@ En cambio en el store de cliente, es un store que cada propiedad al consumirla e
 
 No obstante, el nuevo concepto de "Action Signal" es que podemos extender la vida del store servidor más allá de la request. Para hacer esto es necesario usar el método `store.transferToClient(['some-key'])`, dónde datos que antes eran sensibles, ahora se transfieren al store cliente y se convierten en signals. De esta forma, muchas veces no será necesario hacer ningún re-render desde el servidor, simplemente puedes desde una Server Action hacer reaccionar las signals de los Web Components que estaban escuchando a esa signal.
 
-Esta transferència de store puede servidor para:
+Esta transferència de store, hace que la vida del store servidor ahora sea:
 
 Render incial del Server Component -> Cliente -> Server Action -> Cliente -> Server Action...
 
-Así que pasa de vivir de sólo a nivel de request a vivir de forma permanente, ya que durante las navegaciones en SPA se mantendrá el store cliente.
+Así que pasa de vivir de sólo a nivel de request a vivir de forma permanente, compatible con la navegación entre páginas.
 
-### Transferir datos encriptados desde el Render inicial a la Server Action
+### Transferir datos encriptados desde el Render inicial a la Server Action
 
-Habrá veces que quizás en vez de consultar a la Base de datos desde la Server Action te conviene más transferir datos que ya existian en el render inicial aunque requieran de una encriptación asociada. Para hacer esto, simplemente tienes que usar: `store.transferToClient(["some-key"], { encrypt: true });`, la diferencia es que desde el cliente al hacer `store.get("some-key")` siempre estará encriptado, pero en el servidor siempre estará el valor desencriptado.
+Habrá veces que quizás en vez de consultar a la Base de datos desde la Server Action te conviene más transferir datos que ya existian en el render inicial aunque requieran de una encriptación asociada. Para hacer esto, simplemente tienes que usar: 
+`store.transferToClient(["some-key"], { encrypt: true });`, la diferencia es que desde el cliente al hacer `store.get("some-key")` siempre estará
+encriptado, pero en el servidor siempre estará el valor desencriptado.
