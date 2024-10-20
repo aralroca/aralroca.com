@@ -5,6 +5,7 @@ description: "Server Actions emerged as an idea to reduce client code and simpli
 tags: javascript, experimental, brisa
 cover_image: /images/cover-images/33_cover_image.webp
 cover_image_mobile: /images/cover-images/33_cover_image_mobile.webp
+canonical: https://brisa.build/blog/server-actions-have-been-fixed
 cover_color: "#1D3D71"
 ---
 
