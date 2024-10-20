@@ -9,7 +9,7 @@ export default function Home() {
       <h1>Aral Roca</h1>
       <h2>Software Engineer</h2>
       <div class="content">
-        <p style={{ fontStyle: "italic" }}>Creator and maintainer of:</p>
+        <p style={{ fontStyle: 'italic' }}>Creator and maintainer of:</p>
         <ul>
           <li>
             <a
@@ -18,7 +18,7 @@ export default function Home() {
               href="https://github.com/brisa-build/brisa"
             >
               Brisa
-            </a>{" "}
+            </a>{' '}
             Brisa, The Web Platform Framework.
           </li>
           <li>
@@ -28,7 +28,7 @@ export default function Home() {
               href="https://github.com/aralroca/next-translate"
             >
               Next-translate
-            </a>{" "}
+            </a>{' '}
             Tiny sized Next.js library for i18n that covers all basics needs.
           </li>
           <li>
@@ -38,7 +38,7 @@ export default function Home() {
               href="https://github.com/teafuljs/teaful"
             >
               Teaful
-            </a>{" "}
+            </a>{' '}
             Tiny, easy and powerful React state management.
           </li>
           <li>
@@ -48,7 +48,7 @@ export default function Home() {
               href="https://github.com/teafuljs/teaful-devtools"
             >
               Teaful DevTools
-            </a>{" "}
+            </a>{' '}
             Browser extension for inspection Teaful applications.
           </li>
           <li>
@@ -58,12 +58,12 @@ export default function Home() {
               href="https://github.com/teafuljs/teaful"
             >
               Etiketai
-            </a>{" "}
+            </a>{' '}
             Etiketai is an online tool designed to label images, useful to train
             AI models.
           </li>
-          <li style={{ fontStyle: "italic" }}>
-            ...{" "}
+          <li style={{ fontStyle: 'italic' }}>
+            ...{' '}
             <a
               target="blank"
               rel="noopener noreferrer"
