@@ -15,7 +15,17 @@ export default function Home() {
             <a
               target="blank"
               rel="noopener noreferrer"
-              href="https://github.com/vinissimus/next-translate"
+              href="https://github.com/brisa-build/brisa"
+            >
+              Brisa
+            </a>{' '}
+            Brisa, The Web Platform Framework.
+          </li>
+          <li>
+            <a
+              target="blank"
+              rel="noopener noreferrer"
+              href="https://github.com/aralroca/next-translate"
             >
               Next-translate
             </a>{' '}
