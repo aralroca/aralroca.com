@@ -13,7 +13,7 @@
     "lint": "bun run biome lint --write ."
   },
   "dependencies": {
-    "brisa": "0.1.2",
+    "brisa": "0.1.6",
     "gray-matter": "4.0.3",
     "highlight.js": "11.10.0",
     "marked-highlight": "2.2.0",
