@@ -6,6 +6,7 @@ tags: javascript, experimental, brisa
 cover_image: /images/cover-images/34_cover_image.webp
 cover_image_mobile: /images/cover-images/34_cover_image_mobile.webp
 cover_color: "#EBD5BB"
+dev_to: dont-fall-into-the-cdn-trap-4keg
 ---
 
 This blog post’ll explore how **Brisa's HTML Streaming** feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare [Brisa](https://brisa.build) with other popular tools like **HTMX** and **React** to highlight the benefits of using Brisa for server-side rendering.
