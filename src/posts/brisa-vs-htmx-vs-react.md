@@ -1,5 +1,5 @@
 ---
-title: "Don't fall into the CDN trap!"
+title: "Don't fall into the CDN trap! 🪤"
 created: 12/19/2024
 description: "How Brisa's HTML Streaming feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare Brisa with other popular tools like HTMX and React to highlight the benefits of using Brisa for server-side rendering."
 tags: javascript, experimental, brisa
