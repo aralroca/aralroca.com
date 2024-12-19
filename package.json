@@ -10,10 +10,11 @@
     "rss": "bun run src/utils/generateRss.tsx",
     "format": "bun run biome format --write .",
     "check": "bun run biome check --write .",
-    "lint": "bun run biome lint --write ."
+    "lint": "bun run biome lint --write .",
+    "symlink": "cd ../brisa/packages/brisa && bun run build && cp -R * ../../../aralroca.com/node_modules/brisa/ && cd ../../../aralroca.com && bun dev"
   },
   "dependencies": {
-    "brisa": "0.1.6",
+    "brisa": "0.2.1",
     "gray-matter": "4.0.3",
     "highlight.js": "11.10.0",
     "marked-highlight": "2.2.0",

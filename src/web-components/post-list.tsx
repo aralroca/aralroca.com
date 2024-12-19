@@ -7,7 +7,7 @@ const itemsPerPage = 10;
 
 export default function PostList(
   { tags }: { tags: string[] },
-  { store, params, derived }: WebContext,
+  { store, params, derived, effect }: WebContext,
 ) {
   const filteredPosts = derived(() =>
     params?.value?.q
@@ -22,6 +22,10 @@ export default function PostList(
     const lastIndex = itemsPerPage * currentPage.value;
     const firstIndex = lastIndex - itemsPerPage;
     return filteredPosts?.value?.slice(firstIndex, lastIndex);
+  });
+
+  effect(() => {
+    console.log(params?.value);
   });
 
   return (
@@ -72,7 +76,9 @@ export default function PostList(
                   <a
                     key={`page-${num}`}
                     href={`/blog?q=${params?.value?.q || ''}&page=${num}`}
-                    class={`badge ${num === currentPage.value ? 'current' : ''}`}
+                    class={`badge ${
+                      num === currentPage.value ? 'current' : ''
+                    }`}
                   >
                     {num}{' '}
                   </a>
@@ -135,7 +141,11 @@ function PostInfo({
   date,
   timeToRead,
   hideAuthor,
-}: { date: string; timeToRead: { text: string }; hideAuthor?: boolean }) {
+}: {
+  date: string;
+  timeToRead: { text: string };
+  hideAuthor?: boolean;
+}) {
   const authorElement = hideAuthor ? null : (
     <>
       {`by `}

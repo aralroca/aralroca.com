@@ -5,7 +5,7 @@
         <title>Aral Roca</title>
         <description>Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.</description>
         <link>https://aralroca.com</link>
-        <lastBuildDate>Wed Oct 02 2024 16:25:13 GMT+0200 (Central European Summer Time)</lastBuildDate>
+        <lastBuildDate>Sat Nov 30 2024 21:28:19 GMT+0100 (Central European Standard Time)</lastBuildDate>
       
             <item>
               <title>Detect text toxicity using React</title>
@@ -1729,14 +1729,14 @@ Portals are still a proposal and maybe it's something we won't see in the future
 <h2>Note for Web Component library creators</h2>
 <p>We encourage you to try Brisa to create your own Web Component libraries. If you put the &quot;made with Brisa&quot; badge, we will put a link to your library on the Brisa page.</p>
 <a href="https://brisa.build" target="_blank" rel="noopener noreferrer">
-  <img width="150" height="42" src="https://brisa.build/assets/brisa_badge.svg" alt="Made with Brisa" />
+  <img width="150" height="42" src="https://brisa.build/images/brisa_badge.svg" alt="Made with Brisa" />
 </a>
 
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://brisa.build&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;noopener noreferrer&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
     <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;150&quot;</span>
     <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;42&quot;</span>
-    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://brisa.build/assets/brisa_badge.svg&quot;</span>
+    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://brisa.build/images/brisa_badge.svg&quot;</span>
     <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Made with Brisa&quot;</span>
   /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -5056,6 +5056,309 @@ total 72
 <li><a href="https://rustwasm.github.io/docs/wasm-pack/">https://rustwasm.github.io/docs/wasm-pack/</a></li>
 <li><a href="https://rustwasm.github.io/book/why-rust-and-webassembly.html">https://rustwasm.github.io/book/why-rust-and-webassembly.html</a></li>
 <li><a href="https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71/#:~:text=What%20WebAssembly%20enables%20you%20to,JavaScript%2C%20it%20works%20alongside%20JavaScript">https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71/#:~:text=What%20WebAssembly%20enables%20you%20to,JavaScript%2C%20it%20works%20alongside%20JavaScript</a>.</li>
+</ul>
+]]></content:encoded>
+            </item>
+            <item>
+              <title>Server Actions have been fixed</title>
+              <description>Server Actions emerged as an idea to reduce client code and simplifying the interactions that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked.</description>
+              <link>https://aralroca.com/blog/server-actions-have-been-fixed</link>
+              <guid isPermaLink="false">https://aralroca.com/blog/server-actions-have-been-fixed/</guid>
+              <pubDate>Sun Oct 20 2024 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
+              <content:encoded><![CDATA[<p><a href="https://brisa.build/building-your-application/data-management/server-actions">Server Actions</a> emerged as an idea to <strong>reduce client code</strong> and <strong>simplifying the interactions</strong> that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked.</p>
+<p>In this article we will talk about these problems and how in <a href="https://brisa.build"><strong>Brisa</strong></a> we have found a solution.</p>
+<h2>Why the need for Server Actions?</h2>
+<p>To understand what Server Actions provide, it is useful to review how communication with the server used to be. You are probably used to performing the following actions for each interaction with the server:</p>
+<ol>
+<li>Capture a browser event <em>(Client)</em></li>
+<li>Normalize and serialize data <em>(Client)</em></li>
+<li>Make a request to the server <em>(Client)</em></li>
+<li>Process the request in an endpoint API <em>(Server)</em></li>
+<li>Respond with the necessary data <em>(Server)</em></li>
+<li>Wait for the response from the server and process it <em>(Client)</em></li>
+<li>Update the data on the client and render the changes <em>(Client)</em></li>
+</ol>
+<p>These seven actions are <strong>repeated for each interaction</strong>. For example, if you have a page with 10 different interactions, you will repeat a very similar code 10 times, changing only details such as the type of request, the URL, the data sent and the status of the customer.</p>
+<p>A familiar example would be
+a:</p>
+<pre><code class="hljs language-tsx">&lt;input
+  onInput={<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+    <span class="hljs-comment">// debounce</span>
+    <span class="hljs-keyword">if</span> (timeout) {
+      <span class="hljs-built_in">clearTimeout</span>(timeout);
+    }
+    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;/api/search&quot;</span>, {
+        <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+        <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({ <span class="hljs-attr">query</span>: e.<span class="hljs-property">target</span>.<span class="hljs-property">value</span> }),
+      })
+        .<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> res.<span class="hljs-title function_">json</span>())
+        .<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {
+          <span class="hljs-title function_">setState</span>({ data });
+        });
+    }, <span class="hljs-number">300</span>);
+  }}
+/&gt;
+</code></pre><p>And in the server:</p>
+<pre><code class="hljs language-js">app.<span class="hljs-title function_">post</span>(<span class="hljs-string">&quot;/api/search&quot;</span>, <span class="hljs-title function_">async</span> (req, res) =&gt; {
+  <span class="hljs-keyword">const</span> { query } = req.<span class="hljs-property">body</span>;
+  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title function_">search</span>(query);
+  res.<span class="hljs-title function_">json</span>(data);
+});
+</code></pre><p>Increasing the client bundle size... and the frustration of developers.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/frustrated.jpeg" alt="Developer frustrated" />
+  <figcaption><small>Frustrated Developer</small></figcaption>
+</figure>
+
+<h2>How Server Actions work</h2>
+<p>Server Actions <strong>encapsulate</strong> these actions in a <strong>Remote Procedure Call (RPC)</strong>, which manages the client-server communication, reducing the code on the client and centralizing the logic on the server:</p>
+<ol>
+<li>Capture a browser event <em>(RPC Client)</em></li>
+<li>Normalize and serialize data <em>(RPC Client)</em></li>
+<li>Make a request to the RPC server <em>(RPC Client)</em></li>
+<li>Execute the action on the server with the data <em>(RPC Server)</em></li>
+<li>Option 1:</li>
+</ol>
+<ul>
+<li>Render from the server and send streaming to the client <em>(RPC Server)</em></li>
+<li>Process the chunks of the stream so that the changes are visible <em>(RPC Client)</em></li>
+</ul>
+<ol start="6">
+<li>Option 2:</li>
+</ol>
+<ul>
+<li>Reply with the necessary data and transfer properties from the server store to the client store <em>(RPC Server)</em></li>
+<li>Make the signals that were listening to the changes react to the changes in the store <em>(RPC Client)</em></li>
+</ul>
+<p>Here everything is done for you by the Brisa RPC.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/rpc.jpeg" alt="RPC" />
+  <figcaption><small>Remote Procedure Call</small></figcaption>
+</figure>
+
+<p>This would be the code from a <strong>server component</strong>:</p>
+<pre><code class="hljs language-tsx">&lt;input
+  debounceInput={<span class="hljs-number">300</span>}
+  onInput={<span class="hljs-title function_">async</span> (e) =&gt; {
+    <span class="hljs-comment">// All this code only runs on the server</span>
+    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title function_">search</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>);
+    store.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;query&quot;</span>, data);
+    store.<span class="hljs-title function_">transferToClient</span>([<span class="hljs-string">&quot;query&quot;</span>]);
+  }}
+/&gt;
+</code></pre><p>Here, developers do not write client code, since it is a server component. The <code>onInput</code> event is received after the debounce, handled by the Client RPC, while the Server RPC uses &quot;Action Signals&quot; to trigger the Web Components that have signals registered with that store property.</p>
+<p>As you can see, this significantly reduces the server code and, best of all, the code size on the client does not increase with each interaction. The RPC Client code occupies a fixed 2 KB, whether you have 10 or 1000 such interactions. This means that <strong>increase 0 bytes</strong> in the client bundle size, with other words, doesn&#39;t increase.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/0-bytes.jpeg" alt="0 bytes" />
+  <figcaption><small>+0 bytes on client bundle size</small></figcaption>
+</figure>
+
+<p>Moreover, in the case of needing a rerender, this is done on the server and is returned in HTML streaming, making the user see the changes much earlier than in the traditional way where you had to do this work on the client after the server response.</p>
+<p>In this way:</p>
+<ul>
+<li><strong>Improve</strong> the user experience (<strong>UX</strong>)</li>
+<li><strong>Improve</strong> the development experience (<strong>DX</strong>)</li>
+</ul>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/happy.jpeg" alt="Developer happy" />
+  <figcaption><small>Happy Developer</small></figcaption>
+</figure>
+
+<h2>Differences between Brisa Server Actions and other frameworks</h2>
+<h3>1. Numbers of events to capture</h3>
+<p>In other frameworks such as React, they have focused on actions <strong>only</strong> being part of the <strong>form <code>onSubmit</code></strong>, instead of any event.</p>
+<p>This is a problem, since there are many non-form events that should also be handled from a server component without adding client code. For example, an <strong><code>onInput</code></strong> of an input to do <strong>automatic suggestions</strong>, an <strong><code>onScroll</code></strong> to load an <strong>infinite scroll</strong>, an <strong><code>onMouseOver</code></strong> to do a <strong>hover</strong>, etc.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/interactivity.jpeg" alt="Interactivity" />
+  <figcaption><small>Applications are more interactive than expected</small></figcaption>
+</figure>
+
+<h3>2. Having more HTML controls over Server Actions</h3>
+<p>Many frameworks have also seen the HTMX library as a very different alternative to server actions, when in fact it has brought very good ideas that can be combined with Server Actions to have more potential by simply adding extra attributes in the HTML that the RPC Client can take into account, such as the <code>debounceInput</code> that we have seen before. Also other HTMX ideas like the <code>indicator</code> to show a spinner while making the request, or being able to handle an error in the RPC Client.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/htmx.jpg" alt="HTMX Ideas" />
+  <figcaption><small>HTMX ideas</small></figcaption>
+</figure>
+
+<h3>3. Separation of concerns</h3>
+<p>When Server Actions were introduced in <strong>React</strong>, there was a <strong>new paradigm shift</strong> that many developers had to change the mental chip when working with them.</p>
+<p>We wanted to make it as <strong>familiar as possible to the Web Platform</strong>, this way, you can capture the serialized event from the server and use its properties. The only event a little different is the <code>onSubmit</code> that has already transferred the <code>FormData</code> and has the <code>e.formData</code> property, nevertheless, the rest of <strong>event properties</strong> are interactable. This is an example <strong>resetting a form</strong>:</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">RequestContext</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;brisa&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">FormOnServer</span>(<span class="hljs-params">{}, { indicate }: <span class="hljs-title class_">RequestContext</span></span>) {
+  <span class="hljs-keyword">const</span> pending = <span class="hljs-title function_">indicate</span>(<span class="hljs-string">&quot;action-name&quot;</span>);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>
+      <span class="hljs-attr">indicateSubmit</span>=<span class="hljs-string">{pending}</span>
+      <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{(e)</span> =&gt;</span> {
+        // This code runs on the server
+        console.log(&quot;Username:&quot;, e.formData.get(&quot;username&quot;));
+        e.target.reset(); // Tell to the RPC client to reset the form
+      }}
+    &gt;
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+        Username:
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">indicator</span>=<span class="hljs-string">{pending}</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>
+        Submit
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>
+  );
+}
+</code></pre><p>In this example, there is no client code at all and during the server action you can <strong>disable the submit button</strong> with the <code>indicator</code>, using CSS, so that the form cannot be submitted twice, and at the same time after doing the action on the server and <strong>access the form data</strong> with <code>e.formData</code> and then <strong>resetting the form</strong> using the same API of the event.</p>
+<p>Mentally, it is very <strong>similar</strong> to working with the <strong>Web Platform</strong>. The only difference is that all the events of all the server components are server actions.</p>
+<p>This way, there is a real separation of concerns, where it is <strong>NOT necessary</strong> to put <strong><code>&quot;user server&quot;</code></strong> or <strong><code>&quot;use client&quot;</code></strong> in your components <strong>anymore</strong>.</p>
+<p>Just keep in mind that <strong>everything runs only on the server</strong>. The only <strong>exception</strong> is for the <strong><code>src/web-components</code></strong> folder which runs on the <strong>client</strong> and there the <strong>events are normal</strong>.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/separation-concers.jpeg" alt="Two different worlds, but in agreement" />
+  <figcaption><small>Two different worlds, but in agreement</small></figcaption>
+</figure>
+
+<h3>4. Event Propagation</h3>
+<p>In Brisa, the Server Actions are propagated between Server Components as if they were DOM events. That is to say, from a Server Action you can call an event of a prop of a Server Component and then the Server Action of the parent Server Component is executed, etc.</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Example</span>(<span class="hljs-params">{ onAfterMyAction }</span>) {
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span>
+      <span class="hljs-attr">indicateSubmit</span>=<span class="hljs-string">{pending}</span>
+      <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{(e)</span> =&gt;</span> {
+        const username = e.formData.get(&quot;username&quot;);
+        /* Process data */
+        onAfterMyAction(username); // call server component prop
+        e.target.reset();
+      }}
+    /&gt;</span>
+  );
+}
+</code></pre><p>In this case, the <code>onAfterMyAction</code> event is executed on the parent component and an action can be done on the server. This is very useful to make actions on the server that effect <strong>several server components</strong>.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/after-my-action.jpg" alt="Propagate action" />
+  <figcaption><small>Propagate action</small></figcaption>
+</figure>
+
+<h3>4. Comunication between both worlds</h3>
+<p>Especially after the last few weeks Web Components have been a bit frowned upon after several discussions on X (formelly Twitter). However, being <strong>part of the HTML</strong>, it is the <strong>best way</strong> to <strong>interact with Server Actions</strong> for several reasons:</p>
+<ol>
+<li>You can <strong>capture</strong> any <strong>Web Component event</strong> from the <strong>server</strong> and generate client-server communication. Example <code>&lt;web-component onEvent={serverAction} /&gt;</code>. This is very powerful, since all the events inside the Web Component is only client logic without putting any server logic there, simply from the server when consuming the Web Component you can do server actions.</li>
+<li>The <strong>HTTP protocol</strong> can be used for what it was designed for, to <strong>transfer Hypertext</strong> (HTML) in <strong>streaming</strong>, this way if after a re-rendering from a Server Action any attribute of a Web Component is updated, the diffing algorithm of the RPC Client makes the Web Component to be updated without much effort. The Web Components <strong>attributes</strong> in Brisa <strong>are signals</strong> that make the internal parts of Web Component react without having to rerender. This process in other frameworks becomes very complicated, making the RPC server have to process JSON or JS over the wire, instead of HTML, which makes the streaming implementation more complicated.</li>
+</ol>
+<p>Using attributes in Web Components requires serialization in the same way as transmitting data from server to client without using Web Components, therefore, using both, there is <strong>no extra serialization</strong> to manage.</p>
+<p><em><strong>Note:</strong> Streaming HTML and processing it with the diffing algorithm is something I explained in this other <a href="https://aralroca.com/blog/html-streaming-over-the-wire">article</a> if you are interested.</em></p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/hypertext-over-the-wire.jpeg" alt="Hypertext in streaming over the wire" />
+  <figcaption><small>Hypertext in streaming over the wire</small></figcaption>
+</figure>
+
+<h3>5. New concept: Action Signals</h3>
+<p>In Brisa, we have added a new concept to give even more power to the Server Actions, this concept is called <a href="https://brisa.build/building-your-application/data-management/server-actions#action-signals"><strong>&quot;Action Signals&quot;</strong></a>. The idea of the &quot;Action Signals&quot; is that you have <strong>2 stores</strong>, one on the <strong>server</strong> and one on the <strong>client</strong>.</p>
+<p><strong>Why 2 stores?</strong></p>
+<p>The default <strong>server store</strong> <strong>lives</strong> only at the <strong>request level</strong>. And you can <strong>share data</strong> that will <strong>not be visible</strong> to the <strong>client</strong>. For example you can have the middleware set the user and have access to sensitive user data in any Server Component. By living at request level it is impossible to have conflicts between different requests, since <strong>each request</strong> has its <strong>own store</strong> and is <strong>NOT stored in any database</strong>, when the request is finished, it dies by default.</p>
+<p>On the other hand, in the <strong>client store</strong>, it is a store that <strong>each property</strong> when consumed is a <a href="https://brisa.build/building-your-application/components-details/reactivity"><strong>signal</strong></a>, that is to say, if it is updated, the Web Component that was listening to that signal reacts.</p>
+<p>However, the new concept of <strong>&quot;Action Signal&quot;</strong> is that we can <strong>extend the life of the server store beyond the request</strong>. To do this it is necessary to use this code:</p>
+<pre><code class="hljs language-tsx">store.<span class="hljs-title function_">transferToClient</span>([<span class="hljs-string">&quot;some-key&quot;</span>]);
+</code></pre><p>This <a href="https://brisa.build/api-reference/components/request-context#transfertoclient"><code>transferToClient</code></a> method, <strong>share server data</strong> to the <strong>client store</strong> and converted into signals. In this way, many times it will not be necessary to make <strong>any re-rendering</strong> from the server, you can simply from a Server Action make react the signals of the Web Components that were listening to that signal.</p>
+<p>This store transfer makes the <strong>life of the server store</strong> now:</p>
+<p><em>Render initial Server Component → Client → Server Action → Client → Server Action...</em></p>
+<p>So it goes from living from only at request level to <strong>live permanently</strong>, compatible with navigation between pages.</p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/share-data.jpg" alt="Share data between both worlds" />
+  <figcaption><small>Share data between both worlds (server/client)</small></figcaption>
+</figure>
+
+<p>Example:</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Form</span>(<span class="hljs-params">{}, { store }: <span class="hljs-title class_">RequestContext</span></span>) {
+  <span class="hljs-keyword">const</span> errors = store.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;errors&quot;</span>);
+
+  <span class="hljs-comment">// You extend the life of the store from request-time:</span>
+  <span class="hljs-comment">//  render (server) → 💀</span>
+  <span class="hljs-comment">// to:</span>
+  <span class="hljs-comment">//  render (server) → client → action (server) → rerender (server) → client → ...</span>
+  store.<span class="hljs-title function_">transferToClient</span>([<span class="hljs-string">&quot;errors&quot;</span>]);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>
+      <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{(e)</span> =&gt;</span> {
+        const email = e.formData.get(&quot;email&quot;);
+        const result = schema.safeParse({ email });
+
+        store.set(&quot;errors&quot;, result.success ? null : result.error.format());
+
+        // rerenderInAction is used to make the server components reactively react
+        // to the store change as well. If rerenderInAction is not used, only the
+        // web components that are listening to the store.get(&#x27;errors&#x27;) signal
+        // react to the changes.
+        rerenderInAction({ type: &quot;targetComponent&quot; });
+      }}
+    &gt;
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>
+      {errors?.email &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{errors.email._errors.toString()}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>}
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>
+  );
+}
+</code></pre><p>In this example, we extend the life of the <code>errors</code> store property, not to be used on the client, but to be reused in the Server Action and then finally in the rerender of the Server Action. In this case, being a non-sensitive data, it is not necessary to encrypt it. This example code all happens on the server, even the rerendering and the user will see the errors after this rendering on the server where the Server RPC will send the HTML chunks in streaming and the Client RPC will process it to make the diffing and show the errors to give feedback to the user.</p>
+<h3>6. Encrypt only the sensitive data</h3>
+<p>If within a server action some variable is used that existed at render level, at security level many frameworks like <a href="https://nextjs.org/blog/security-nextjs-server-components-actions#closures"><strong>Next.js 14</strong></a> what they do is to encrypt this data to create an snapshot of data used at the time of rendering. This is more or less fine, but <strong>encrypting data always</strong> has an associated <strong>computational cost</strong> and it is not always sensitive data.</p>
+<p>In Brisa, to solve this, there are different requests, where in the initial render it has a value, and in the server action you can capture the value that it has in this request.</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Page</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> foo = <span class="hljs-string">&quot;bar&quot;</span>;
+
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">onServerAction</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span> (foo === <span class="hljs-string">&quot;bar&quot;</span>) {
+      <span class="hljs-comment">// It works without transferring &quot;foo&quot; to the client</span>
+    }
+  }
+
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{onServerAction}</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
+}
+</code></pre><p>This is useful in some cases but not always, for example if you do a <code>Math.random</code> it will be different between the initial render and the Server Action execution for sure.</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Page</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> value = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>();
+  <span class="hljs-comment">// Ex: 0.123456789 (Initial render) - 0.987654321 (Server Action)</span>
+
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">onServerAction</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span> (value === <span class="hljs-number">0.123456789</span>) {
+      <span class="hljs-comment">// 😕 Ups! It&#x27;s wrong condition</span>
+    }
+  }
+
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">web-component</span> <span class="hljs-attr">onAction</span>=<span class="hljs-string">{onServerAction}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">web-component</span>&gt;</span></span>;
+}
+</code></pre><p>This is why we created the concept of <strong>&quot;Action Signals&quot;</strong>, to <strong>transfer data</strong> from the <strong>server store</strong> to the <strong>client store</strong>, and the <strong>developer</strong> can <strong>decide</strong> whether to <strong>encrypt</strong> it <strong>or not</strong> at will.</p>
+<p>Sometimes, instead of querying the database from the Server Action, you may want to transfer data that already exists in the initial render even if it requires an associated encryption. To do this, you simply use:</p>
+<pre><code class="hljs language-js">store.<span class="hljs-title function_">transferToClient</span>([<span class="hljs-string">&quot;some-key&quot;</span>], { <span class="hljs-attr">encrypt</span>: <span class="hljs-literal">true</span> });
+</code></pre><p>When you do:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> value = store.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;some-key&quot;</span>);
+</code></pre><p>Inside a Web Component (client) will always be encrypted, but on the server it will always be decrypted.</p>
+<p><em><strong>Note</strong>: Brisa uses aes-256-cbc for encryption, a combination of cryptographic algorithms used to securely encrypt information recommended by OpenSSL. Encryption keys are generated during the build of your project.</em></p>
+<figure align="center">
+  <img class="center" src="https://aralroca.com/images/blog-images/encrypt.jpg" alt="Share encrypted data between both worlds" />
+  <figcaption><small>Share encrypted data between both worlds (server/client)</small></figcaption>
+</figure>
+
+<h2>Conclusion</h2>
+<p>In Brisa, although we like to support writing Web Components easily, the goal is to be able to make a SPA without client code and only use Web Components when it is a purely client interaction or the Web API has to be touched. That&#39;s why Server Actions are so important, as they allow interactions with the server without having to write client code.</p>
+<p>We encourage you to <a href="https://brisa.build/getting-started/quick-start">try Brisa</a>, you just have to run this command in the terminal: <code>bun create brisa</code>, or try some <a href="https://brisa.build/examples">example</a> to see how it works.</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#convention">Server Actions Convetion</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#behavior">Server Actions Behavior</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#forms">Forms with Server Actions</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#nested-actions">Nested Actions</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#server-side-validation-and-error-handling">Server-side validation and error handling</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#debounce">Debounce a Server Action</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#optimistic-updates">Optimistic Updates</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#rerenderinaction">Re-render in Action</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#navigate">Navigate to another page with Server Actions</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#cookies">Access to Cookies</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#security">Security in Server Actions</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#action-signals">Action Signals</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#transfer-sensitive-data">Transfer sensitive data</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#props-in-server-actions">Props in Server Actions</a></li>
+<li><a href="https://brisa.build/building-your-application/data-management/server-actions#using-server-actions-in-a-reverse-proxy">Using Server Actions in a Reverse Proxy</a></li>
 </ul>
 ]]></content:encoded>
             </item>
