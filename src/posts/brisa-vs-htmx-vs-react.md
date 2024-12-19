@@ -8,7 +8,7 @@ cover_image_mobile: /images/cover-images/34_cover_image_mobile.webp
 cover_color: "#EBD5BB"
 ---
 
-In this blog post, we’ll explore how **Brisa's HTML Streaming** feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare [Brisa](https://brisa.build) with other popular tools like **HTMX** and **React** to highlight the benefits of using Brisa for server-side rendering.
+This blog post’ll explore how **Brisa's HTML Streaming** feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare [Brisa](https://brisa.build) with other popular tools like **HTMX** and **React** to highlight the benefits of using Brisa for server-side rendering.
 
 ## Why HTML Streaming is Important
 
@@ -18,9 +18,9 @@ HTML Streaming is a powerful technique that allows you to send **HTML incrementa
 
 If your app needs just **1 request** to fetch server data, you’re stuck in the **CDN trap**. Add more requests, and you’re in a cascading nightmare. CDNs are fine for assets—nothing more. Your website is an asset only if it doesn’t rely on server data. 
 
-**Rendering** the Components on the **server** with **streaming** is the best way to **avoid the CDN trap**. Brisa not only uses **HTML Streaming** for the first render, but also as a response to **Server Actions** after rendering a component on the server.
+**Rendering** the Components on the **server** with **streaming** is the best way to **avoid the CDN trap**. Brisa not only uses **HTML Streaming** for the first render but also as a response to **Server Actions** after rendering a component on the server.
 
-You may wonder; but there are many components that are static and I don't want to render them always on the server. Well, Brisa allows you to [**pre-render them at build-time**](https://brisa.build/api-reference/extended-props/renderOn#renderon) with just one attribute, so that **only dynamic components are rendered** on the server.
+You may wonder, but many components are static and I don't want to render them always on the server. Well, Brisa allows you to [**pre-render them at build-time**](https://brisa.build/api-reference/extended-props/renderOn#renderon) with just one attribute, so that **only dynamic components are rendered** on the server.
 
 ```tsx
 <StaticComponent renderOn="build" />
@@ -145,7 +145,7 @@ One of the advantages of using server-side logic for rendering and controlling a
 
 In this example, a modal dialog is used to present random quiz questions to the user. The logic for selecting the question, validating the answer, and rendering the UI is entirely managed on the server. This approach eliminates the risk of exposing sensitive data, such as the correct answer, to the client.
 
-Normaly we load modals on the client with a dynamic import to avoid loading them at the start, making a request to the CDN, and then if the modal needs server data, once rendered it has to make a cascade of calls to the server. With Brisa, we can load the modal directly from the server, avoiding the need to make additional calls and keeping the modal logic on the server.
+Normally we load modals on the client with a dynamic import to avoid loading them at the start, requesting the CDN, and then if the modal needs server data, once rendered it has to make a cascade of calls to the server. With Brisa, we can load the modal directly from the server, avoiding the need to make additional calls and keeping the modal logic on the server.
 
 <div align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7kwT1oshUJA" title="Server-Side Dialog Management: No Browser JavaScript Required" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -256,7 +256,7 @@ export default function MyComponent({ text = "foo" }: { text: string }) {
 }
 ```
 
-All this code is server-side code. In Brisa all the events from server components are Server Actions.
+All this code is server-side code. In Brisa, all the events from server components are Server Actions.
 
 
 ## Why is This a Game-Changer?
@@ -280,11 +280,11 @@ With `renderComponent`, you get:
 
 ### Brisa vs. React
 
-In **React**, implementing server actions often involves using `"use server"` and `"use client"` directives. This dual model introduces potential for human error and can unintentionally expose components to the client. 
+In **React**, implementing server actions often involves using `"use server"` and `"use client"` directives. This dual model introduces the potential for human error and can unintentionally expose components to the client. 
 
 Key differentiators include:
 
-- **Streaming HTML support:** React communicates between the server and client by sending JavaScript, which can add significant overhead. Brisa, on the other hand, streams HTML directly to the client, reducing complexity and improving performance.
+- **Streaming HTML support:** React communicates between the server and client by sending JavaScript, which can add significant overhead. Conversely, Brisa streams HTML directly to the client, reducing complexity and improving performance.
 - **Signals - fine-grained reactivity:** Brisa’s client-side signals automatically react to server-side changes by updating Web Components, avoiding the need for a complete re-render.
 - **Bundle size:** React-DOM v.19 weighs around 200KB, while Brisa maintains an ultra-lightweight footprint of just 2KB.
 - **Selective updates:** Brisa allows you to update specific components on the server, reducing the need for full-page reloads.
@@ -292,7 +292,7 @@ Key differentiators include:
 
 ## Conclusion
 
-Brisa’s HTML Streaming avoid the CDN trap and improve your app’s performance. You can stream HTML content directly to the client, not only for the initial render but also for subsequent updates and Server Actions. This approach improves security, user experience, and simplified state management, making it an ideal choice for server-side rendering.
+Brisa’s HTML Streaming avoids the CDN trap and improves your app’s performance. You can stream HTML content directly to the client for the initial render, subsequent updates, and Server Actions. This approach improves security, and user experience, and simplifies state management, making it an ideal choice for server-side rendering.
 
 If you’re looking to build fast, secure, and scalable web applications, give [Brisa](https://brisa.build) a try today!
 
