@@ -119,6 +119,15 @@ export default function Supporters() {
             </li>
             <li>
               <a
+                href="https://coffeepay.me/aralroca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Coffeepay.me
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://ko-fi.com/aralroca"
                 target="_blank"
                 rel="noopener noreferrer"
