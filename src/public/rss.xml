@@ -5,7 +5,7 @@
         <title>Aral Roca</title>
         <description>Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.</description>
         <link>https://aralroca.com</link>
-        <lastBuildDate>Sat Nov 30 2024 21:28:19 GMT+0100 (Central European Standard Time)</lastBuildDate>
+        <lastBuildDate>Mon Apr 14 2025 21:20:51 GMT+0200 (Central European Summer Time)</lastBuildDate>
       
             <item>
               <title>Detect text toxicity using React</title>
@@ -1024,6 +1024,259 @@ Portals are still a proposal and maybe it's something we won't see in the future
 <li><a href="https://www.aboutmonica.com/blog/how-to-create-a-github-profile-readme">https://www.aboutmonica.com/blog/how-to-create-a-github-profile-readme</a></li>
 <li><a href="https://github.com/midudev/midudev">https://github.com/midudev/midudev</a></li>
 </ul>
+]]></content:encoded>
+            </item>
+            <item>
+              <title>Don't Fall Into the CDN Trap! 🪤</title>
+              <description>How Brisa's HTML Streaming feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare Brisa with other popular tools like HTMX and React to highlight the benefits of using Brisa for server-side rendering.</description>
+              <link>https://aralroca.com/blog/brisa-vs-htmx-vs-react</link>
+              <guid isPermaLink="false">https://aralroca.com/blog/brisa-vs-htmx-vs-react/</guid>
+              <pubDate>Thu Dec 19 2024 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
+              <content:encoded><![CDATA[<p>This blog post’ll explore how <strong>Brisa&#39;s HTML Streaming</strong> feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare <a href="https://brisa.build">Brisa</a> with other popular tools like <strong>HTMX</strong> and <strong>React</strong> to highlight the benefits of using Brisa for server-side rendering.</p>
+<h2>Why HTML Streaming is Important</h2>
+<p>HTML Streaming is a powerful technique that allows you to send <strong>HTML incrementally</strong> from the server to the client, improving performance and reducing latency. With <a href="https://brisa.build">Brisa</a>, you can stream HTML content directly to the client, not only for the initial render but also for subsequent updates and server actions.</p>
+<img src="https://aralroca.com/images/blog-images/render.png" alt="HTML Streaming vs CDN + fetching data" class="center" />
+
+<p>If your app needs just <strong>1 request</strong> to fetch server data, you’re stuck in the <strong>CDN trap</strong>. Add more requests, and you’re in a cascading nightmare. CDNs are fine for assets—nothing more. Your website is an asset only if it doesn’t rely on server data. </p>
+<p><strong>Rendering</strong> the Components on the <strong>server</strong> with <strong>streaming</strong> is the best way to <strong>avoid the CDN trap</strong>. Brisa not only uses <strong>HTML Streaming</strong> for the first render but also as a response to <strong>Server Actions</strong> after rendering a component on the server.</p>
+<p>You may wonder, but many components are static and I don&#39;t want to render them always on the server. Well, Brisa allows you to <a href="https://brisa.build/api-reference/extended-props/renderOn#renderon"><strong>pre-render them at build-time</strong></a> with just one attribute, so that <strong>only dynamic components are rendered</strong> on the server.</p>
+<pre><code class="hljs language-tsx">&lt;<span class="hljs-title class_">StaticComponent</span> renderOn=<span class="hljs-string">&quot;build&quot;</span> /&gt;
+</code></pre><h2>Do dynamic imports solve the CDN trap?</h2>
+<p><strong>No</strong>. Using HTML Streaming on Server Actions have exactly the same benefits as using it on the first render.</p>
+<p>Imagine managing the <strong>opening</strong> and <strong>rendering</strong> of a <strong>dialog</strong> with a <strong>dynamic import</strong>:</p>
+<img src="https://aralroca.com/images/blog-images/dialog.png" alt="Server-side Dialog vs Client-side Dialog" class="center" />
+
+<p>Only if the dialog needs server data, we are in the same problem.</p>
+<h2>Code example: Quiz with HTML Streaming</h2>
+<p>As an example, we are going to make a quiz of questions in Brisa using HTML Streaming through Server Actions, and you will see how easy it is to do it, apart from its benefits.</p>
+<p>In order to make the quiz, we are going to create a component that will be rendered on the server and will be responsible for managing the questions and answers. The questions will be sent to the client through HTML Streaming, and the answers will be processed on the server.</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">import</span> { renderComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;brisa/server&#x27;</span>;
+
+<span class="hljs-comment">// Define the type for questions to ensure type safety.</span>
+<span class="hljs-keyword">type</span> <span class="hljs-title class_">Question</span> = {
+  <span class="hljs-attr">answer</span>: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// The correct answer for the question (&#x27;yes&#x27; or &#x27;no&#x27;).</span>
+  <span class="hljs-attr">question</span>: <span class="hljs-built_in">string</span>; <span class="hljs-comment">// The text of the question to be displayed.</span>
+  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>; <span class="hljs-comment">// Unique identifier for each question.</span>
+};
+
+<span class="hljs-comment">// All this code is server-code. It ensures that the user cannot infer the correct</span>
+<span class="hljs-comment">// answers by inspecting the page source or the network.</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">questions</span>: <span class="hljs-title class_">Question</span>[] = [
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;no&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Is the Earth flat? &#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;yes&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Is the Earth round? &#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;no&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Can giraffes lay eggs?&#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;yes&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Can penguins fly?&#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;no&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Can a cow jump over the moon?&#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">6</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;yes&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Is water wet by definition?&#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">7</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;yes&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Is the sky blue?&#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">8</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;yes&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Do fish sleep with their eyes open?&#x27;</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">9</span>, <span class="hljs-attr">answer</span>: <span class="hljs-string">&#x27;no&#x27;</span>, <span class="hljs-attr">question</span>: <span class="hljs-string">&#x27;Can a cow fly?&#x27;</span> },
+];
+
+<span class="hljs-comment">// Function to open the modal with a random question.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">openModal</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> randomIndex = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * questions.<span class="hljs-property">length</span>);
+  
+  <span class="hljs-title function_">renderComponent</span>({
+    <span class="hljs-attr">element</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Modal</span> {<span class="hljs-attr">...questions</span>[<span class="hljs-attr">randomIndex</span>]} /&gt;</span></span>,
+    <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;#content&#x27;</span>, <span class="hljs-comment">// Specify the DOM element where the modal should render.</span>
+  });
+}
+
+<span class="hljs-comment">// Function to process the user’s answer and display the result.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">processAnswer</span>(<span class="hljs-params"><span class="hljs-attr">e</span>: <span class="hljs-title class_">ClickEvent</span>, value = <span class="hljs-string">&#x27;yes&#x27;</span></span>) {
+  <span class="hljs-comment">// We have the event on the server, so we can access the target and the dataset!</span>
+  <span class="hljs-keyword">const</span> id = (e.<span class="hljs-property">target</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">HTMLButtonElement</span>).<span class="hljs-property">dataset</span>.<span class="hljs-property">id</span>;
+
+  <span class="hljs-comment">// Check if the user&#x27;s answer matches the correct answer.</span>
+  <span class="hljs-keyword">const</span> isCorrect = questions.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">q</span>) =&gt;</span> q.<span class="hljs-property">id</span> === <span class="hljs-title class_">Number</span>(id)).<span class="hljs-property">answer</span> === value;
+
+  <span class="hljs-comment">// Render feedback based on the correctness of the answer.</span>
+  <span class="hljs-title function_">renderComponent</span>({
+    <span class="hljs-attr">element</span>: isCorrect ? (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;correct&quot;</span>&gt;</span>
+        Correct!
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    ) : (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;incorrect&quot;</span>&gt;</span>
+        Incorrect!
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    ),
+    <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;dialog&#x27;</span>,
+  });
+}
+
+<span class="hljs-comment">// Main homepage component.</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Homepage</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hero&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h1_addition&quot;</span>&gt;</span>Welcome to <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>Brisa
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit-note&quot;</span>&gt;</span>✏️ SSR Modal example<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>src/pages/index.tsx<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{openModal}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Open modal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> /&gt;</span> {/* Container for rendering dynamic content */}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/&gt;</span></span>
+  );
+}
+
+<span class="hljs-comment">// Modal component to display a question and answer options.</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">Modal</span>(<span class="hljs-params">{ question, answer, id }: <span class="hljs-title class_">Question</span></span>) {
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dialog</span> <span class="hljs-attr">open</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>{question}<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        {/* Button for &quot;Yes&quot; answer */}
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">{id}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{(e)</span> =&gt;</span> processAnswer(e, &#x27;yes&#x27;)}&gt;
+          Yes
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        {/* Button for &quot;No&quot; answer */}
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">{id}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{(e)</span> =&gt;</span> processAnswer(e, &#x27;no&#x27;)}&gt;
+          No
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dialog</span>&gt;</span></span>
+  );
+}
+</code></pre><ul>
+<li><a href="https://github.com/brisa-build/brisa/tree/canary/examples/with-ssr-modal">🔗 Code example here</a></li>
+</ul>
+<p>One of the advantages of using server-side logic for rendering and controlling a dialog is the enhanced security and simplicity it offers. With Brisa, you can offload both the rendering and logic processing to the server, ensuring that critical data remains inaccessible to the client and maintaining a clean separation of concerns.</p>
+<p>In this example, a modal dialog is used to present random quiz questions to the user. The logic for selecting the question, validating the answer, and rendering the UI is entirely managed on the server. This approach eliminates the risk of exposing sensitive data, such as the correct answer, to the client.</p>
+<p>Normally we load modals on the client with a dynamic import to avoid loading them at the start, requesting the CDN, and then if the modal needs server data, once rendered it has to make a cascade of calls to the server. With Brisa, we can load the modal directly from the server, avoiding the need to make additional calls and keeping the modal logic on the server.</p>
+<div align="center">
+
+</div>
+
+
+<p>With this approach, we get the following benefits:</p>
+<ol>
+<li><strong>Enhanced Security:</strong> Sensitive data, such as correct answers, remain on the server, preventing unauthorized access or manipulation.</li>
+<li><strong>Improve UX</strong>: By rendering the modal directly on the server with streaming, we can avoid additional network requests and improve the user experience thanks to streaming.</li>
+<li><strong>Simplified State Management:</strong>  By centralizing logic on the server, the client remains lightweight and focuses only on rendering and user interaction.</li>
+<li><strong>Reduced Client-Side Complexity and Size:</strong> No need for complex state management libraries or additional client-side logic to handle the modal. The server manages everything and you can do an SPA without increasing the client bundle size.</li>
+</ol>
+<h2>SPA without Client-Side JavaScript?</h2>
+<p><strong>Yes</strong>, you can! Although we support writing <a href="https://brisa.build/building-your-application/components-details/web-components">Web Components</a> with <strong>JSX</strong> and <strong>Signals</strong> with very little code (3kb), we want you to use them <strong>only</strong> for pure <strong>client interactions</strong>. Our <strong>goal</strong> is to make it possible to create <strong>SPAs without</strong> the need for <strong>client-side JavaScript</strong>.</p>
+<p>Imagine that your <strong>e-commerce</strong> site, instead of having a <strong>cascade</strong> of <strong>requests</strong> and a lot of <strong>client-side JavaScript code</strong> that harms <strong>performance</strong> and <strong>user experience</strong>, becomes a <strong>SPA</strong> without client-side JavaScript, since most interactions that require server data can be <strong>managed directly on the server</strong>. </p>
+<p>Rendering on the server is very <strong>cheap</strong> and <strong>fast</strong> (~10ms)! </p>
+<figure align="center">
+<img src="https://aralroca.com/images/blog-images/cheap.gif" alt="Cheap and fast" class="center" />
+  <figcaption><small>Cheap and fast</small></figcaption>
+</figure>
+
+<h2>Control stream chunks with Async Generators</h2>
+<p>Brisa allows you to control the <strong>stream chunks</strong> with <strong>Async Generators</strong>. This way, you can <strong>stream</strong> the <strong>HTML</strong> in <strong>chunks</strong> and <strong>control</strong> the <strong>flow</strong> of the <strong>stream</strong>.</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Database</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;bun:sqlite&quot;</span>;
+<span class="hljs-keyword">import</span> { renderComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;brisa/server&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">LoadMovies</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">streamMovies</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-title function_">renderComponent</span>({
+      <span class="hljs-attr">element</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">MovieItems</span> /&gt;</span></span>,
+      <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;ul&quot;</span>,
+      <span class="hljs-attr">placement</span>: <span class="hljs-string">&quot;append&quot;</span>,
+    });
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;movies&quot;</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{streamMovies}</span>&gt;</span>
+        Click here to stream movies from a Server Action
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/&gt;</span></span>
+  )
+}
+
+<span class="hljs-keyword">const</span> db = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Database</span>(<span class="hljs-string">&quot;db.sqlite&quot;</span>);
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span>* <span class="hljs-title class_">MovieItems</span>() {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> movie <span class="hljs-keyword">of</span> db.<span class="hljs-title function_">query</span>(<span class="hljs-string">&quot;SELECT title, year FROM movies&quot;</span>)) {
+    <span class="hljs-title function_">yield</span> (
+      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        {movie.title} ({movie.year})
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre><p>In this example, we are using an <a href="https://brisa.build/building-your-application/data-management/fetching#async-generators"><strong>Async Generator</strong></a> to <strong>stream</strong> the movies from a <strong>SQLite database</strong>. Any <code>yield</code> is a chunk of the stream that will be sent to the client.</p>
+<ul>
+<li><a href="https://github.com/brisa-build/brisa/tree/canary/examples/with-sqlite-with-server-action">🔗 Code example Streaming HTML from SQLite</a></li>
+</ul>
+<h2>What is <code>renderComponent</code>?</h2>
+<p>Brisa’s <code>renderComponent</code> allows developers to:</p>
+<ol>
+<li><strong>Re-render components dynamically on server actions.</strong></li>
+<li><strong>Render specific components to specific locations</strong> in the DOM.</li>
+<li><strong>Choose how and where to place them</strong> (e.g., replace, append, prepend, after &amp; before).</li>
+<li><strong>Enhance transitions</strong> with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition">View Transition API</a>.</li>
+<li><strong>Stream JSX components</strong> incrementally from the server.</li>
+</ol>
+<p>Here’s a quick look:</p>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyComponent</span>(<span class="hljs-params">{ text = <span class="hljs-string">&quot;foo&quot;</span> }: { text: <span class="hljs-built_in">string</span> }</span>) {
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleClick</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// Re-render the same component</span>
+    <span class="hljs-title function_">renderComponent</span>();
+
+    <span class="hljs-comment">// Re-render with new props</span>
+    <span class="hljs-title function_">renderComponent</span>({ <span class="hljs-attr">element</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyComponent</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;bar&quot;</span> /&gt;</span></span> });
+
+    <span class="hljs-comment">// Render another Component to a specific location</span>
+    <span class="hljs-title function_">renderComponent</span>({
+      <span class="hljs-attr">element</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">AnotherComponent</span> /&gt;</span></span>,
+      <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;#target-id&quot;</span>,
+      <span class="hljs-attr">placement</span>: <span class="hljs-string">&quot;append&quot;</span>,
+      <span class="hljs-attr">withTransition</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// Enhance transitions with the View Transition API</span>
+    });
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{handleClick}</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre><p>All this code is server-side code. In Brisa, all the events from server components are Server Actions.</p>
+<h2>Why is This a Game-Changer?</h2>
+<p>Brisa’s approach to server actions is inspired by React’s model and HTMX concepts but is designed to be simpler and inherently safer.</p>
+<h3>Brisa vs. HTMX</h3>
+<p><strong>HTMX</strong> allows developers to dynamically update portions of the DOM via server responses. But it lacks:</p>
+<ul>
+<li><strong>Component-level granularity:</strong> HTMX relies on server-generated HTML partials without the concept of components.</li>
+<li><strong>Streaming support:</strong> HTMX does not natively support streaming updates to the client.</li>
+<li><strong>Bundle size</strong>: HTMX is a 14KB library, while Brisa is only 2KB.</li>
+</ul>
+<p>With <code>renderComponent</code>, you get:</p>
+<ul>
+<li><strong>Component reuse:</strong> Brisa components are re-rendered seamlessly, leveraging JSX and React-like composition.</li>
+<li><strong>Dynamic placement:</strong> Update or append components where in the DOM.</li>
+<li><strong>Streaming support:</strong> Send and render data incrementally using server-side streams.</li>
+</ul>
+<h3>Brisa vs. React</h3>
+<p>In <strong>React</strong>, implementing server actions often involves using <code>&quot;use server&quot;</code> and <code>&quot;use client&quot;</code> directives. This dual model introduces the potential for human error and can unintentionally expose components to the client. </p>
+<p>Key differentiators include:</p>
+<ul>
+<li><strong>Streaming HTML support:</strong> React communicates between the server and client by sending JavaScript, which can add significant overhead. Conversely, Brisa streams HTML directly to the client, reducing complexity and improving performance.</li>
+<li><strong>Signals - fine-grained reactivity:</strong> Brisa’s client-side signals automatically react to server-side changes by updating Web Components, avoiding the need for a complete re-render.</li>
+<li><strong>Bundle size:</strong> React-DOM v.19 weighs around 200KB, while Brisa maintains an ultra-lightweight footprint of just 2KB.</li>
+<li><strong>Selective updates:</strong> Brisa allows you to update specific components on the server, reducing the need for full-page reloads.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Brisa’s HTML Streaming avoids the CDN trap and improves your app’s performance. You can stream HTML content directly to the client for the initial render, subsequent updates, and Server Actions. This approach improves security, and user experience, and simplifies state management, making it an ideal choice for server-side rendering.</p>
+<p>If you’re looking to build fast, secure, and scalable web applications, give <a href="https://brisa.build">Brisa</a> a try today!</p>
+<p><strong>Support Us:</strong> <a href="https://brisadotbuild.myspreadshop.es/">Visit our shop</a> for Brisa swag! 🛍️</p>
+<div align="center">
+<a href="https://brisadotbuild.myspreadshop.es/" alt="Brisa Shop" target="_blank">
+<img width="400" height="425" src="https://brisa.build/images/blog-images/shop.webp" alt="Brisa Shop" />
+</a>
+</div>
 ]]></content:encoded>
             </item>
             <item>
@@ -6346,7 +6599,7 @@ Server running on localhost:3000
 
 <span class="hljs-keyword">const</span> users = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-title class_">WebSocket</span>&gt;()
 
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">broadcast</span>(<span class="hljs-params"><span class="hljs-attr">message</span>: <span class="hljs-built_in">string</span>, senderId?: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">void</span> {
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">broadcast</span>(<span class="hljs-params"><span class="hljs-attr">message</span>: <span class="hljs-built_in">string</span>, <span class="hljs-attr">senderId</span>?: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">void</span> {
   <span class="hljs-keyword">if</span> (!message) <span class="hljs-keyword">return</span>
   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> user <span class="hljs-keyword">of</span> users.<span class="hljs-title function_">values</span>()) {
     user.<span class="hljs-title function_">send</span>(senderId ? <span class="hljs-string">`[<span class="hljs-subst">${senderId}</span>]: <span class="hljs-subst">${message}</span>`</span> : message)
