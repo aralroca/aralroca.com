@@ -9,7 +9,7 @@ export default function Supporters() {
       </div>
 
       <p class="description">
-        Thank you for making my Open-Source work possible.{' '}
+        Thank you for making my Open-Source work possible.{" "}
         <u>You're awesome!</u>
       </p>
 
@@ -34,6 +34,11 @@ export default function Supporters() {
         <li>
           <a href="https://github.com/rkalis" target="_blank">
             Rosco Kalis
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/DanTehrani" target="_blank">
+            Daniel Tehrani
           </a>
         </li>
       </ul>
