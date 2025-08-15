@@ -14,18 +14,18 @@
     "symlink": "cd ../brisa/packages/brisa && bun run build && cp -R * ../../../aralroca.com/node_modules/brisa/ && cd ../../../aralroca.com && bun dev"
   },
   "dependencies": {
-    "brisa": "0.2.10",
+    "brisa": "0.2.14",
     "gray-matter": "4.0.3",
     "highlight.js": "11.11.1",
-    "marked-highlight": "2.2.1",
+    "marked-highlight": "2.2.2",
     "js-paging": "0.2.0",
-    "marked": "14.1.3",
+    "marked": "16.1.2",
     "reading-time": "1.5.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "brisa-adapter-vercel": "0.2.10",
-    "@types/bun": "1.2.9",
-    "typescript": "5.8.3"
+    "@biomejs/biome": "2.2.0",
+    "brisa-adapter-vercel": "0.2.14",
+    "@types/bun": "1.2.20",
+    "typescript": "5.9.2"
   }
 }
