@@ -1,56 +1,38 @@
-import getCanonical from '@/utils/getCanonical';
-import { dangerHTML, type RequestContext } from 'brisa';
-
-// import '@/styles/main.css';
-// import '@/styles/highlightcode.css';
+import getCanonical from "@/utils/getCanonical";
+import { dangerHTML, type RequestContext } from "brisa";
+import "@/styles/main.css";
+import "@/styles/highlightcode.css";
 
 const TITLE_BY_PATHNAME: Record<string, string> = {
-  '/': 'Aral Roca',
-  '/blog': 'Blog - Aral Roca',
-  '/thanks': 'Supporters - Aral Roca',
+  "/": "Aral Roca",
+  "/blog": "Blog - Aral Roca",
+  "/thanks": "Supporters - Aral Roca",
 } as const;
 
-export default function Layout({ children }: any, { route }: RequestContext) {
+export default function Layout(
+  { children }: any,
+  { store, route }: RequestContext,
+) {
   const { name, params, pathname } = route;
-  const isActive = (link: string) => (name.startsWith(link) ? 'active' : '');
-  const isDefaultMeta = name !== '/blog/[slug]';
-  const mainClass = name.startsWith('/blog/') ? 'blog' : '';
+  const isActive = (link: string) => (name.startsWith(link) ? "active" : "");
+  const isDefaultMeta = name !== "/blog/[slug]";
+  const mainClass = name.startsWith("/blog/") ? "blog" : "";
   const hasParams = Object.keys(params as Record<string, string>).length > 0;
 
   const data = {
     url: getCanonical(pathname),
-    title: TITLE_BY_PATHNAME[name] || 'Aral Roca',
+    title: TITLE_BY_PATHNAME[name] || "Aral Roca",
     description:
       "Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.",
-    cover_image: 'https://aralroca.com/images/profile_full.jpg',
-    tags: 'javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain',
+    cover_image: "https://aralroca.com/images/profile_full.jpg",
+    tags: "javascript, developer, open source, software engineer, preact, react, machine learning, js, barcelona, spain",
   };
 
-  // TODO: Remove styles after this issue:
-  // https://github.com/brisa-build/brisa/issues/156#issuecomment-2228440081
   return (
     <html lang="en">
       <head>
         <meta name="theme-color" content="#ad1457" />
         <link id="favicon" rel="shortcut icon" href="/favicon.ico" />
-        <link
-          id="main-preload"
-          rel="preload"
-          href="/styles/main.css"
-          as="style"
-        />
-        <link
-          id="hightlight-preload"
-          rel="preload"
-          href="/styles/highlightcode.css"
-          as="style"
-        />
-        <link id="main" rel="stylesheet" href="/styles/main.css"></link>
-        <link
-          id="hightlight"
-          rel="stylesheet"
-          href="/styles/highlightcode.css"
-        ></link>
         <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {hasParams && (
@@ -80,7 +62,7 @@ export default function Layout({ children }: any, { route }: RequestContext) {
             />
             <meta id="meta-og:title" property="og:title" content={data.title} />
             <meta
-              id="meta-og:description"
+              id="meta-og-description"
               property="og:description"
               content={data.description}
             />
@@ -124,10 +106,10 @@ export default function Layout({ children }: any, { route }: RequestContext) {
             <span>Aral Roca.</span>
           </a>
           <nav>
-            <a class={isActive('/blog')} href="/blog">
+            <a class={isActive("/blog")} href="/blog">
               Blog
             </a>
-            <a href="/thanks" class={isActive('/thanks')}>
+            <a href="/thanks" class={isActive("/thanks")}>
               Support
             </a>
           </nav>
@@ -167,7 +149,7 @@ export default function Layout({ children }: any, { route }: RequestContext) {
           <a title="Contact me" href="mailto:contact@aralroca.com">
             contact@aralroca.com
           </a>
-          <change-theme skipSSR style={{ height: '28px', width: '118px' }}>
+          <change-theme skipSSR style={{ height: "28px", width: "118px" }}>
             <DarkSVG />
             <LightSVG />
             <SystemElement />
@@ -177,6 +159,7 @@ export default function Layout({ children }: any, { route }: RequestContext) {
     </html>
   );
 }
+
 function DarkSVG() {
   return (
     <svg
@@ -245,14 +228,14 @@ function SystemElement() {
 function initTheme() {
   if (document.body.classList.length) return;
 
-  const theme = localStorage.getItem('theme');
+  const theme = localStorage.getItem("theme");
 
-  if (theme && theme !== 'system') {
+  if (theme && theme !== "system") {
     document.body.classList.add(theme);
     return;
   }
 
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.add('dark');
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark");
   }
 }
