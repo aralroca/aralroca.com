@@ -6,6 +6,7 @@ tags: ai, webassembly, javascript, music, privacy
 cover_image: /images/cover-images/35_cover_image.webp
 cover_image_mobile: /images/cover-images/35_cover_image_mobile.webp
 cover_color: "#212121"
+dev_to: i-built-a-100-private-on-device-ai-audio-stem-splitter-no-servers-5016
 ---
 
 Most "AI" tools these days are just wrappers around an API. You upload your
