@@ -5,7 +5,7 @@
         <title>Aral Roca</title>
         <description>Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.</description>
         <link>https://aralroca.com</link>
-        <lastBuildDate>Fri Aug 15 2025 21:07:19 GMT+0200 (Central European Summer Time)</lastBuildDate>
+        <lastBuildDate>Sun Mar 29 2026 18:02:20 GMT+0200 (Central European Summer Time)</lastBuildDate>
       
             <item>
               <title>Detect text toxicity using React</title>
@@ -2258,6 +2258,82 @@ Portals are still a proposal and maybe it's something we won't see in the future
 <li><a href="https://nextjs.org/docs/app/api-reference/next-config-js/partial-prerendering">Partial Prerendering in Next.js</a></li>
 <li><a href="https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model#try-ppr-on-vercel-today">Partial Prerendering Vercel</a></li>
 </ul>
+]]></content:encoded>
+            </item>
+            <item>
+              <title>I Built a 100% Private, On-Device AI Audio Stem Splitter (No Servers!)</title>
+              <description>How I implemented a browser-based AI tool to split songs into vocals, drums, and bass without uploading a single byte to any server.</description>
+              <link>https://aralroca.com/blog/on-device-ai-stem-splitter</link>
+              <guid isPermaLink="false">https://aralroca.com/blog/on-device-ai-stem-splitter/</guid>
+              <pubDate>Tue Mar 17 2026 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
+              <content:encoded><![CDATA[<p>Most &quot;AI&quot; tools these days are just wrappers around an API. You upload your
+file, wait for a server to process it, and hope your data isn&#39;t being used to
+train the next big model.</p>
+<p>When I decided to add an <strong>Audio Stem Splitter</strong> to
+<a href="https://kitmul.com/en/music/audio-stem-splitter">Kitmul</a>, I had one
+non-negotiable rule: <strong>Zero server uploads</strong>.</p>
+<p>The result is a tool that can take any song and split it into <strong>Vocals, Drums,
+Bass, and Instruments</strong> entirely within your browser.</p>
+<img class="center" alt="Stems" src="https://aralroca.com/images/blog-images/stems.png">
+
+<h2>The Problem with Traditional Audio Splitting</h2>
+<p>If you&#39;ve ever used tools like PhonicMind or LALAL.AI, you know the drill:</p>
+<ol>
+<li>Upload your MP3.</li>
+<li>Wait in a queue.</li>
+<li>Pay for &quot;credits&quot; or high-quality downloads.</li>
+<li>Your file sits on someone else&#39;s server.</li>
+</ol>
+<p>For musicians, producers, or just karaoke fans, this is slow and
+privacy-invasive. I wanted to see if we could bring the power of models like
+<a href="https://huggingface.co/smank/htdemucs-onnx/resolve/main/htdemucs.onnx"><strong>Demucs</strong></a>
+directly to the user&#39;s hardware using <strong>WebAssembly</strong> and <strong>Web Workers</strong>.</p>
+<h2>How it Works: AI in the Browser</h2>
+<p>The magic happens thanks to a few modern web technologies:</p>
+<ol>
+<li><strong>WebAssembly (WASM):</strong> We run the heavy lifting—the actual neural network
+inference—using a specialized AI model optimized for the browser.</li>
+<li><strong>Web Workers:</strong> Splitting audio is CPU-intensive. By offloading the process
+to a background thread, the UI remains snappy. You can still navigate the
+site while the &quot;AI chef&quot; is in the kitchen.</li>
+<li><strong>Local Processing:</strong> When you drag a file into the splitter, the browser
+reads the raw bytes, processes them locally, and generates the stems. <strong>Your
+audio never leaves your computer.</strong></li>
+</ol>
+<img class="center" alt="Stem Splitter process" src="https://aralroca.com/images/blog-images/kitmul-stem-splitter.png">
+
+<h2>Why Use an On-Device Splitter?</h2>
+<ul>
+<li><strong>Privacy First:</strong> Your unfinished demos or private recordings stay private.</li>
+<li><strong>No Subscriptions:</strong> Since it uses <em>your</em> CPU/GPU, there&#39;s no server cost for
+me to pass on to you. It&#39;s free.</li>
+<li><strong>High Fidelity:</strong> We export the results in high-quality <strong>WAV</strong> format, not
+compressed MP3s.</li>
+<li><strong>No Limits:</strong> Split as many songs as you want without worrying about &quot;minutes
+remaining.&quot;</li>
+</ul>
+<h2>Beyond Karaoke: Practical Use Cases</h2>
+<p>While removing vocals for karaoke is the most obvious use, I&#39;ve seen some great
+creative ways to use it:</p>
+<ul>
+<li><strong>Sampling for Producers:</strong> Isolate a clean drum break or a bassline for your
+own tracks.</li>
+<li><strong>Instrument Practice:</strong> Remove the guitar track so you can be the lead
+guitarist for your favorite band.</li>
+<li><strong>Mixing Reference:</strong> Listen only to the vocal harmonies to study how a
+professional track was layered.</li>
+</ul>
+<h2>Try it Out</h2>
+<p>The <strong>Audio Stem Splitter</strong> is now live on Kitmul. It&#39;s best used on desktop
+(Chrome or Edge handle the AI models particularly well).</p>
+<img class="center" alt="Kitmul processing" src="https://aralroca.com/images/blog-images/kitmul-processing.png">
+
+<p><strong><a href="https://kitmul.com/en/music/audio-stem-splitter">👉 Try the Audio Stem Splitter on Kitmul</a></strong></p>
+<p>I&#39;m constantly adding more tools to Kitmul (we&#39;re at over 150 now!), but this
+one feels special because it pushes the boundaries of what the browser can do
+without relying on the cloud.</p>
+<p>If you are a developer interested in on-device AI or a musician looking for a
+private way to split tracks, let me know what you think in the comments!</p>
 ]]></content:encoded>
             </item>
             <item>
@@ -6873,6 +6949,43 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (3ms)
 <p>714 B !! 🤯</p>
 <p>Please, help us with a star on GitHub repo (or contribute, PRs are welcome 😊</p>
 <p>👉 <a href="https://github.com/vinissimus/next-translate">https://github.com/vinissimus/next-translate</a></p>
+]]></content:encoded>
+            </item>
+            <item>
+              <title>Next-translate 3.0.0 - Turbopack, Next.js 16, and a New Chapter</title>
+              <description>Today, I am incredibly happy to announce that Next-translate version 3.0.0 is officially out! This release is focused on Modernity and Stability, including Turbopack support and compatibility with Next.js 15+ async params.</description>
+              <link>https://aralroca.com/blog/next-translate-3-0</link>
+              <guid isPermaLink="false">https://aralroca.com/blog/next-translate-3-0/</guid>
+              <pubDate>Sun Mar 01 2026 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
+              <content:encoded><![CDATA[<p>It has been quite a journey since the last major update of <strong>Next-translate</strong>. Today, I am incredibly happy to announce that version <strong>3.0.0</strong> is officially out!</p>
+<h2>A Personal Note</h2>
+<p>Before diving into the technical details, I want to address the elephant in the room: the lack of updates over the past year. I’ve been deeply involved in other projects and, unfortunately, Next-translate didn&#39;t get the attention it deserved.</p>
+<p>I want to apologize for the wait. The community support has been overwhelming, and seeing so many of you still rely on this tool made me realize I need to give it my priority again. Starting today, I’m back to a constant maintenance rhythm. Next-translate is a core part of my focus once more.</p>
+<h2>What&#39;s New in 3.0.0?</h2>
+<p>This release is focused on two things: <strong>Modernity</strong> and <strong>Stability</strong>.</p>
+<h3>1. Turbopack Support (Finally!)</h3>
+<p>One of the most requested features was compatibility with <strong>Turbopack</strong>. With Next.js 16 pushing for better build performance, we&#39;ve updated <code>next-translate-plugin</code> to play nice with the Rust-based bundler. You get the speed of Turbopack without losing your localized content.</p>
+<h3>2. Next.js 15+ Async Params</h3>
+<p>Next.js 15 introduced a significant change: <code>params</code> and <code>searchParams</code> are now asynchronous. Version 3.0.0 handles this natively, ensuring your translations work perfectly in both Server and Client components without the dreaded &quot;params is not a promise&quot; errors.</p>
+<h3>3. Stabilizing the App Router</h3>
+<p>We&#39;ve introduced a new <code>createTranslation</code> helper specifically designed for the <code>app</code> directory architecture. We&#39;ve also stabilized the internal <code>t</code> function to prevent unnecessary re-renders and improved the overall DX for server-side translation.</p>
+<h3>4. Better Components and Typings</h3>
+<ul>
+<li><strong>Trans Component</strong>: Now supports nested arrays and improved pluralization.</li>
+<li><strong>formatElements</strong>: Now explicitly exported for your own custom formatting logic.</li>
+<li><strong>TypeScript 5.3+</strong>: Full support for the latest TS features and significantly improved auto-completion for your namespaces.</li>
+</ul>
+<h2>Breaking Changes to Watch Out For</h2>
+<p>To keep the project lean and compatible with the future of Next.js, we&#39;ve made a few adjustments:</p>
+<ul>
+<li>Support for the automatic migration logic from <code>pages</code> to <code>app</code> router has been removed from the plugin.</li>
+<li>We now use the <code>exports</code> field in <code>package.json</code>, so make sure you use formal entry points like <code>next-translate/useTranslation</code> instead of internal paths.</li>
+</ul>
+<h2>Moving Forward</h2>
+<p>This is just the beginning of the 3.0.x cycle. My goal is to keep Next-translate as the lightweight, powerful alternative for i18n in Next.js.</p>
+<p>Thank you to everyone who contributed to this release. Let&#39;s build a more global web together!</p>
+<hr>
+<p>Check out the code on <a href="https://github.com/aralroca/next-translate">GitHub</a>.</p>
 ]]></content:encoded>
             </item>
       </channel>
