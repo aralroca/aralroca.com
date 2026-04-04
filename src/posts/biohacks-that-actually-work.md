@@ -6,6 +6,7 @@ tags: productivity, biohacking, breathwork, startup
 cover_image: /images/cover-images/37_cover_image.webp
 cover_image_mobile: /images/cover-images/37_cover_image_mobile.webp
 cover_color: "#1a2634"
+dev_to: resting-heart-rate-68-to-56-what-changed-in-my-dev-work-i13
 ---
 
 I normally write about web frameworks, WebAssembly, and JavaScript internals. And I normally don't publish on a Saturday. But I've been wanting to write this for a while and today I woke up inspired, so here it is.
@@ -45,7 +46,7 @@ None of this came from a supplement, an app, or a course. It came from applying 
 
 ## Some context about me
 
-I've been in software development for over ten years. Most of that time I've been deep in open source. I created [NextTranslate](https://github.com/aralroca/next-translate), [Teaful](https://github.com/teafuljs/teaful), and more recently [Brisa](https://brisa.build), a web framework built on web components. I also recently built [Kitmul](https://kitmul.com/en), which went from a testing ground for my libraries to 300+ browser-based tools in three weeks (I wrote about that [here](ai-agents-should-be-the-app)).
+I've been in software development for over ten years. Most of that time I've been deep in open source. I created [NextTranslate](https://github.com/aralroca/next-translate), [Teaful](https://github.com/teafuljs/teaful), and more recently [Brisa](https://brisa.build), a web framework built on web components. I also recently built [Kitmul](https://kitmul.com/en), which went from a testing ground for my libraries to 300+ browser-based tools in three weeks (I wrote about that [here](/blog/ai-agents-should-be-the-app)).
 
 That's the professional side. But there's another side that's been part of my life for just as long: parkour.
 
