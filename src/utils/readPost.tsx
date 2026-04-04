@@ -6,6 +6,7 @@ import path from 'node:path';
 import readingTime from 'reading-time';
 import niceDateText from './niceDateText';
 import { markedHighlight } from 'marked-highlight';
+import { gfmHeadingId } from 'marked-gfm-heading-id';
 
 export type PostContent = {
   data: any;
@@ -38,6 +39,7 @@ export default function readPost(slug: string): PostContent {
         return hljs.highlight(code, { language }).value;
       },
     }),
+    gfmHeadingId(),
   );
 
   const { data, content } = matter(markdownWithMetadata);
