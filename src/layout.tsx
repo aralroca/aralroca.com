@@ -7,6 +7,7 @@ const TITLE_BY_PATHNAME: Record<string, string> = {
   "/": "Aral Roca",
   "/blog": "Blog - Aral Roca",
   "/thanks": "Supporters - Aral Roca",
+  "/tools": "Free Online Tools - Aral Roca",
 } as const;
 
 export default function Layout(
@@ -108,6 +109,9 @@ export default function Layout(
           <nav>
             <a class={isActive("/blog")} href="/blog">
               Blog
+            </a>
+            <a class={isActive("/tools")} href="/tools">
+              Tools
             </a>
             <a href="/thanks" class={isActive("/thanks")}>
               Support

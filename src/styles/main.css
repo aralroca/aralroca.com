@@ -450,6 +450,68 @@ table th {
   border-left: 3px solid var(--secondary-color);
 }
 
+/* Tools page */
+.tools-page {
+  max-width: var(--max-screen-width);
+}
+
+.tools-intro {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.tool-category {
+  margin-bottom: 40px;
+}
+
+.tool-category h2 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--separator);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.tool-card {
+  display: block;
+  text-decoration: none;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--separator);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: inherit;
+}
+
+.tool-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tool-card h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  color: var(--secondary-color);
+}
+
+.tool-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color);
+  opacity: 0.75;
+}
+
+@media (max-width: 612px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .change-theme {
   padding: 0 5px 0 20px;
   margin-top: -2px;
