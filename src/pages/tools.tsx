@@ -3,7 +3,7 @@ export default function Tools() {
     <div class="tools-page">
       <h1>Free Online Tools</h1>
       <p class="tools-intro">
-        A collection of 404+ free tools I've built for the community. They all run
+        A collection of 415+ free tools I've built for the community. They all run
         entirely in your browser; nothing is uploaded to any server. No signup required.
       </p>
 
@@ -170,6 +170,10 @@ export default function Tools() {
       <section class="tool-category">
         <h2>CSS & Design</h2>
         <div class="tool-grid">
+          <a href="https://kitmul.com/en/design-css/accessibility-tree-visualizer" class="tool-card" target="_blank">
+            <h3>Accessibility Tree Visualizer</h3>
+            <p>Visualize how HTML maps to an accessibility tree and compare inaccessible vs semantic markup side by side.</p>
+          </a>
           <a href="https://kitmul.com/en/design-css/button-css-generator" class="tool-card" target="_blank">
             <h3>Button CSS Generator</h3>
             <p>Generate custom CSS button styles visually</p>
@@ -182,9 +186,21 @@ export default function Tools() {
             <h3>CSS Box Shadow Generator</h3>
             <p>Generate CSS box-shadow with visual editor</p>
           </a>
+          <a href="https://kitmul.com/en/design-css/css-clip-path-maker" class="tool-card" target="_blank">
+            <h3>CSS Clip-path Maker</h3>
+            <p>Build custom CSS clip-path shapes visually with an interactive editor and live preview.</p>
+          </a>
+          <a href="https://kitmul.com/en/design-css/css-flexbox-guide" class="tool-card" target="_blank">
+            <h3>CSS Flexbox Guide</h3>
+            <p>Visually build and experiment with CSS Flexbox layouts, then export production-ready CSS code.</p>
+          </a>
           <a href="https://kitmul.com/en/design-css/css-gradient-generator" class="tool-card" target="_blank">
             <h3>CSS Gradient Generator</h3>
             <p>Create linear, radial, and conic CSS gradients</p>
+          </a>
+          <a href="https://kitmul.com/en/design-css/css-grid-generator" class="tool-card" target="_blank">
+            <h3>CSS Grid Generator</h3>
+            <p>Create responsive CSS grid layouts visually with customizable columns, rows, gap, and preset templates.</p>
           </a>
           <a href="https://kitmul.com/en/design-css/css-text-shadow" class="tool-card" target="_blank">
             <h3>CSS Text Shadow Generator</h3>
@@ -633,6 +649,18 @@ export default function Tools() {
           <a href="https://kitmul.com/en/health/heart-rate-zones" class="tool-card" target="_blank">
             <h3>Heart Rate Zones Calculator</h3>
             <p>Calculate your 5 heart rate training zones based on age</p>
+          </a>
+          <a href="https://kitmul.com/en/health/ideal-weight-calculator" class="tool-card" target="_blank">
+            <h3>Ideal Weight Calculator</h3>
+            <p>Find your ideal body weight using five scientific formulas with metric and imperial support.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/macro-calculator" class="tool-card" target="_blank">
+            <h3>Macro Calculator</h3>
+            <p>Calculate daily macronutrient targets based on your TDEE, fitness goal, and preferred diet style.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/tdee-calculator" class="tool-card" target="_blank">
+            <h3>TDEE Calculator</h3>
+            <p>Calculate your Total Daily Energy Expenditure using the Mifflin-St Jeor equation with activity multipliers.</p>
           </a>
           <a href="https://kitmul.com/en/health/water-intake-calculator" class="tool-card" target="_blank">
             <h3>Water Intake Calculator</h3>
@@ -1266,6 +1294,10 @@ export default function Tools() {
             <h3>PDF Splitter</h3>
             <p>Split your PDF document into multiple separate files.</p>
           </a>
+          <a href="https://kitmul.com/en/pdf/pdf-to-markdown" class="tool-card" target="_blank">
+            <h3>PDF to Markdown</h3>
+            <p>Convert PDF documents to clean Markdown text directly in your browser using WASM-powered extraction.</p>
+          </a>
           <a href="https://kitmul.com/en/pdf/pdf-watermark" class="tool-card" target="_blank">
             <h3>PDF Watermark</h3>
             <p>Add text watermarks to your PDF documents easily.</p>
@@ -1342,6 +1374,14 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Security & Cryptography</h2>
         <div class="tool-grid">
+          <a href="https://kitmul.com/en/security/aes-encryption" class="tool-card" target="_blank">
+            <h3>AES Encryption</h3>
+            <p>Encrypt and decrypt text using AES-CBC or AES-GCM directly in your browser with the Web Crypto API.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/bcrypt-hash-generator" class="tool-card" target="_blank">
+            <h3>Bcrypt Hash Generator</h3>
+            <p>Hash passwords and verify bcrypt hashes securely in your browser.</p>
+          </a>
           <a href="https://kitmul.com/en/security/caesar-cipher" class="tool-card" target="_blank">
             <h3>Caesar Cipher</h3>
             <p>Encrypt and decrypt text using the Caesar cipher with a customizable shift value.</p>
@@ -1361,6 +1401,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/security/random-token-generator" class="tool-card" target="_blank">
             <h3>Random Token Generator</h3>
             <p>Generate cryptographically secure random tokens and secrets instantly.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/rsa-key-generator" class="tool-card" target="_blank">
+            <h3>RSA Key Generator</h3>
+            <p>Generate secure RSA public and private key pairs in PEM format.</p>
           </a>
           <a href="https://kitmul.com/en/security/vigenere-cipher" class="tool-card" target="_blank">
             <h3>Vigenere Cipher</h3>
