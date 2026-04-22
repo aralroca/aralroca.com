@@ -3,7 +3,7 @@ export default function Tools() {
     <div class="tools-page">
       <h1>Free Online Tools</h1>
       <p class="tools-intro">
-        A collection of 415+ free tools I've built for the community. They all run
+        A collection of 444+ free tools I've built for the community. They all run
         entirely in your browser; nothing is uploaded to any server. No signup required.
       </p>
 
@@ -414,6 +414,10 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Education & Science</h2>
         <div class="tool-grid">
+          <a href="https://kitmul.com/en/education-science/equation-balancer" class="tool-card" target="_blank">
+            <h3>Balance Chemical Equations</h3>
+            <p>Balance chemical equations with step-by-step atom counting.</p>
+          </a>
           <a href="https://kitmul.com/en/education-science/dna-converter" class="tool-card" target="_blank">
             <h3>DNA to RNA &amp; Protein</h3>
             <p>Transcribe DNA to RNA and translate it into a protein sequence.</p>
@@ -430,6 +434,10 @@ export default function Tools() {
             <h3>Molar Mass Calculator</h3>
             <p>Calculate the molar mass of any chemical formula instantly.</p>
           </a>
+          <a href="https://kitmul.com/en/education-science/molarity-calculator" class="tool-card" target="_blank">
+            <h3>Molarity Calculator</h3>
+            <p>Calculate molarity, moles, and volume for chemical solutions.</p>
+          </a>
           <a href="https://kitmul.com/en/education-science/multiplication-table" class="tool-card" target="_blank">
             <h3>Multiplication Table</h3>
             <p>Generate and print custom multiplication tables.</p>
@@ -442,6 +450,10 @@ export default function Tools() {
             <h3>pH Calculator</h3>
             <p>Calculate pH, pOH, and concentrations of ions in any solution.</p>
           </a>
+          <a href="https://kitmul.com/en/education-science/projectile-motion" class="tool-card" target="_blank">
+            <h3>Projectile Motion Calculator</h3>
+            <p>Calculate and visualize projectile trajectories with different gravity conditions.</p>
+          </a>
           <a href="https://kitmul.com/en/education-science/roman-numerals" class="tool-card" target="_blank">
             <h3>Roman Numerals Converter</h3>
             <p>Convert decimal numbers to Roman numerals and vice versa.</p>
@@ -453,6 +465,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/education-science/significant-figures" class="tool-card" target="_blank">
             <h3>Significant Figures Calculator</h3>
             <p>Identify significant digits and round numbers with precision.</p>
+          </a>
+          <a href="https://kitmul.com/en/education-science/stoichiometry-calculator" class="tool-card" target="_blank">
+            <h3>Stoichiometry Calculator</h3>
+            <p>Calculate reactant and product amounts from balanced chemical equations.</p>
           </a>
         </div>
       </section>
@@ -506,6 +522,10 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Everyday & Practical</h2>
         <div class="tool-grid">
+          <a href="https://kitmul.com/en/everyday-practical/battery-life-calculator" class="tool-card" target="_blank">
+            <h3>Battery Life Calculator</h3>
+            <p>Calculate battery life from capacity and consumption.</p>
+          </a>
           <a href="https://kitmul.com/en/everyday-practical/cooking-conversion" class="tool-card" target="_blank">
             <h3>Cooking Conversion Calculator</h3>
             <p>Convert between cooking measurements including volume, weight, and temperature.</p>
@@ -526,9 +546,41 @@ export default function Tools() {
             <h3>GPA Calculator</h3>
             <p>Calculate your Grade Point Average on a 4.0 scale</p>
           </a>
+          <a href="https://kitmul.com/en/everyday-practical/grade-calculator" class="tool-card" target="_blank">
+            <h3>Grade Calculator</h3>
+            <p>Calculate your weighted grade average from assignments and weights.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/paint-calculator" class="tool-card" target="_blank">
+            <h3>Paint Calculator</h3>
+            <p>Calculate how many gallons of paint you need for your walls.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/recipe-scaler" class="tool-card" target="_blank">
+            <h3>Recipe Scaler</h3>
+            <p>Scale recipe ingredients for any number of servings.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/road-trip-cost-calculator" class="tool-card" target="_blank">
+            <h3>Road Trip Cost Calculator</h3>
+            <p>Estimate fuel and travel costs for your road trip.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/solar-panel-calculator" class="tool-card" target="_blank">
+            <h3>Solar Panel Calculator</h3>
+            <p>Calculate how many solar panels you need.</p>
+          </a>
           <a href="https://kitmul.com/en/everyday-practical/speed-distance-time" class="tool-card" target="_blank">
             <h3>Speed Distance Time Calculator</h3>
             <p>Calculate speed, distance, or time given any two values with unit conversions.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/square-footage-calculator" class="tool-card" target="_blank">
+            <h3>Square Footage Calculator</h3>
+            <p>Calculate room and property area in square feet or meters.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/tile-calculator" class="tool-card" target="_blank">
+            <h3>Tile Calculator</h3>
+            <p>Calculate how many tiles you need for your project.</p>
+          </a>
+          <a href="https://kitmul.com/en/everyday-practical/time-card-calculator" class="tool-card" target="_blank">
+            <h3>Time Card Calculator</h3>
+            <p>Calculate weekly work hours from clock-in and clock-out times.</p>
           </a>
           <a href="https://kitmul.com/en/everyday-practical/tip-calculator" class="tool-card" target="_blank">
             <h3>Tip Calculator</h3>
@@ -630,6 +682,10 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Health & Wellness</h2>
         <div class="tool-grid">
+          <a href="https://kitmul.com/en/health/breathing-timer-478" class="tool-card" target="_blank">
+            <h3>4-7-8 Breathing Timer</h3>
+            <p>Guided breathing exercise with animated circle, progressive difficulty, and streak tracking.</p>
+          </a>
           <a href="https://kitmul.com/en/health/bmi-calculator" class="tool-card" target="_blank">
             <h3>BMI Calculator</h3>
             <p>Calculate your Body Mass Index and health category</p>
@@ -637,6 +693,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/health/bmr-calculator" class="tool-card" target="_blank">
             <h3>BMR Calculator</h3>
             <p>Calculate your Basal Metabolic Rate and daily calorie needs</p>
+          </a>
+          <a href="https://kitmul.com/en/health/bac-calculator" class="tool-card" target="_blank">
+            <h3>Blood Alcohol Calculator</h3>
+            <p>Estimate BAC with multi-drink timeline, Watson formula, and safe-to-drive countdown.</p>
           </a>
           <a href="https://kitmul.com/en/health/body-fat-calculator" class="tool-card" target="_blank">
             <h3>Body Fat Calculator</h3>
@@ -646,6 +706,10 @@ export default function Tools() {
             <h3>Caffeine Half-Life Calculator</h3>
             <p>Track caffeine decay over 24 hours and find safe sleep time</p>
           </a>
+          <a href="https://kitmul.com/en/health/calories-burned-calculator" class="tool-card" target="_blank">
+            <h3>Calories Burned Calculator</h3>
+            <p>Compare calories burned across activities with MET data and food equivalents.</p>
+          </a>
           <a href="https://kitmul.com/en/health/heart-rate-zones" class="tool-card" target="_blank">
             <h3>Heart Rate Zones Calculator</h3>
             <p>Calculate your 5 heart rate training zones based on age</p>
@@ -654,13 +718,41 @@ export default function Tools() {
             <h3>Ideal Weight Calculator</h3>
             <p>Find your ideal body weight using five scientific formulas with metric and imperial support.</p>
           </a>
+          <a href="https://kitmul.com/en/health/intermittent-fasting-timer" class="tool-card" target="_blank">
+            <h3>Intermittent Fasting Timer</h3>
+            <p>Track fasting with protocol selection, stage visualization, and streak tracking.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/keto-macro-calculator" class="tool-card" target="_blank">
+            <h3>Keto Macro Calculator</h3>
+            <p>Calculate keto macros with workout/rest day toggle and net carbs tracking.</p>
+          </a>
           <a href="https://kitmul.com/en/health/macro-calculator" class="tool-card" target="_blank">
             <h3>Macro Calculator</h3>
             <p>Calculate daily macronutrient targets based on your TDEE, fitness goal, and preferred diet style.</p>
           </a>
+          <a href="https://kitmul.com/en/health/one-rep-max-calculator" class="tool-card" target="_blank">
+            <h3>One-Rep Max Calculator</h3>
+            <p>Estimate your 1RM using 5 formulas with training load table and plate calculator.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/pregnancy-due-date-calculator" class="tool-card" target="_blank">
+            <h3>Pregnancy Due Date Calculator</h3>
+            <p>Calculate your due date with multiple methods and trimester milestone timeline.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/sleep-cycle-calculator" class="tool-card" target="_blank">
+            <h3>Sleep Cycle Calculator</h3>
+            <p>Calculate optimal bedtime and wake time based on 90-minute sleep cycles.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/stress-level-pss10" class="tool-card" target="_blank">
+            <h3>Stress Level Test (PSS-10)</h3>
+            <p>Measure perceived stress with the validated PSS-10 questionnaire and subscale analysis.</p>
+          </a>
           <a href="https://kitmul.com/en/health/tdee-calculator" class="tool-card" target="_blank">
             <h3>TDEE Calculator</h3>
             <p>Calculate your Total Daily Energy Expenditure using the Mifflin-St Jeor equation with activity multipliers.</p>
+          </a>
+          <a href="https://kitmul.com/en/health/waist-to-hip-ratio" class="tool-card" target="_blank">
+            <h3>Waist-to-Hip Ratio Calculator</h3>
+            <p>Calculate WHR with WHO risk classification and waist circumference assessment.</p>
           </a>
           <a href="https://kitmul.com/en/health/water-intake-calculator" class="tool-card" target="_blank">
             <h3>Water Intake Calculator</h3>
@@ -1306,6 +1398,10 @@ export default function Tools() {
             <h3>PDF Watermark Remover</h3>
             <p>Remove watermarks from PDF documents using AI-powered inpainting.</p>
           </a>
+          <a href="https://kitmul.com/en/pdf/ppt-compressor" class="tool-card" target="_blank">
+            <h3>PPT Compressor</h3>
+            <p>Compress PowerPoint PPTX files locally in your browser to reduce file size.</p>
+          </a>
           <a href="https://kitmul.com/en/pdf/pptx-to-pdf" class="tool-card" target="_blank">
             <h3>PowerPoint (PPTX) to PDF</h3>
             <p>Convert your PowerPoint presentations to PDF format.</p>
@@ -1420,9 +1516,17 @@ export default function Tools() {
             <h3>Ad Character Counter</h3>
             <p>Count characters for Google, Facebook, and other ads.</p>
           </a>
+          <a href="https://kitmul.com/en/social/breadcrumb-schema" class="tool-card" target="_blank">
+            <h3>Breadcrumb Schema Generator</h3>
+            <p>Generate JSON-LD breadcrumb structured data for SEO.</p>
+          </a>
           <a href="https://kitmul.com/en/social/canonical-url-generator" class="tool-card" target="_blank">
             <h3>Canonical URL Gen</h3>
             <p>Generate canonical URL tags to prevent duplicate content.</p>
+          </a>
+          <a href="https://kitmul.com/en/social/digital-business-card" class="tool-card" target="_blank">
+            <h3>Digital Business Card</h3>
+            <p>Create and download a digital business card with vCard and QR code.</p>
           </a>
           <a href="https://kitmul.com/en/social/hashtag-generator" class="tool-card" target="_blank">
             <h3>Hashtag Generator</h3>
@@ -1436,6 +1540,10 @@ export default function Tools() {
             <h3>Keyword Density Checker</h3>
             <p>Analyze the keyword density of your content for SEO.</p>
           </a>
+          <a href="https://kitmul.com/en/social/linkedin-post-formatter" class="tool-card" target="_blank">
+            <h3>LinkedIn Post Formatter</h3>
+            <p>Format and style your LinkedIn posts with Unicode text and preview.</p>
+          </a>
           <a href="https://kitmul.com/en/social/meta-tag-generator" class="tool-card" target="_blank">
             <h3>Meta Tag Generator for SEO</h3>
             <p>Generate SEO-optimized meta tags for your website.</p>
@@ -1448,6 +1556,10 @@ export default function Tools() {
             <h3>Robots.txt Generator</h3>
             <p>Create a robots.txt file to guide search engine crawlers.</p>
           </a>
+          <a href="https://kitmul.com/en/social/seo-title-meta-optimizer" class="tool-card" target="_blank">
+            <h3>SEO Title &amp; Meta Optimizer</h3>
+            <p>Optimize your page titles and meta descriptions for search engines.</p>
+          </a>
           <a href="https://kitmul.com/en/social/sitemap-generator" class="tool-card" target="_blank">
             <h3>Sitemap Generator (XML)</h3>
             <p>Generate an XML sitemap for search engine indexing.</p>
@@ -1455,6 +1567,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/social/twitter-character-counter" class="tool-card" target="_blank">
             <h3>Twitter Character Counter</h3>
             <p>Count characters and verify Twitter's limit.</p>
+          </a>
+          <a href="https://kitmul.com/en/social/utm-builder" class="tool-card" target="_blank">
+            <h3>UTM Builder</h3>
+            <p>Build campaign tracking URLs with UTM parameters.</p>
           </a>
         </div>
       </section>
