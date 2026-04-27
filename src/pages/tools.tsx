@@ -210,6 +210,10 @@ export default function Tools() {
             <h3>Glassmorphism Generator</h3>
             <p>Generate glassmorphism frosted glass CSS effects</p>
           </a>
+          <a href="https://kitmul.com/en/design-css/color-picker" class="tool-card" target="_blank">
+            <h3>Pick &amp; Convert Colors</h3>
+            <p>Pick any color and instantly convert between HEX, RGB, HSL, CMYK, and Tailwind CSS classes.</p>
+          </a>
         </div>
       </section>
 
@@ -352,6 +356,10 @@ export default function Tools() {
             <h3>Chmod Calculator</h3>
             <p>Calculate Linux file permissions easily.</p>
           </a>
+          <a href="https://kitmul.com/en/developer/json-to-typescript" class="tool-card" target="_blank">
+            <h3>Convert JSON to TypeScript Interfaces</h3>
+            <p>Generate TypeScript interfaces from any JSON data instantly.</p>
+          </a>
           <a href="https://kitmul.com/en/developer/hreflang-checker" class="tool-card" target="_blank">
             <h3>Hreflang Checker</h3>
             <p>Validate hreflang tags for international SEO. Check language codes, region codes, and x-default.</p>
@@ -399,6 +407,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/developer/source-map-unpacker" class="tool-card" target="_blank">
             <h3>Source Map Unpacker</h3>
             <p>Extract source files from a .map file and download as ZIP.</p>
+          </a>
+          <a href="https://kitmul.com/en/developer/regex-tester" class="tool-card" target="_blank">
+            <h3>Test &amp; Explain Regular Expressions</h3>
+            <p>Test regex patterns against text and get plain English explanations of each token.</p>
           </a>
           <a href="https://kitmul.com/en/developer/url-encoder-decoder" class="tool-card" target="_blank">
             <h3>URL Encoder/Decoder</h3>
@@ -465,6 +477,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/education-science/significant-figures" class="tool-card" target="_blank">
             <h3>Significant Figures Calculator</h3>
             <p>Identify significant digits and round numbers with precision.</p>
+          </a>
+          <a href="https://kitmul.com/en/education-science/ohms-law" class="tool-card" target="_blank">
+            <h3>Solve Ohm's Law</h3>
+            <p>Calculate voltage, current, resistance, and power using Ohm's Law with an interactive circuit diagram.</p>
           </a>
           <a href="https://kitmul.com/en/education-science/stoichiometry-calculator" class="tool-card" target="_blank">
             <h3>Stoichiometry Calculator</h3>
@@ -600,6 +616,10 @@ export default function Tools() {
             <h3>Burn Rate / Runway Calculator</h3>
             <p>Calculate your startup's monthly burn rate, net burn, and cash runway with month-by-month projections.</p>
           </a>
+          <a href="https://kitmul.com/en/finance/inflation-calculator" class="tool-card" target="_blank">
+            <h3>Calculate Inflation-Adjusted Values</h3>
+            <p>Calculate how inflation affects purchasing power over time with historical and custom rates.</p>
+          </a>
           <a href="https://kitmul.com/en/finance/cash-change-calculator" class="tool-card" target="_blank">
             <h3>Cash Change Calculator</h3>
             <p>Calculate the exact change to return in bills and coins for any currency.</p>
@@ -639,6 +659,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/finance/loan-payoff-calculator" class="tool-card" target="_blank">
             <h3>Loan Payoff Calculator</h3>
             <p>Find out when your loan will be paid off.</p>
+          </a>
+          <a href="https://kitmul.com/en/finance/loan-payoff" class="tool-card" target="_blank">
+            <h3>Loan Payoff Calculator</h3>
+            <p>Determine how long it will take to pay off your loan and the total interest you will pay.</p>
           </a>
           <a href="https://kitmul.com/en/finance/margin-markup-calculator" class="tool-card" target="_blank">
             <h3>Margin &amp; Markup Calculator</h3>
@@ -848,6 +872,10 @@ export default function Tools() {
             <h3>Favicon Generator</h3>
             <p>Create a complete set of favicons for your website from any image instantly.</p>
           </a>
+          <a href="https://kitmul.com/en/image-design/image-flip-rotate" class="tool-card" target="_blank">
+            <h3>Flip &amp; Rotate Image</h3>
+            <p>Rotate images by any angle and flip them horizontally or vertically.</p>
+          </a>
           <a href="https://kitmul.com/en/image-design/flyer-builder" class="tool-card" target="_blank">
             <h3>Flyer &amp; Poster Maker</h3>
             <p>Design eye-catching flyers and posters with customizable templates, text, shapes, and images.</p>
@@ -872,6 +900,10 @@ export default function Tools() {
             <h3>GIF to WebP Converter</h3>
             <p>Convert GIF images to WebP format instantly in your browser to reduce file size or add format support.</p>
           </a>
+          <a href="https://kitmul.com/en/image-design/qr-code-generator" class="tool-card" target="_blank">
+            <h3>Generate &amp; Scan QR Codes</h3>
+            <p>Create custom QR codes and scan existing ones instantly in your browser.</p>
+          </a>
           <a href="https://kitmul.com/en/image-design/ico-to-avif" class="tool-card" target="_blank">
             <h3>ICO to AVIF Converter</h3>
             <p>Convert ICO icon files to AVIF for efficient web display and compact storage.</p>
@@ -880,6 +912,10 @@ export default function Tools() {
             <h3>ICO to GIF Converter</h3>
             <p>Convert ICO images to GIF format instantly in your browser to reduce file size or add format support.</p>
           </a>
+          <a href="https://kitmul.com/en/image-design/image-compressor" class="tool-card" target="_blank">
+            <h3>Image Compressor</h3>
+            <p>Reduce image file size while maintaining quality directly in your browser.</p>
+          </a>
           <a href="https://kitmul.com/en/image-design/image-cropper" class="tool-card" target="_blank">
             <h3>Image Cropper</h3>
             <p>Crop your images to any size or shape easily and securely in your browser.</p>
@@ -887,6 +923,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/image-design/image-enhancer" class="tool-card" target="_blank">
             <h3>Image Enhancer</h3>
             <p>Enhance and upscale images using Swin2SR AI super-resolution.</p>
+          </a>
+          <a href="https://kitmul.com/en/image-design/image-format-converter" class="tool-card" target="_blank">
+            <h3>Image Format Converter</h3>
+            <p>Convert images between PNG, JPG, and WebP formats instantly in your browser.</p>
           </a>
           <a href="https://kitmul.com/en/image-design/image-resizer" class="tool-card" target="_blank">
             <h3>Image Resizer</h3>
@@ -1020,6 +1060,10 @@ export default function Tools() {
             <h3>Texture Preview (KTX2 / DDS to PNG)</h3>
             <p>Preview KTX2 and DDS GPU texture files in your browser and download them as PNG. Supports Basis Universal and BC1-BC7.</p>
           </a>
+          <a href="https://kitmul.com/en/image-design/interactive-360-photo-viewer" class="tool-card" target="_blank">
+            <h3>View 360 Photos</h3>
+            <p>Upload and explore equirectangular 360 photos in an interactive 3D panorama viewer.</p>
+          </a>
           <a href="https://kitmul.com/en/image-design/watermark-generator" class="tool-card" target="_blank">
             <h3>Watermark Generator</h3>
             <p>Add text watermarks to your photos easily and securely in your browser.</p>
@@ -1090,6 +1134,10 @@ export default function Tools() {
             <h3>Percentage Calculator</h3>
             <p>Quickly calculate percentages and percentage changes.</p>
           </a>
+          <a href="https://kitmul.com/en/math/percentage" class="tool-card" target="_blank">
+            <h3>Percentage Calculator</h3>
+            <p>Calculate percentages, percentage change, and what percentage X is of Y instantly.</p>
+          </a>
           <a href="https://kitmul.com/en/math/percentage-change-calculator" class="tool-card" target="_blank">
             <h3>Percentage Change Calculator</h3>
             <p>Calculate the percentage increase or decrease between two values.</p>
@@ -1155,6 +1203,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/music/aac-to-wav" class="tool-card" target="_blank">
             <h3>AAC to WAV Converter</h3>
             <p>Convert AAC audio files to WAV format online for free.</p>
+          </a>
+          <a href="https://kitmul.com/en/music/audio-format-converter" class="tool-card" target="_blank">
+            <h3>Audio Format Converter</h3>
+            <p>Convert audio files between MP3, WAV, OGG, M4A, FLAC and AAC formats instantly in your browser.</p>
           </a>
           <a href="https://kitmul.com/en/music/adsr-envelope-designer" class="tool-card" target="_blank">
             <h3>ADSR Envelope Designer</h3>
@@ -1478,13 +1530,41 @@ export default function Tools() {
             <h3>Bcrypt Hash Generator</h3>
             <p>Hash passwords and verify bcrypt hashes securely in your browser.</p>
           </a>
+          <a href="https://kitmul.com/en/security/csp-builder" class="tool-card" target="_blank">
+            <h3>Build Content Security Policy</h3>
+            <p>Generate CSP headers interactively with all directives, presets, and output for HTTP headers, meta tags, Nginx, Apache, and Express.</p>
+          </a>
           <a href="https://kitmul.com/en/security/caesar-cipher" class="tool-card" target="_blank">
             <h3>Caesar Cipher</h3>
             <p>Encrypt and decrypt text using the Caesar cipher with a customizable shift value.</p>
           </a>
+          <a href="https://kitmul.com/en/security/pwned-password-checker" class="tool-card" target="_blank">
+            <h3>Check Pwned Passwords</h3>
+            <p>Check if your password has been exposed in known data breaches using the Have I Been Pwned API with k-anonymity.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/cors-configuration-helper" class="tool-card" target="_blank">
+            <h3>Configure CORS Headers</h3>
+            <p>Generate CORS configurations for Express.js, Nginx, Apache, Fetch API, Spring Boot, Django, and Laravel.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/ssl-certificate-decoder" class="tool-card" target="_blank">
+            <h3>Decode SSL/TLS Certificates</h3>
+            <p>Parse and inspect PEM-encoded X.509 certificates. View subject, issuer, validity, and public key details.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/base58-encoder" class="tool-card" target="_blank">
+            <h3>Encode and Decode Base58</h3>
+            <p>Encode text to Base58 and decode Base58 back to text using the Bitcoin alphabet.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/security-headers-generator" class="tool-card" target="_blank">
+            <h3>Generate Security Headers</h3>
+            <p>Configure and generate HTTP security headers with a security grade score. Export for Nginx, Apache, and Express.js.</p>
+          </a>
           <a href="https://kitmul.com/en/security/hash-generator" class="tool-card" target="_blank">
             <h3>Hash Generator</h3>
             <p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text input instantly.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/steganography-tool" class="tool-card" target="_blank">
+            <h3>Hide Text in Images with Steganography</h3>
+            <p>Hide secret messages inside images using LSB steganography. Extract hidden text from stego images.</p>
           </a>
           <a href="https://kitmul.com/en/security/morse-code" class="tool-card" target="_blank">
             <h3>Morse Code Encoder/Decoder</h3>
@@ -1501,6 +1581,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/security/rsa-key-generator" class="tool-card" target="_blank">
             <h3>RSA Key Generator</h3>
             <p>Generate secure RSA public and private key pairs in PEM format.</p>
+          </a>
+          <a href="https://kitmul.com/en/security/shamirs-secret-sharing" class="tool-card" target="_blank">
+            <h3>Split Secrets with Shamir's Scheme</h3>
+            <p>Split a secret into N shares and reconstruct it with any K shares using Shamir's Secret Sharing over GF(256).</p>
           </a>
           <a href="https://kitmul.com/en/security/vigenere-cipher" class="tool-card" target="_blank">
             <h3>Vigenere Cipher</h3>
@@ -1586,6 +1670,18 @@ export default function Tools() {
             <h3>AMRAP Timer</h3>
             <p>Timed workout timer for 'As Many Rounds As Possible' routines with integrated round and rep counters.</p>
           </a>
+          <a href="https://kitmul.com/en/sport-performance/ffmi-calculator" class="tool-card" target="_blank">
+            <h3>Calculate Your FFMI</h3>
+            <p>Calculate your Fat-Free Mass Index with normalized height adjustment and natural limit overlay.</p>
+          </a>
+          <a href="https://kitmul.com/en/sport-performance/strength-standards-checker" class="tool-card" target="_blank">
+            <h3>Check Your Strength Standards</h3>
+            <p>Check your powerlifting strength level with Wilks, DOTS, and IPF GL scoring.</p>
+          </a>
+          <a href="https://kitmul.com/en/sport-performance/vo2-max-estimator" class="tool-card" target="_blank">
+            <h3>Estimate Your VO2 Max</h3>
+            <p>Calculate your VO2 max using Cooper, Rockport, or Uth formulas with age-based percentile ranking.</p>
+          </a>
           <a href="https://kitmul.com/en/sport-performance/hiit-workout-timer" class="tool-card" target="_blank">
             <h3>HIIT Workout Timer</h3>
             <p>Customizable High-Intensity Interval Training timer for any workout routine.</p>
@@ -1647,6 +1743,10 @@ export default function Tools() {
           <a href="https://kitmul.com/en/converters/km-to-miles" class="tool-card" target="_blank">
             <h3>Km ↔ Miles Converter</h3>
             <p>Convert Kilometers to Miles and vice-versa instantly.</p>
+          </a>
+          <a href="https://kitmul.com/en/converters/km-miles" class="tool-card" target="_blank">
+            <h3>Km ↔ Miles Converter</h3>
+            <p>Quickly convert between Kilometers and Miles with high precision in real-time.</p>
           </a>
           <a href="https://kitmul.com/en/converters/length-converter" class="tool-card" target="_blank">
             <h3>Length Converter</h3>
@@ -1762,6 +1862,10 @@ export default function Tools() {
             <h3>Video Compressor</h3>
             <p>Reduce video file size while maintaining quality.</p>
           </a>
+          <a href="https://kitmul.com/en/video/video-format-converter" class="tool-card" target="_blank">
+            <h3>Video Format Converter</h3>
+            <p>Convert videos between MP4, MOV, AVI, MKV and WebM formats instantly in your browser.</p>
+          </a>
           <a href="https://kitmul.com/en/video/video-to-gif" class="tool-card" target="_blank">
             <h3>Video to GIF Converter</h3>
             <p>Convert any video to animated GIF with custom FPS and size.</p>
@@ -1808,9 +1912,17 @@ export default function Tools() {
             <h3>Binary Search Tree Lab</h3>
             <p>Interactive BST visualizer with insert, delete, search, and traversal operations.</p>
           </a>
+          <a href="https://kitmul.com/en/visualizers-logic/big-o-complexity-comparator" class="tool-card" target="_blank">
+            <h3>Compare Big O Complexity Curves</h3>
+            <p>Visualize and compare Big O complexity curves from O(1) to O(n!) on an interactive chart.</p>
+          </a>
           <a href="https://kitmul.com/en/visualizers-logic/css-grid-builder" class="tool-card" target="_blank">
             <h3>CSS Grid Interactive Builder</h3>
             <p>Visualize and build complex CSS grid layouts effortlessly with our interactive tool.</p>
+          </a>
+          <a href="https://kitmul.com/en/visualizers-logic/database-schema-designer" class="tool-card" target="_blank">
+            <h3>Design Database Schemas Visually</h3>
+            <p>Design database schemas with a visual ER diagram editor. Parse SQL DDL, add tables, and export CREATE TABLE statements.</p>
           </a>
           <a href="https://kitmul.com/en/visualizers-logic/graph-traversal-animator" class="tool-card" target="_blank">
             <h3>Graph Traversal Animator</h3>
@@ -1839,6 +1951,18 @@ export default function Tools() {
           <a href="https://kitmul.com/en/visualizers-logic/sorting-algorithms-animator" class="tool-card" target="_blank">
             <h3>Sorting Algorithms Animator</h3>
             <p>Visualize sorting algorithms step by step with animated bars.</p>
+          </a>
+          <a href="https://kitmul.com/en/visualizers-logic/pathfinding-visualizer" class="tool-card" target="_blank">
+            <h3>Visualize Pathfinding Algorithms</h3>
+            <p>Visualize A*, Dijkstra, BFS, and DFS pathfinding algorithms step by step on an interactive grid.</p>
+          </a>
+          <a href="https://kitmul.com/en/visualizers-logic/recursion-tree-visualizer" class="tool-card" target="_blank">
+            <h3>Visualize Recursion Tree &amp; Callstack</h3>
+            <p>Paste a recursive function, execute it, and visualize the call tree with memoization overlay.</p>
+          </a>
+          <a href="https://kitmul.com/en/visualizers-logic/css-box-model-visualizer" class="tool-card" target="_blank">
+            <h3>Visualize the CSS Box Model</h3>
+            <p>Interactively visualize the CSS box model with live padding, border, margin, and content editing.</p>
           </a>
         </div>
       </section>
