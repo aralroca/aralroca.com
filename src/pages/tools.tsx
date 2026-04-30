@@ -3,7 +3,7 @@ export default function Tools() {
     <div class="tools-page">
       <h1>Free Online Tools</h1>
       <p class="tools-intro">
-        A collection of 444+ free tools I've built for the community. They all run
+        A collection of 464+ free tools I've built for the community. They all run
         entirely in your browser; nothing is uploaded to any server. No signup required.
       </p>
 
@@ -57,6 +57,18 @@ export default function Tools() {
           <a href="https://kitmul.com/en/ai/text-tone-analyzer" class="tool-card" target="_blank">
             <h3>Text Tone Analyzer</h3>
             <p>Analyze the tone and mood of your text using lexicon-based detection.</p>
+          </a>
+          <a href="https://kitmul.com/en/ai/ats-resume-analyzer" class="tool-card" target="_blank">
+            <h3>ATS Resume Analyzer</h3>
+            <p>Score your resume against a job description with keyword matching, format analysis, and actionable improvement suggestions.</p>
+          </a>
+          <a href="https://kitmul.com/en/ai/image-colorizer" class="tool-card" target="_blank">
+            <h3>Colorize Black and White Images</h3>
+            <p>Automatically add realistic color to grayscale photos using AI with before/after comparison and intensity control.</p>
+          </a>
+          <a href="https://kitmul.com/en/ai/object-detector" class="tool-card" target="_blank">
+            <h3>Object Detector</h3>
+            <p>Detect and label objects in images using AI with bounding boxes, confidence scores, and JSON export.</p>
           </a>
         </div>
       </section>
@@ -213,6 +225,14 @@ export default function Tools() {
           <a href="https://kitmul.com/en/design-css/color-picker" class="tool-card" target="_blank">
             <h3>Pick &amp; Convert Colors</h3>
             <p>Pick any color and instantly convert between HEX, RGB, HSL, CMYK, and Tailwind CSS classes.</p>
+          </a>
+          <a href="https://kitmul.com/en/design-css/color-contrast-checker" class="tool-card" target="_blank">
+            <h3>Color Contrast Checker (WCAG)</h3>
+            <p>Check WCAG 2.1 color contrast ratios with AA/AAA pass/fail badges and live preview.</p>
+          </a>
+          <a href="https://kitmul.com/en/design-css/svg-wave-blob-generator" class="tool-card" target="_blank">
+            <h3>SVG Wave &amp; Blob Generator</h3>
+            <p>Create SVG wave dividers and organic blob shapes with customizable layers, colors, and export options.</p>
           </a>
         </div>
       </section>
@@ -420,6 +440,26 @@ export default function Tools() {
             <h3>UUID/GUID Generator</h3>
             <p>Generate secure UUIDs (v1, v4, v7) instantly.</p>
           </a>
+          <a href="https://kitmul.com/en/developer/crontab-generator" class="tool-card" target="_blank">
+            <h3>Crontab Generator</h3>
+            <p>Build cron expressions visually with presets, human-readable explanations, and next run previews.</p>
+          </a>
+          <a href="https://kitmul.com/en/developer/docker-compose-generator" class="tool-card" target="_blank">
+            <h3>Docker Compose Generator</h3>
+            <p>Build docker-compose.yml visually with service templates for Postgres, Redis, MongoDB, and more.</p>
+          </a>
+          <a href="https://kitmul.com/en/developer/gitignore-generator" class="tool-card" target="_blank">
+            <h3>Gitignore Generator</h3>
+            <p>Create .gitignore files by selecting from language, framework, IDE, and OS templates.</p>
+          </a>
+          <a href="https://kitmul.com/en/developer/html-to-jsx" class="tool-card" target="_blank">
+            <h3>HTML to JSX Converter</h3>
+            <p>Convert HTML to React JSX with automatic attribute conversion.</p>
+          </a>
+          <a href="https://kitmul.com/en/developer/sql-formatter" class="tool-card" target="_blank">
+            <h3>SQL Formatter</h3>
+            <p>Format, beautify, and minify SQL queries with multi-dialect support.</p>
+          </a>
         </div>
       </section>
 
@@ -531,6 +571,22 @@ export default function Tools() {
           <a href="https://kitmul.com/en/data-coding/octal-to-string" class="tool-card" target="_blank">
             <h3>Text ↔ Octal Converter</h3>
             <p>Convert between octal code and plain text.</p>
+          </a>
+          <a href="https://kitmul.com/en/data-coding/fake-data-generator" class="tool-card" target="_blank">
+            <h3>Fake Data Generator</h3>
+            <p>Generate realistic mock data for testing with multiple schemas and export formats.</p>
+          </a>
+          <a href="https://kitmul.com/en/data-coding/image-to-base64" class="tool-card" target="_blank">
+            <h3>Image to Base64</h3>
+            <p>Convert images to Base64 with multiple output formats: data URI, CSS, HTML, and Markdown.</p>
+          </a>
+          <a href="https://kitmul.com/en/data-coding/json-to-csv" class="tool-card" target="_blank">
+            <h3>JSON to CSV</h3>
+            <p>Transform JSON data into CSV format with nested object flattening and table preview.</p>
+          </a>
+          <a href="https://kitmul.com/en/data-coding/markdown-table-generator" class="tool-card" target="_blank">
+            <h3>Markdown Table Generator</h3>
+            <p>Create markdown tables with an interactive grid editor, column alignment, and CSV import.</p>
           </a>
         </div>
       </section>
@@ -700,6 +756,10 @@ export default function Tools() {
             <h3>VAT Calculator</h3>
             <p>Calculate VAT (Value Added Tax) for any amount and rate.</p>
           </a>
+          <a href="https://kitmul.com/en/finance/currency-converter" class="tool-card" target="_blank">
+            <h3>Currency Converter</h3>
+            <p>Convert between 50+ world currencies with live exchange rates.</p>
+          </a>
         </div>
       </section>
 
@@ -782,12 +842,20 @@ export default function Tools() {
             <h3>Water Intake Calculator</h3>
             <p>Calculate your recommended daily water intake</p>
           </a>
+          <a href="https://kitmul.com/en/health/typing-speed-test" class="tool-card" target="_blank">
+            <h3>Typing Speed Test</h3>
+            <p>Measure WPM, accuracy, and consistency with timed typing tests.</p>
+          </a>
         </div>
       </section>
 
       <section class="tool-category">
         <h2>Image & Design</h2>
         <div class="tool-grid">
+          <a href="https://kitmul.com/en/image-design/barcode-generator" class="tool-card" target="_blank">
+            <h3>Barcode Generator</h3>
+            <p>Create barcodes in Code 128, EAN-13, UPC-A, Code 39, and more formats.</p>
+          </a>
           <a href="https://kitmul.com/en/image-design/ase-to-css-palette" class="tool-card" target="_blank">
             <h3>ASE to CSS Color Palette</h3>
             <p>Convert Adobe ASE swatch files to CSS custom properties, SASS, LESS, or Tailwind config.</p>
@@ -1461,6 +1529,18 @@ export default function Tools() {
           <a href="https://kitmul.com/en/pdf/text-to-pdf" class="tool-card" target="_blank">
             <h3>Text to PDF</h3>
             <p>Convert plain text into a professional PDF document.</p>
+          </a>
+          <a href="https://kitmul.com/en/pdf/markdown-to-pdf" class="tool-card" target="_blank">
+            <h3>Markdown to PDF</h3>
+            <p>Convert Markdown text to PDF with live preview and multiple themes.</p>
+          </a>
+          <a href="https://kitmul.com/en/pdf/pdf-to-word" class="tool-card" target="_blank">
+            <h3>PDF to Word</h3>
+            <p>Convert PDF documents to editable Word (DOCX) files with text extraction, heading detection, and list formatting.</p>
+          </a>
+          <a href="https://kitmul.com/en/pdf/word-to-pdf" class="tool-card" target="_blank">
+            <h3>Word to PDF</h3>
+            <p>Convert Word (DOCX) documents to PDF with faithful rendering, page size options, and quality control.</p>
           </a>
         </div>
       </section>
