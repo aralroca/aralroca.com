@@ -1,4 +1,5 @@
 import { Image } from 'janux';
+import postImageTransition from '@/utils/postImageTransition';
 import PostInfo from './PostInfo';
 
 type Props = {
@@ -26,13 +27,11 @@ export default function PostItem({ slug, metadata, date, timeToRead }: Props) {
           width={110}
           src={metadata.cover_image_mobile}
           alt={metadata.title}
-          style={{ viewTransitionName: `img:${slug}` }}
+          style={{ viewTransitionName: postImageTransition(slug) }}
         />
       </div>
       <div class="info">
-        <h2 style={{ viewTransitionName: `title:${slug}` }}>
-          {metadata.title}
-        </h2>
+        <h2>{metadata.title}</h2>
         {PostInfo({ timeToRead, date, hideAuthor: true })}
       </div>
     </a>

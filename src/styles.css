@@ -61,9 +61,6 @@ a {
   color: var(--secondary-color);
 }
 
-h1 {
-  view-transition-name: heading;
-}
 
 body,
 html {

@@ -7,6 +7,7 @@ import Newsletter from '@/components/Newsletter';
 import PostInfo from '@/components/PostInfo';
 import PostItem from '@/components/PostItem';
 import pageMeta from '@/seo';
+import postImageTransition from '@/utils/postImageTransition';
 import addCustomPostWidgets from '@/utils/addCustomPostWidgets';
 import clearPage from '@/utils/clearPage';
 import getCanonical from '@/utils/getCanonical';
@@ -64,12 +65,10 @@ export default async function Post({ params }: Params) {
           width={840}
           aspectRatio="960/432"
           sizes="(max-width: 920px) 100vw, 840px"
-          style={{ viewTransitionName: `img:${slug}` }}
+          style={{ viewTransitionName: postImageTransition(slug) }}
         />
       </div>
-      <h1 style={{ viewTransitionName: `title:${slug}` }} class="post-title">
-        {data.title}
-      </h1>
+      <h1 class="post-title">{data.title}</h1>
       <PostInfo date={date} timeToRead={timeToRead} />
       <div class="tags" style={{ marginBottom: 30 }}>
         {tags.map((tag: string) => (
