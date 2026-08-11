@@ -1,3 +1,10 @@
+import pageMeta from '@/seo';
+
+export const meta = pageMeta({
+  title: 'Free Online Tools - Aral Roca',
+  canonical: '/tools',
+});
+
 export default function Tools() {
   return (
     <div class="tools-page">

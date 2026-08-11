@@ -1,3 +1,7 @@
+import pageMeta from '@/seo';
+
+export const meta = pageMeta({ title: 'Aral Roca', canonical: '/' });
+
 export default function Home() {
   return (
     <div class="homepage">
@@ -5,12 +9,24 @@ export default function Home() {
         class="profile-picture"
         src="/images/profile.jpg"
         alt="Aral Roca profile's picture"
+        width={200}
+        height={200}
       />
       <h1>Aral Roca</h1>
       <h2>Software Engineer</h2>
       <div class="content">
         <p style={{ fontStyle: 'italic' }}>Creator and maintainer of:</p>
         <ul>
+          <li>
+            <a
+              target="blank"
+              rel="noopener noreferrer"
+              href="https://github.com/aralroca/Janux"
+            >
+              Janux
+            </a>{' '}
+            Janux, the fullstack framework for the Agentic Web.
+          </li>
           <li>
             <a
               target="blank"
@@ -55,7 +71,7 @@ export default function Home() {
             <a
               target="blank"
               rel="noopener noreferrer"
-              href="https://github.com/teafuljs/teaful"
+              href="https://github.com/aralroca/etiketai"
             >
               Etiketai
             </a>{' '}

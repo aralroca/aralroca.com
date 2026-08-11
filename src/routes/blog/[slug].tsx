@@ -1,22 +1,54 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { dangerHTML, type RequestContext } from 'brisa';
-import type { MatchedRoute } from 'bun';
+import { notFound, type PageMeta } from 'janux';
 
 import BlogSeries from '@/components/BlogSeries';
 import Newsletter from '@/components/Newsletter';
 import PostInfo from '@/components/PostInfo';
 import PostItem from '@/components/PostItem';
+import pageMeta from '@/seo';
 import addCustomPostWidgets from '@/utils/addCustomPostWidgets';
 import clearPage from '@/utils/clearPage';
+import getCanonical from '@/utils/getCanonical';
 import getMorePosts from '@/utils/getMorePosts';
 import readPost from '@/utils/readPost';
-import getCanonical from '@/utils/getCanonical';
 
-export default async function Post({}, { store, route }: RequestContext) {
-  const { slug } = route.params;
-  const { data, date, morePosts, series, __html, tags, timeToRead } =
-    store.get('post');
+const POSTS_PATH = path.join(process.cwd(), 'src', 'posts');
+
+type Params = { params: { slug: string } };
+
+const exists = (slug: string) =>
+  fs.existsSync(path.join(POSTS_PATH, `${slug}.md`));
+
+/** Enumerates the concrete pages: the static prerender and the sitemap read this. */
+export const staticParams = () =>
+  fs.readdirSync(POSTS_PATH).map((file) => ({ slug: clearPage(file) }));
+
+export function meta({ params }: Params): PageMeta {
+  if (!exists(params.slug)) return {};
+  const { data } = readPost(params.slug);
+  const url = getCanonical(`/blog/${params.slug}`);
+
+  return pageMeta({
+    title: data.title,
+    description: data.description,
+    canonical: data.canonical || url,
+    image: `https://aralroca.com${data.cover_image}`,
+    keywords: data.tags,
+    og: { type: 'article', url },
+    head: [{ tag: 'meta', attrs: { name: 'twitter:widgets:theme' } }],
+  });
+}
+
+export default async function Post({ params }: Params) {
+  const { slug } = params;
+
+  if (!exists(slug)) notFound();
+  const post = readPost(slug);
+  const [morePosts, series] = await getMorePosts(post, slug);
+  const __html = await addCustomPostWidgets(post.__html);
+  const { data, timeToRead, date } = post;
+  const tags = data.tags.split(',');
 
   return (
     <>
@@ -27,7 +59,11 @@ export default async function Post({}, { store, route }: RequestContext) {
       >
         <img
           loading="eager"
+          fetchpriority="high"
           src={data.cover_image}
+          alt={data.title}
+          width={960}
+          height={432}
           style={{ viewTransitionName: 'img:' + slug, aspectRatio: '960/432' }}
         />
       </div>
@@ -42,13 +78,19 @@ export default async function Post({}, { store, route }: RequestContext) {
           </a>
         ))}
       </div>
-      <BlogSeries key="series-top" title={data.series} series={series} />
-      <div class="post">{dangerHTML(__html)}</div>
+      <BlogSeries
+        key="series-top"
+        title={data.series}
+        series={series}
+        currentSlug={slug}
+      />
+      <div class="post" dangerHTML={__html} />
       <BlogSeries
         style={{ marginTop: 40 }}
         key="series-bottom"
         title={data.series}
         series={series}
+        currentSlug={slug}
       />
       <div class="end-post">
         {data.dev_to && (
@@ -76,7 +118,7 @@ export default async function Post({}, { store, route }: RequestContext) {
         </a>
         <span> • </span>
         <a
-          href={`https://github.com/aralroca/aralroca.com/blob/master/posts/${slug}.md`}
+          href={`https://github.com/aralroca/aralroca.com/blob/master/src/posts/${slug}.md`}
           rel="noopener noreferrer"
           target="_blank"
           title="Edit post on GitHub"
@@ -96,63 +138,3 @@ export default async function Post({}, { store, route }: RequestContext) {
     </>
   );
 }
-
-async function loadPostData(route: MatchedRoute) {
-  const {
-    params: { slug },
-  } = route;
-  const post = readPost(slug);
-  const [morePosts, series] = await getMorePosts(post, slug);
-  const __html = await addCustomPostWidgets(post.__html);
-  const { data, timeToRead, date } = post;
-  const tags = data.tags.split(',');
-
-  return { data, date, morePosts, series, __html, tags, timeToRead };
-}
-
-export async function Head({}, { store, route }: RequestContext) {
-  const post = await loadPostData(route);
-  const { data } = post;
-
-  store.set('post', post);
-
-  // TODO: Remove styles after this issue:
-  // https://github.com/brisa-build/brisa/issues/156#issuecomment-2228440081
-  return (
-    <>
-      <link
-        id="canonical"
-        rel="canonical"
-        href={data?.canonical || getCanonical(route.pathname)}
-      />
-      <title id="title">{data.title}</title>
-      <meta id="meta-title" name="title" content={data.title} />
-      <meta
-        id="meta-description"
-        name="description"
-        content={data.description}
-      />
-      <meta name="twitter:widgets:theme" />
-      <meta id="meta-keywords" name="keywords" content={data.tags} />
-      <meta id="meta-twitter-title" name="twitter:title" content={data.title} />
-      <meta id="og:type" property="og:type" content="article" />
-      <meta
-        id="meta-og-image"
-        property="og:image"
-        content={'https://aralroca.com' + data.cover_image}
-      />
-      <meta id="meta-og:title" property="og:title" content={data.title} />
-      <meta
-        id="meta-og:description"
-        property="og:description"
-        content={data.description}
-      />
-    </>
-  );
-}
-
-export const prerender = async () => {
-  const POST_PATH = path.join(process.cwd(), 'src', 'posts');
-  const files = fs.readdirSync(POST_PATH).map(clearPage);
-  return files.map((slug) => ({ slug }));
-};

@@ -1,3 +1,7 @@
+import pageMeta from '@/seo';
+
+export const meta = pageMeta({ title: 'Aral Roca', robots: 'noindex' });
+
 export default function Page404() {
   return (
     <div class="page-404">

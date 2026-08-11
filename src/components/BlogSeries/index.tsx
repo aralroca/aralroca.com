@@ -1,38 +1,34 @@
-import type { RequestContext } from 'brisa';
-
 type Props = {
   title: string;
-  key: string;
+  key?: string;
+  currentSlug: string;
   series: { title: string; slug: string }[];
   style?: Record<string, string | number>;
 };
 
-export default function BlogSeries(
-  { key, title, series, style }: Props,
-  { route: { query } }: RequestContext,
-) {
+export default function BlogSeries({ title, series, style, currentSlug }: Props) {
   if (!series || !series.length) return null;
 
   return (
-    <div key={key} class="blogSeries" style={style}>
+    <div class="blogSeries" style={style}>
       <div class="title">
         {title} ({series.length} Part Series)
       </div>
       {series.map((serie, index) => {
-        const title = `${index + 1}) ${serie.title}`;
-        const key = `serie-${serie.slug}`;
+        const serieTitle = `${index + 1}) ${serie.title}`;
+        const serieKey = `serie-${serie.slug}`;
 
-        if (serie.slug === query.slug) {
+        if (serie.slug === currentSlug) {
           return (
-            <div key={key} class="blogSerie active">
-              {title}
+            <div key={serieKey} class="blogSerie active">
+              {serieTitle}
             </div>
           );
         }
 
         return (
-          <a key={key} href={`/blog/${serie.slug}`} class="blogSerie">
-            {title}
+          <a key={serieKey} href={`/blog/${serie.slug}`} class="blogSerie">
+            {serieTitle}
           </a>
         );
       })}

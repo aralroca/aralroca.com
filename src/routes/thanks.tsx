@@ -1,3 +1,10 @@
+import pageMeta from '@/seo';
+
+export const meta = pageMeta({
+  title: 'Supporters - Aral Roca',
+  canonical: '/thanks',
+});
+
 export default function Supporters() {
   return (
     <div class="supporters">
