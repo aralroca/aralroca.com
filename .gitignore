@@ -2,4 +2,5 @@ build
 node_modules
 out
 .vercel
-.DS_Storedist
+.DS_Store
+dist

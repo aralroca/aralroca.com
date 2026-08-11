@@ -26,5 +26,5 @@ export default function Blog() {
     ),
   ];
 
-  return <PostList initial={{ posts, tags }} eager />;
+  return <PostList initial={{ posts, tags }} />;
 }

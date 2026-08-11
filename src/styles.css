@@ -978,3 +978,11 @@ body[data-theme-pref="system"] .theme-icon-system,
 body:not([data-theme-pref]) .theme-icon-system {
   display: inline-flex;
 }
+
+/* Fluid cover: the box comes from aspect-ratio, never from a fixed height. */
+.cover-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 432;
+  object-fit: cover;
+}

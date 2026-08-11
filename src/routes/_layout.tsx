@@ -7,7 +7,8 @@ type LayoutProps = {
 
 export default function Layout({ children, ctx }: LayoutProps) {
   const { pathname } = ctx.url;
-  const isActive = (link: string) => (pathname.startsWith(link) ? 'active' : '');
+  const isActive = (link: string) =>
+    pathname.startsWith(link) ? 'active' : '';
   const mainClass = pathname.startsWith('/blog/') ? 'blog' : '';
 
   return (

@@ -5,14 +5,14 @@
         <title>Aral Roca</title>
         <description>Aral Roca's personal web site. Open source does tend to be more stable software. It's the right way to do things.</description>
         <link>https://aralroca.com</link>
-        <lastBuildDate>Tue Aug 11 2026 13:49:06 GMT+0000 (Coordinated Universal Time)</lastBuildDate>
+        <lastBuildDate>Tue Aug 11 2026 16:25:16 GMT+0200 (Central European Summer Time)</lastBuildDate>
       
             <item>
               <title>AI agents shouldn't control your apps; they should be the app</title>
               <description>From maintaining open source libraries to building an AI-powered tools OS with Rust and WebAssembly. How Kitmul went from a testing ground to 300+ browser-based tools.</description>
               <link>https://aralroca.com/blog/ai-agents-should-be-the-app</link>
               <guid isPermaLink="false">https://aralroca.com/blog/ai-agents-should-be-the-app/</guid>
-              <pubDate>Tue Mar 31 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Tue Mar 31 2026 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p><a href="https://kitmul.com/en">Kitmul</a> started as something far more modest than what it is today. I maintain two open source libraries: <a href="https://github.com/aralroca/next-translate">NextTranslate</a> and <a href="https://github.com/teafuljs/teaful">Teaful</a>. I needed a real Next.js project where I could iterate on them. Not artificial demos or example repositories; a live product where bugs surface naturally and limitations become obvious.</p>
 <p>That was the only goal.</p>
 <h2 id="the-ai-multiplier-effect">The AI multiplier effect</h2>
@@ -110,7 +110,7 @@
               <description>Learn how to make an application without tools as Webpack or Babel while using the same API of React.</description>
               <link>https://aralroca.com/blog/app-with-react-api-without-tools-as-webpack-or-babel</link>
               <guid isPermaLink="false">https://aralroca.com/blog/app-with-react-api-without-tools-as-webpack-or-babel/</guid>
-              <pubDate>Thu May 07 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Thu May 07 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>There are tools like Webpack or Babel that seem indispensable when we work as frontends. But, could we make an application without such tools? Even without package.json or bundles? And being able to continue using the React API? Let&#39;s see how.</p>
 <h2 id="getting-the-hello-world">Getting the hello world</h2>
 <p>We are going to start our App with just two files: <code>index.html</code> and <code>App.js</code>:</p>
@@ -235,7 +235,7 @@
               <description>A 6-month n=1 experiment applying athletic training principles to software development. Intermittent hypoxia, structured rest, and a few other physiological interventions that produced measurable differences.</description>
               <link>https://aralroca.com/blog/biohacks-that-actually-work</link>
               <guid isPermaLink="false">https://aralroca.com/blog/biohacks-that-actually-work/</guid>
-              <pubDate>Sat Apr 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sat Apr 04 2026 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>I normally write about web frameworks, WebAssembly, and JavaScript internals. And I normally don&#39;t publish on a Saturday. But I&#39;ve been wanting to write this for a while and today I woke up inspired, so here it is.</p>
 <p>This isn&#39;t a technical article. It&#39;s personal. But I genuinely believe it can help a lot of people, especially developers and founders who spend long hours in front of a screen and feel like their brain gives up before their schedule does.</p>
 <p>I want to talk about the things that changed my daily performance more than any tool, framework, or productivity app ever did. Not hypothetical stuff I read on a blog. Things I&#39;ve been doing for months (some for years) that produced measurable, repeatable differences in how I work.</p>
@@ -475,7 +475,7 @@
               <description>How Brisa's HTML Streaming feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare Brisa with other popular tools like HTMX and React to highlight the benefits of using Brisa for server-side rendering.</description>
               <link>https://aralroca.com/blog/brisa-vs-htmx-vs-react</link>
               <guid isPermaLink="false">https://aralroca.com/blog/brisa-vs-htmx-vs-react/</guid>
-              <pubDate>Thu Dec 19 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Thu Dec 19 2024 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>This blog post’ll explore how <strong>Brisa&#39;s HTML Streaming</strong> feature can help you avoid the CDN trap and improve your app’s performance. We’ll also compare <a href="https://brisa.build">Brisa</a> with other popular tools like <strong>HTMX</strong> and <strong>React</strong> to highlight the benefits of using Brisa for server-side rendering.</p>
 <h2 id="why-html-streaming-is-important">Why HTML Streaming is Important</h2>
 <p>HTML Streaming is a powerful technique that allows you to send <strong>HTML incrementally</strong> from the server to the client, improving performance and reducing latency. With <a href="https://brisa.build">Brisa</a>, you can stream HTML content directly to the client, not only for the initial render but also for subsequent updates and server actions.</p>
@@ -728,7 +728,7 @@
               <description>Learn how to implement any kind of image recognition in the browser by implementing a cat/dog classifier in Tensorflow.js.</description>
               <link>https://aralroca.com/blog/cat-dog-classifier</link>
               <guid isPermaLink="false">https://aralroca.com/blog/cat-dog-classifier/</guid>
-              <pubDate>Tue Jul 07 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Tue Jul 07 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>This is a small tutorial to implement an application that predicts if it&#39;s a cat or a dog image. To do this we&#39;ll use Tensorflow.js to make the prediction directly in the browser.</p>
 <p>I recommend reading <a href="https://aralroca.com/blog/first-steps-with-tensorflowjs">this other article</a> where I introduce Tensorflow.js.</p>
 <p>However, after this, you&#39;ll be able to classify any kind of image in an easy way even without any knowledge of ML. Also, it can be replicated for any image classification problem.</p>
@@ -975,7 +975,7 @@
               <description>This post advocates for the creation of versatile and elegant React components from the start to avoid issues with single-use components</description>
               <link>https://aralroca.com/blog/creating-scalable-and-reusable-react-components</link>
               <guid isPermaLink="false">https://aralroca.com/blog/creating-scalable-and-reusable-react-components/</guid>
-              <pubDate>Sun Apr 30 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Apr 30 2023 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<h2 id="tldr">TLDR;</h2>
 <p>In this article, I will discuss a <strong>common issue</strong> that I have encountered in React applications: the creation of <strong>single-use components</strong> that lack the versatility and elegance of a truly reusable component. Rather than designing components for specific use cases, it is more beneficial to create generic components that can be adapted to various contexts.</p>
 <h2 id="problem-simple-use-and-overly-contextualized-components">Problem: Simple-use and overly contextualized components</h2>
@@ -1136,7 +1136,7 @@
               <description>"Default-composer" is a tiny library that simplifies setting default values for nested objects</description>
               <link>https://aralroca.com/blog/default-composer</link>
               <guid isPermaLink="false">https://aralroca.com/blog/default-composer/</guid>
-              <pubDate>Mon Jun 05 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Jun 05 2023 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>When working with objects in JavaScript, it is common to need to set default values for empty <code>strings</code>/<code>objects</code>/<code>arrays</code>, <code>null</code>, or <code>undefined</code> properties. When dealing with nested objects, this can become even more complicated and require complex programming logic. However, with the &quot;<strong><a href="https://github.com/aralroca/default-composer">default-composer</a></strong>&quot; library, this task becomes simple and easy.</p>
 <h2 id="what-is-default-composer">What is &quot;default-composer&quot;?</h2>
 <p>&quot;<a href="https://github.com/aralroca/default-composer">default-composer</a>&quot; is a lightweight (~300B) JavaScript library that allows you to set default values for nested objects. The library replaces empty strings/arrays/objects, null, or undefined values in an existing object with the defined default values, which helps simplify programming logic and reduce the amount of code needed to set default values.</p>
@@ -1281,7 +1281,7 @@
               <description>Discover how to detect threatening language, insults, obscenities, identity-based hate or sexually explicit language on texts using React.</description>
               <link>https://aralroca.com/blog/detect-text-toxicity-with-react</link>
               <guid isPermaLink="false">https://aralroca.com/blog/detect-text-toxicity-with-react/</guid>
-              <pubDate>Tue Apr 28 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Tue Apr 28 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>In a previous article I explained <strong>how to start with Tensorflow.js</strong>, from creating a simple linear regression model to using pretrained models as posenet. I <strong>highly recommend</strong> to read <a href="https://aralroca.com/blog/first-steps-with-tensorflowjs">this article</a> to understand how it works.</p>
 <p>In today&#39;s article I want to show you how easy it&#39;s to use the text toxicity detection model without any previous knowledge of machine learning.</p>
 <h2 id="what-is-text-toxicity-detection">What is text toxicity detection?</h2>
@@ -1379,7 +1379,7 @@
               <description>We just shipped Didit Copilot, an AI agent embedded in the Didit identity-verification console. It queries your data through an MCP server, drives the UI through WebMCP tools, and falls back to inferring the DOM. Here is the full architecture — gui-agent, Mastra, and the lessons — so you can build the same for your product.</description>
               <link>https://aralroca.com/blog/didit-copilot-agent-inside-the-app</link>
               <guid isPermaLink="false">https://aralroca.com/blog/didit-copilot-agent-inside-the-app/</guid>
-              <pubDate>Thu Jul 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Thu Jul 09 2026 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>A few months ago I wrote that <a href="ai-agents-should-be-the-app">AI agents shouldn&#39;t control your apps; they should be the app</a>. That post was the thesis. This one is the proof.</p>
 <p>We just shipped <strong>Didit Copilot</strong>: an AI agent embedded in the <a href="https://didit.me">Didit</a> Business Console, the dashboard our customers use to manage identity verification (KYC/KYB, AML screening, biometrics, workflows). You open a chat panel, ask in natural language, and the agent operates the console <strong>in front of you</strong>: it queries your data, opens pages, applies filters, and builds verification workflows on the visual editor; node by node, with a glow over everything it touches.</p>
 <p>No screenshots. No robot moving your mouse. The app itself exposes its actions to the agent, and the agent composes them.</p>
@@ -1509,7 +1509,7 @@ clientTools[spec.<span class="hljs-property">name</span>] = <span class="hljs-ti
               <description>Discover how Snowpack fits into the JavaScript ecosystem.</description>
               <link>https://aralroca.com/blog/discovering-snowpack</link>
               <guid isPermaLink="false">https://aralroca.com/blog/discovering-snowpack/</guid>
-              <pubDate>Mon Jun 22 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Jun 22 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>In today&#39;s article, we&#39;ll do some exploring to see what <a href="https://www.snowpack.dev/">Snowpack</a> is and what are its advantages.</p>
 <p>In the last few months, I&#39;ve heard a lot of talk about Snowpack and I hadn&#39;t given it a chance. The time has come.</p>
 <img src="https://aralroca.com/images/blog-images/snowpack_logo.png" alt="Snowpack logo" class="center transparent" />
@@ -1599,7 +1599,7 @@ yarn start
               <description>Learn what Rome is, how it fits into the JavaScript ecosystem and my thoughts about it... Will Rome replace all the current tooling?</description>
               <link>https://aralroca.com/blog/do-all-roads-lead-to-rome</link>
               <guid isPermaLink="false">https://aralroca.com/blog/do-all-roads-lead-to-rome/</guid>
-              <pubDate>Mon Aug 24 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Aug 24 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>We&#39;ll see what <a href="https://github.com/romefrontend/rome">Rome</a> is, how it fits into the JavaScript ecosystem, and my thoughts about it. <strong>Will Rome replace all the current tooling?</strong> Let&#39;s see.</p>
 <h2 id="what-is-rome">What is Rome?</h2>
 <p><a href="https://github.com/romefrontend/rome"><strong>Rome</strong></a> is a full toolchain (can be used via CLI, VSCode extension, and in the future via API for testing purposes) that unifies the JavaScript and Typescript development: bundling, compiling, documentation generation, formatting, linting, minification, testing, type checking, etc. It tries to be a &quot;<strong>one-in-all</strong>&quot; solution, being able to do all these tasks under one CLI.</p>
@@ -1694,7 +1694,7 @@ yarn start
               <description>Use uncontrolled forms as default way to handle forms.</description>
               <link>https://aralroca.com/blog/dont-control-everything-react-forms</link>
               <guid isPermaLink="false">https://aralroca.com/blog/dont-control-everything-react-forms/</guid>
-              <pubDate>Fri Nov 02 2018 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Fri Nov 02 2018 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>Forms are a crucial part of almost all applications. At least one of them is usually necessary: the “Sign in” page. In this article, we are going to explain the benefits of uncontrolled forms in React and how to do it as simple as possible to re-use it in every form. We are going to use the classic “Sign in” page as an example.</p>
 <img class="center" src="https://aralroca.com/images/blog-images/9.png" alt="Sign in image" />
 
@@ -1822,7 +1822,7 @@ yarn start
               <description>I've launched Etiketai. Training AI models are now more friendlier. Use it from any device ensuring security. It has support for ImageNet and YOLO.</description>
               <link>https://aralroca.com/blog/etiketai</link>
               <guid isPermaLink="false">https://aralroca.com/blog/etiketai/</guid>
-              <pubDate>Sun Sep 20 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Sep 20 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>I&#39;d like to tell you why I made <strong><a href="https://github.com/aralroca/etiketai">Etiketai</a></strong>, a tool that makes it easier to train image recognition AI models (ImageNet, YOLO and its variants) from any device ensuring security.</p>
 <h2 id="a-little-bit-of-context">A little bit of context</h2>
 <p>When we want to directly use existing image recognition models such as ImageNet, COCO-ssd or YOLO, we are limited to predict only everyday objects such as cars, people, etc. This is because these models have only learned to recognize these objects within an image. However, there are techniques such as transfer-learning that allow us to retrain these models to <strong>predict what we want</strong>. </p>
@@ -1882,7 +1882,7 @@ yarn start
               <description>In this article, I will explain how to use HTMLPortalElement doing a “Hello world” demo with React.</description>
               <link>https://aralroca.com/blog/exploring-htmlportalelement-with-react</link>
               <guid isPermaLink="false">https://aralroca.com/blog/exploring-htmlportalelement-with-react/</guid>
-              <pubDate>Mon Jun 10 2019 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Jun 10 2019 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>HTMLPortalElement is a draft of a new HTML Element, very similar to iframes but with the big difference that it allows to navigate to the content of the &quot;iframe&quot; by using a page transition.</p>
 <img class="center" src="https://aralroca.com/images/blog-images/3.gif" alt="Example of HTMLPortalElement" />
 
@@ -2008,7 +2008,7 @@ Portals are still a proposal and maybe it's something we won't see in the future
               <description>Learn what WebGL is and how it works by drawing a triangle.</description>
               <link>https://aralroca.com/blog/first-steps-in-webgl</link>
               <guid isPermaLink="false">https://aralroca.com/blog/first-steps-in-webgl/</guid>
-              <pubDate>Mon Jul 20 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Jul 20 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>In this article we&#39;ll see what WebGL is and how to draw a <strong>triangle</strong> by talking to the graphics processing unit (GPU). Although this simple example could be solved in better ways, such as using a canvas with a 2d context or even with CSS, what we want is to start with WebGL. Like a &quot;hello world&quot;, to understand how it works.</p>
 <img src="https://aralroca.com/images/blog-images/triangle.jpeg" alt="Triangle" class="center" />
 <small class="center">Photo by: Apurv Das (Unsplash)</small>
@@ -2219,7 +2219,7 @@ gl.<span class="hljs-title function_">vertexAttribPointer</span>(
               <description>Discover how to start with WebAssembly in an easy way with Rust.</description>
               <link>https://aralroca.com/blog/first-steps-webassembly-rust</link>
               <guid isPermaLink="false">https://aralroca.com/blog/first-steps-webassembly-rust/</guid>
-              <pubDate>Mon Aug 17 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Aug 17 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>We&#39;ll see how to <strong>run native code in the browser</strong>, doing faster web applications, being able to reuse old code like retro videogames, and at the same time learning the future of web development.</p>
 <p><strong>We&#39;ll cover the following:</strong></p>
 <ul>
@@ -2474,7 +2474,7 @@ total 72
               <description>Learn how to start with TensorFlow.js</description>
               <link>https://aralroca.com/blog/first-steps-with-tensorflowjs</link>
               <guid isPermaLink="false">https://aralroca.com/blog/first-steps-with-tensorflowjs/</guid>
-              <pubDate>Fri Aug 24 2018 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Fri Aug 24 2018 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>I would like to do more articles explaining a little bit about all the machine learning and deep learning basics. I&#39;m a beginner in this area, but I&#39;d like to explain soon these concepts to create some interesting AI models. Nevertheless, we don&#39;t need a deep knowledge about machine learning to use some existing models. We can use some libraries like Keras, Tensorflow or TensorFlow.js. We are going to see here how to create basic AI models and use more sophisticated models with TensorFlow.js. Although it&#39;s not required a deep knowledge, we are going to explain few concepts.</p>
 <h2 id="what-is-a-model">What is a Model?</h2>
 <p>Or maybe a better question would be: &#39;What is the reality?&#39;. Yes, that&#39;s quite complex to answer... We need to simplify it in order to understand it! A way to represent a part of this simplified &quot;reality&quot;  is using a model. So; there are infinity kind of models: world maps, diagrams, etc.</p>
@@ -2755,7 +2755,7 @@ img = tf.<span class="hljs-title function_">cast</span>(img, <span class="hljs-s
               <description>How to develop a food text classifier to suggest the best wines to pair with the name of a dish or an ingredient.</description>
               <link>https://aralroca.com/blog/food-pairing-classifier</link>
               <guid isPermaLink="false">https://aralroca.com/blog/food-pairing-classifier/</guid>
-              <pubDate>Mon May 17 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon May 17 2021 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>At Vinissimus, we have recently launched a <a href="https://www.vinissimus.com/en/virtual-sommelier/">virtual sommelier</a> that suggests wines given a text of a food dish.</p>
 <img width="400" height="257" src="https://aralroca.com/images/blog-images/virtual-sommelier.png" alt="example" class="center">
@@ -3008,7 +3008,7 @@ model.<span class="hljs-title function_">fitDataset</span>(dataset, { <span clas
               <description>The shift from deterministic to probabilistic computing isn't just a technical upgrade. It's a change in how knowledge gets created.</description>
               <link>https://aralroca.com/blog/from-determinism-to-probabilism-ai-paradigm-shift</link>
               <guid isPermaLink="false">https://aralroca.com/blog/from-determinism-to-probabilism-ai-paradigm-shift/</guid>
-              <pubDate>Thu Apr 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Thu Apr 30 2026 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>The other day I had a bug in production. Something was rendering wrong in the UI and I couldn&#39;t figure out where it was coming from. I gave Claude the URL, it opened Chrome, inspected the HTML in the browser, cross-referenced what it saw in the DOM with my source code, and found the exact line where the error was. Not the file; the line. It navigated between the rendered output and the codebase, matched what was broken on screen to the component that produced it, and pointed me to the fix.</p>
 <p>That moment stuck with me. Not because AI saved me time (it does that daily), but because of what it revealed about the nature of the answer. The model didn&#39;t <em>know</em> where the bug was. It inferred it. It observed the rendered HTML, estimated which parts of the code could produce that output, and surfaced the most probable origin. That probabilistic inference across two different representations of the same system; browser and codebase; was more effective than my deterministic debugging would have been.</p>
 <p>We&#39;re living through something bigger than most people realize. The shift from deterministic to probabilistic computing isn&#39;t just a technical upgrade. It&#39;s a change in how knowledge gets created.</p>
@@ -3130,7 +3130,7 @@ model.<span class="hljs-title function_">fitDataset</span>(dataset, { <span clas
               <description>Learn how to use Node ecosystem in Deno.</description>
               <link>https://aralroca.com/blog/from-node-to-deno</link>
               <guid isPermaLink="false">https://aralroca.com/blog/from-node-to-deno/</guid>
-              <pubDate>Sun May 17 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun May 17 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>Last week I published an article about Deno, and how to create a <a href="https://aralroca.com/blog/learn-deno-chat-app">Chat app with Deno and Preact</a>. Since then, many doubts have arisen. Mostly of them are about how to do the same thing we did in Node, but with the new Deno ecosystem.</p>
 <p>I&#39;ve tried to collect some of the most used topics in Node, and looked for their alternative with Deno. First of all, I would like to make it clear that we can use many of the current Node.js modules. There is no need to look for an alternative for everything, as many modules are reusable. You can visit <a href="https://www.pika.dev/about">pika.dev</a> to look for modules to use in Deno. That said, let&#39;s start with the list:</p>
 <p><strong>We will cover the following:</strong></p>
@@ -3495,7 +3495,7 @@ client.<span class="hljs-title function_">connectWithUri</span>(<span class="hlj
               <description>Learn how to automatize publishing to dev.to from your GitHub repo.</description>
               <link>https://aralroca.com/blog/ghaction-devto</link>
               <guid isPermaLink="false">https://aralroca.com/blog/ghaction-devto/</guid>
-              <pubDate>Wed Sep 02 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed Sep 02 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>I started writing when I joined <a href="https://dev.to/">dev.to</a> in 2017, joining the community motivated me.</p>
 <p>After a few articles I decided to create my own personal <a href="https://aralroca.com/blog">blog</a>. However, I&#39;ve always wanted to continue contributing to dev.to. That&#39;s why I post articles on my personal blog and then share them on dev.to with the canonical. I suppose it&#39;s a standard practice and more than one of you are doing it.</p>
 <p>In order to make my life a little easier, I&#39;ve recently made a GitHub action that posts directly to dev.to when it detects a new article on my blog.</p>
@@ -3685,7 +3685,7 @@ client.<span class="hljs-title function_">connectWithUri</span>(<span class="hlj
               <description>Learn how to draw dynamic 2D complex shapes in WebGL by drawing gears.</description>
               <link>https://aralroca.com/blog/how-to-draw-gears-in-webgl</link>
               <guid isPermaLink="false">https://aralroca.com/blog/how-to-draw-gears-in-webgl/</guid>
-              <pubDate>Sun Aug 09 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Aug 09 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>In this article we continue what we started in &quot;<a href="https://aralroca.com/blog/first-steps-in-webgl">First steps in WebGL</a>&quot;, where we saw <a href="https://aralroca.com/blog/first-steps-in-webgl#what-is-webgl">what it is and how it works</a> internally: the <a href="https://aralroca.com/blog/first-steps-in-webgl#glsl-and-shaders">shaders</a>, the <a href="https://aralroca.com/blog/first-steps-in-webgl#create-program-from-shaders">program</a>, <a href="https://aralroca.com/blog/first-steps-in-webgl#create-buffers">buffers</a>, how to <a href="https://aralroca.com/blog/first-steps-in-webgl#create-buffers">link data from CPU to GPU</a>, and finally how to <a href="https://aralroca.com/blog/first-steps-in-webgl#drawing-the-triangle">render a triangle</a>. To understand all this well, I recommend first reading the previous chapter.</p>
 <p>Here, instead of rendering a triangle, we&#39;ll see how to render more complex structures and how to give it movement. To do that we&#39;ll implement three <strong>dynamic gears</strong>:</p>
 <figure align="center">
@@ -4147,7 +4147,7 @@ void main () {
               <description>Explore HTML Streaming and its benefits covering topics from initial loading to advanced cases like navigation, RPCs, and DOM diffing algorithms during streaming</description>
               <link>https://aralroca.com/blog/html-node-streaming</link>
               <guid isPermaLink="false">https://aralroca.com/blog/html-node-streaming/</guid>
-              <pubDate>Wed Feb 21 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed Feb 21 2024 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>In recent years browsers have supported streaming HTML and JavaScript. In this article we will talk about the benefits of this, and what else we can do that browsers don&#39;t do automatically to take full advantage of streaming.</p>
 <h2 id="streaming-html">Streaming HTML</h2>
 <p>During the initial load, we don&#39;t have to worry much because the browsers do it automatically. When they receive the HTML chunks during the streaming they print the content.</p>
@@ -4421,7 +4421,7 @@ void main () {
               <description>Explore HTML Streaming Over the Wire! We explain the Diff DOM algorithm with streaming to make only the necessary modifications, insertions, and deletions between a DOM node and an HTML stream reader.</description>
               <link>https://aralroca.com/blog/html-streaming-over-the-wire</link>
               <guid isPermaLink="false">https://aralroca.com/blog/html-streaming-over-the-wire/</guid>
-              <pubDate>Mon Apr 08 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Mon Apr 08 2024 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>In our previous article in the series, we introduced the Diff DOM Algorithm briefly without delving into its technical intricacies. In this installment, we present the <a href="https://github.com/aralroca/diff-dom-streaming"><code>diff-dom-streaming</code></a> library, an open-source solution designed to facilitate HTML Streaming Over the Wire using the Diff DOM Algorithm. This library is intended not only for use within other frameworks and libraries but also as a standalone solution.</p>
 <ul>
 <li><a href="#why-html-streaming-over-the-wire">Why HTML Streaming Over the Wire?</a><ul>
@@ -4581,7 +4581,7 @@ void main () {
               <description>In this blog post, we explore how to use Next.js 13's app directory and consume i18n translations for both server and client components in an easy way. With this approach, you can reduce the size of your bundles and maintain the code clean.</description>
               <link>https://aralroca.com/blog/i18n-translations-nextjs-13-app-dir</link>
               <guid isPermaLink="false">https://aralroca.com/blog/i18n-translations-nextjs-13-app-dir/</guid>
-              <pubDate>Sun Feb 19 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Feb 19 2023 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>In this post, I will explain how to easily load and use translations in the pages within the <strong><a href="https://beta.nextjs.org/docs/app-directory-roadmap"><code>app</code> directory</a></strong> of Next.js 13, a <strong>new paradigm</strong> for managing your pages that, if mismanaged, <strong>can lead to headaches</strong>.</p>
 <h2 id="before-we-begin-a-little-context">Before we begin... A little context</h2>
 <p>First, let me tell you about <strong><a href="https://github.com/aralroca/next-translate">Next-translate</a></strong>. It is one of the most widely used libraries for <strong>loading</strong> and <strong>using translations</strong> in <strong>Next.js pages</strong> (~70k weekly downloads) and has existed since Next.js 9.</p>
@@ -4762,7 +4762,7 @@ void main () {
               <description>Learn how Deno works and it's differences with Node.js by creating a Chat application.</description>
               <link>https://aralroca.com/blog/learn-deno-chat-app</link>
               <guid isPermaLink="false">https://aralroca.com/blog/learn-deno-chat-app/</guid>
-              <pubDate>Sun May 10 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun May 10 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>Node.js was writtern initially by <a href="https://en.wikipedia.org/wiki/Ryan_Dahl">Ryan Dahl</a> on 2009 (in C++). Ryan left Node.js in 2012, as at this point he felt he had more or less fulfilled his goals.</p>
 <p>His goals are now different. After realizing that there were some design errors impossible to fix in Node.js, he decided to create another JavaScript (also TypeScript) runtime built with V8: Deno (in Rust). Deno 1.0.0 will be finally released on 13th May 2020.</p>
 <img src="https://aralroca.com/images/blog-images/38.svg" width="100" alt="Deno logo" class="center transparent" />
@@ -5159,7 +5159,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (3ms)
               <description>Next-translate is an i18n library to keep the translations as simple as possible in a Next.js environment. Today we announce the release of version 1.0.</description>
               <link>https://aralroca.com/blog/next-translate-1.0</link>
               <guid isPermaLink="false">https://aralroca.com/blog/next-translate-1.0/</guid>
-              <pubDate>Wed Dec 09 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed Dec 09 2020 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>Today is the day. The Vinissimus Team is very proud and happy to announce the much-anticipated <a href="https://github.com/vinissimus/next-translate/releases/tag/1.0.0">version 1.0</a> of <a href="https://github.com/vinissimus/next-translate">Next-translate</a> library. It&#39;s been a year since the first <a href="https://aralroca.com/blog/next-translate-released">version 0.1</a> and a lot happened <em>(+160 closed issues)</em>.</p>
 
 <div align="center"><small>Showing version 1.0 when it was experimental</small></div>
@@ -5244,7 +5244,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (3ms)
               <description>Today, I am incredibly happy to announce that Next-translate version 3.0.0 is officially out! This release is focused on Modernity and Stability, including Turbopack support and compatibility with Next.js 15+ async params.</description>
               <link>https://aralroca.com/blog/next-translate-3-0</link>
               <guid isPermaLink="false">https://aralroca.com/blog/next-translate-3-0/</guid>
-              <pubDate>Sun Mar 01 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Mar 01 2026 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>It has been quite a journey since the last major update of <strong>Next-translate</strong>. Today, I am incredibly happy to announce that version <strong>3.0.0</strong> is officially out!</p>
 <h2 id="a-personal-note">A Personal Note</h2>
 <p>Before diving into the technical details, I want to address the elephant in the room: the lack of updates over the past year. I’ve been deeply involved in other projects and, unfortunately, Next-translate didn&#39;t get the attention it deserved.</p>
@@ -5281,7 +5281,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (3ms)
               <description>i18n for Next.js static pages</description>
               <link>https://aralroca.com/blog/next-translate-released</link>
               <guid isPermaLink="false">https://aralroca.com/blog/next-translate-released/</guid>
-              <pubDate>Wed Dec 11 2019 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed Dec 11 2019 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>After having some trouble with <code>next-i18next</code> library to internationalize pages, we decided to create an alternative library! With some differences:</p>
 <p>📦 Tiny (~1kb)
 ⚡️ It also works for static-sites (with no server)</p>
@@ -5301,7 +5301,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (3ms)
               <description>How I implemented a browser-based AI tool to split songs into vocals, drums, and bass without uploading a single byte to any server.</description>
               <link>https://aralroca.com/blog/on-device-ai-stem-splitter</link>
               <guid isPermaLink="false">https://aralroca.com/blog/on-device-ai-stem-splitter/</guid>
-              <pubDate>Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Tue Mar 17 2026 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>Most &quot;AI&quot; tools these days are just wrappers around an API. You upload your
 file, wait for a server to process it, and hope your data isn&#39;t being used to
 train the next big model.</p>
@@ -5377,7 +5377,7 @@ private way to split tracks, let me know what you think in the comments!</p>
               <description>How contributing import attributes support to Meriyah enabled Brisa's entire prerender pipeline; and why understanding ASTs matters for framework authors.</description>
               <link>https://aralroca.com/blog/one-pr-unlocked-prerendering-brisa</link>
               <guid isPermaLink="false">https://aralroca.com/blog/one-pr-unlocked-prerendering-brisa/</guid>
-              <pubDate>Wed Apr 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed Apr 22 2026 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>I built a JavaScript framework called <a href="https://brisa.build">Brisa</a>. The kind of framework that needs to parse every single source file your app contains; analyze imports, detect server vs. client components, inject macros, transform JSX. All of that happens at the AST level.</p>
 <p>Before Brisa, I was already maintaining <a href="https://github.com/aralroca/next-translate">next-translate</a>, an i18n library for Next.js. For the plugin that auto-injects locale loaders into pages, I used the TypeScript compiler API. It worked. It was also painfully slow; <code>ts.createProgram()</code> for every page file at build time, full type-checker instantiation, lib resolution. We had to add <code>noResolve: true</code> and <code>noLib: true</code> just to make it bearable. The parser was doing ten times more work than we needed because all we wanted was the AST, not the types.</p>
 <p>When I started building Brisa, I knew I needed something faster. Something that gave me an ESTree-compliant AST without the overhead of a full compiler. That&#39;s how I found <a href="https://github.com/meriyah/meriyah">Meriyah</a>.</p>
@@ -5495,7 +5495,7 @@ private way to split tracks, let me know what you think in the comments!</p>
               <description>Learn how to use OpenCV in the web without a lot of headaches.</description>
               <link>https://aralroca.com/blog/opencv-in-the-web</link>
               <guid isPermaLink="false">https://aralroca.com/blog/opencv-in-the-web/</guid>
-              <pubDate>Tue May 05 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Tue May 05 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>We&#39;ll see how to use the OpenCV library directly on the browser! To do this, we will compile OpenCV to webassembly and then run it inside a webworker.</p>
 <h2 id="what-is-opencv">What is OpenCV</h2>
 <p>OpenCV is the most popular library of Computer Vision, and has existed since 1999! What it does is providing a user-friendly and highly efficient development environment. It is a library written in C and C++ by Intel.</p>
@@ -5881,7 +5881,7 @@ onmessage = <span class="hljs-keyword">function</span> (<span class="hljs-params
               <description>Learn how to re-use pagination badges logic in all your projects.</description>
               <link>https://aralroca.com/blog/pagination-badges</link>
               <guid isPermaLink="false">https://aralroca.com/blog/pagination-badges/</guid>
-              <pubDate>Wed May 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed May 13 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>The purpose of this short article is to share a helper function to create typical paging badges. I have used this helper on several places and I think it can be useful for anyone who needs it.</p>
 <img src="https://aralroca.com/images/blog-images/39.gif" alt="Example of paging badges" class="center" />
 
@@ -5944,7 +5944,7 @@ onmessage = <span class="hljs-keyword">function</span> (<span class="hljs-params
               <description>Unlock the power of partial pre-rendering with Bun, optimizing web application performance and package size effortlessly.</description>
               <link>https://aralroca.com/blog/partial-prerendering</link>
               <guid isPermaLink="false">https://aralroca.com/blog/partial-prerendering/</guid>
-              <pubDate>Sun Mar 24 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Mar 24 2024 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>In modern web development, optimizing the performance of web applications is paramount. One approach gaining traction is <strong>partial prerendering</strong>, a technique that combines static and dynamic content rendering to enhance both the bundle size and runtime speed. In this article, we&#39;ll delve into the concept of partial prerendering and explore its benefits, especially when implemented through Ahead of Time (<a href="https://en.wikipedia.org/wiki/Ahead-of-time_compilation">AOT</a>) rendering.</p>
 <p>Also, we will see how to do it with a Bun plugin and be able to apply it in every JSX framework in an easy way.</p>
 <h2 id="how-partial-prerendering-works">How Partial Prerendering Works</h2>
@@ -6037,7 +6037,7 @@ onmessage = <span class="hljs-keyword">function</span> (<span class="hljs-params
               <description>Fragmented store concept and how to apply it with React Context</description>
               <link>https://aralroca.com/blog/react-fragmented-store</link>
               <guid isPermaLink="false">https://aralroca.com/blog/react-fragmented-store/</guid>
-              <pubDate>Fri Sep 24 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Fri Sep 24 2021 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>There are many ways to manage the React state between many components: using libraries like Redux, MobX, Immer, Recoil, etc, or using a React Context.</p>
 <p>After using several of them, I personally choose React Context because of its simplicity. To use a React Context to manage the state you have to put the state in the <code>Provider</code> along with the method to update it. Then you can consume it from the <code>Consumer</code>.</p>
 <p>However, the problem with React Context is that if you change the value of a single field of the state, instead of updating the components that use only this field, all components that use any field from the state will be re-rendered.</p>
@@ -6266,7 +6266,7 @@ onmessage = <span class="hljs-keyword">function</span> (<span class="hljs-params
               <description>A quick guide on how to build reactive Web Components that work with SSR and with any JavaScript or Vanilla JS framework.</description>
               <link>https://aralroca.com/blog/reactive-web-components-with-ssr</link>
               <guid isPermaLink="false">https://aralroca.com/blog/reactive-web-components-with-ssr/</guid>
-              <pubDate>Sat Aug 24 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sat Aug 24 2024 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>Traditional way of writing Web Components is not very SSR (Server Side Rendering) friendly. In this post, I show you how you can build reactive Web Components that work with SSR and with any JavaScript framework (Vue, React, Svelte, Solid, Brisa) or Vanilla JS.</p>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
@@ -6446,7 +6446,7 @@ onmessage = <span class="hljs-keyword">function</span> (<span class="hljs-params
               <description>Server Actions emerged as an idea to reduce client code and simplifying the interactions that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked.</description>
               <link>https://aralroca.com/blog/server-actions-have-been-fixed</link>
               <guid isPermaLink="false">https://aralroca.com/blog/server-actions-have-been-fixed/</guid>
-              <pubDate>Sun Oct 20 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Sun Oct 20 2024 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p><a href="https://brisa.build/building-your-application/data-management/server-actions">Server Actions</a> emerged as an idea to <strong>reduce client code</strong> and <strong>simplifying the interactions</strong> that require communication with the server. It is an excellent solution that allows developers to write less code. However, there are several challenges associated with its implementation in other frameworks, which should not be overlooked.</p>
 <p>In this article we will talk about these problems and how in <a href="https://brisa.build"><strong>Brisa</strong></a> we have found a solution.</p>
 <h2 id="why-the-need-for-server-actions">Why the need for Server Actions?</h2>
@@ -6749,7 +6749,7 @@ a:</p>
               <description>Learn how to keep your web components' state intact while navigating, just like in a SPA!</description>
               <link>https://aralroca.com/blog/spa-navigation</link>
               <guid isPermaLink="false">https://aralroca.com/blog/spa-navigation/</guid>
-              <pubDate>Thu Apr 25 2024 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Thu Apr 25 2024 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>In this third and final article in the series on HTML Streaming, we will explore the practical implementation of the <a href="https://github.com/aralroca/diff-dom-streaming"><strong>Diff DOM Streaming</strong></a> library in web browsing. This approach will allow <strong>any website</strong> using <strong>web components</strong> to <strong>retain its state during browsing</strong>. We will discuss in detail how to achieve this step by step using <strong>VanillaJS</strong> and <a href="https://bun.sh/"><strong>Bun</strong></a>.</p>
 <p>It is important to note that it is not necessary to have a complex server, as we can use static files. However, we will also explore how this technique works with HTML streaming and we will stream from Bun.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
@@ -7247,7 +7247,7 @@ await diff(document, res.body.getReader(), {
               <description>Use a cron with Github Actions to always have your GitHub README.md profile updated.</description>
               <link>https://aralroca.com/blog/static-readme-regeneration</link>
               <guid isPermaLink="false">https://aralroca.com/blog/static-readme-regeneration/</guid>
-              <pubDate>Wed Jul 29 2020 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Wed Jul 29 2020 00:00:00 GMT+0200 (Central European Summer Time)</pubDate>
               <content:encoded><![CDATA[<p>GitHub has recently introduced a &quot;secret&quot; feature to show a markdown template on your profile page. You may have heard about this. All you need to do is create a repo named with your username and create the <code>README.md</code> file there.</p>
 <p>When we think of a template markdown on GitHub we normally think of static content. However, in this article, I want to go a little further. I&#39;ll tell you how to add content that is going to be <strong>updated from time to time</strong>; whether it&#39;s about your latest tweets, your latest youtube video or your latest blog posts.</p>
 <img src="https://aralroca.com/images/blog-images/my-gh-profile.png" alt="My GH profile" class="center" />
@@ -7425,7 +7425,7 @@ await diff(document, res.body.getReader(), {
               <description>Teaful DevTools is a browser extension to inspect Teaful applications</description>
               <link>https://aralroca.com/blog/teaful-devtools</link>
               <guid isPermaLink="false">https://aralroca.com/blog/teaful-devtools/</guid>
-              <pubDate>Thu Dec 02 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Thu Dec 02 2021 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>Very recently, <strong>2 weeks ago</strong>, we released <a href="https://github.com/teafuljs/teaful">Teaful</a>; a tiny, easy and powerful React State management. If you want to know more about Teaful, I recommend <a href="https://aralroca.com/blog/teaful">this article</a>.</p>
 <p>Teaful was <strong>well received</strong> (+500 GH stars) and one of the most requested features was to implement a devtool to debug the stores. Today we released <strong><a href="https://github.com/teafuljs/teaful-devtools">Teaful DevTools</a></strong>. In this short article I will explain a little about how to use it and its benefits.</p>
 <img alt="Teaful DevTools" src="https://aralroca.com/images/blog-images/teaful-devtools.png" />
@@ -7511,7 +7511,7 @@ await diff(document, res.body.getReader(), {
               <description>Teaful is a new npm package where you can manage your stores with less than 1kb without the need of boilerplate: reducers, actions, selectors, connect, etc. And without unnecessary rerenders! It subscribes only to the changes of the used properties.</description>
               <link>https://aralroca.com/blog/teaful</link>
               <guid isPermaLink="false">https://aralroca.com/blog/teaful/</guid>
-              <pubDate>Fri Nov 05 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
+              <pubDate>Fri Nov 05 2021 00:00:00 GMT+0100 (Central European Standard Time)</pubDate>
               <content:encoded><![CDATA[<p>I&#39;ve recently talked about Fragmented-store in <a href="react-fragmented-store">another article</a>, a library I was developing, explaining future improvements. Well, we have made a reimplementation to make it tinier, easier to use and more powerful, and we have renamed it to <strong>Teaful</strong>. In this article I will talk about its benefits and how to use it.</p>
 <p>This is <strong>the final name</strong>. Since the library was created, it has been called:</p>
 <ul>

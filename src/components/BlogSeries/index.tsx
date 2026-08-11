@@ -6,7 +6,12 @@ type Props = {
   style?: Record<string, string | number>;
 };
 
-export default function BlogSeries({ title, series, style, currentSlug }: Props) {
+export default function BlogSeries({
+  title,
+  series,
+  style,
+  currentSlug,
+}: Props) {
   if (!series || !series.length) return null;
 
   return (

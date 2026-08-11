@@ -5,7 +5,8 @@ export default function Newsletter() {
       action="https://aralroca.us8.list-manage.com/subscribe/post?u=29d99171aa3f671bde658475a&amp;id=9f1a0b31e3"
       method="post"
       target="_blank"
-      novalidate
+      noValidate
+      rel="noopener"
     >
       <h2 id="subscribe-to-new-posts">Subscribe to new posts! 📩</h2>
       <input
@@ -17,7 +18,7 @@ export default function Newsletter() {
         placeholder="Email address"
         required
       />
-      <button>Subscribe</button>
+      <button type="submit">Subscribe</button>
     </form>
   );
 }

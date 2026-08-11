@@ -17,11 +17,14 @@ function syncTwitterEmbeds(mode: string) {
   document
     .querySelector('meta[name="twitter:widgets:theme"]')
     ?.setAttribute('content', mode);
-  document.querySelectorAll<HTMLIFrameElement>('iframe[src]').forEach((iframe) => {
-    if (!iframe.src.startsWith('https://platform.twitter.com')) return;
-    if (!iframe.src.includes('theme=')) iframe.src += `&theme=${mode}`;
-    else iframe.src = iframe.src.replace(/theme=(dark|light)/g, `theme=${mode}`);
-  });
+  document
+    .querySelectorAll<HTMLIFrameElement>('iframe[src]')
+    .forEach((iframe) => {
+      if (!iframe.src.startsWith('https://platform.twitter.com')) return;
+      if (!iframe.src.includes('theme=')) iframe.src += `&theme=${mode}`;
+      else
+        iframe.src = iframe.src.replace(/theme=(dark|light)/g, `theme=${mode}`);
+    });
 }
 
 export const ChangeTheme = component({
@@ -74,6 +77,7 @@ export const ChangeTheme = component({
 function DarkSVG() {
   return (
     <svg
+      aria-hidden="true"
       class="theme-icon theme-icon-dark"
       viewBox="0 0 24 24"
       width="16"
@@ -93,6 +97,7 @@ function DarkSVG() {
 function LightSVG() {
   return (
     <svg
+      aria-hidden="true"
       class="theme-icon theme-icon-light"
       viewBox="0 0 24 24"
       width="16"
@@ -120,6 +125,7 @@ function LightSVG() {
 function SystemSVG() {
   return (
     <svg
+      aria-hidden="true"
       class="theme-icon theme-icon-system"
       viewBox="0 0 24 24"
       width="16"

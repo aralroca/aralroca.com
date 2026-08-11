@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { notFound, type PageMeta } from 'janux';
+import { Image, notFound, type PageMeta } from 'janux';
 
 import BlogSeries from '@/components/BlogSeries';
 import Newsletter from '@/components/Newsletter';
@@ -57,17 +57,17 @@ export default async function Post({ params }: Params) {
         style={{ '--cover-color': data.cover_color }}
         class="cover-image"
       >
-        <img
-          loading="eager"
-          fetchpriority="high"
+        <Image
+          priority
           src={data.cover_image}
           alt={data.title}
-          width={960}
-          height={432}
-          style={{ viewTransitionName: 'img:' + slug, aspectRatio: '960/432' }}
+          width={840}
+          aspectRatio="960/432"
+          sizes="(max-width: 920px) 100vw, 840px"
+          style={{ viewTransitionName: `img:${slug}` }}
         />
       </div>
-      <h1 style={{ viewTransitionName: 'title:' + slug }} class="post-title">
+      <h1 style={{ viewTransitionName: `title:${slug}` }} class="post-title">
         {data.title}
       </h1>
       <PostInfo date={date} timeToRead={timeToRead} />

@@ -39,14 +39,21 @@ const SITE_HEAD: HeadTag[] = [
 type SiteMeta = PageMeta & { keywords?: string };
 
 /** Site-wide head + social defaults, merged with each page's own meta. */
-export default function pageMeta({ head = [], keywords, ...meta }: SiteMeta = {}): PageMeta {
+export default function pageMeta({
+  head = [],
+  keywords,
+  ...meta
+}: SiteMeta = {}): PageMeta {
   return {
     description: DEFAULT_DESCRIPTION,
     image: DEFAULT_IMAGE,
     twitter: { creator: '@aralroca' },
     ...meta,
     head: [
-      { tag: 'meta', attrs: { name: 'keywords', content: keywords ?? DEFAULT_TAGS } },
+      {
+        tag: 'meta',
+        attrs: { name: 'keywords', content: keywords ?? DEFAULT_TAGS },
+      },
       ...SITE_HEAD,
       ...head,
     ],

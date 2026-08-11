@@ -10,72 +10,187 @@ export default function Tools() {
     <div class="tools-page">
       <h1>Free Online Tools</h1>
       <p class="tools-intro">
-        A collection of 464+ free tools I've built for the community. They all run
-        entirely in your browser; nothing is uploaded to any server. No signup required.
+        A collection of 464+ free tools I've built for the community. They all
+        run entirely in your browser; nothing is uploaded to any server. No
+        signup required.
       </p>
 
       <section class="tool-category">
         <h2>AI Tools</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/ai/ai-content-detector" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/ai-content-detector"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AI Content Detector</h3>
-            <p>Detect AI-generated content by analyzing perplexity, burstiness, and writing patterns.</p>
+            <p>
+              Detect AI-generated content by analyzing perplexity, burstiness,
+              and writing patterns.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/prompt-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/prompt-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AI Prompt Generator</h3>
-            <p>Create detailed prompts for AI image generators like Midjourney and Stable Diffusion.</p>
+            <p>
+              Create detailed prompts for AI image generators like Midjourney
+              and Stable Diffusion.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/automatic-subtitle-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/automatic-subtitle-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Automatic Subtitle Generator</h3>
-            <p>Generate synchronized subtitles for your videos using local AI. 100% private.</p>
+            <p>
+              Generate synchronized subtitles for your videos using local AI.
+              100% private.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/background-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/background-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Background Remover</h3>
             <p>Remove image backgrounds instantly in your browser using AI.</p>
           </a>
-          <a href="https://kitmul.com/en/ai/depth-estimation" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/depth-estimation"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Depth Estimation from Image</h3>
-            <p>Generate a depth map from any photo using AI. Visualize how far objects are from the camera with colorized depth maps.</p>
+            <p>
+              Generate a depth map from any photo using AI. Visualize how far
+              objects are from the camera with colorized depth maps.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/keyword-extractor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/keyword-extractor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Keyword Extractor</h3>
             <p>Extract the most important words and phrases from your text.</p>
           </a>
-          <a href="https://kitmul.com/en/ai/pii-redactor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/pii-redactor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PII Redactor</h3>
-            <p>Automatically detect and redact Personal Identifiable Information from text.</p>
+            <p>
+              Automatically detect and redact Personal Identifiable Information
+              from text.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/pose-break-coach" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/pose-break-coach"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Pose Break Coach (PoseNet)</h3>
-            <p>Neck mobility mini-game controlled by your body movement with PoseNet.</p>
+            <p>
+              Neck mobility mini-game controlled by your body movement with
+              PoseNet.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/sentiment-analyzer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/sentiment-analyzer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sentiment Analyzer</h3>
-            <p>Analyze toxicity and tone of your text (Insults, Threats, Toxicity, etc).</p>
+            <p>
+              Analyze toxicity and tone of your text (Insults, Threats,
+              Toxicity, etc).
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/syllable-counter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/syllable-counter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Syllable Counter &amp; Analyzer</h3>
-            <p>Count syllables in text with per-word breakdown and distribution analysis.</p>
+            <p>
+              Count syllables in text with per-word breakdown and distribution
+              analysis.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/text-readability-scorer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/text-readability-scorer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text Readability Scorer</h3>
-            <p>Analyze text readability with Flesch, Gunning Fog, and Coleman-Liau scores.</p>
+            <p>
+              Analyze text readability with Flesch, Gunning Fog, and
+              Coleman-Liau scores.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/text-tone-analyzer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/text-tone-analyzer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text Tone Analyzer</h3>
-            <p>Analyze the tone and mood of your text using lexicon-based detection.</p>
+            <p>
+              Analyze the tone and mood of your text using lexicon-based
+              detection.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/ats-resume-analyzer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/ats-resume-analyzer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ATS Resume Analyzer</h3>
-            <p>Score your resume against a job description with keyword matching, format analysis, and actionable improvement suggestions.</p>
+            <p>
+              Score your resume against a job description with keyword matching,
+              format analysis, and actionable improvement suggestions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/image-colorizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/image-colorizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Colorize Black and White Images</h3>
-            <p>Automatically add realistic color to grayscale photos using AI with before/after comparison and intensity control.</p>
+            <p>
+              Automatically add realistic color to grayscale photos using AI
+              with before/after comparison and intensity control.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/ai/object-detector" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/ai/object-detector"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Object Detector</h3>
-            <p>Detect and label objects in images using AI with bounding boxes, confidence scores, and JSON export.</p>
+            <p>
+              Detect and label objects in images using AI with bounding boxes,
+              confidence scores, and JSON export.
+            </p>
           </a>
         </div>
       </section>
@@ -83,105 +198,304 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Agile & Project Management</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/agile-project-management/backlog-arrival-rate-forecaster" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/backlog-arrival-rate-forecaster"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Backlog Arrival Rate Forecaster</h3>
-            <p>Forecast future backlog arrival rates using seasonal decomposition with linear trend analysis.</p>
+            <p>
+              Forecast future backlog arrival rates using seasonal decomposition
+              with linear trend analysis.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/capability-gap-analyzer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/capability-gap-analyzer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Capability Gap Analyzer</h3>
-            <p>Map team skills against future needs, calculate risk scores, and identify training priorities.</p>
+            <p>
+              Map team skills against future needs, calculate risk scores, and
+              identify training priorities.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/cumulative-flow-diagram" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/cumulative-flow-diagram"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Cumulative Flow Diagram (CFD) Generator</h3>
-            <p>Create cumulative flow diagrams to visualize workflow stages and track lead time, throughput, and WIP.</p>
+            <p>
+              Create cumulative flow diagrams to visualize workflow stages and
+              track lead time, throughput, and WIP.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/standup-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/standup-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Daily Standup Timer</h3>
-            <p>Run timed standups with automatic speaker rotation and randomized order.</p>
+            <p>
+              Run timed standups with automatic speaker rotation and randomized
+              order.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/eisenhower-matrix" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/eisenhower-matrix"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Eisenhower Matrix</h3>
-            <p>Prioritize your tasks by urgency and importance with the Eisenhower Matrix (Time Management Matrix).</p>
+            <p>
+              Prioritize your tasks by urgency and importance with the
+              Eisenhower Matrix (Time Management Matrix).
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/fishbone-diagram" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/fishbone-diagram"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Fishbone (Ishikawa) Diagram Builder</h3>
-            <p>Build visual Ishikawa/Fishbone cause-and-effect diagrams to identify root causes of problems.</p>
+            <p>
+              Build visual Ishikawa/Fishbone cause-and-effect diagrams to
+              identify root causes of problems.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/raci-matrix" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/raci-matrix"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Interactive RACI Matrix Generator</h3>
-            <p>Create a RACI responsibility assignment matrix with color-coded cells and validation.</p>
+            <p>
+              Create a RACI responsibility assignment matrix with color-coded
+              cells and validation.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/kano-model" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/kano-model"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Kano Model Analysis</h3>
-            <p>Classify product features into Must-be, Performance, Attractive, and Indifferent categories.</p>
+            <p>
+              Classify product features into Must-be, Performance, Attractive,
+              and Indifferent categories.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/lean-canvas" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/lean-canvas"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Lean Canvas Generator</h3>
-            <p>Build a complete Lean Canvas with the classic 9-block layout. Auto-saves and exports to JSON.</p>
+            <p>
+              Build a complete Lean Canvas with the classic 9-block layout.
+              Auto-saves and exports to JSON.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/link-routine" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/link-routine"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>LinkRoutine: URL-Persistent Planner</h3>
-            <p>Weekly planner that stores all your tasks in the URL. No database, no local storage, 100% shareable.</p>
+            <p>
+              Weekly planner that stores all your tasks in the URL. No database,
+              no local storage, 100% shareable.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/meeting-cost-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/meeting-cost-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Meeting Cost Calculator</h3>
-            <p>Calculate the real-time cost of meetings with a live timer based on attendee count and hourly rates.</p>
+            <p>
+              Calculate the real-time cost of meetings with a live timer based
+              on attendee count and hourly rates.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/monte-carlo-forecaster" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/monte-carlo-forecaster"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Monte Carlo Delivery Forecaster</h3>
-            <p>Use Monte Carlo simulation to forecast project delivery dates based on historical throughput data.</p>
+            <p>
+              Use Monte Carlo simulation to forecast project delivery dates
+              based on historical throughput data.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/moscow-prioritization" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/moscow-prioritization"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MoSCoW Prioritization</h3>
-            <p>Categorize your requirements into Must-have, Should-have, Could-have, and Won't-have.</p>
+            <p>
+              Categorize your requirements into Must-have, Should-have,
+              Could-have, and Won't-have.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/okr-tracker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/okr-tracker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>OKRs (Objectives &amp; Key Results) Tracker</h3>
-            <p>Track your Objectives and Key Results with progress bars, status indicators, and automatic progress calculations.</p>
+            <p>
+              Track your Objectives and Key Results with progress bars, status
+              indicators, and automatic progress calculations.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/scrum-poker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/scrum-poker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>P2P Scrum Poker Deck</h3>
-            <p>Real-time, serverless Scrum Poker for agile teams using WebRTC.</p>
+            <p>
+              Real-time, serverless Scrum Poker for agile teams using WebRTC.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/pomodoro-agile" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/pomodoro-agile"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Pomodoro Timer</h3>
-            <p>Customizable Pomodoro timer designed for agile workflows, sprints, and deep focus sessions.</p>
+            <p>
+              Customizable Pomodoro timer designed for agile workflows, sprints,
+              and deep focus sessions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/rice-scoring" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/rice-scoring"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>RICE Scoring Model</h3>
-            <p>Prioritize your product backlog using the RICE framework (Reach, Impact, Confidence, Effort).</p>
+            <p>
+              Prioritize your product backlog using the RICE framework (Reach,
+              Impact, Confidence, Effort).
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/seasonal-capacity-planner" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/seasonal-capacity-planner"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Seasonal Capacity Planner</h3>
-            <p>Plan team capacity across seasons by combining throughput, team size, and seasonal factors.</p>
+            <p>
+              Plan team capacity across seasons by combining throughput, team
+              size, and seasonal factors.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/six-dimensions-radar" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/six-dimensions-radar"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Six Dimensions of Performance Radar</h3>
-            <p>Assess team performance across Quality, Responsiveness, Predictability, Productivity, Flow, and Value.</p>
+            <p>
+              Assess team performance across Quality, Responsiveness,
+              Predictability, Productivity, Flow, and Value.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/sprint-capacity-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/sprint-capacity-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sprint Capacity Calculator</h3>
-            <p>Calculate your team's real capacity for the next sprint based on individual availability, focus factor, and days off.</p>
+            <p>
+              Calculate your team's real capacity for the next sprint based on
+              individual availability, focus factor, and days off.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/team-formation-optimizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/team-formation-optimizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Team Formation Optimizer</h3>
-            <p>Build balanced, resilient teams by optimizing skill coverage and distribution.</p>
+            <p>
+              Build balanced, resilient teams by optimizing skill coverage and
+              distribution.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/team-health-radar" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/team-health-radar"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Team Health Radar Generator</h3>
-            <p>Visualize team health with a radar/spider chart. Score dimensions, track trends over time, and export as PNG or JSON.</p>
+            <p>
+              Visualize team health with a radar/spider chart. Score dimensions,
+              track trends over time, and export as PNG or JSON.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/user-story-mapping" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/user-story-mapping"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>User Story Mapping Canvas</h3>
-            <p>Create visual user story maps with activities, tasks, and stories organized by release.</p>
+            <p>
+              Create visual user story maps with activities, tasks, and stories
+              organized by release.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/wip-age-chart" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/wip-age-chart"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WIP Age Chart</h3>
-            <p>Visualize work-in-progress aging across workflow stages with color-coded age buckets.</p>
+            <p>
+              Visualize work-in-progress aging across workflow stages with
+              color-coded age buckets.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/agile-project-management/wsjf-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/agile-project-management/wsjf-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WSJF Calculator (Weighted Shortest Job First)</h3>
-            <p>Prioritize your backlog using the WSJF model to maximize value delivery and minimize the cost of delay.</p>
+            <p>
+              Prioritize your backlog using the WSJF model to maximize value
+              delivery and minimize the cost of delay.
+            </p>
           </a>
         </div>
       </section>
@@ -189,57 +503,143 @@ export default function Tools() {
       <section class="tool-category">
         <h2>CSS & Design</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/design-css/accessibility-tree-visualizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/accessibility-tree-visualizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Accessibility Tree Visualizer</h3>
-            <p>Visualize how HTML maps to an accessibility tree and compare inaccessible vs semantic markup side by side.</p>
+            <p>
+              Visualize how HTML maps to an accessibility tree and compare
+              inaccessible vs semantic markup side by side.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/design-css/button-css-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/button-css-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Button CSS Generator</h3>
             <p>Generate custom CSS button styles visually</p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-border-radius-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-border-radius-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Border Radius Generator</h3>
             <p>Generate CSS border-radius with visual editor</p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-box-shadow-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-box-shadow-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Box Shadow Generator</h3>
             <p>Generate CSS box-shadow with visual editor</p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-clip-path-maker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-clip-path-maker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Clip-path Maker</h3>
-            <p>Build custom CSS clip-path shapes visually with an interactive editor and live preview.</p>
+            <p>
+              Build custom CSS clip-path shapes visually with an interactive
+              editor and live preview.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-flexbox-guide" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-flexbox-guide"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Flexbox Guide</h3>
-            <p>Visually build and experiment with CSS Flexbox layouts, then export production-ready CSS code.</p>
+            <p>
+              Visually build and experiment with CSS Flexbox layouts, then
+              export production-ready CSS code.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-gradient-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-gradient-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Gradient Generator</h3>
             <p>Create linear, radial, and conic CSS gradients</p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-grid-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-grid-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Grid Generator</h3>
-            <p>Create responsive CSS grid layouts visually with customizable columns, rows, gap, and preset templates.</p>
+            <p>
+              Create responsive CSS grid layouts visually with customizable
+              columns, rows, gap, and preset templates.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/design-css/css-text-shadow" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/css-text-shadow"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Text Shadow Generator</h3>
             <p>Create CSS text-shadow effects with visual editor</p>
           </a>
-          <a href="https://kitmul.com/en/design-css/glassmorphism-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/glassmorphism-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Glassmorphism Generator</h3>
             <p>Generate glassmorphism frosted glass CSS effects</p>
           </a>
-          <a href="https://kitmul.com/en/design-css/color-picker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/color-picker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Pick &amp; Convert Colors</h3>
-            <p>Pick any color and instantly convert between HEX, RGB, HSL, CMYK, and Tailwind CSS classes.</p>
+            <p>
+              Pick any color and instantly convert between HEX, RGB, HSL, CMYK,
+              and Tailwind CSS classes.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/design-css/color-contrast-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/color-contrast-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Color Contrast Checker (WCAG)</h3>
-            <p>Check WCAG 2.1 color contrast ratios with AA/AAA pass/fail badges and live preview.</p>
+            <p>
+              Check WCAG 2.1 color contrast ratios with AA/AAA pass/fail badges
+              and live preview.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/design-css/svg-wave-blob-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/design-css/svg-wave-blob-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG Wave &amp; Blob Generator</h3>
-            <p>Create SVG wave dividers and organic blob shapes with customizable layers, colors, and export options.</p>
+            <p>
+              Create SVG wave dividers and organic blob shapes with customizable
+              layers, colors, and export options.
+            </p>
           </a>
         </div>
       </section>
@@ -247,75 +647,204 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Data Tools</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/data/csv-column-extractor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/csv-column-extractor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSV Column Extractor</h3>
-            <p>Extract specific columns from CSV data by selecting which ones to keep.</p>
+            <p>
+              Extract specific columns from CSV data by selecting which ones to
+              keep.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/csv-to-impex" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/csv-to-impex"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSV to Impex Converter</h3>
-            <p>Turn a CSV export into a ready-to-run SAP Hybris Impex script with the mode and unique column of your choice.</p>
+            <p>
+              Turn a CSV export into a ready-to-run SAP Hybris Impex script with
+              the mode and unique column of your choice.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/csv-to-json" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/csv-to-json"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSV to JSON</h3>
             <p>Convert CSV data to JSON format and vice-versa.</p>
           </a>
-          <a href="https://kitmul.com/en/data/csv-to-xml" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/csv-to-xml"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSV to XML</h3>
             <p>Convert CSV data to XML format and vice versa instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/data/excel-to-json" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/excel-to-json"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Excel to JSON</h3>
-            <p>Convert Excel spreadsheets (.xlsx, .xls) to JSON data instantly.</p>
+            <p>
+              Convert Excel spreadsheets (.xlsx, .xls) to JSON data instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/impex-macro-expander" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/impex-macro-expander"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Impex Macro Expander</h3>
-            <p>Resolve every $macro reference in an Impex script and emit a fully inlined version safe to review and audit.</p>
+            <p>
+              Resolve every $macro reference in an Impex script and emit a fully
+              inlined version safe to review and audit.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/impex-table-editor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/impex-table-editor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Impex Table Editor</h3>
-            <p>Parse an Impex block into an editable spreadsheet grid, tweak rows in place, and re-emit a clean Impex script.</p>
+            <p>
+              Parse an Impex block into an editable spreadsheet grid, tweak rows
+              in place, and re-emit a clean Impex script.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/impex-to-csv" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/impex-to-csv"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Impex to CSV Converter</h3>
-            <p>Turn any SAP Hybris Impex block into a clean CSV file ready for spreadsheets or ETL pipelines.</p>
+            <p>
+              Turn any SAP Hybris Impex block into a clean CSV file ready for
+              spreadsheets or ETL pipelines.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/impex-to-json" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/impex-to-json"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Impex to JSON Converter</h3>
-            <p>Parse any SAP Hybris Impex into structured JSON blocks with headers, modifiers, rows, and macros preserved.</p>
+            <p>
+              Parse any SAP Hybris Impex into structured JSON blocks with
+              headers, modifiers, rows, and macros preserved.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/impex-to-sql" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/impex-to-sql"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Impex to SQL (Approximate)</h3>
-            <p>Translate a SAP Hybris Impex into approximate SQL INSERT / UPDATE / DELETE statements in Postgres, MySQL, or ANSI-standard dialects.</p>
+            <p>
+              Translate a SAP Hybris Impex into approximate SQL INSERT / UPDATE
+              / DELETE statements in Postgres, MySQL, or ANSI-standard dialects.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/impex-validator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/impex-validator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Impex Validator / Linter</h3>
-            <p>Lint a SAP Hybris Impex script for missing headers, unknown modifiers, duplicate unique keys, and undefined macros.</p>
+            <p>
+              Lint a SAP Hybris Impex script for missing headers, unknown
+              modifiers, duplicate unique keys, and undefined macros.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/json-diff" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/json-diff"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JSON Diff Tool</h3>
-            <p>Compare two JSON objects side by side and highlight differences.</p>
+            <p>
+              Compare two JSON objects side by side and highlight differences.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/json-to-html-table" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/json-to-html-table"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JSON to HTML Table</h3>
-            <p>Convert JSON data into a clean, visual HTML table and get the code.</p>
+            <p>
+              Convert JSON data into a clean, visual HTML table and get the
+              code.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/json-to-impex" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/json-to-impex"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JSON to Impex Converter</h3>
-            <p>Rebuild a SAP Hybris Impex script from a JSON document containing blocks, headers, modifiers, rows, and macros.</p>
+            <p>
+              Rebuild a SAP Hybris Impex script from a JSON document containing
+              blocks, headers, modifiers, rows, and macros.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/json-validator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/json-validator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JSON Validator &amp; Lint</h3>
-            <p>Validate JSON syntax, find errors with line numbers, and pretty-print your data.</p>
+            <p>
+              Validate JSON syntax, find errors with line numbers, and
+              pretty-print your data.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/sql-insert-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/sql-insert-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SQL Insert Generator</h3>
-            <p>Convert JSON or CSV data into SQL INSERT statements instantly.</p>
+            <p>
+              Convert JSON or CSV data into SQL INSERT statements instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data/xml-to-json" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/xml-to-json"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>XML to JSON</h3>
             <p>Convert XML data to JSON format and vice-versa.</p>
           </a>
-          <a href="https://kitmul.com/en/data/yaml-to-json" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data/yaml-to-json"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>YAML to JSON</h3>
             <p>Convert YAML data to JSON and vice versa instantly.</p>
           </a>
@@ -325,47 +854,122 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Date & Time</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/datetime/date-adder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/date-adder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Add or Subtract Days from Date</h3>
-            <p>Easily add or subtract days, weeks, months, or years from any given date.</p>
+            <p>
+              Easily add or subtract days, weeks, months, or years from any
+              given date.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/age-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/age-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Age Calculator</h3>
-            <p>Calculate your exact age in years, months, weeks, days, hours, and minutes.</p>
+            <p>
+              Calculate your exact age in years, months, weeks, days, hours, and
+              minutes.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/astronomic-clock" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/astronomic-clock"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Astronomic Clock</h3>
-            <p>Visualize solar, lunar, and celestial time with stunning precision.</p>
+            <p>
+              Visualize solar, lunar, and celestial time with stunning
+              precision.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/business-days-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/business-days-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Business Days Calculator</h3>
-            <p>Calculate the number of working days between two dates, excluding weekends.</p>
+            <p>
+              Calculate the number of working days between two dates, excluding
+              weekends.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/countdown-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/countdown-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Countdown Timer</h3>
-            <p>Multiple simultaneous countdown timers with visual progress indicators.</p>
+            <p>
+              Multiple simultaneous countdown timers with visual progress
+              indicators.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/date-difference-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/date-difference-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Date Difference Calculator</h3>
             <p>Calculate the exact duration between two dates.</p>
           </a>
-          <a href="https://kitmul.com/en/datetime/leap-year-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/leap-year-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Leap Year Checker</h3>
-            <p>Quickly check if a year is a leap year and see when the next one will be.</p>
+            <p>
+              Quickly check if a year is a leap year and see when the next one
+              will be.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/seconds-to-hms" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/seconds-to-hms"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Seconds to H:M:S Converter</h3>
             <p>Convert seconds to hours, minutes, seconds and vice versa.</p>
           </a>
-          <a href="https://kitmul.com/en/datetime/stopwatch-lap-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/stopwatch-lap-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Stopwatch &amp; Lap Timer</h3>
             <p>A simple and precise stopwatch with lap timing.</p>
           </a>
-          <a href="https://kitmul.com/en/datetime/unix-timestamp-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/unix-timestamp-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Unix Timestamp Converter</h3>
-            <p>Convert Unix timestamps to human-readable dates and vice versa.</p>
+            <p>
+              Convert Unix timestamps to human-readable dates and vice versa.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/datetime/week-number-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/datetime/week-number-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Week Number Calculator</h3>
             <p>Find the ISO 8601 and US week number for any date.</p>
           </a>
@@ -375,97 +979,244 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Developer Tools</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/developer/base64-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/base64-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Base64 Encoder/Decoder</h3>
             <p>Encode and decode text to Base64 format.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/chmod-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/chmod-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Chmod Calculator</h3>
             <p>Calculate Linux file permissions easily.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/json-to-typescript" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/json-to-typescript"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Convert JSON to TypeScript Interfaces</h3>
             <p>Generate TypeScript interfaces from any JSON data instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/hreflang-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/hreflang-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Hreflang Checker</h3>
-            <p>Validate hreflang tags for international SEO. Check language codes, region codes, and x-default.</p>
+            <p>
+              Validate hreflang tags for international SEO. Check language
+              codes, region codes, and x-default.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/html-entity-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/html-entity-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>HTML Entity Converter</h3>
             <p>Convert special characters to HTML entities.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/http-status-codes" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/http-status-codes"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>HTTP Status Codes</h3>
             <p>Quick reference for HTTP response codes.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/infrastructure-diagram" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/infrastructure-diagram"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Infrastructure Diagram</h3>
-            <p>Design and visualize infrastructure architecture with an interactive isometric diagram editor.</p>
+            <p>
+              Design and visualize infrastructure architecture with an
+              interactive isometric diagram editor.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/js-key-code" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/js-key-code"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JS Key Code Finder</h3>
             <p>Find JavaScript event key codes instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/json-formatter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/json-formatter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JSON Formatter</h3>
             <p>Format, validate, and minify your JSON data.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/meta-tag-inspector" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/meta-tag-inspector"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Meta Tag Inspector</h3>
-            <p>Paste HTML and get a detailed analysis of all meta tags, Open Graph, Twitter Card, and SEO signals.</p>
+            <p>
+              Paste HTML and get a detailed analysis of all meta tags, Open
+              Graph, Twitter Card, and SEO signals.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/mime-types" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/mime-types"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Mime Type Lookup</h3>
             <p>Lookup MIME types for file extensions.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/robots-txt-validator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/robots-txt-validator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Robots.txt Validator</h3>
-            <p>Validate your robots.txt file for syntax errors and SEO best practices.</p>
+            <p>
+              Validate your robots.txt file for syntax errors and SEO best
+              practices.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/password-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/password-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Secure Password Generator</h3>
             <p>Generate strong, random passwords for your accounts.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/sitemap-validator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/sitemap-validator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sitemap Validator</h3>
-            <p>Validate XML sitemap syntax, check URL structure, and verify compliance with the sitemaps.org protocol.</p>
+            <p>
+              Validate XML sitemap syntax, check URL structure, and verify
+              compliance with the sitemaps.org protocol.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/source-map-unpacker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/source-map-unpacker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Source Map Unpacker</h3>
             <p>Extract source files from a .map file and download as ZIP.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/regex-tester" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/regex-tester"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Test &amp; Explain Regular Expressions</h3>
-            <p>Test regex patterns against text and get plain English explanations of each token.</p>
+            <p>
+              Test regex patterns against text and get plain English
+              explanations of each token.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/url-encoder-decoder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/url-encoder-decoder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>URL Encoder/Decoder</h3>
             <p>Safely encode or decode URLs for all browsers.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/uuid-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/uuid-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>UUID/GUID Generator</h3>
             <p>Generate secure UUIDs (v1, v4, v7) instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/developer/crontab-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/crontab-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Crontab Generator</h3>
-            <p>Build cron expressions visually with presets, human-readable explanations, and next run previews.</p>
+            <p>
+              Build cron expressions visually with presets, human-readable
+              explanations, and next run previews.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/docker-compose-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/docker-compose-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Docker Compose Generator</h3>
-            <p>Build docker-compose.yml visually with service templates for Postgres, Redis, MongoDB, and more.</p>
+            <p>
+              Build docker-compose.yml visually with service templates for
+              Postgres, Redis, MongoDB, and more.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/gitignore-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/gitignore-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Gitignore Generator</h3>
-            <p>Create .gitignore files by selecting from language, framework, IDE, and OS templates.</p>
+            <p>
+              Create .gitignore files by selecting from language, framework,
+              IDE, and OS templates.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/html-to-jsx" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/html-to-jsx"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>HTML to JSX Converter</h3>
-            <p>Convert HTML to React JSX with automatic attribute conversion.</p>
+            <p>
+              Convert HTML to React JSX with automatic attribute conversion.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/developer/sql-formatter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/developer/sql-formatter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SQL Formatter</h3>
-            <p>Format, beautify, and minify SQL queries with multi-dialect support.</p>
+            <p>
+              Format, beautify, and minify SQL queries with multi-dialect
+              support.
+            </p>
           </a>
         </div>
       </section>
@@ -473,65 +1224,161 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Education & Science</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/education-science/equation-balancer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/equation-balancer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Balance Chemical Equations</h3>
             <p>Balance chemical equations with step-by-step atom counting.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/dna-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/dna-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>DNA to RNA &amp; Protein</h3>
-            <p>Transcribe DNA to RNA and translate it into a protein sequence.</p>
+            <p>
+              Transcribe DNA to RNA and translate it into a protein sequence.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/ideal-gas-law" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/ideal-gas-law"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Ideal Gas Law Calculator</h3>
-            <p>Calculate pressure, volume, moles, or temperature of an ideal gas using PV = nRT.</p>
+            <p>
+              Calculate pressure, volume, moles, or temperature of an ideal gas
+              using PV = nRT.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/periodic-table" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/periodic-table"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Interactive Periodic Table</h3>
             <p>Explore chemical elements with an interactive periodic table.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/molar-mass-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/molar-mass-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Molar Mass Calculator</h3>
             <p>Calculate the molar mass of any chemical formula instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/molarity-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/molarity-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Molarity Calculator</h3>
             <p>Calculate molarity, moles, and volume for chemical solutions.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/multiplication-table" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/multiplication-table"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Multiplication Table</h3>
             <p>Generate and print custom multiplication tables.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/ohms-law-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/ohms-law-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Ohm's Law Calculator</h3>
-            <p>Calculate voltage, current, resistance, and power using Ohm's Law.</p>
+            <p>
+              Calculate voltage, current, resistance, and power using Ohm's Law.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/ph-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/ph-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>pH Calculator</h3>
-            <p>Calculate pH, pOH, and concentrations of ions in any solution.</p>
+            <p>
+              Calculate pH, pOH, and concentrations of ions in any solution.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/projectile-motion" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/projectile-motion"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Projectile Motion Calculator</h3>
-            <p>Calculate and visualize projectile trajectories with different gravity conditions.</p>
+            <p>
+              Calculate and visualize projectile trajectories with different
+              gravity conditions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/roman-numerals" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/roman-numerals"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Roman Numerals Converter</h3>
             <p>Convert decimal numbers to Roman numerals and vice versa.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/scientific-notation" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/scientific-notation"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Scientific Notation Converter</h3>
-            <p>Convert between standard decimal and scientific notation effortlessly.</p>
+            <p>
+              Convert between standard decimal and scientific notation
+              effortlessly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/significant-figures" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/significant-figures"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Significant Figures Calculator</h3>
             <p>Identify significant digits and round numbers with precision.</p>
           </a>
-          <a href="https://kitmul.com/en/education-science/ohms-law" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/ohms-law"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Solve Ohm's Law</h3>
-            <p>Calculate voltage, current, resistance, and power using Ohm's Law with an interactive circuit diagram.</p>
+            <p>
+              Calculate voltage, current, resistance, and power using Ohm's Law
+              with an interactive circuit diagram.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/education-science/stoichiometry-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/education-science/stoichiometry-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Stoichiometry Calculator</h3>
-            <p>Calculate reactant and product amounts from balanced chemical equations.</p>
+            <p>
+              Calculate reactant and product amounts from balanced chemical
+              equations.
+            </p>
           </a>
         </div>
       </section>
@@ -539,61 +1386,153 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Encoding & Ciphers</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/data-coding/atbash-cipher" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/atbash-cipher"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Atbash Cipher</h3>
-            <p>Encode and decode text using the Atbash cipher that reverses the alphabet.</p>
+            <p>
+              Encode and decode text using the Atbash cipher that reverses the
+              alphabet.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/base-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/base-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Base Converter (2-64)</h3>
             <p>Convert numbers between any base from 2 to 64.</p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/base32-encoder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/base32-encoder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Base32 Encoder/Decoder</h3>
-            <p>Encode text to Base32 or decode Base32 back to text using RFC 4648.</p>
+            <p>
+              Encode text to Base32 or decode Base32 back to text using RFC
+              4648.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/binary-to-string" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/binary-to-string"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Binary ↔ String Converter</h3>
             <p>Convert between binary code and plain text.</p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/empty-line-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/empty-line-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Empty Line Remover</h3>
             <p>Remove all empty or blank lines from text.</p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/hex-to-string" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/hex-to-string"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Hex ↔ String Converter</h3>
             <p>Convert between hexadecimal and plain text.</p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/line-sorter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/line-sorter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Line Sorter</h3>
-            <p>Sort lines of text alphabetically, numerically, by length, etc.</p>
+            <p>
+              Sort lines of text alphabetically, numerically, by length, etc.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/rot13-encoder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/rot13-encoder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ROT13/ROT47 Encoder</h3>
-            <p>Apply ROT13 or ROT47 cipher to encode and decode text instantly.</p>
+            <p>
+              Apply ROT13 or ROT47 cipher to encode and decode text instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/decimal-to-string" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/decimal-to-string"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text ↔ Decimal Converter</h3>
             <p>Convert between decimal code and plain text.</p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/octal-to-string" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/octal-to-string"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text ↔ Octal Converter</h3>
             <p>Convert between octal code and plain text.</p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/fake-data-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/fake-data-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Fake Data Generator</h3>
-            <p>Generate realistic mock data for testing with multiple schemas and export formats.</p>
+            <p>
+              Generate realistic mock data for testing with multiple schemas and
+              export formats.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/image-to-base64" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/image-to-base64"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image to Base64</h3>
-            <p>Convert images to Base64 with multiple output formats: data URI, CSS, HTML, and Markdown.</p>
+            <p>
+              Convert images to Base64 with multiple output formats: data URI,
+              CSS, HTML, and Markdown.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/json-to-csv" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/json-to-csv"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JSON to CSV</h3>
-            <p>Transform JSON data into CSV format with nested object flattening and table preview.</p>
+            <p>
+              Transform JSON data into CSV format with nested object flattening
+              and table preview.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/data-coding/markdown-table-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/data-coding/markdown-table-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Markdown Table Generator</h3>
-            <p>Create markdown tables with an interactive grid editor, column alignment, and CSV import.</p>
+            <p>
+              Create markdown tables with an interactive grid editor, column
+              alignment, and CSV import.
+            </p>
           </a>
         </div>
       </section>
@@ -601,67 +1540,161 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Everyday & Practical</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/everyday-practical/battery-life-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/battery-life-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Battery Life Calculator</h3>
             <p>Calculate battery life from capacity and consumption.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/cooking-conversion" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/cooking-conversion"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Cooking Conversion Calculator</h3>
-            <p>Convert between cooking measurements including volume, weight, and temperature.</p>
+            <p>
+              Convert between cooking measurements including volume, weight, and
+              temperature.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/dice-roller" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/dice-roller"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Dice Roller</h3>
             <p>Roll one or multiple virtual dice for games.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/dog-age-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/dog-age-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Dog Age Calculator</h3>
-            <p>Convert your dog's age to human years using the modern veterinary formula.</p>
+            <p>
+              Convert your dog's age to human years using the modern veterinary
+              formula.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/electricity-cost-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/electricity-cost-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Electricity Cost Calculator</h3>
             <p>Estimate your electricity costs by device and usage</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/gpa-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/gpa-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GPA Calculator</h3>
             <p>Calculate your Grade Point Average on a 4.0 scale</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/grade-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/grade-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Grade Calculator</h3>
-            <p>Calculate your weighted grade average from assignments and weights.</p>
+            <p>
+              Calculate your weighted grade average from assignments and
+              weights.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/paint-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/paint-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Paint Calculator</h3>
             <p>Calculate how many gallons of paint you need for your walls.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/recipe-scaler" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/recipe-scaler"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Recipe Scaler</h3>
             <p>Scale recipe ingredients for any number of servings.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/road-trip-cost-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/road-trip-cost-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Road Trip Cost Calculator</h3>
             <p>Estimate fuel and travel costs for your road trip.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/solar-panel-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/solar-panel-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Solar Panel Calculator</h3>
             <p>Calculate how many solar panels you need.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/speed-distance-time" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/speed-distance-time"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Speed Distance Time Calculator</h3>
-            <p>Calculate speed, distance, or time given any two values with unit conversions.</p>
+            <p>
+              Calculate speed, distance, or time given any two values with unit
+              conversions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/square-footage-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/square-footage-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Square Footage Calculator</h3>
             <p>Calculate room and property area in square feet or meters.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/tile-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/tile-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Tile Calculator</h3>
             <p>Calculate how many tiles you need for your project.</p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/time-card-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/time-card-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Time Card Calculator</h3>
-            <p>Calculate weekly work hours from clock-in and clock-out times.</p>
+            <p>
+              Calculate weekly work hours from clock-in and clock-out times.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/everyday-practical/tip-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/everyday-practical/tip-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Tip Calculator</h3>
             <p>Calculate the tip and split the bill among friends.</p>
           </a>
@@ -671,101 +1704,265 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Finance & Business</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/finance/budget-planner" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/budget-planner"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Budget Planner (50/30/20)</h3>
-            <p>Plan your monthly budget using the 50/30/20 rule with customizable categories and expense tracking.</p>
+            <p>
+              Plan your monthly budget using the 50/30/20 rule with customizable
+              categories and expense tracking.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/burn-rate-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/burn-rate-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Burn Rate / Runway Calculator</h3>
-            <p>Calculate your startup's monthly burn rate, net burn, and cash runway with month-by-month projections.</p>
+            <p>
+              Calculate your startup's monthly burn rate, net burn, and cash
+              runway with month-by-month projections.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/inflation-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/inflation-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Calculate Inflation-Adjusted Values</h3>
-            <p>Calculate how inflation affects purchasing power over time with historical and custom rates.</p>
+            <p>
+              Calculate how inflation affects purchasing power over time with
+              historical and custom rates.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/cash-change-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/cash-change-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Cash Change Calculator</h3>
-            <p>Calculate the exact change to return in bills and coins for any currency.</p>
+            <p>
+              Calculate the exact change to return in bills and coins for any
+              currency.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/credit-card-payoff" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/credit-card-payoff"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Credit Card Payoff Calculator</h3>
-            <p>Calculate how long it takes to pay off your credit card and how much interest you'll pay.</p>
+            <p>
+              Calculate how long it takes to pay off your credit card and how
+              much interest you'll pay.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/dca-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/dca-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>DCA Calculator (Investment Optimizer)</h3>
-            <p>Optimize your recurring investments using a Softmax-based allocation strategy.</p>
+            <p>
+              Optimize your recurring investments using a Softmax-based
+              allocation strategy.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/debt-snowball" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/debt-snowball"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Debt Snowball Calculator</h3>
-            <p>Compare snowball and avalanche debt payoff strategies to find your fastest path to financial freedom.</p>
+            <p>
+              Compare snowball and avalanche debt payoff strategies to find your
+              fastest path to financial freedom.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/discount-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/discount-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Discount Calculator</h3>
             <p>Calculate the final price after applying a discount.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/fire-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/fire-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>FIRE Number Calculator</h3>
-            <p>Calculate your Financial Independence, Retire Early (FIRE) number and timeline.</p>
+            <p>
+              Calculate your Financial Independence, Retire Early (FIRE) number
+              and timeline.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/interest-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/interest-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Interest Calculator</h3>
             <p>Calculate simple and compound interest easily.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/invoice-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/invoice-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Invoice Generator</h3>
-            <p>Create professional invoices with multiple templates. Add line items, taxes, and discounts. Download as PDF instantly.</p>
+            <p>
+              Create professional invoices with multiple templates. Add line
+              items, taxes, and discounts. Download as PDF instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/job-offer-comparison" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/job-offer-comparison"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Job Offer Comparison</h3>
-            <p>Compare multiple job offers side by side with weighted scoring to find the best overall package.</p>
+            <p>
+              Compare multiple job offers side by side with weighted scoring to
+              find the best overall package.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/loan-payoff-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/loan-payoff-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Loan Payoff Calculator</h3>
             <p>Find out when your loan will be paid off.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/loan-payoff" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/loan-payoff"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Loan Payoff Calculator</h3>
-            <p>Determine how long it will take to pay off your loan and the total interest you will pay.</p>
+            <p>
+              Determine how long it will take to pay off your loan and the total
+              interest you will pay.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/margin-markup-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/margin-markup-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Margin &amp; Markup Calculator</h3>
             <p>Calculate profit margin and markup for your products.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/mortgage-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/mortgage-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Mortgage Calculator</h3>
             <p>Calculate your monthly mortgage payments with ease.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/net-worth-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/net-worth-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Net Worth Calculator</h3>
             <p>Calculate your net worth by tracking assets and liabilities.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/retirement-planner" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/retirement-planner"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Retirement Planner</h3>
-            <p>Plan your retirement savings with projected growth, contribution tracking, and year-by-year breakdown.</p>
+            <p>
+              Plan your retirement savings with projected growth, contribution
+              tracking, and year-by-year breakdown.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/roi-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/roi-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ROI Calculator</h3>
             <p>Calculate your return on investment easily.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/salary-after-tax" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/salary-after-tax"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Salary After Tax Calculator</h3>
-            <p>Calculate your net pay after taxes and deductions with customizable progressive tax brackets.</p>
+            <p>
+              Calculate your net pay after taxes and deductions with
+              customizable progressive tax brackets.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/subscription-tracker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/subscription-tracker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Subscription Overload Finder</h3>
-            <p>Track recurring subscriptions, see total costs, and find potential savings.</p>
+            <p>
+              Track recurring subscriptions, see total costs, and find potential
+              savings.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/finance/tip-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/tip-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Tip Calculator</h3>
             <p>Calculate the tip and split the bill among friends.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/vat-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/vat-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>VAT Calculator</h3>
             <p>Calculate VAT (Value Added Tax) for any amount and rate.</p>
           </a>
-          <a href="https://kitmul.com/en/finance/currency-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/finance/currency-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Currency Converter</h3>
-            <p>Convert between 50+ world currencies with live exchange rates.</p>
+            <p>
+              Convert between 50+ world currencies with live exchange rates.
+            </p>
           </a>
         </div>
       </section>
@@ -773,85 +1970,226 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Health & Wellness</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/health/breathing-timer-478" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/breathing-timer-478"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>4-7-8 Breathing Timer</h3>
-            <p>Guided breathing exercise with animated circle, progressive difficulty, and streak tracking.</p>
+            <p>
+              Guided breathing exercise with animated circle, progressive
+              difficulty, and streak tracking.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/bmi-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/bmi-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BMI Calculator</h3>
             <p>Calculate your Body Mass Index and health category</p>
           </a>
-          <a href="https://kitmul.com/en/health/bmr-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/bmr-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BMR Calculator</h3>
             <p>Calculate your Basal Metabolic Rate and daily calorie needs</p>
           </a>
-          <a href="https://kitmul.com/en/health/bac-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/bac-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Blood Alcohol Calculator</h3>
-            <p>Estimate BAC with multi-drink timeline, Watson formula, and safe-to-drive countdown.</p>
+            <p>
+              Estimate BAC with multi-drink timeline, Watson formula, and
+              safe-to-drive countdown.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/body-fat-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/body-fat-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Body Fat Calculator</h3>
             <p>Calculate body fat percentage using the U.S. Navy method</p>
           </a>
-          <a href="https://kitmul.com/en/health/caffeine-half-life" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/caffeine-half-life"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Caffeine Half-Life Calculator</h3>
             <p>Track caffeine decay over 24 hours and find safe sleep time</p>
           </a>
-          <a href="https://kitmul.com/en/health/calories-burned-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/calories-burned-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Calories Burned Calculator</h3>
-            <p>Compare calories burned across activities with MET data and food equivalents.</p>
+            <p>
+              Compare calories burned across activities with MET data and food
+              equivalents.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/heart-rate-zones" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/heart-rate-zones"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Heart Rate Zones Calculator</h3>
             <p>Calculate your 5 heart rate training zones based on age</p>
           </a>
-          <a href="https://kitmul.com/en/health/ideal-weight-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/ideal-weight-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Ideal Weight Calculator</h3>
-            <p>Find your ideal body weight using five scientific formulas with metric and imperial support.</p>
+            <p>
+              Find your ideal body weight using five scientific formulas with
+              metric and imperial support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/intermittent-fasting-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/intermittent-fasting-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Intermittent Fasting Timer</h3>
-            <p>Track fasting with protocol selection, stage visualization, and streak tracking.</p>
+            <p>
+              Track fasting with protocol selection, stage visualization, and
+              streak tracking.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/keto-macro-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/keto-macro-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Keto Macro Calculator</h3>
-            <p>Calculate keto macros with workout/rest day toggle and net carbs tracking.</p>
+            <p>
+              Calculate keto macros with workout/rest day toggle and net carbs
+              tracking.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/macro-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/macro-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Macro Calculator</h3>
-            <p>Calculate daily macronutrient targets based on your TDEE, fitness goal, and preferred diet style.</p>
+            <p>
+              Calculate daily macronutrient targets based on your TDEE, fitness
+              goal, and preferred diet style.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/one-rep-max-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/one-rep-max-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>One-Rep Max Calculator</h3>
-            <p>Estimate your 1RM using 5 formulas with training load table and plate calculator.</p>
+            <p>
+              Estimate your 1RM using 5 formulas with training load table and
+              plate calculator.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/pregnancy-due-date-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/pregnancy-due-date-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Pregnancy Due Date Calculator</h3>
-            <p>Calculate your due date with multiple methods and trimester milestone timeline.</p>
+            <p>
+              Calculate your due date with multiple methods and trimester
+              milestone timeline.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/sleep-cycle-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/sleep-cycle-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sleep Cycle Calculator</h3>
-            <p>Calculate optimal bedtime and wake time based on 90-minute sleep cycles.</p>
+            <p>
+              Calculate optimal bedtime and wake time based on 90-minute sleep
+              cycles.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/stress-level-pss10" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/stress-level-pss10"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Stress Level Test (PSS-10)</h3>
-            <p>Measure perceived stress with the validated PSS-10 questionnaire and subscale analysis.</p>
+            <p>
+              Measure perceived stress with the validated PSS-10 questionnaire
+              and subscale analysis.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/tdee-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/tdee-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>TDEE Calculator</h3>
-            <p>Calculate your Total Daily Energy Expenditure using the Mifflin-St Jeor equation with activity multipliers.</p>
+            <p>
+              Calculate your Total Daily Energy Expenditure using the Mifflin-St
+              Jeor equation with activity multipliers.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/waist-to-hip-ratio" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/waist-to-hip-ratio"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Waist-to-Hip Ratio Calculator</h3>
-            <p>Calculate WHR with WHO risk classification and waist circumference assessment.</p>
+            <p>
+              Calculate WHR with WHO risk classification and waist circumference
+              assessment.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/health/water-intake-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/water-intake-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Water Intake Calculator</h3>
             <p>Calculate your recommended daily water intake</p>
           </a>
-          <a href="https://kitmul.com/en/health/typing-speed-test" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/health/typing-speed-test"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Typing Speed Test</h3>
-            <p>Measure WPM, accuracy, and consistency with timed typing tests.</p>
+            <p>
+              Measure WPM, accuracy, and consistency with timed typing tests.
+            </p>
           </a>
         </div>
       </section>
@@ -859,311 +2197,867 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Image & Design</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/image-design/barcode-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/barcode-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Barcode Generator</h3>
-            <p>Create barcodes in Code 128, EAN-13, UPC-A, Code 39, and more formats.</p>
+            <p>
+              Create barcodes in Code 128, EAN-13, UPC-A, Code 39, and more
+              formats.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/ase-to-css-palette" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/ase-to-css-palette"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ASE to CSS Color Palette</h3>
-            <p>Convert Adobe ASE swatch files to CSS custom properties, SASS, LESS, or Tailwind config.</p>
+            <p>
+              Convert Adobe ASE swatch files to CSS custom properties, SASS,
+              LESS, or Tailwind config.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/ase-to-gpl-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/ase-to-gpl-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ASE to GPL Palette Converter</h3>
             <p>Convert Adobe ASE swatch files to GIMP GPL palette format.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-bmp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-bmp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to BMP Converter</h3>
-            <p>Convert AVIF images to uncompressed BMP format for legacy systems and raw pixel access.</p>
+            <p>
+              Convert AVIF images to uncompressed BMP format for legacy systems
+              and raw pixel access.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to GIF Converter</h3>
-            <p>Convert AVIF images to GIF format for email signatures, forums, and legacy platforms.</p>
+            <p>
+              Convert AVIF images to GIF format for email signatures, forums,
+              and legacy platforms.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-ico" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-ico"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to ICO Converter</h3>
-            <p>Convert AVIF images to ICO format for website favicons and Windows application icons.</p>
+            <p>
+              Convert AVIF images to ICO format for website favicons and Windows
+              application icons.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to JPG Converter</h3>
-            <p>Convert AVIF images to widely compatible JPG format for sharing and printing.</p>
+            <p>
+              Convert AVIF images to widely compatible JPG format for sharing
+              and printing.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to PDF Converter</h3>
-            <p>Convert AVIF images to professional PDF documents for printing and archival.</p>
+            <p>
+              Convert AVIF images to professional PDF documents for printing and
+              archival.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to PNG Converter</h3>
-            <p>Convert AVIF images to universally compatible PNG format with full transparency support.</p>
+            <p>
+              Convert AVIF images to universally compatible PNG format with full
+              transparency support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/avif-to-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/avif-to-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVIF to WebP Converter</h3>
-            <p>Convert AVIF images to WebP format for broad browser support and efficient web delivery.</p>
+            <p>
+              Convert AVIF images to WebP format for broad browser support and
+              efficient web delivery.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/aspect-ratio-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/aspect-ratio-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Aspect Ratio Calculator</h3>
-            <p>Calculate dimensions and ratios for images, videos, and screens accurately.</p>
+            <p>
+              Calculate dimensions and ratios for images, videos, and screens
+              accurately.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/base64-to-image" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/base64-to-image"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Base64 to Image</h3>
             <p>Convert Base64 strings to images and vice versa instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/bmp-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/bmp-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BMP to AVIF Converter</h3>
-            <p>Convert BMP images to AVIF for dramatic file size reduction from uncompressed bitmaps.</p>
+            <p>
+              Convert BMP images to AVIF for dramatic file size reduction from
+              uncompressed bitmaps.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/bmp-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/bmp-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BMP to GIF Converter</h3>
-            <p>Convert BMP images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert BMP images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/bmp-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/bmp-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BMP to PDF Converter</h3>
-            <p>Convert BMP images to PDF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert BMP images to PDF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/bmp-to-svg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/bmp-to-svg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BMP to SVG Converter</h3>
-            <p>Vectorize BMP images to SVG format in your browser using vtracer. Convert raster bitmaps to scalable vector graphics.</p>
+            <p>
+              Vectorize BMP images to SVG format in your browser using vtracer.
+              Convert raster bitmaps to scalable vector graphics.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/color-palette-extractor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/color-palette-extractor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Color Palette Extractor</h3>
-            <p>Extract beautiful color palettes from any image automatically.</p>
+            <p>
+              Extract beautiful color palettes from any image automatically.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/compress-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/compress-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Compress GIF</h3>
             <p>Reduce GIF file size while maintaining quality online.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/compress-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/compress-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Compress JPEG</h3>
             <p>Reduce JPEG file size while maintaining quality online.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/compress-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/compress-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Compress PNG</h3>
             <p>Reduce PNG file size while maintaining quality online.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/compress-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/compress-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Compress WEBP</h3>
             <p>Reduce WEBP file size while maintaining quality online.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/favicon-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/favicon-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Favicon Generator</h3>
-            <p>Create a complete set of favicons for your website from any image instantly.</p>
+            <p>
+              Create a complete set of favicons for your website from any image
+              instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-flip-rotate" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-flip-rotate"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Flip &amp; Rotate Image</h3>
-            <p>Rotate images by any angle and flip them horizontally or vertically.</p>
+            <p>
+              Rotate images by any angle and flip them horizontally or
+              vertically.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/flyer-builder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/flyer-builder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Flyer &amp; Poster Maker</h3>
-            <p>Design eye-catching flyers and posters with customizable templates, text, shapes, and images.</p>
+            <p>
+              Design eye-catching flyers and posters with customizable
+              templates, text, shapes, and images.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/gif-to-bmp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/gif-to-bmp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GIF to BMP Converter</h3>
-            <p>Convert GIF images to BMP format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert GIF images to BMP format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/gif-to-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/gif-to-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GIF to JPEG Converter</h3>
-            <p>Convert GIF images to JPEG format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert GIF images to JPEG format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/gif-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/gif-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GIF to PDF Converter</h3>
-            <p>Convert GIF images to PDF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert GIF images to PDF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/gif-to-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/gif-to-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GIF to PNG Converter</h3>
-            <p>Convert GIF images to PNG format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert GIF images to PNG format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/gif-to-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/gif-to-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GIF to WebP Converter</h3>
-            <p>Convert GIF images to WebP format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert GIF images to WebP format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/qr-code-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/qr-code-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Generate &amp; Scan QR Codes</h3>
-            <p>Create custom QR codes and scan existing ones instantly in your browser.</p>
+            <p>
+              Create custom QR codes and scan existing ones instantly in your
+              browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/ico-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/ico-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ICO to AVIF Converter</h3>
-            <p>Convert ICO icon files to AVIF for efficient web display and compact storage.</p>
+            <p>
+              Convert ICO icon files to AVIF for efficient web display and
+              compact storage.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/ico-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/ico-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ICO to GIF Converter</h3>
-            <p>Convert ICO images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert ICO images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-compressor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-compressor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image Compressor</h3>
-            <p>Reduce image file size while maintaining quality directly in your browser.</p>
+            <p>
+              Reduce image file size while maintaining quality directly in your
+              browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-cropper" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-cropper"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image Cropper</h3>
-            <p>Crop your images to any size or shape easily and securely in your browser.</p>
+            <p>
+              Crop your images to any size or shape easily and securely in your
+              browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-enhancer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-enhancer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image Enhancer</h3>
             <p>Enhance and upscale images using Swin2SR AI super-resolution.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-format-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-format-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image Format Converter</h3>
-            <p>Convert images between PNG, JPG, and WebP formats instantly in your browser.</p>
+            <p>
+              Convert images between PNG, JPG, and WebP formats instantly in
+              your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-resizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-resizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image Resizer</h3>
-            <p>Resize single or multiple images to custom dimensions in bulk.</p>
+            <p>
+              Resize single or multiple images to custom dimensions in bulk.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/image-watermark-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/image-watermark-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image Watermark Remover</h3>
             <p>Remove watermarks from images using AI-powered inpainting.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/jpeg-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/jpeg-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JPEG to AVIF Converter</h3>
-            <p>Convert JPEG photos to AVIF for superior compression and faster web loading.</p>
+            <p>
+              Convert JPEG photos to AVIF for superior compression and faster
+              web loading.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/jpeg-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/jpeg-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JPEG to GIF Converter</h3>
-            <p>Convert JPEG images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert JPEG images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/jpeg-to-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/jpeg-to-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JPEG to WebP Converter</h3>
-            <p>Convert JPEG images to WebP format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert JPEG images to WebP format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/jpeg-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/jpeg-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JPG to PDF Converter</h3>
             <p>Convert JPG or JPEG photos into a PDF file in seconds.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/jpeg-to-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/jpeg-to-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JPG to PNG Converter</h3>
-            <p>Convert JPG images to PNG to preserve quality or add transparency.</p>
+            <p>
+              Convert JPG images to PNG to preserve quality or add transparency.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/license-plate-blur" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/license-plate-blur"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>License Plate Blur</h3>
             <p>Blur and anonymize vehicle license plates in images using AI.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/linkedin-banner-builder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/linkedin-banner-builder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>LinkedIn Banner Builder</h3>
-            <p>Create professional LinkedIn banners with the perfect 1584×396 dimensions.</p>
+            <p>
+              Create professional LinkedIn banners with the perfect 1584×396
+              dimensions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/meme-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/meme-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Meme Generator</h3>
-            <p>Create classic memes with custom top and bottom text instantly.</p>
+            <p>
+              Create classic memes with custom top and bottom text instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/pdf-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/pdf-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to AVIF Converter</h3>
-            <p>Convert PDF pages to compact AVIF images for web previews and social sharing.</p>
+            <p>
+              Convert PDF pages to compact AVIF images for web previews and
+              social sharing.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/pdf-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/pdf-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to GIF Converter</h3>
-            <p>Convert PDF images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert PDF images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/pdf-to-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/pdf-to-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to JPEG Converter</h3>
-            <p>Convert PDF images to JPEG format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert PDF images to JPEG format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/pdf-to-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/pdf-to-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to PNG Converter</h3>
             <p>Extract pages from a PDF file as high-quality PNG images.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/pdf-to-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/pdf-to-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to WebP Converter</h3>
-            <p>Convert PDF images to WebP format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert PDF images to WebP format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/png-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/png-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PNG to AVIF Converter</h3>
-            <p>Convert PNG images to AVIF for 30-50% smaller files with identical visual quality.</p>
+            <p>
+              Convert PNG images to AVIF for 30-50% smaller files with identical
+              visual quality.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/png-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/png-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PNG to GIF Converter</h3>
-            <p>Convert PNG images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert PNG images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/png-to-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/png-to-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PNG to JPG Converter</h3>
             <p>Convert PNG images to JPG format for smaller file sizes.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/png-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/png-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PNG to PDF Converter</h3>
             <p>Convert your PNG images into a PDF document online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/png-to-svg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/png-to-svg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PNG to SVG Converter</h3>
-            <p>Vectorize PNG images to SVG format in your browser using vtracer. Convert raster graphics to scalable vector art.</p>
+            <p>
+              Vectorize PNG images to SVG format in your browser using vtracer.
+              Convert raster graphics to scalable vector art.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/png-to-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/png-to-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PNG to WebP Converter</h3>
             <p>Convert PNG images to WebP for better web performance.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/psd-layer-extractor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/psd-layer-extractor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PSD Layer Extractor</h3>
-            <p>Extract and download individual layers from Photoshop PSD files.</p>
+            <p>
+              Extract and download individual layers from Photoshop PSD files.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/psd-to-png-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/psd-to-png-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PSD to PNG Converter</h3>
-            <p>Convert Photoshop PSD files to PNG with optional layer export.</p>
+            <p>
+              Convert Photoshop PSD files to PNG with optional layer export.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/psd-to-svg-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/psd-to-svg-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PSD to SVG Converter</h3>
             <p>Convert Photoshop PSD files to scalable SVG vector format.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to AVIF Converter</h3>
-            <p>Convert SVG vector graphics to compact AVIF raster images for web and social media.</p>
+            <p>
+              Convert SVG vector graphics to compact AVIF raster images for web
+              and social media.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-bmp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-bmp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to BMP Converter</h3>
-            <p>Convert SVG images to BMP format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert SVG images to BMP format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to GIF Converter</h3>
-            <p>Convert SVG images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert SVG images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to JPEG Converter</h3>
-            <p>Convert SVG images to JPEG format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert SVG images to JPEG format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to PDF Converter</h3>
-            <p>Convert SVG images to PDF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert SVG images to PDF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to PNG Converter</h3>
             <p>Convert vector SVG files to raster PNG images instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/svg-to-webp" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/svg-to-webp"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SVG to WebP Converter</h3>
-            <p>Convert SVG images to WebP format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert SVG images to WebP format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/tshirt-mockup" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/tshirt-mockup"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>T-Shirt Mockup Generator (3D Preview)</h3>
-            <p>Preview your design on a 3D t-shirt you can rotate, zoom, and recolor. Upload artwork and export as PNG.</p>
+            <p>
+              Preview your design on a 3D t-shirt you can rotate, zoom, and
+              recolor. Upload artwork and export as PNG.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/texture-preview" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/texture-preview"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Texture Preview (KTX2 / DDS to PNG)</h3>
-            <p>Preview KTX2 and DDS GPU texture files in your browser and download them as PNG. Supports Basis Universal and BC1-BC7.</p>
+            <p>
+              Preview KTX2 and DDS GPU texture files in your browser and
+              download them as PNG. Supports Basis Universal and BC1-BC7.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/interactive-360-photo-viewer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/interactive-360-photo-viewer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>View 360 Photos</h3>
-            <p>Upload and explore equirectangular 360 photos in an interactive 3D panorama viewer.</p>
+            <p>
+              Upload and explore equirectangular 360 photos in an interactive 3D
+              panorama viewer.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/watermark-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/watermark-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Watermark Generator</h3>
-            <p>Add text watermarks to your photos easily and securely in your browser.</p>
+            <p>
+              Add text watermarks to your photos easily and securely in your
+              browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/webp-to-avif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/webp-to-avif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebP to AVIF Converter</h3>
-            <p>Convert WebP images to AVIF for next-generation compression and HDR support.</p>
+            <p>
+              Convert WebP images to AVIF for next-generation compression and
+              HDR support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/webp-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/webp-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebP to GIF Converter</h3>
-            <p>Convert WebP images to GIF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert WebP images to GIF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/webp-to-jpeg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/webp-to-jpeg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebP to JPEG Converter</h3>
-            <p>Convert WebP images to JPEG format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert WebP images to JPEG format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/webp-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/webp-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebP to PDF Converter</h3>
-            <p>Convert WebP images to PDF format instantly in your browser to reduce file size or add format support.</p>
+            <p>
+              Convert WebP images to PDF format instantly in your browser to
+              reduce file size or add format support.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/image-design/webp-to-png" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/webp-to-png"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebP to PNG Converter</h3>
             <p>Convert WebP images to standard PNG format with transparency.</p>
           </a>
-          <a href="https://kitmul.com/en/image-design/xd-to-svg-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/image-design/xd-to-svg-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>XD to SVG Converter</h3>
             <p>Convert Adobe XD files to SVG format for web and design use.</p>
           </a>
@@ -1173,83 +3067,202 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Math & Calculators</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/math/absolute-value-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/absolute-value-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Absolute Value Calculator</h3>
             <p>Find the absolute value (magnitude) of any number.</p>
           </a>
-          <a href="https://kitmul.com/en/math/average-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/average-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Average Calculator</h3>
-            <p>Calculate arithmetic, geometric, and harmonic mean of a set of numbers.</p>
+            <p>
+              Calculate arithmetic, geometric, and harmonic mean of a set of
+              numbers.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/factorial-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/factorial-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Factorial Calculator</h3>
             <p>Calculate the factorial of a non-negative integer.</p>
           </a>
-          <a href="https://kitmul.com/en/math/fibonacci-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/fibonacci-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Fibonacci Sequence Generator</h3>
-            <p>Generate a sequence of Fibonacci numbers up to a specified term.</p>
+            <p>
+              Generate a sequence of Fibonacci numbers up to a specified term.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/fraction-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/fraction-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Fraction Calculator</h3>
-            <p>Perform addition, subtraction, multiplication, and division of fractions.</p>
+            <p>
+              Perform addition, subtraction, multiplication, and division of
+              fractions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/gcd-lcm-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/gcd-lcm-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>GCD &amp; LCM Calculator</h3>
-            <p>Calculate the Greatest Common Divisor and Least Common Multiple of two numbers.</p>
+            <p>
+              Calculate the Greatest Common Divisor and Least Common Multiple of
+              two numbers.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/modulo-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/modulo-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Modulo Calculator</h3>
             <p>Calculate the remainder of a division (A mod B) instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/math/palindrome-number-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/palindrome-number-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Palindrome Number Checker</h3>
             <p>Check if a number reads the same forwards and backwards.</p>
           </a>
-          <a href="https://kitmul.com/en/math/percentage-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/percentage-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Percentage Calculator</h3>
             <p>Quickly calculate percentages and percentage changes.</p>
           </a>
-          <a href="https://kitmul.com/en/math/percentage" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/percentage"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Percentage Calculator</h3>
-            <p>Calculate percentages, percentage change, and what percentage X is of Y instantly.</p>
+            <p>
+              Calculate percentages, percentage change, and what percentage X is
+              of Y instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/percentage-change-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/percentage-change-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Percentage Change Calculator</h3>
-            <p>Calculate the percentage increase or decrease between two values.</p>
+            <p>
+              Calculate the percentage increase or decrease between two values.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/prime-number-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/prime-number-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Prime Number Checker</h3>
             <p>Check if a number is prime and find its prime factorization.</p>
           </a>
-          <a href="https://kitmul.com/en/math/quadratic-equation-solver" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/quadratic-equation-solver"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Quadratic Equation Solver</h3>
             <p>Solve quadratic equations of the form ax² + bx + c = 0.</p>
           </a>
-          <a href="https://kitmul.com/en/math/random-number-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/random-number-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Number Generator</h3>
             <p>Generate random numbers within a specified range.</p>
           </a>
-          <a href="https://kitmul.com/en/math/ratio-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/ratio-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Ratio Calculator</h3>
             <p>Simplify ratios and convert them to their simplest form.</p>
           </a>
-          <a href="https://kitmul.com/en/math/reverse-number" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/reverse-number"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Reverse Number</h3>
             <p>Reverse the digits of any integer instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/math/rule-of-three-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/rule-of-three-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Rule of Three Calculator</h3>
             <p>Solve direct and inverse proportions easily.</p>
           </a>
-          <a href="https://kitmul.com/en/math/slope-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/slope-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Slope Calculator</h3>
             <p>Calculate the slope, angle, and distance between two points.</p>
           </a>
-          <a href="https://kitmul.com/en/math/statistics-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/statistics-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Statistics Calculator</h3>
-            <p>Calculate mean, median, mode, standard deviation, and more for a set of numbers.</p>
+            <p>
+              Calculate mean, median, mode, standard deviation, and more for a
+              set of numbers.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/math/sum-of-digits" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/math/sum-of-digits"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sum of Digits</h3>
             <p>Calculate the sum of all digits in a number.</p>
           </a>
@@ -1259,193 +3272,470 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Music & Audio</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/music/aac-to-flac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/aac-to-flac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AAC to FLAC Converter</h3>
             <p>Convert AAC audio files to FLAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/aac-to-m4a" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/aac-to-m4a"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AAC to M4A Converter</h3>
             <p>Convert AAC audio files to M4A format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/aac-to-mp3" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/aac-to-mp3"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AAC to MP3 Converter</h3>
             <p>Convert AAC audio files to MP3 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/aac-to-ogg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/aac-to-ogg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AAC to OGG Converter</h3>
             <p>Convert AAC audio files to OGG format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/aac-to-wav" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/aac-to-wav"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AAC to WAV Converter</h3>
             <p>Convert AAC audio files to WAV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/audio-format-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/audio-format-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Audio Format Converter</h3>
-            <p>Convert audio files between MP3, WAV, OGG, M4A, FLAC and AAC formats instantly in your browser.</p>
+            <p>
+              Convert audio files between MP3, WAV, OGG, M4A, FLAC and AAC
+              formats instantly in your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/adsr-envelope-designer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/adsr-envelope-designer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>ADSR Envelope Designer</h3>
-            <p>Design Attack-Decay-Sustain-Release envelopes with real-time visualization and audio preview.</p>
+            <p>
+              Design Attack-Decay-Sustain-Release envelopes with real-time
+              visualization and audio preview.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/audio-stem-splitter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/audio-stem-splitter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Audio Stem Splitter</h3>
-            <p>Split any audio file into separate stems locally in your browser.</p>
+            <p>
+              Split any audio file into separate stems locally in your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/audio-trimmer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/audio-trimmer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Audio Trimmer</h3>
-            <p>Clip and trim audio files directly in your browser with high precision.</p>
+            <p>
+              Clip and trim audio files directly in your browser with high
+              precision.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/binaural-beats-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/binaural-beats-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Binaural Beats Generator</h3>
-            <p>Generate custom binaural beats for focus, sleep, and meditation.</p>
+            <p>
+              Generate custom binaural beats for focus, sleep, and meditation.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/bpm-key-detector" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/bpm-key-detector"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>BPM &amp; Key Detector</h3>
             <p>Real-time analyzer via microphone or file upload.</p>
           </a>
-          <a href="https://kitmul.com/en/music/chiptune-creator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/chiptune-creator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Chiptune (8-bit) Sound Creator</h3>
-            <p>Create retro 8-bit chiptune sounds with a step sequencer and waveform selector.</p>
+            <p>
+              Create retro 8-bit chiptune sounds with a step sequencer and
+              waveform selector.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/circle-of-fifths" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/circle-of-fifths"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Circle of Fifths</h3>
-            <p>Interactive circle of fifths to understand harmonic relationships, find related chords, and improve your compositions.</p>
+            <p>
+              Interactive circle of fifths to understand harmonic relationships,
+              find related chords, and improve your compositions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/flac-to-aac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/flac-to-aac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>FLAC to AAC Converter</h3>
             <p>Convert FLAC audio files to AAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/flac-to-m4a" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/flac-to-m4a"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>FLAC to M4A Converter</h3>
             <p>Convert FLAC audio files to M4A format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/flac-to-mp3" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/flac-to-mp3"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>FLAC to MP3 Converter</h3>
             <p>Convert FLAC audio files to MP3 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/flac-to-ogg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/flac-to-ogg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>FLAC to OGG Converter</h3>
             <p>Convert FLAC audio files to OGG format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/flac-to-wav" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/flac-to-wav"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>FLAC to WAV Converter</h3>
             <p>Convert FLAC audio files to WAV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/loop-music-creator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/loop-music-creator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Loop Music Creator</h3>
-            <p>Browser-based DAW for creating music with loops. Drum step sequencers, synth piano rolls, master effects, and WAV export.</p>
+            <p>
+              Browser-based DAW for creating music with loops. Drum step
+              sequencers, synth piano rolls, master effects, and WAV export.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/m4a-to-aac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/m4a-to-aac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>M4A to AAC Converter</h3>
             <p>Convert M4A audio files to AAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/m4a-to-flac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/m4a-to-flac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>M4A to FLAC Converter</h3>
             <p>Convert M4A audio files to FLAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/m4a-to-mp3" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/m4a-to-mp3"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>M4A to MP3 Converter</h3>
             <p>Convert M4A audio files to MP3 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/m4a-to-ogg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/m4a-to-ogg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>M4A to OGG Converter</h3>
             <p>Convert M4A audio files to OGG format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/m4a-to-wav" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/m4a-to-wav"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>M4A to WAV Converter</h3>
             <p>Convert M4A audio files to WAV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/mp3-to-aac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/mp3-to-aac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP3 to AAC Converter</h3>
             <p>Convert MP3 audio files to AAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/mp3-to-flac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/mp3-to-flac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP3 to FLAC Converter</h3>
             <p>Convert MP3 audio files to FLAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/mp3-to-m4a" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/mp3-to-m4a"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP3 to M4A Converter</h3>
             <p>Convert MP3 audio files to M4A format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/mp3-to-ogg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/mp3-to-ogg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP3 to OGG Converter</h3>
             <p>Convert MP3 audio files to OGG format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/mp3-to-wav" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/mp3-to-wav"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP3 to WAV Converter</h3>
             <p>Convert MP3 audio files to WAV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/music-scale-library" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/music-scale-library"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Music Scale Library</h3>
-            <p>Explore a comprehensive collection of musical scales. Select a root note and listen to how each scale sounds.</p>
+            <p>
+              Explore a comprehensive collection of musical scales. Select a
+              root note and listen to how each scale sounds.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/noise-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/noise-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Noise Generator</h3>
-            <p>Generate white, pink, and brown noise for testing, relaxation, or sound design.</p>
+            <p>
+              Generate white, pink, and brown noise for testing, relaxation, or
+              sound design.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/ogg-to-aac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/ogg-to-aac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>OGG to AAC Converter</h3>
             <p>Convert OGG audio files to AAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/ogg-to-flac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/ogg-to-flac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>OGG to FLAC Converter</h3>
             <p>Convert OGG audio files to FLAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/ogg-to-m4a" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/ogg-to-m4a"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>OGG to M4A Converter</h3>
             <p>Convert OGG audio files to M4A format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/ogg-to-mp3" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/ogg-to-mp3"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>OGG to MP3 Converter</h3>
             <p>Convert OGG audio files to MP3 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/ogg-to-wav" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/ogg-to-wav"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>OGG to WAV Converter</h3>
             <p>Convert OGG audio files to WAV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/polyrhythm-metronome" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/polyrhythm-metronome"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Polyrhythm Metronome</h3>
-            <p>Practice complex polyrhythms with visual and audio feedback. Supports ratios like 3:4, 5:4, and more.</p>
+            <p>
+              Practice complex polyrhythms with visual and audio feedback.
+              Supports ratios like 3:4, 5:4, and more.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/sine-wave-sweep" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/sine-wave-sweep"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sine Wave Sweep Generator</h3>
-            <p>Generate frequency sweeps for testing speakers and headphones.</p>
+            <p>
+              Generate frequency sweeps for testing speakers and headphones.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/tempo-tapper" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/tempo-tapper"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Tempo Tapper</h3>
             <p>Calculate BPM instantly by tapping along to any rhythm.</p>
           </a>
-          <a href="https://kitmul.com/en/music/vocal-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/vocal-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Vocal Remover</h3>
-            <p>Remove vocals from any song and get the instrumental track using AI.</p>
+            <p>
+              Remove vocals from any song and get the instrumental track using
+              AI.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/voice-noise-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/voice-noise-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Voice Noise Remover</h3>
-            <p>Remove background noise from voice recordings using AI, 100% in your browser.</p>
+            <p>
+              Remove background noise from voice recordings using AI, 100% in
+              your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/music/wav-to-aac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/wav-to-aac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WAV to AAC Converter</h3>
             <p>Convert WAV audio files to AAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/wav-to-flac" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/wav-to-flac"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WAV to FLAC Converter</h3>
             <p>Convert WAV audio files to FLAC format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/wav-to-m4a" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/wav-to-m4a"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WAV to M4A Converter</h3>
             <p>Convert WAV audio files to M4A format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/wav-to-mp3" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/wav-to-mp3"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WAV to MP3 Converter</h3>
             <p>Convert WAV audio files to MP3 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/wav-to-ogg" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/wav-to-ogg"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WAV to OGG Converter</h3>
             <p>Convert WAV audio files to OGG format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/music/youtube-loop-mix" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/music/youtube-loop-mix"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>YouTube Loop Mix &amp; DJ Tool</h3>
-            <p>DJ-style mixer with dual decks, crossfader, EQ, A-B loop markers, cue points, BPM detection, and WAV export.</p>
+            <p>
+              DJ-style mixer with dual decks, crossfader, EQ, A-B loop markers,
+              cue points, BPM detection, and WAV export.
+            </p>
           </a>
         </div>
       </section>
@@ -1453,101 +3743,247 @@ export default function Tools() {
       <section class="tool-category">
         <h2>PDF & Documents</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/pdf/image-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/image-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image to PDF</h3>
             <p>Convert your images into a single PDF document.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-compressor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-compressor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Compressor</h3>
-            <p>Compress PDF files locally to reduce file size without losing quality.</p>
+            <p>
+              Compress PDF files locally to reduce file size without losing
+              quality.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-crop" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-crop"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Crop</h3>
             <p>Crop PDF pages to a specific area or size.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-flatten" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-flatten"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Flatten</h3>
             <p>Flatten PDF forms and layers into a single layer.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-image-extractor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-image-extractor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Image Extractor</h3>
-            <p>Extract all images from a PDF, replace them, and regenerate the document.</p>
+            <p>
+              Extract all images from a PDF, replace them, and regenerate the
+              document.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-image-quality-enhancer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-image-quality-enhancer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Image Quality Enhancer</h3>
-            <p>Enhance the quality of all images in a PDF using AI super-resolution and rebuild the document.</p>
+            <p>
+              Enhance the quality of all images in a PDF using AI
+              super-resolution and rebuild the document.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-margin-adjuster" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-margin-adjuster"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Margin Adjuster</h3>
             <p>Adjust the margins of your PDF pages.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-merger" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-merger"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Merger</h3>
             <p>Combine multiple PDF files into a single document instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-metadata-editor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-metadata-editor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Metadata Editor</h3>
             <p>View and edit metadata of your PDF files instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-page-deleter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-page-deleter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Page Deleter</h3>
             <p>Remove unwanted pages from your PDF files easily.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-page-extractor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-page-extractor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Page Extractor</h3>
             <p>Extract specific pages from your PDF file.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-page-numberer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-page-numberer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Page Numberer</h3>
             <p>Add page numbers to your PDF documents automatically.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-page-reorder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-page-reorder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Page Reorder</h3>
             <p>Rearrange pages in your PDF document easily.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-page-rotator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-page-rotator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Page Rotator</h3>
             <p>Rotate individual or all pages in your PDF document.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-splitter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-splitter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Splitter</h3>
             <p>Split your PDF document into multiple separate files.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-to-markdown" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-to-markdown"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to Markdown</h3>
-            <p>Convert PDF documents to clean Markdown text directly in your browser using WASM-powered extraction.</p>
+            <p>
+              Convert PDF documents to clean Markdown text directly in your
+              browser using WASM-powered extraction.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-watermark" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-watermark"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Watermark</h3>
             <p>Add text watermarks to your PDF documents easily.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-watermark-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-watermark-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF Watermark Remover</h3>
-            <p>Remove watermarks from PDF documents using AI-powered inpainting.</p>
+            <p>
+              Remove watermarks from PDF documents using AI-powered inpainting.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/ppt-compressor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/ppt-compressor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PPT Compressor</h3>
-            <p>Compress PowerPoint PPTX files locally in your browser to reduce file size.</p>
+            <p>
+              Compress PowerPoint PPTX files locally in your browser to reduce
+              file size.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pptx-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pptx-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PowerPoint (PPTX) to PDF</h3>
             <p>Convert your PowerPoint presentations to PDF format.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/text-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/text-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text to PDF</h3>
             <p>Convert plain text into a professional PDF document.</p>
           </a>
-          <a href="https://kitmul.com/en/pdf/markdown-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/markdown-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Markdown to PDF</h3>
-            <p>Convert Markdown text to PDF with live preview and multiple themes.</p>
+            <p>
+              Convert Markdown text to PDF with live preview and multiple
+              themes.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/pdf-to-word" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/pdf-to-word"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PDF to Word</h3>
-            <p>Convert PDF documents to editable Word (DOCX) files with text extraction, heading detection, and list formatting.</p>
+            <p>
+              Convert PDF documents to editable Word (DOCX) files with text
+              extraction, heading detection, and list formatting.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/pdf/word-to-pdf" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/pdf/word-to-pdf"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Word to PDF</h3>
-            <p>Convert Word (DOCX) documents to PDF with faithful rendering, page size options, and quality control.</p>
+            <p>
+              Convert Word (DOCX) documents to PDF with faithful rendering, page
+              size options, and quality control.
+            </p>
           </a>
         </div>
       </section>
@@ -1555,51 +3991,117 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Random & Fun</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/random/blue-noise-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/blue-noise-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Blue Noise Point Distribution Generator</h3>
-            <p>Generate high-performance distributions with Mitchell's Best Candidate algorithm.</p>
+            <p>
+              Generate high-performance distributions with Mitchell's Best
+              Candidate algorithm.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/random/coin-flipper" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/coin-flipper"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Coin Flipper</h3>
             <p>Flip a virtual coin to make a quick decision.</p>
           </a>
-          <a href="https://kitmul.com/en/random/dice-roller" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/dice-roller"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Dice Roller</h3>
             <p>Roll one or multiple virtual dice for games.</p>
           </a>
-          <a href="https://kitmul.com/en/random/random-choice-picker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/random-choice-picker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Choice Picker</h3>
             <p>Pick a random item from a list of options.</p>
           </a>
-          <a href="https://kitmul.com/en/random/random-color-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/random-color-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Color Generator</h3>
             <p>Generate random colors in HEX, RGB, and HSL formats.</p>
           </a>
-          <a href="https://kitmul.com/en/random/random-fact-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/random-fact-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Fact Generator</h3>
             <p>Learn something new with interesting random facts.</p>
           </a>
-          <a href="https://kitmul.com/en/random/random-name-picker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/random-name-picker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Name Picker</h3>
             <p>Randomly select a name from your list.</p>
           </a>
-          <a href="https://kitmul.com/en/random/random-quote-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/random-quote-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Quote Generator</h3>
             <p>Get inspired with random quotes from famous people.</p>
           </a>
-          <a href="https://kitmul.com/en/random/rock-paper-scissors" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/rock-paper-scissors"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Rock Paper Scissors</h3>
             <p>Play a classic game of Rock Paper Scissors against the CPU.</p>
           </a>
-          <a href="https://kitmul.com/en/random/spaced-repetition-flashcards" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/spaced-repetition-flashcards"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Spaced Repetition Flashcards</h3>
-            <p>Create, review, and schedule flashcards with local storage and JSON export/import.</p>
+            <p>
+              Create, review, and schedule flashcards with local storage and
+              JSON export/import.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/random/spin-the-wheel" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/spin-the-wheel"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Spin the Wheel</h3>
             <p>Create a custom wheel and spin it for random results.</p>
           </a>
-          <a href="https://kitmul.com/en/random/team-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/random/team-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Team Generator</h3>
             <p>Quickly split a list of names into random teams.</p>
           </a>
@@ -1609,73 +4111,207 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Security & Cryptography</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/security/aes-encryption" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/aes-encryption"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AES Encryption</h3>
-            <p>Encrypt and decrypt text using AES-CBC or AES-GCM directly in your browser with the Web Crypto API.</p>
+            <p>
+              Encrypt and decrypt text using AES-CBC or AES-GCM directly in your
+              browser with the Web Crypto API.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/bcrypt-hash-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/bcrypt-hash-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Bcrypt Hash Generator</h3>
-            <p>Hash passwords and verify bcrypt hashes securely in your browser.</p>
+            <p>
+              Hash passwords and verify bcrypt hashes securely in your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/csp-builder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/csp-builder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Build Content Security Policy</h3>
-            <p>Generate CSP headers interactively with all directives, presets, and output for HTTP headers, meta tags, Nginx, Apache, and Express.</p>
+            <p>
+              Generate CSP headers interactively with all directives, presets,
+              and output for HTTP headers, meta tags, Nginx, Apache, and
+              Express.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/caesar-cipher" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/caesar-cipher"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Caesar Cipher</h3>
-            <p>Encrypt and decrypt text using the Caesar cipher with a customizable shift value.</p>
+            <p>
+              Encrypt and decrypt text using the Caesar cipher with a
+              customizable shift value.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/pwned-password-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/pwned-password-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Check Pwned Passwords</h3>
-            <p>Check if your password has been exposed in known data breaches using the Have I Been Pwned API with k-anonymity.</p>
+            <p>
+              Check if your password has been exposed in known data breaches
+              using the Have I Been Pwned API with k-anonymity.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/cors-configuration-helper" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/cors-configuration-helper"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Configure CORS Headers</h3>
-            <p>Generate CORS configurations for Express.js, Nginx, Apache, Fetch API, Spring Boot, Django, and Laravel.</p>
+            <p>
+              Generate CORS configurations for Express.js, Nginx, Apache, Fetch
+              API, Spring Boot, Django, and Laravel.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/ssl-certificate-decoder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/ssl-certificate-decoder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Decode SSL/TLS Certificates</h3>
-            <p>Parse and inspect PEM-encoded X.509 certificates. View subject, issuer, validity, and public key details.</p>
+            <p>
+              Parse and inspect PEM-encoded X.509 certificates. View subject,
+              issuer, validity, and public key details.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/base58-encoder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/base58-encoder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Encode and Decode Base58</h3>
-            <p>Encode text to Base58 and decode Base58 back to text using the Bitcoin alphabet.</p>
+            <p>
+              Encode text to Base58 and decode Base58 back to text using the
+              Bitcoin alphabet.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/security-headers-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/security-headers-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Generate Security Headers</h3>
-            <p>Configure and generate HTTP security headers with a security grade score. Export for Nginx, Apache, and Express.js.</p>
+            <p>
+              Configure and generate HTTP security headers with a security grade
+              score. Export for Nginx, Apache, and Express.js.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/hash-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/hash-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Hash Generator</h3>
-            <p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text input instantly.</p>
+            <p>
+              Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text
+              input instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/steganography-tool" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/steganography-tool"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Hide Text in Images with Steganography</h3>
-            <p>Hide secret messages inside images using LSB steganography. Extract hidden text from stego images.</p>
+            <p>
+              Hide secret messages inside images using LSB steganography.
+              Extract hidden text from stego images.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/morse-code" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/morse-code"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Morse Code Encoder/Decoder</h3>
-            <p>Encode text to Morse code and decode Morse code back to text instantly.</p>
+            <p>
+              Encode text to Morse code and decode Morse code back to text
+              instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/password-strength-tester" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/password-strength-tester"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Password Strength Tester</h3>
-            <p>Test and analyze the strength of any password with entropy calculation and detailed feedback.</p>
+            <p>
+              Test and analyze the strength of any password with entropy
+              calculation and detailed feedback.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/random-token-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/random-token-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Random Token Generator</h3>
-            <p>Generate cryptographically secure random tokens and secrets instantly.</p>
+            <p>
+              Generate cryptographically secure random tokens and secrets
+              instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/rsa-key-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/rsa-key-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>RSA Key Generator</h3>
-            <p>Generate secure RSA public and private key pairs in PEM format.</p>
+            <p>
+              Generate secure RSA public and private key pairs in PEM format.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/shamirs-secret-sharing" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/shamirs-secret-sharing"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Split Secrets with Shamir's Scheme</h3>
-            <p>Split a secret into N shares and reconstruct it with any K shares using Shamir's Secret Sharing over GF(256).</p>
+            <p>
+              Split a secret into N shares and reconstruct it with any K shares
+              using Shamir's Secret Sharing over GF(256).
+            </p>
           </a>
-          <a href="https://kitmul.com/en/security/vigenere-cipher" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/security/vigenere-cipher"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Vigenere Cipher</h3>
-            <p>Encrypt and decrypt text using the Vigenere cipher with a keyword.</p>
+            <p>
+              Encrypt and decrypt text using the Vigenere cipher with a keyword.
+            </p>
           </a>
         </div>
       </section>
@@ -1683,63 +4319,147 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Social Media & SEO</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/social/ad-character-counter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/ad-character-counter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Ad Character Counter</h3>
             <p>Count characters for Google, Facebook, and other ads.</p>
           </a>
-          <a href="https://kitmul.com/en/social/breadcrumb-schema" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/breadcrumb-schema"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Breadcrumb Schema Generator</h3>
             <p>Generate JSON-LD breadcrumb structured data for SEO.</p>
           </a>
-          <a href="https://kitmul.com/en/social/canonical-url-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/canonical-url-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Canonical URL Gen</h3>
             <p>Generate canonical URL tags to prevent duplicate content.</p>
           </a>
-          <a href="https://kitmul.com/en/social/digital-business-card" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/digital-business-card"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Digital Business Card</h3>
-            <p>Create and download a digital business card with vCard and QR code.</p>
+            <p>
+              Create and download a digital business card with vCard and QR
+              code.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/social/hashtag-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/hashtag-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Hashtag Generator</h3>
             <p>Generate trending hashtags for your social media posts.</p>
           </a>
-          <a href="https://kitmul.com/en/social/instagram-caption-spacer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/instagram-caption-spacer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Instagram Caption Spacer</h3>
             <p>Add clean line breaks to your Instagram captions.</p>
           </a>
-          <a href="https://kitmul.com/en/social/keyword-density-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/keyword-density-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Keyword Density Checker</h3>
             <p>Analyze the keyword density of your content for SEO.</p>
           </a>
-          <a href="https://kitmul.com/en/social/linkedin-post-formatter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/linkedin-post-formatter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>LinkedIn Post Formatter</h3>
-            <p>Format and style your LinkedIn posts with Unicode text and preview.</p>
+            <p>
+              Format and style your LinkedIn posts with Unicode text and
+              preview.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/social/meta-tag-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/meta-tag-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Meta Tag Generator for SEO</h3>
             <p>Generate SEO-optimized meta tags for your website.</p>
           </a>
-          <a href="https://kitmul.com/en/social/open-graph-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/open-graph-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Open Graph (OG) Generator</h3>
             <p>Generate Open Graph meta tags for better social sharing.</p>
           </a>
-          <a href="https://kitmul.com/en/social/robots-txt-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/robots-txt-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Robots.txt Generator</h3>
             <p>Create a robots.txt file to guide search engine crawlers.</p>
           </a>
-          <a href="https://kitmul.com/en/social/seo-title-meta-optimizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/seo-title-meta-optimizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>SEO Title &amp; Meta Optimizer</h3>
-            <p>Optimize your page titles and meta descriptions for search engines.</p>
+            <p>
+              Optimize your page titles and meta descriptions for search
+              engines.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/social/sitemap-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/sitemap-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sitemap Generator (XML)</h3>
             <p>Generate an XML sitemap for search engine indexing.</p>
           </a>
-          <a href="https://kitmul.com/en/social/twitter-character-counter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/twitter-character-counter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Twitter Character Counter</h3>
             <p>Count characters and verify Twitter's limit.</p>
           </a>
-          <a href="https://kitmul.com/en/social/utm-builder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/social/utm-builder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>UTM Builder</h3>
             <p>Build campaign tracking URLs with UTM parameters.</p>
           </a>
@@ -1749,61 +4469,172 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Sport & Performance</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/sport-performance/one-rep-max-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/one-rep-max-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>1-Rep Max Calculator</h3>
-            <p>Calculate your estimated one-repetition maximum (1RM) using various established formulas.</p>
+            <p>
+              Calculate your estimated one-repetition maximum (1RM) using
+              various established formulas.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/amrap-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/amrap-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AMRAP Timer</h3>
-            <p>Timed workout timer for 'As Many Rounds As Possible' routines with integrated round and rep counters.</p>
+            <p>
+              Timed workout timer for 'As Many Rounds As Possible' routines with
+              integrated round and rep counters.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/ffmi-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/ffmi-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Calculate Your FFMI</h3>
-            <p>Calculate your Fat-Free Mass Index with normalized height adjustment and natural limit overlay.</p>
+            <p>
+              Calculate your Fat-Free Mass Index with normalized height
+              adjustment and natural limit overlay.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/strength-standards-checker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/strength-standards-checker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Check Your Strength Standards</h3>
-            <p>Check your powerlifting strength level with Wilks, DOTS, and IPF GL scoring.</p>
+            <p>
+              Check your powerlifting strength level with Wilks, DOTS, and IPF
+              GL scoring.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/vo2-max-estimator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/vo2-max-estimator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Estimate Your VO2 Max</h3>
-            <p>Calculate your VO2 max using Cooper, Rockport, or Uth formulas with age-based percentile ranking.</p>
+            <p>
+              Calculate your VO2 max using Cooper, Rockport, or Uth formulas
+              with age-based percentile ranking.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/hiit-workout-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/hiit-workout-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>HIIT Workout Timer</h3>
-            <p>Customizable High-Intensity Interval Training timer for any workout routine.</p>
+            <p>
+              Customizable High-Intensity Interval Training timer for any
+              workout routine.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/hypoxia-breathing-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/hypoxia-breathing-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Intermittent Hypoxia Breathing Timer</h3>
-            <p>Guided breathing exercise timer with configurable rounds of rapid breathing, breath holds, and recovery periods.</p>
+            <p>
+              Guided breathing exercise timer with configurable rounds of rapid
+              breathing, breath holds, and recovery periods.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/macro-split-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/macro-split-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Macro Split Generator</h3>
-            <p>Calculate your ideal macronutrient split based on your daily calorie goal and fitness objectives.</p>
+            <p>
+              Calculate your ideal macronutrient split based on your daily
+              calorie goal and fitness objectives.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/parkour-combo-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/parkour-combo-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Parkour Combo Generator</h3>
-            <p>Generate random and creative parkour combinations and sequences to practice.</p>
+            <p>
+              Generate random and creative parkour combinations and sequences to
+              practice.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/plate-loading-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/plate-loading-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Plate Loading Calculator</h3>
-            <p>Calculate which plates to load on each side of the barbell for any target weight.</p>
+            <p>
+              Calculate which plates to load on each side of the barbell for any
+              target weight.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/running-pace-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/running-pace-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Running Pace Calculator</h3>
-            <p>Calculate your pace, time, or distance for your runs and races.</p>
+            <p>
+              Calculate your pace, time, or distance for your runs and races.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/tabata-timer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/tabata-timer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Tabata Timer</h3>
-            <p>High-intensity interval training (HIIT) timer with customizable work and rest periods.</p>
+            <p>
+              High-intensity interval training (HIIT) timer with customizable
+              work and rest periods.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/vertical-jump-meter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/vertical-jump-meter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Vertical Jump Meter</h3>
-            <p>Estimate your vertical jump height from air time using physics-based calculation.</p>
+            <p>
+              Estimate your vertical jump height from air time using
+              physics-based calculation.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/sport-performance/wilks-score-calculator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/sport-performance/wilks-score-calculator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Wilks Score Calculator</h3>
-            <p>Calculate your Wilks coefficient to compare strength across different body weights and genders.</p>
+            <p>
+              Calculate your Wilks coefficient to compare strength across
+              different body weights and genders.
+            </p>
           </a>
         </div>
       </section>
@@ -1811,65 +4642,158 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Unit Converters</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/converters/angle-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/angle-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Angle Converter</h3>
             <p>Convert between degrees, radians, and other angle units.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/area-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/area-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Area Converter</h3>
             <p>Convert between square meters, acres, and other area units.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/digital-storage-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/digital-storage-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Digital Storage Converter</h3>
-            <p>Convert between Bytes, KB, MB, GB, TB and other digital units.</p>
+            <p>
+              Convert between Bytes, KB, MB, GB, TB and other digital units.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/converters/energy-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/energy-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Energy Converter</h3>
             <p>Convert between Joules, Calories, and other energy units.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/km-to-miles" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/km-to-miles"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Km ↔ Miles Converter</h3>
             <p>Convert Kilometers to Miles and vice-versa instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/km-miles" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/km-miles"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Km ↔ Miles Converter</h3>
-            <p>Quickly convert between Kilometers and Miles with high precision in real-time.</p>
+            <p>
+              Quickly convert between Kilometers and Miles with high precision
+              in real-time.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/converters/length-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/length-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Length Converter</h3>
             <p>Convert between meters, feet, inches, and other length units.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/power-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/power-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Power Converter</h3>
             <p>Convert between Watts, Horsepower, and other power units.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/pressure-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/pressure-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Pressure Converter</h3>
             <p>Convert between Pascal, Bar, PSI, and other pressure units.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/speed-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/speed-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Speed Converter</h3>
-            <p>Convert between different speed units like km/h, mph, and knots.</p>
+            <p>
+              Convert between different speed units like km/h, mph, and knots.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/converters/temperature-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/temperature-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Temperature Converter</h3>
             <p>Convert between Celsius, Fahrenheit, and Kelvin instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/converters/time-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/time-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Time Converter</h3>
-            <p>Convert between seconds, minutes, hours, days, and other time units.</p>
+            <p>
+              Convert between seconds, minutes, hours, days, and other time
+              units.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/converters/torque-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/torque-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Torque Converter</h3>
-            <p>Convert between Newton-meters, foot-pounds, and other torque units.</p>
+            <p>
+              Convert between Newton-meters, foot-pounds, and other torque
+              units.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/converters/volume-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/volume-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Volume Converter</h3>
-            <p>Convert between liters, gallons, cubic meters, and other volume units.</p>
+            <p>
+              Convert between liters, gallons, cubic meters, and other volume
+              units.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/converters/weight-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/converters/weight-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Weight &amp; Mass Converter</h3>
-            <p>Convert between kilograms, pounds, ounces, and other weight units.</p>
+            <p>
+              Convert between kilograms, pounds, ounces, and other weight units.
+            </p>
           </a>
         </div>
       </section>
@@ -1877,107 +4801,245 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Video Tools</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/video/avi-to-mkv" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/avi-to-mkv"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVI to MKV Converter</h3>
             <p>Convert AVI videos to MKV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/avi-to-mov" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/avi-to-mov"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVI to MOV Converter</h3>
             <p>Convert AVI videos to MOV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/avi-to-mp4" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/avi-to-mp4"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVI to MP4 Converter</h3>
             <p>Convert AVI videos to MP4 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/avi-to-webm" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/avi-to-webm"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>AVI to WebM Converter</h3>
             <p>Convert AVI videos to WebM format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/extract-audio-from-video" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/extract-audio-from-video"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Extract Audio from Video</h3>
-            <p>Extract the audio track from any video as MP3, WAV, M4A or OGG.</p>
+            <p>
+              Extract the audio track from any video as MP3, WAV, M4A or OGG.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/video/mkv-to-avi" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mkv-to-avi"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MKV to AVI Converter</h3>
             <p>Convert MKV videos to AVI format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mkv-to-mov" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mkv-to-mov"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MKV to MOV Converter</h3>
             <p>Convert MKV videos to MOV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mkv-to-mp4" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mkv-to-mp4"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MKV to MP4 Converter</h3>
             <p>Convert MKV videos to MP4 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mkv-to-webm" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mkv-to-webm"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MKV to WebM Converter</h3>
             <p>Convert MKV videos to WebM format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mov-to-avi" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mov-to-avi"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MOV to AVI Converter</h3>
             <p>Convert MOV videos to AVI format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mov-to-mkv" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mov-to-mkv"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MOV to MKV Converter</h3>
             <p>Convert MOV videos to MKV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mov-to-mp4" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mov-to-mp4"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MOV to MP4 Converter</h3>
             <p>Convert MOV videos to MP4 format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mov-to-webm" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mov-to-webm"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MOV to WebM Converter</h3>
             <p>Convert MOV videos to WebM format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mp4-to-avi" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mp4-to-avi"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP4 to AVI Converter</h3>
             <p>Convert MP4 videos to AVI format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mp4-to-mkv" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mp4-to-mkv"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP4 to MKV Converter</h3>
             <p>Convert MP4 videos to MKV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mp4-to-mov" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mp4-to-mov"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP4 to MOV Converter</h3>
             <p>Convert MP4 videos to MOV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/mp4-to-webm" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/mp4-to-webm"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>MP4 to WebM Converter</h3>
             <p>Convert MP4 videos to WebM format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/video-compressor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/video-compressor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Video Compressor</h3>
             <p>Reduce video file size while maintaining quality.</p>
           </a>
-          <a href="https://kitmul.com/en/video/video-format-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/video-format-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Video Format Converter</h3>
-            <p>Convert videos between MP4, MOV, AVI, MKV and WebM formats instantly in your browser.</p>
+            <p>
+              Convert videos between MP4, MOV, AVI, MKV and WebM formats
+              instantly in your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/video/video-to-gif" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/video-to-gif"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Video to GIF Converter</h3>
             <p>Convert any video to animated GIF with custom FPS and size.</p>
           </a>
-          <a href="https://kitmul.com/en/video/video-trimmer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/video-trimmer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Video Trimmer</h3>
             <p>Cut and trim videos to the exact length you need.</p>
           </a>
-          <a href="https://kitmul.com/en/video/video-upscaler" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/video-upscaler"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Video Up Scaler</h3>
-            <p>Upscale video resolution using AI-powered WebGPU processing directly in your browser.</p>
+            <p>
+              Upscale video resolution using AI-powered WebGPU processing
+              directly in your browser.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/video/webm-to-avi" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/webm-to-avi"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebM to AVI Converter</h3>
             <p>Convert WebM videos to AVI format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/webm-to-mkv" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/webm-to-mkv"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebM to MKV Converter</h3>
             <p>Convert WebM videos to MKV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/webm-to-mov" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/webm-to-mov"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebM to MOV Converter</h3>
             <p>Convert WebM videos to MOV format online for free.</p>
           </a>
-          <a href="https://kitmul.com/en/video/webm-to-mp4" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/video/webm-to-mp4"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>WebM to MP4 Converter</h3>
             <p>Convert WebM videos to MP4 format online for free.</p>
           </a>
@@ -1987,69 +5049,192 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Visualizers & Logic</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/visualizers-logic/ast-visualizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/ast-visualizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Abstract Syntax Tree (AST) Visualizer</h3>
-            <p>Visualize the structure of your JavaScript code with a detailed AST tree.</p>
+            <p>
+              Visualize the structure of your JavaScript code with a detailed
+              AST tree.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/big-data-text-visualizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/big-data-text-visualizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Big Data Text Visualizer</h3>
-            <p>Efficiently visualize and search through extremely large text files using buffering and infinite scroll.</p>
+            <p>
+              Efficiently visualize and search through extremely large text
+              files using buffering and infinite scroll.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/binary-search-tree-lab" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/binary-search-tree-lab"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Binary Search Tree Lab</h3>
-            <p>Interactive BST visualizer with insert, delete, search, and traversal operations.</p>
+            <p>
+              Interactive BST visualizer with insert, delete, search, and
+              traversal operations.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/big-o-complexity-comparator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/big-o-complexity-comparator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Compare Big O Complexity Curves</h3>
-            <p>Visualize and compare Big O complexity curves from O(1) to O(n!) on an interactive chart.</p>
+            <p>
+              Visualize and compare Big O complexity curves from O(1) to O(n!)
+              on an interactive chart.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/css-grid-builder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/css-grid-builder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>CSS Grid Interactive Builder</h3>
-            <p>Visualize and build complex CSS grid layouts effortlessly with our interactive tool.</p>
+            <p>
+              Visualize and build complex CSS grid layouts effortlessly with our
+              interactive tool.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/database-schema-designer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/database-schema-designer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Design Database Schemas Visually</h3>
-            <p>Design database schemas with a visual ER diagram editor. Parse SQL DDL, add tables, and export CREATE TABLE statements.</p>
+            <p>
+              Design database schemas with a visual ER diagram editor. Parse SQL
+              DDL, add tables, and export CREATE TABLE statements.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/graph-traversal-animator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/graph-traversal-animator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Graph Traversal Animator</h3>
-            <p>Visualize BFS and DFS graph traversal algorithms step by step.</p>
+            <p>
+              Visualize BFS and DFS graph traversal algorithms step by step.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/json-tree-explorer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/json-tree-explorer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Interactive JSON Tree Explorer</h3>
-            <p>Visualize, search, and navigate through complex JSON structures effortlessly.</p>
+            <p>
+              Visualize, search, and navigate through complex JSON structures
+              effortlessly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/jwt-decoder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/jwt-decoder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>JWT Payload &amp; Header Decoder</h3>
-            <p>Visualize and inspect the header and payload of your JSON Web Tokens instantly.</p>
+            <p>
+              Visualize and inspect the header and payload of your JSON Web
+              Tokens instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/mermaid-editor" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/mermaid-editor"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Mermaid Diagram Editor</h3>
-            <p>Create and edit professional diagrams using Mermaid.js syntax.</p>
+            <p>
+              Create and edit professional diagrams using Mermaid.js syntax.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/quantum-circuit-simulator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/quantum-circuit-simulator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Quantum Circuit Simulator</h3>
-            <p>Simulate basic quantum circuits and visualize state probabilities in real time.</p>
+            <p>
+              Simulate basic quantum circuits and visualize state probabilities
+              in real time.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/regex-diagram" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/regex-diagram"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Regex Diagram Generator</h3>
-            <p>Visualize your regular expressions as easy-to-read railroad diagrams.</p>
+            <p>
+              Visualize your regular expressions as easy-to-read railroad
+              diagrams.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/sorting-algorithms-animator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/sorting-algorithms-animator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Sorting Algorithms Animator</h3>
             <p>Visualize sorting algorithms step by step with animated bars.</p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/pathfinding-visualizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/pathfinding-visualizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Visualize Pathfinding Algorithms</h3>
-            <p>Visualize A*, Dijkstra, BFS, and DFS pathfinding algorithms step by step on an interactive grid.</p>
+            <p>
+              Visualize A*, Dijkstra, BFS, and DFS pathfinding algorithms step
+              by step on an interactive grid.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/recursion-tree-visualizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/recursion-tree-visualizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Visualize Recursion Tree &amp; Callstack</h3>
-            <p>Paste a recursive function, execute it, and visualize the call tree with memoization overlay.</p>
+            <p>
+              Paste a recursive function, execute it, and visualize the call
+              tree with memoization overlay.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/visualizers-logic/css-box-model-visualizer" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/visualizers-logic/css-box-model-visualizer"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Visualize the CSS Box Model</h3>
-            <p>Interactively visualize the CSS box model with live padding, border, margin, and content editing.</p>
+            <p>
+              Interactively visualize the CSS box model with live padding,
+              border, margin, and content editing.
+            </p>
           </a>
         </div>
       </section>
@@ -2057,81 +5242,200 @@ export default function Tools() {
       <section class="tool-category">
         <h2>Writing & Text</h2>
         <div class="tool-grid">
-          <a href="https://kitmul.com/en/writing/case-converter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/case-converter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Case Converter</h3>
-            <p>Quickly convert text into various cases: UPPERCASE, lowercase, Title Case, etc.</p>
+            <p>
+              Quickly convert text into various cases: UPPERCASE, lowercase,
+              Title Case, etc.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/cover-letter-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/cover-letter-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Cover Letter Generator</h3>
-            <p>Create professional cover letters with multiple templates. Download as PDF instantly.</p>
+            <p>
+              Create professional cover letters with multiple templates.
+              Download as PDF instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/find-and-replace" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/find-and-replace"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Find and Replace</h3>
-            <p>Find and replace specific text or patterns using regular expressions.</p>
+            <p>
+              Find and replace specific text or patterns using regular
+              expressions.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/html-to-markdown" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/html-to-markdown"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>HTML to Markdown</h3>
             <p>Convert HTML snippets into readable Markdown instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/image-to-text" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/image-to-text"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Image to Text (OCR)</h3>
             <p>Extract text from images using optical character recognition.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/lorem-ipsum-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/lorem-ipsum-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Lorem Ipsum Generator</h3>
             <p>Generate placeholder text for designs and projects.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/markdown-to-html" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/markdown-to-html"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Markdown to HTML</h3>
             <p>Convert Markdown content into clean HTML instantly.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/markdown-to-medium" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/markdown-to-medium"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Markdown to Medium</h3>
-            <p>Convert Markdown into Medium-compatible rich text with one click.</p>
+            <p>
+              Convert Markdown into Medium-compatible rich text with one click.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/ppt-presentation-maker" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/ppt-presentation-maker"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>PPT Presentation Maker</h3>
-            <p>Create professional PowerPoint presentations from scratch. Download as PPTX or PDF.</p>
+            <p>
+              Create professional PowerPoint presentations from scratch.
+              Download as PPTX or PDF.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/resume-builder" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/resume-builder"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Resume Builder</h3>
-            <p>Create professional, ATS-friendly resumes with multiple templates. Download as PDF instantly.</p>
+            <p>
+              Create professional, ATS-friendly resumes with multiple templates.
+              Download as PDF instantly.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/slug-generator" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/slug-generator"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Slug Generator</h3>
             <p>Generate URL-friendly slugs from any text.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/speech-to-text" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/speech-to-text"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Speech to Text</h3>
-            <p>Transcribe your voice to text in real time using browser-based speech recognition.</p>
+            <p>
+              Transcribe your voice to text in real time using browser-based
+              speech recognition.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/string-reverser" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/string-reverser"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>String Reverser</h3>
-            <p>Quickly reverse your text, words, or lines with this simple tool.</p>
+            <p>
+              Quickly reverse your text, words, or lines with this simple tool.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/text-diff" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/text-diff"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text Diff Tool</h3>
             <p>Compare two texts and find the differences between them.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/text-to-speech" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/text-to-speech"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Text to Speech</h3>
-            <p>Convert any text into natural-sounding speech using the browser's Web Speech API.</p>
+            <p>
+              Convert any text into natural-sounding speech using the browser's
+              Web Speech API.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/whitespace-remover" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/whitespace-remover"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Whitespace Remover</h3>
-            <p>Clean up your text by removing leading, trailing, and extra spaces, or eliminating all whitespace.</p>
+            <p>
+              Clean up your text by removing leading, trailing, and extra
+              spaces, or eliminating all whitespace.
+            </p>
           </a>
-          <a href="https://kitmul.com/en/writing/word-character-counter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/word-character-counter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Word &amp; Character Counter</h3>
             <p>Count words, characters, sentences and paragraphs.</p>
           </a>
-          <a href="https://kitmul.com/en/writing/word-frequency-counter" class="tool-card" target="_blank">
+          <a
+            href="https://kitmul.com/en/writing/word-frequency-counter"
+            class="tool-card"
+            target="_blank"
+            rel="noopener"
+          >
             <h3>Word Frequency Counter</h3>
-            <p>Analyze your text to find the most used words and their frequency.</p>
+            <p>
+              Analyze your text to find the most used words and their frequency.
+            </p>
           </a>
         </div>
       </section>
-
     </div>
   );
 }
