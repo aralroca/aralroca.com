@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "bun run build && bunx janux-vercel",
+  "cleanUrls": true
+}

@@ -1,3 +1,10 @@
+import pageMeta from '@/seo';
+
+export const meta = pageMeta({
+  title: 'Supporters - Aral Roca',
+  canonical: '/thanks',
+});
+
 export default function Supporters() {
   return (
     <div class="supporters">
@@ -9,7 +16,7 @@ export default function Supporters() {
       </div>
 
       <p class="description">
-        Thank you for making my Open-Source work possible.{" "}
+        Thank you for making my Open-Source work possible.{' '}
         <u>You're awesome!</u>
       </p>
 
@@ -18,7 +25,7 @@ export default function Supporters() {
       <h3>Open-Source Top Supporters</h3>
       <ul>
         <li>
-          <a href="https://github.com/taehee-ww" target="_blank">
+          <a href="https://github.com/taehee-ww" target="_blank" rel="noopener">
             Taehee Kim (비행토끼)
           </a>
         </li>
@@ -27,17 +34,21 @@ export default function Supporters() {
       <h3>Open-Source Supporters</h3>
       <ul>
         <li>
-          <a href="https://github.com/phanan" target="_blank">
+          <a href="https://github.com/phanan" target="_blank" rel="noopener">
             Phan An
           </a>
         </li>
         <li>
-          <a href="https://github.com/rkalis" target="_blank">
+          <a href="https://github.com/rkalis" target="_blank" rel="noopener">
             Rosco Kalis
           </a>
         </li>
         <li>
-          <a href="https://github.com/DanTehrani" target="_blank">
+          <a
+            href="https://github.com/DanTehrani"
+            target="_blank"
+            rel="noopener"
+          >
             Daniel Tehrani
           </a>
         </li>

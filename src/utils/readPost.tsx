@@ -1,8 +1,8 @@
 import fs from 'node:fs';
-// @ts-ignore
-import { Marked, marked } from 'marked';
-import matter from 'gray-matter';
 import path from 'node:path';
+import matter from 'gray-matter';
+import hljs from 'highlight.js';
+import { Marked } from 'marked';
 import readingTime from 'reading-time';
 import niceDateText from './niceDateText';
 import { markedHighlight } from 'marked-highlight';
@@ -29,8 +29,6 @@ export default function readPost(slug: string): PostContent {
   const markdownWithMetadata = fs
     .readFileSync(path.join(POST_PATH, slug + '.md'))
     .toString();
-  const hljs = require('highlight.js');
-
   const marked = new Marked(
     markedHighlight({
       langPrefix: 'hljs language-',

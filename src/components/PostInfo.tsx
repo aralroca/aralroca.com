@@ -14,7 +14,7 @@ export default function PostInfo({ date, timeToRead, hideAuthor }: Props) {
   );
 
   return (
-    <time datetime={date} class="post-info">
+    <time dateTime={date} class="post-info">
       {authorElement}
       {`${date} • ${timeToRead.text.replace(/ /g, '\u00A0')}`}
     </time>

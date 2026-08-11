@@ -1,7 +1,10 @@
 import type { PostContent } from '@/utils/readPost';
-import getAllPosts from './getAllPosts';
+import getAllPosts, { type Post } from './getAllPosts';
 
-export default function getMorePosts({ data }: PostContent, slug: string) {
+export default function getMorePosts(
+  { data }: PostContent,
+  slug: string,
+): [Post[], { title: string; slug: string }[]] {
   const tags = data.tags.split(',').map((l: string) => l.trim());
   const posts = getAllPosts();
 
